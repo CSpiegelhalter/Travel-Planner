@@ -16,6 +16,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <p>This is a start</p>
+        <p>This is a change</p>
       </main>
     </>
   )
