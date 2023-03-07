@@ -17,6 +17,7 @@ export default function Home() {
       <main className={styles.main}>
         <p>This is a start</p>
         <p>This is a change</p>
+        <p>I am a master hacker</p>
       </main>
     </>
   )
