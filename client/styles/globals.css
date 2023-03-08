@@ -4,13 +4,18 @@
   }
 } */
 
+body{
+  margin: 0;
+}
+
 .main-header {
   display: flex;
   align-items: center;
   height: 65px;
   background: linear-gradient(90deg, #DC3535 1.2%, #F49D1A 100%);
   color: white;
-  padding: 15px;
+  padding: 7px;
+  
 }   
 
 .header-title {
@@ -21,18 +26,11 @@
   line-height: 24px;
   color: #FFFFFF;
   margin-right: auto;
-  width: auto;
+  width: 100%;
 
 
 
 }
-
-.header-img{
-  height: 100%;
-  width: 60px;
-  padding-right: 7px;
-}
-
 
 .nav {
  padding: 15px;
@@ -40,8 +38,12 @@
  text-align: center;
 }
 
+.nav-list-container{
+  display:flex;
+  padding: 3px;
+}
+
 .nav li {
-  display: inline;
   padding: 0 20px;
   cursor: pointer;
 } 

@@ -5,14 +5,18 @@ function NavBar(props: any) {
 
 
     return (
-        <div>
+        <div className='nav-container'>
             <header className="main-header">
-                <Image src='/Globe.png' alt="WorldGlobe or food" width={60} height={60}></Image>
-                <h2 className="header-title">Super-Mega-Awesome Travel-Planner</h2>
+                <Image src='/Globe.png' alt="WorldGlobe or food" width={40} height={40}></Image>
+                <h2 className="header-title">Our Travel-Planner</h2>
+                <p>Home</p>
                 <ul className="nav">
-                    <li>Home</li>
-                    <li>Login</li>
-                    <li>SignUp</li>
+                    <div className='nav-list-container'>
+                    <li >Login</li>
+                    </div>
+                    <div className='nav-list-container'>
+                    <li>Sign-Up</li>
+                    </div>
                 </ul>
             </header>
         </div>
