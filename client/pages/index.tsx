@@ -10,8 +10,7 @@ import { env } from 'process'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const key: any = process.env.GOOGLE_MAPS_API_KEY
-  // console.log(process.env.GOOGLE_MAPS_API_KEY)
+  const key: any = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
   const { isLoaded } = useLoadScript({
     'googleMapsApiKey': key
   })
