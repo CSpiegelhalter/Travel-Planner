@@ -3,10 +3,18 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import NavBar from '@/components/NavBar'
+import { use, useMemo } from 'react'
+import {GoogleMap, useLoadScript, Marker, useJsApiLoader} from '@react-google-maps/api'
+import { env } from 'process'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const key: any = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+  const { isLoaded } = useLoadScript({
+    'googleMapsApiKey': key
+  })
+  if(!isLoaded) return <div>Loading...</div>
   return (
     <>
       <Head>
@@ -17,9 +25,12 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <NavBar />
-        <p>This is a start</p>
-
+      <Map />
       </main>
     </>
   )
+}
+
+function Map(){
+  return <GoogleMap zoom={10} center={{lat:51, lng:0 }} mapContainerClassName='map-container'></GoogleMap>
 }
