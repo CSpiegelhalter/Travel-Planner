@@ -32,5 +32,6 @@ export default function Home() {
 }
 
 function Map(){
-  return <GoogleMap zoom={10} center={{lat:51, lng:0 }} mapContainerClassName='map-container'></GoogleMap>
+  return <GoogleMap options={{disableDefaultUI: true,}} zoom={10} center={{lat:51, lng:0 }} mapContainerClassName='map-container'></GoogleMap>
 }
+
