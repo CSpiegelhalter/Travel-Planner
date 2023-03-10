@@ -4,17 +4,37 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import NavBar from '@/components/NavBar'
 import { use, useMemo } from 'react'
-import {GoogleMap, useLoadScript, Marker, useJsApiLoader} from '@react-google-maps/api'
+import { GoogleMap, useLoadScript, Marker, useJsApiLoader } from '@react-google-maps/api'
 import { env } from 'process'
+import { useState } from 'react' 
 
 const inter = Inter({ subsets: ['latin'] })
 
+
 export default function Home() {
+  const [location, setLocation] = useState()
+  
+  
+  // this is our key and how we load in our google maps api
   const key: any = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
   const { isLoaded } = useLoadScript({
     'googleMapsApiKey': key
   })
+  
+  //sets the space where the map should be to loading... if it is not yet rendered
   if(!isLoaded) return <div>Loading...</div>
+  
+  const fetchLocation = async () =>{
+    const response = await fetch('/api/locator')
+    // const data = await response.json()
+    // setLocation(data)
+  }
+  
+  fetchLocation()
+  console.log(location)
+  
+  
+  
   return (
     <>
       <Head>
@@ -32,8 +52,10 @@ export default function Home() {
 }
 
 
+
+
 function Map(){
-  const center = useMemo(() => ({lat:51, lng:0 }), [])
+  const center = useMemo(() => ({lat:51.5072, lng:0.1276 }), [])
   return <GoogleMap options={{disableDefaultUI: true,}} zoom={10} center={center} mapContainerClassName='map-container'></GoogleMap>
 }
 
