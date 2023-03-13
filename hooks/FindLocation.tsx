@@ -6,8 +6,6 @@ const FindLocation = async () => {
         longitude: number
     }
 
-    // const [cords, setCords] = useState({lattitude: 0, longitude: 0})
-
     let lat
     let lng
 
@@ -35,8 +33,6 @@ const FindLocation = async () => {
 
    
     const center: any = async () => {
-        // Now I can use the promise followed by .then() 
-        // to make use of the values anywhere in the program
         let location: Location = await getLocationPromise
         let center = {
             lat: location.latitude,
@@ -52,9 +48,3 @@ const FindLocation = async () => {
 }
 
 export default FindLocation
-
-
-// use state like this ?????
-// useEffect(() => {
-//     fetch(info).then(setState(info))
-// }, [])
