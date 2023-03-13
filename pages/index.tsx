@@ -3,16 +3,33 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import NavBar from '@/components/NavBar'
-import { use, useMemo } from 'react'
+import { use, useEffect, useMemo } from 'react'
 import { GoogleMap, useLoadScript, Marker, useJsApiLoader } from '@react-google-maps/api'
 import { env } from 'process'
-import { useState } from 'react' 
-
-const inter = Inter({ subsets: ['latin'] })
+import { useState } from 'react';
+import FindLocation from '@/hooks/FindLocation' 
 
 
 export default function Home() {
+  //These are the two states used to get our location for centering
   const [location, setLocation] = useState()
+  const [hasLoaded, setHasLoaded] = useState(false)
+
+// this sets our location State using this function
+  function setUserLocation() {
+    return FindLocation().then((value) => {
+      setLocation(value)
+      return value
+    })
+  }
+
+//This is a useEffect used to make sure that the users location is grabbed only once when the page is rendered
+  useEffect(() => {
+    if (!hasLoaded) {
+      setUserLocation()
+      setHasLoaded(true)
+    }
+  }, [])
   
   
   // this is our key and how we load in our google maps api
@@ -24,17 +41,16 @@ export default function Home() {
   //sets the space where the map should be to loading... if it is not yet rendered
   if(!isLoaded) return <div>Loading...</div>
   
-  const fetchLocation = async () =>{
-    const response = await fetch('/api/locator')
-    // const data = await response.json()
-    // setLocation(data)
+  console.log(location)
+
+  //This is where we make the map. It has to be inside the Home functional component so that it has access to the location state used to set the intitial start.
+  function Map(){
+    const center = useMemo(() => (location), [])
+    return <GoogleMap options={{disableDefaultUI: true,}} zoom={10} center={center} mapContainerClassName='map-container'></GoogleMap>
   }
   
-  fetchLocation()
-  console.log(location)
-  
-  
-  
+
+  //our final return for home
   return (
     <>
       <Head>
@@ -54,8 +70,4 @@ export default function Home() {
 
 
 
-function Map(){
-  const center = useMemo(() => ({lat:51.5072, lng:0.1276 }), [])
-  return <GoogleMap options={{disableDefaultUI: true,}} zoom={10} center={center} mapContainerClassName='map-container'></GoogleMap>
-}
 
