@@ -7,15 +7,29 @@ import { use, useEffect, useMemo } from 'react'
 import { GoogleMap, useLoadScript, Marker, useJsApiLoader } from '@react-google-maps/api'
 import { env } from 'process'
 import { useState } from 'react';
-import FindLocation from '@/hooks/FindLocation' 
+import FindLocation from '@/hooks/FindLocation'
+
+// const placesApi = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=todo+in+paris&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
+
+// export  async function getServerSideProps(){
+//   const res = await fetch(placesApi)
+//   const data: any = await res.json()
+//   return {
+//     props: {
+//       data
+//     }
+//   }
+// }
 
 
 export default function Home() {
+
+  // console.log(data)
   //These are the two states used to get our location for centering
   const [location, setLocation] = useState()
   const [hasLoaded, setHasLoaded] = useState(false)
 
-// this sets our location State using this function
+  // this sets our location State using this function
   function setUserLocation() {
     return FindLocation().then((value) => {
       setLocation(value)
@@ -23,32 +37,42 @@ export default function Home() {
     })
   }
 
-//This is a useEffect used to make sure that the users location is grabbed only once when the page is rendered
+  //This is a useEffect used to make sure that the users location is grabbed only once when the page is rendered
   useEffect(() => {
+    fetch('api/pointsOfInterests').then((data) => {
+      console.log(data)
+    })
     if (!hasLoaded) {
       setUserLocation()
       setHasLoaded(true)
     }
   }, [])
-  
-  
+
+
   // this is our key and how we load in our google maps api
   const key: any = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
   const { isLoaded } = useLoadScript({
     'googleMapsApiKey': key
   })
-  
+
   //sets the space where the map should be to loading... if it is not yet rendered
-  if(!isLoaded) return <div>Loading...</div>
-  
+  if (!isLoaded) return <div>Loading...</div>
+
   console.log(location)
 
   //This is where we make the map. It has to be inside the Home functional component so that it has access to the location state used to set the intitial start.
-  function Map(){
+  function Map() {
     const center = useMemo(() => (location), [])
-    return <GoogleMap options={{disableDefaultUI: true,}} zoom={10} center={center} mapContainerClassName='map-container'></GoogleMap>
+    return <GoogleMap options={{ disableDefaultUI: true, }} zoom={15} center={center} mapContainerClassName='map-container'></GoogleMap>
   }
-  
+
+  //start of api maybe
+
+  // let data = fetch('api/pointsOfInterest.ts')
+  const fetchPlaces = async () => {
+    const data = await fetch('/api/pointsOfInterest')
+    console.log(await data.json())
+  }
 
   //our final return for home
   return (
@@ -61,7 +85,8 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <NavBar />
-      <Map />
+      <button onClick={fetchPlaces}></button>
+        <Map />
       </main>
     </>
   )
