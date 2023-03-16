@@ -13,8 +13,9 @@ import Map from '@/components/Map'
 export default function Home() {
 
   //These are the two states used to get our location for centering
-  const [location, setLocation] = useState()
+  const [location, setLocation] = useState(null)
   const [hasLoaded, setHasLoaded] = useState(false)
+  const [showInfo, setShowInfo] = useState(false)
 
   // this sets our location State using this function
   function setUserLocation() {
@@ -30,7 +31,7 @@ export default function Home() {
       console.log(data)
     })
     if (!hasLoaded) {
-      setUserLocation()
+      // setUserLocation()
       setHasLoaded(true)
     }
   }, [])
@@ -54,6 +55,10 @@ export default function Home() {
     console.log(await data.json())
   }
 
+  function infoFlip(){
+    setShowInfo(!showInfo)
+  }
+
   //our final return for home
   return (
     <>
@@ -68,10 +73,10 @@ export default function Home() {
         <div className='info-container'>
           <div className='poi-container' >
             <button className='test-btn' onClick={fetchPlaces}>Test button</button>
+            <button className='test-btn' onClick={infoFlip}>Test flip button</button>
           </div>
-          <div className='info-col'>
-          </div>
-          <Map location={location} />
+          {showInfo && <div className='info-col'></div>}
+          {location ? <Map location={location} /> : <Map location={{lat: 51.5072, lng: 0.1276}} />}
         </div>
       </main>
     </>
