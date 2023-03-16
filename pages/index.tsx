@@ -65,8 +65,14 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <NavBar />
-      <button onClick={fetchPlaces}></button>
-        <Map  location={location} />
+        <div className='info-container'>
+          <div className='poi-container' >
+            <button className='test-btn' onClick={fetchPlaces}>Test button</button>
+          </div>
+          <div className='info-col'>
+          </div>
+          <Map location={location} />
+        </div>
       </main>
     </>
   )
