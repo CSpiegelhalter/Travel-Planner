@@ -8,23 +8,10 @@ import { GoogleMap, useLoadScript, Marker, useJsApiLoader } from '@react-google-
 import { env } from 'process'
 import { useState } from 'react';
 import FindLocation from '@/hooks/FindLocation'
-
-// const placesApi = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=todo+in+paris&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
-
-// export  async function getServerSideProps(){
-//   const res = await fetch(placesApi)
-//   const data: any = await res.json()
-//   return {
-//     props: {
-//       data
-//     }
-//   }
-// }
-
+import Map from '@/components/Map'
 
 export default function Home() {
 
-  // console.log(data)
   //These are the two states used to get our location for centering
   const [location, setLocation] = useState()
   const [hasLoaded, setHasLoaded] = useState(false)
@@ -60,15 +47,8 @@ export default function Home() {
 
   console.log(location)
 
-  //This is where we make the map. It has to be inside the Home functional component so that it has access to the location state used to set the intitial start.
-  function Map() {
-    const center = useMemo(() => (location), [])
-    return <GoogleMap options={{ disableDefaultUI: true, }} zoom={15} center={center} mapContainerClassName='map-container'></GoogleMap>
-  }
-
   //start of api maybe
 
-  // let data = fetch('api/pointsOfInterest.ts')
   const fetchPlaces = async () => {
     const data = await fetch('/api/pointsOfInterest')
     console.log(await data.json())
@@ -86,7 +66,7 @@ export default function Home() {
       <main className={styles.main}>
         <NavBar />
       <button onClick={fetchPlaces}></button>
-        <Map />
+        <Map  location={location} />
       </main>
     </>
   )
