@@ -4,6 +4,6 @@ export default async function handler(req: any, res: any){
     const results = await fetch(placesApi)
 
 
-    await res.status(200).send(await results.json())
+    await res.status(200).send(JSON.stringify(await results.json()))
 }
 

@@ -28,11 +28,8 @@ export default function Home() {
 
   //This is a useEffect used to make sure that the users location is grabbed only once when the page is rendered
   useEffect(() => {
-    fetch('api/pointsOfInterests').then((data) => {
-      console.log(data)
-    })
     if (!hasLoaded) {
-      // setUserLocation()
+      setUserLocation()
       setHasLoaded(true)
     }
   }, [])
