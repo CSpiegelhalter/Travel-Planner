@@ -69,7 +69,7 @@ export default function Home() {
             <Button name='info-sidebar-btn' handler={infoSidebarHandler} value='Holder Value'/>          
           </div>
           {showInfo && <div className='info-sidebar'>
-            <Card />
+            <Card  />
           </div>}
           {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
         </div>
