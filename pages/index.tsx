@@ -15,6 +15,7 @@ export default function Home() {
   //These are the two states used to get our location for centering
   const [location, setLocation] = useState(null)
   const [hasLoaded, setHasLoaded] = useState(false)
+  //This state is used to show (or not show) the information sidebar
   const [showInfo, setShowInfo] = useState(false)
 
   // this sets our location State using this function
@@ -48,13 +49,12 @@ export default function Home() {
 
   console.log(location)
 
-  //start of api maybe
-
+  //This is the function that calls the PointsOfInterest api
   const fetchPlaces = async () => {
     const data = await fetch('/api/pointsOfInterest')
     console.log(await data.json())
   }
-
+  //This function flips the state to show or not show the information sidebar
   function infoFlip(){
     setShowInfo(!showInfo)
   }

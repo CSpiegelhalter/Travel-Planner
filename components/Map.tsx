@@ -1,5 +1,4 @@
 import { GoogleMap } from '@react-google-maps/api'
-import { useMemo } from 'react'
 
 
   //This is where we make the map. We pass the location from the home component as a prop
