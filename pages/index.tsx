@@ -44,7 +44,6 @@ export default function Home() {
   //sets the space where the map should be to loading... if it is not yet rendered
   if (!isLoaded) return <div>Loading...</div>
 
-  console.log(location)
 
   //This is the function that calls the PointsOfInterest api
   const fetchPlaces = async () => {
