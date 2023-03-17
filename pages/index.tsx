@@ -9,6 +9,7 @@ import { env } from 'process'
 import { useState } from 'react';
 import FindLocation from '@/hooks/FindLocation'
 import Map from '@/components/Map'
+import Button from '@/components/Button'
 
 export default function Home() {
 
@@ -44,17 +45,13 @@ export default function Home() {
   //sets the space where the map should be to loading... if it is not yet rendered
   if (!isLoaded) return <div>Loading...</div>
 
-
-  //This is the function that calls the PointsOfInterest api
-  const fetchPlaces = async () => {
+  // Sidebar handler
+  //This is the function that calls the PointsOfInterest api and flips the state to show or not show the information sidebar
+  const infoSidebarHandler = async () => {
     const data = await fetch('/api/pointsOfInterest')
     console.log(await data.json())
-  }
-  //This function flips the state to show or not show the information sidebar
-  function infoFlip(){
     setShowInfo(!showInfo)
   }
-
   //our final return for home
   return (
     <>
@@ -68,11 +65,10 @@ export default function Home() {
         <NavBar />
         <div className='info-container'>
           <div className='pointsOfInterest-filter-container' >
-            <button className='test-btn' onClick={fetchPlaces}>Test button</button>
-            <button className='test-btn' onClick={infoFlip}>Test flip button</button>
+            <Button name='info-sidebar-btn' handler={infoSidebarHandler} value='Holder Value'/>          
           </div>
           {showInfo && <div className='info-sidebar'></div>}
-          {location ? <Map location={location} /> : <Map location={{lat: 51.5072, lng: 0.1276}} />}
+          {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
         </div>
       </main>
     </>
