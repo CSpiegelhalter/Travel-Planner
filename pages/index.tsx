@@ -71,11 +71,11 @@ export default function Home() {
       <main className={styles.main}>
         <NavBar />
         <div className='info-container'>
-          <div className='poi-container' >
+          <div className='pointsOfInterest-filter-container' >
             <button className='test-btn' onClick={fetchPlaces}>Test button</button>
             <button className='test-btn' onClick={infoFlip}>Test flip button</button>
           </div>
-          {showInfo && <div className='info-col'></div>}
+          {showInfo && <div className='info-sidebar'></div>}
           {location ? <Map location={location} /> : <Map location={{lat: 51.5072, lng: 0.1276}} />}
         </div>
       </main>
