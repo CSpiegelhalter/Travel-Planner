@@ -2,7 +2,7 @@
   --color-primary: #DC3535;
   --color-secondary: #F49D1A;
   --color-tertiary: #B01E68;
-  --color-information-sidebar-bg: gray;
+  --color-information-sidebar-bg: rgb(173, 61, 9);
   --color-neutral: #ffffff;
 }
 
@@ -126,7 +126,8 @@ button:hover{
 }
 
 .card-container{
-  border: 5px solid green;
+  color: white;
+  border: 5px solid var(--color-secondary);
   border-radius: 10%;
   padding: 5%;
 }

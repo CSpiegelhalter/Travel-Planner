@@ -20,6 +20,9 @@ export default function Home() {
   //This state is used to show (or not show) the information sidebar
   const [showInfo, setShowInfo] = useState(false)
 
+  // this is to hold onto our data that we get from our api call
+  const [placesInfo, setPlacesInfo] = useState()
+
   // this sets our location State using this function
   function setUserLocation() {
     return FindLocation().then((value) => {
@@ -46,13 +49,19 @@ export default function Home() {
   //sets the space where the map should be to loading... if it is not yet rendered
   if (!isLoaded) return <div>Loading...</div>
 
+  let test: any  
   // Sidebar handler
   //This is the function that calls the PointsOfInterest api and flips the state to show or not show the information sidebar
   const infoSidebarHandler = async () => {
     const data = await fetch('/api/pointsOfInterest')
-    console.log(await data.json())
+    setPlacesInfo(await data.json())
     setShowInfo(!showInfo)
+    setPlacesInfo(prevVal => prevVal.results)
+      console.log(placesInfo)
+
+    
   }
+
   //our final return for home
   return (
     <>
@@ -69,7 +78,8 @@ export default function Home() {
             <Button name='info-sidebar-btn' handler={infoSidebarHandler} value='Holder Value'/>          
           </div>
           {showInfo && <div className='info-sidebar'>
-            <Card  />
+            {placesInfo.map((place: any) => <Card  id={place.place_id} name={place.name} rating={place.rating} price={place.price_level} address={place.formatted_address} ratings_number={place.user_ratings_total} />)} 
+          
           </div>}
           {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
         </div>
