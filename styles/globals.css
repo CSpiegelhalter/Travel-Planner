@@ -2,6 +2,7 @@
   --color-primary: #DC3535;
   --color-secondary: #F49D1A;
   --color-tertiary: #B01E68;
+  --color-information-sidebar-bg: gray;
   --color-neutral: #ffffff;
 }
 
@@ -88,7 +89,7 @@ body {
 
 .info-sidebar {
   z-index: 2;
-  background-color: blue;
+  background-color: var(--color-information-sidebar-bg);
   height: 88vh;
   width: 35vw;
   position: absolute;
@@ -122,4 +123,10 @@ body {
 
 button:hover{
   color: var(--color-tertiary)
+}
+
+.card-container{
+  border: 5px solid green;
+  border-radius: 10%;
+  padding: 5%;
 }

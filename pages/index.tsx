@@ -10,6 +10,7 @@ import { useState } from 'react';
 import FindLocation from '@/hooks/FindLocation'
 import Map from '@/components/Map'
 import Button from '@/components/Button'
+import Card from '@/components/Card'
 
 export default function Home() {
 
@@ -67,7 +68,9 @@ export default function Home() {
           <div className='pointsOfInterest-filter-container' >
             <Button name='info-sidebar-btn' handler={infoSidebarHandler} value='Holder Value'/>          
           </div>
-          {showInfo && <div className='info-sidebar'></div>}
+          {showInfo && <div className='info-sidebar'>
+            <Card />
+          </div>}
           {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
         </div>
       </main>
