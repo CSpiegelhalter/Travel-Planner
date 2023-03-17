@@ -69,6 +69,8 @@ export default function Home() {
           </div>
           {showInfo && <div className='info-sidebar'></div>}
           {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
+
+
         </div>
       </main>
     </>

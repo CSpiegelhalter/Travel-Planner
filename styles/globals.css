@@ -89,15 +89,16 @@ body {
 .info-sidebar {
   z-index: 2;
   background-color: blue;
-  height: 88vh;
-  width: 35vw;
+  height: 30vh;
+  width: 100vw;
   position: absolute;
+  bottom: 0%;
 }
 
 
 
 /* CSS */
- button {
+button {
   background-color: var(--color-secondary);
   border-radius: 8px;
   border-width: 0;
@@ -120,6 +121,17 @@ body {
   touch-action: manipulation;
 }
 
-button:hover{
+button:hover {
   color: var(--color-tertiary)
+}
+
+@media (min-width: 62em){
+  .info-sidebar {
+
+    z-index: 2;
+    background-color: blue;
+    height: 88vh;
+    width: 35vw;
+  }
+
 }
