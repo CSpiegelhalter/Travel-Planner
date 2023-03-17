@@ -9,7 +9,7 @@ function NavBar(props: any) {
             <header className="main-header">
                 <Image src='/Globe.png' alt="WorldGlobe or food" width={40} height={40}></Image>
                 <h2 className="header-title">Our Travel-Planner</h2>
-                <p>Home</p>
+                <p className='home-btn'>Home</p>
                 <ul className="nav">
                     <div className='nav-list-container'>
                     <li >Login</li>
