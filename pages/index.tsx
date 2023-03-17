@@ -9,6 +9,7 @@ import { env } from 'process'
 import { useState } from 'react';
 import FindLocation from '@/hooks/FindLocation'
 import Map from '@/components/Map'
+import Button from '@/components/Button'
 
 export default function Home() {
 
@@ -64,7 +65,7 @@ export default function Home() {
         <NavBar />
         <div className='info-container'>
           <div className='pointsOfInterest-filter-container' >
-            <button className='test-btn' onClick={infoSidebarHandler}>Test flip button</button>
+            <Button name='info-sidebar-btn' handler={infoSidebarHandler} value='Holder Value'/>          
           </div>
           {showInfo && <div className='info-sidebar'></div>}
           {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
