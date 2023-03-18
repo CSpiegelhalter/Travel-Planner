@@ -90,11 +90,12 @@ body {
 .info-sidebar {
   z-index: 2;
   background-color: var(--color-information-sidebar-bg);
-  height: 88vh;
-  width: 35vw;
+  height: 30vh;
+  width: 100vw;
   position: absolute;
   bottom: 0%;
 }
+
 
 
 
@@ -126,17 +127,18 @@ button:hover {
   color: var(--color-tertiary)
 }
 
-.card-container{
+.card-container {
   color: white;
   border: 5px solid var(--color-secondary);
   border-radius: 10%;
   padding: 5%;
 }
-@media (min-width: 62em){
+
+@media (min-width: 62em) {
   .info-sidebar {
 
     z-index: 2;
-    background-color: blue;
+    background-color: var(--color-information-sidebar-bg);
     height: 88vh;
     width: 35vw;
   }
