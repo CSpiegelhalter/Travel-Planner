@@ -76,7 +76,7 @@ body {
   width: 100vw;
   height: 5vh;
   padding: 0.5%;
-  ;
+  z-index: 5;
 }
 
 .map-container {
@@ -94,6 +94,8 @@ body {
   width: 100vw;
   position: absolute;
   bottom: 0%;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 
@@ -139,7 +141,7 @@ button:hover {
 
     z-index: 2;
     background-color: var(--color-information-sidebar-bg);
-    height: 88vh;
+    height: 84.5vh;
     width: 35vw;
   }
 
