@@ -9,7 +9,7 @@ type ButtonProps = {
 function Button(props: ButtonProps ) {
     return (
         <div>
-            <button onClick={props.handler} className={props.name}>{props.value}</button>
+            <button onClick={() => props.handler(props.value)} className={props.name}>{props.value}</button>
         </div>
     );
 }
