@@ -89,7 +89,7 @@ export default function Home() {
         <div className='info-container'>
           <div className='pointsOfInterest-filter-container' >
             <Button name='info-sidebar-btn' handler={infoSidebarHandler} value='Holder Value' />
-            <div>
+            <div className="pointsOfInterest-btn-container">
             {pointsOfInterest.map((point, index) => <Button key={index} name='here' handler={callApi} value={point} />)}
             </div>
 \          </div>
