@@ -1,12 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import NavBar from '@/components/NavBar'
-import { use, useEffect, useMemo } from 'react'
+import { useState, useEffect,  } from 'react'
 import { GoogleMap, useLoadScript, Marker, useJsApiLoader } from '@react-google-maps/api'
 import { env } from 'process'
-import { useState } from 'react';
 import FindLocation from '@/hooks/FindLocation'
 import Map from '@/components/Map'
 import Button from '@/components/Button'
