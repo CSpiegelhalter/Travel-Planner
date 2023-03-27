@@ -1,7 +1,7 @@
 export default async function handler(req: any, res: any){
     const body = JSON.parse(req.body)
     let city = body['city']
-    let pointOfInterest = body['point']
+    let pointOfInterest = body['typeOfInterest']
 
     console.log(req.body)
     console.log(city)

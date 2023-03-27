@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react"
 
 const FindLocation = async () => {
     interface Location {
-        latitude: number,
-        longitude: number
+        lat: number,
+        lng: number
     }
 
     let lat
@@ -20,8 +19,8 @@ const FindLocation = async () => {
 
                 // Resolving the values which I need
                 resolve({
-                    latitude: lat,
-                    longitude: lng
+                    lat,
+                    lng
                 })
             })
 
@@ -35,15 +34,26 @@ const FindLocation = async () => {
     const center: any = async () => {
         let location: Location = await getLocationPromise
         let center = {
-            lat: location.latitude,
-            lng: location.longitude
+            lat: location.lat,
+            lng: location.lng
         }
         return center
     }
 
-    const userLocation = await center()
+    const cityLocator = async (latLng: Location) => {
+        const lat = latLng.lat
+        const lng = latLng.lng
+        const reverseGeoCodeApi = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
+        const city = await fetch(reverseGeoCodeApi)
+        console.log(city)
+        console.log(await city.json())
+    }
+
+    const userLatLng = await center()
+    await cityLocator(userLatLng)
+    const userCity = 'paris'
     
-    return userLocation
+    return {lat: userLatLng.lat, long: userLatLng.lng, city: userCity}
 
 }
 

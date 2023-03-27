@@ -23,11 +23,12 @@ export default function Home() {
   const [placesInfo, setPlacesInfo] = useState()
 
   // this sets our location State using this function
-  function setUserLocation() {
-    return FindLocation().then((value) => {
-      setLocation(value)
-      return value
-    })
+  async function setUserLocation() {
+    const value = await FindLocation()
+     console.log(value.lat)
+     console.log(value.lng)
+    setLocation(value)
+    return value
   }
 
   //This is a useEffect used to make sure that the users location is grabbed only once when the page is rendered
@@ -57,10 +58,10 @@ export default function Home() {
     setPlacesInfo(prevVal => prevVal.results)
   }
 
-  const callApi = async (point: string) => {
+  const callApi = async (typeOfInterest: string) => {
     const params = {
       city: 'Paris',
-      point
+      point: typeOfInterest
     }
     const options = {
       method: 'POST',
