@@ -11,10 +11,10 @@ import SideBar from '@/components/SideBar'
 
 export default function Home() {
 
-  const pointsOfInterest: string[] = ['attractions', 'restaurants', 'shopping', 'bars']
+  const pointsOfInterest: string[] = [ 'restaurant', 'shopping', 'bar']
 
   //These are the two states used to get our location for centering
-  const [location, setLocation] = useState(null)
+  const [location, setLocation] = useState()
   const [hasLoaded, setHasLoaded] = useState(false)
   //This state is used to show (or not show) the information sidebar
   const [showInfo, setShowInfo] = useState(false)
@@ -25,9 +25,7 @@ export default function Home() {
   // this sets our location State using this function
   async function setUserLocation() {
     const value = await FindLocation()
-     console.log(value.lat)
-     console.log(value.lng)
-     console.log(value.city)
+    console.log(value)
     setLocation(value)
     return value
   }
@@ -59,9 +57,11 @@ export default function Home() {
     setPlacesInfo(prevVal => prevVal.results)
   }
 
+ 
+
   const callApi = async (typeOfInterest: string) => {
     const params = {
-      city: 'Paris',
+      city: location ? `${location.city}`: 'Paris',
       point: typeOfInterest
     }
     const options = {
@@ -71,6 +71,7 @@ export default function Home() {
   const data = await fetch('/api/pointsOfInterest', options)
   const results = await data.json()
   console.log(results.results)
+  console.log(location.city)
 
   }
 
