@@ -14,8 +14,8 @@ const FindLocation = async () => {
 
             navigator.geolocation.getCurrentPosition(function (position) {
 
-                lat = position.coords.latitude
-                lng = position.coords.longitude
+                lat = position?.coords?.latitude
+                lng = position?.coords?.longitude
 
                 // Resolving the values which I need
                 resolve({
@@ -34,8 +34,8 @@ const FindLocation = async () => {
     const center: any = async () => {
         let location: Location = await getLocationPromise
         let center = {
-            lat: location.lat,
-            lng: location.lng
+            lat: location?.lat,
+            lng: location?.lng
         }
         return center
     }
@@ -43,8 +43,8 @@ const FindLocation = async () => {
     // this is a function that uses reverse geocoding in order to get the city name for the parameter in the pointsOfInterest api
     const cityLocator = async (latLng: Location) => {
         //setting the lat and long that we will pass into the reverse geocoding api
-        const lat = latLng.lat
-        const lng = latLng.lng
+        const lat = latLng?.lat
+        const lng = latLng?.lng
         //reverse geocoding api used to return an array with all the information on the location of the coordinates given
         const reverseGeoCodeApi = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
         const cityInformation = await fetch(reverseGeoCodeApi)
@@ -54,13 +54,13 @@ const FindLocation = async () => {
         //pass the first position of the array (which is an array) into a forEach function to check each of the address_components properties
         locationInfo?.results[0]?.address_components?.forEach(function (element: any) {
             //this first if is to check for the postal_town value that a lot of countries use for their city but not all of them
-            if (element.types[0] === 'postal_town') {
-                city = element.long_name
+            if (element?.types[0] === 'postal_town') {
+                city = element?.long_name
                 return
             }
             //this should catch all cities that do not have the postal_town attribute
-            else if (element.types[0] == 'locality' && element.types[1] == 'political') {
-                city = element.long_name
+            else if (element?.types[0] == 'locality' && element?.types[1] == 'political') {
+                city = element?.long_name
                 return
             }
         })
