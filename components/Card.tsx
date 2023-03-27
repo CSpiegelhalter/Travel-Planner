@@ -7,7 +7,7 @@ function Card(props: any) {
             <p className='rating'>{props.rating}, Number of ratings {props.ratings_number}</p>
             <p className='priceRange'>Price Level: {props.price}</p>
             <p className='address' >{props.address}</p>
-            <p className='operatingHours'>idk where the hours are ahh</p>
+            <p className='operatingHours'></p>
             {props.phone && <p className='phone-number'>{props.phone}</p>}
         </div>
     );

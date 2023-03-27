@@ -11,10 +11,10 @@ import SideBar from '@/components/SideBar'
 
 export default function Home() {
 
-  const pointsOfInterest: string[] = ['attractions', 'restaurants', 'shopping', 'bars']
+  const pointsOfInterest: string[] = [ 'restaurant', 'shopping', 'bar']
 
   //These are the two states used to get our location for centering
-  const [location, setLocation] = useState(null)
+  const [location, setLocation] = useState()
   const [hasLoaded, setHasLoaded] = useState(false)
   //This state is used to show (or not show) the information sidebar
   const [showInfo, setShowInfo] = useState(false)
@@ -23,11 +23,11 @@ export default function Home() {
   const [placesInfo, setPlacesInfo] = useState()
 
   // this sets our location State using this function
-  function setUserLocation() {
-    return FindLocation().then((value) => {
-      setLocation(value)
-      return value
-    })
+  async function setUserLocation() {
+    const value = await FindLocation()
+    console.log(value)
+    setLocation(value)
+    return value
   }
 
   //This is a useEffect used to make sure that the users location is grabbed only once when the page is rendered
@@ -57,10 +57,12 @@ export default function Home() {
     setPlacesInfo(prevVal => prevVal.results)
   }
 
-  const callApi = async (point: string) => {
+ 
+
+  const callApi = async (typeOfInterest: string) => {
     const params = {
-      city: 'Paris',
-      point
+      city: location ? `${location.city}`: 'London',
+      point: typeOfInterest
     }
     const options = {
       method: 'POST',
@@ -69,6 +71,7 @@ export default function Home() {
   const data = await fetch('/api/pointsOfInterest', options)
   const results = await data.json()
   console.log(results.results)
+  console.log(location.city)
 
   }
 
