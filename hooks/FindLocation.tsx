@@ -46,19 +46,27 @@ const FindLocation = async () => {
         const reverseGeoCodeApi = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
         const cityInformation = await fetch(reverseGeoCodeApi)
         const locationInfo = await cityInformation.json()
-        const city =  await locationInfo.results[0].address_components.forEach(function (element: any) {
+        console.log(locationInfo)
+        let city: string | null = null
+        locationInfo.results[0].address_components.forEach(function (element: any) {
             if (element.types[0] === 'postal_town') {
                 console.log('first catch')
                 console.log(element.long_name)
-                return element.long_name
+                city = element.long_name
+                return
             }
             else if (element.types[0] == 'locality' && element.types[1] == 'political') {
                 console.log('second catch')
-                return element.long_name
+                city = element.long_name
+                return
             }
         })
+
+        if (!city) {
+            console.error('City name not found')
+        }
         console.log('check for city')
-        console.log(await city)
+        console.log(city)
         return  city
     }
 
