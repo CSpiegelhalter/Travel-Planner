@@ -1,18 +1,17 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import NavBar from '@/components/NavBar'
-import { use, useEffect, useMemo } from 'react'
+import { useState, useEffect,  } from 'react'
 import { GoogleMap, useLoadScript, Marker, useJsApiLoader } from '@react-google-maps/api'
 import { env } from 'process'
-import { useState } from 'react';
 import FindLocation from '@/hooks/FindLocation'
 import Map from '@/components/Map'
 import Button from '@/components/Button'
 import SideBar from '@/components/SideBar'
 
 export default function Home() {
+
+  const pointsOfInterest: string[] = ['attractions', 'restaurants', 'shopping', 'bars']
 
   //These are the two states used to get our location for centering
   const [location, setLocation] = useState(null)
@@ -48,7 +47,7 @@ export default function Home() {
 
   //sets the space where the map should be to loading... if it is not yet rendered
   if (!isLoaded) return <div>Loading...</div>
-  
+
   // Sidebar handler
   //This is the function that calls the PointsOfInterest api and flips the state to show or not show the information sidebar
   const infoSidebarHandler = async () => {
@@ -56,6 +55,21 @@ export default function Home() {
     setPlacesInfo(await data.json())
     setShowInfo(!showInfo)
     setPlacesInfo(prevVal => prevVal.results)
+  }
+
+  const callApi = async (point: string) => {
+    const params = {
+      city: 'Paris',
+      point
+    }
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(params)  
+  }
+  const data = await fetch('/api/pointsOfInterest', options)
+  const results = await data.json()
+  console.log(results.results)
+
   }
 
   //our final return for home
@@ -71,8 +85,11 @@ export default function Home() {
         <NavBar />
         <div className='info-container'>
           <div className='pointsOfInterest-filter-container' >
-            <Button name='info-sidebar-btn' handler={infoSidebarHandler} value='Holder Value'/>          
-          </div>
+            <Button name='info-sidebar-btn' handler={infoSidebarHandler} value='Holder Value' />
+            <div className="pointsOfInterest-btn-container">
+            {pointsOfInterest.map((point, index) => <Button key={index} name='here' handler={callApi} value={point} />)}
+            </div>
+\          </div>
           {showInfo && <SideBar placesInfo={placesInfo} />}
           {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
 
