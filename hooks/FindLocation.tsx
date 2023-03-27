@@ -30,7 +30,7 @@ const FindLocation = async () => {
     })
 
 
-   
+
     const center: any = async () => {
         let location: Location = await getLocationPromise
         let center = {
@@ -44,16 +44,28 @@ const FindLocation = async () => {
         const lat = latLng.lat
         const lng = latLng.lng
         const reverseGeoCodeApi = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
-        const city = await fetch(reverseGeoCodeApi)
-        console.log(city)
-        console.log(await city.json())
+        const cityInformation = await fetch(reverseGeoCodeApi)
+        const locationInfo = await cityInformation.json()
+        const city =  await locationInfo.results[0].address_components.forEach(function (element: any) {
+            if (element.types[0] === 'postal_town') {
+                console.log('first catch')
+                console.log(element.long_name)
+                return element.long_name
+            }
+            else if (element.types[0] == 'locality' && element.types[1] == 'political') {
+                console.log('second catch')
+                return element.long_name
+            }
+        })
+        console.log('check for city')
+        console.log(await city)
+        return  city
     }
 
     const userLatLng = await center()
-    await cityLocator(userLatLng)
-    const userCity = 'paris'
-    
-    return {lat: userLatLng.lat, long: userLatLng.lng, city: userCity}
+    const userCity = await cityLocator(userLatLng)
+
+    return { lat: userLatLng.lat, lng: userLatLng.lng, city: userCity }
 
 }
 

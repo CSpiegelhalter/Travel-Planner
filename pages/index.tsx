@@ -27,6 +27,7 @@ export default function Home() {
     const value = await FindLocation()
      console.log(value.lat)
      console.log(value.lng)
+     console.log(value.city)
     setLocation(value)
     return value
   }
