@@ -52,14 +52,14 @@ const FindLocation = async () => {
         //this is the variable that we will store the city name in
         let city: string | null = null
         //pass the first position of the array (which is an array) into a forEach function to check each of the address_components properties
-        locationInfo?.results[0]?.address_components?.forEach(function (element: any) {
+        locationInfo?.results?.[0]?.address_components?.forEach(function (element: any) {
             //this first if is to check for the postal_town value that a lot of countries use for their city but not all of them
-            if (element?.types[0] === 'postal_town') {
+            if (element?.types?.[0] === 'postal_town') {
                 city = element?.long_name
                 return
             }
             //this should catch all cities that do not have the postal_town attribute
-            else if (element?.types[0] == 'locality' && element?.types[1] == 'political') {
+            else if (element?.types?.[0] == 'locality' && element?.types?.[1] == 'political') {
                 city = element?.long_name
                 return
             }
