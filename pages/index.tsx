@@ -61,7 +61,7 @@ export default function Home() {
 
   const callApi = async (typeOfInterest: string) => {
     const params = {
-      city: location ? `${location.city}`: 'Paris',
+      city: location ? `${location.city}`: 'London',
       point: typeOfInterest
     }
     const options = {

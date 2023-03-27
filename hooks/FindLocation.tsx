@@ -52,7 +52,7 @@ const FindLocation = async () => {
         //this is the variable that we will store the city name in
         let city: string | null = null
         //pass the first position of the array (which is an array) into a forEach function to check each of the address_components properties
-        locationInfo.results[0].address_components.forEach(function (element: any) {
+        locationInfo?.results[0]?.address_components?.forEach(function (element: any) {
             //this first if is to check for the postal_town value that a lot of countries use for their city but not all of them
             if (element.types[0] === 'postal_town') {
                 city = element.long_name
@@ -67,7 +67,6 @@ const FindLocation = async () => {
         //if the city is not found it will give an error and also an alert that we were unable to locate the city
         if (!city) {
             console.error('City name not found')
-            alert('Unable to locate your city!')
         }
      
         return  city
@@ -78,7 +77,7 @@ const FindLocation = async () => {
     const userCity = await cityLocator(userLatLng)
 
     //final returned object
-    return { lat: userLatLng.lat, lng: userLatLng.lng, city: userCity }
+    return { lat: userLatLng?.lat, lng: userLatLng?.lng, city: userCity }
 
 }
 
