@@ -4,7 +4,7 @@ import NavBar from '@/components/NavBar'
 import { useState, useEffect,  } from 'react'
 import { GoogleMap, useLoadScript, Marker, useJsApiLoader } from '@react-google-maps/api'
 import { env } from 'process'
-import FindLocation from '@/hooks/FindLocation'
+import FindLocation, { Location } from '@/hooks/FindLocation'
 import Map from '@/components/Map'
 import Button from '@/components/Button'
 import SideBar from '@/components/SideBar'
@@ -26,7 +26,7 @@ export default function Home() {
 
   // this sets our location State using this function
   async function setUserLocation() {
-    const value: any = await FindLocation()
+    const value: Location = await FindLocation()
     console.log(value)
     setLocation({lat: value.lat, lng: value.lng})
     setCity(value.city)
