@@ -8,6 +8,7 @@ import FindLocation from '@/hooks/FindLocation'
 import Map from '@/components/Map'
 import Button from '@/components/Button'
 import SideBar from '@/components/SideBar'
+import PlaceComponent from '@/components/PlaceComponent'
 
 export default function Home() {
 
@@ -92,7 +93,8 @@ export default function Home() {
             <div className="pointsOfInterest-btn-container">
             {pointsOfInterest.map((point, index) => <Button key={index} name='here' handler={callApi} value={point} />)}
             </div>
-\          </div>
+            <PlaceComponent />
+           </div>
           {showInfo && <SideBar placesInfo={placesInfo} />}
           {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
 
