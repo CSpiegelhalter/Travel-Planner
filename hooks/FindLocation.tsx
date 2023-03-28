@@ -1,15 +1,21 @@
 
 const FindLocation = async () => {
+    interface latLng {
+        lat: number,
+        lng: number,
+    }
+    
     interface Location {
         lat: number,
-        lng: number
+        lng: number,
+        city: string
     }
 
     let lat
     let lng
 
     // Creating a promise out of the function
-    let getLocationPromise: Promise<Location> = new Promise((resolve, reject) => {
+    let getLocationPromise: Promise<latLng> = new Promise((resolve, reject) => {
         if (navigator.geolocation) {
 
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -32,7 +38,7 @@ const FindLocation = async () => {
 
 // this sets the center ot the lat and lng of the user that gets returned at the end to center the map  
     const center: any = async () => {
-        let location: Location = await getLocationPromise
+        let location: latLng = await getLocationPromise
         let center = {
             lat: location?.lat,
             lng: location?.lng

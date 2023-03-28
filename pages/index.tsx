@@ -15,7 +15,8 @@ export default function Home() {
   const pointsOfInterest: string[] = [ 'restaurant', 'shopping', 'bar']
 
   //These are the two states used to get our location for centering
-  const [location, setLocation] = useState()
+  const [location, setLocation] = useState({lat: 51.5072, lng:0.1276 })
+  const [city, setCity] = useState('london')
   const [hasLoaded, setHasLoaded] = useState(false)
   //This state is used to show (or not show) the information sidebar
   const [showInfo, setShowInfo] = useState(false)
@@ -25,9 +26,10 @@ export default function Home() {
 
   // this sets our location State using this function
   async function setUserLocation() {
-    const value = await FindLocation()
+    const value: any = await FindLocation()
     console.log(value)
-    setLocation(value)
+    setLocation({lat: value.lat, lng: value.lng})
+    setCity(value.city)
     return value
   }
 
@@ -51,18 +53,13 @@ export default function Home() {
 
   // Sidebar handler
   //This is the function that calls the PointsOfInterest api and flips the state to show or not show the information sidebar
-  const infoSidebarHandler = async () => {
-    const data = await fetch('/api/pointsOfInterest')
-    setPlacesInfo(await data.json())
-    setShowInfo(!showInfo)
-    setPlacesInfo(prevVal => prevVal.results)
-  }
+
 
  
 
   const callApi = async (typeOfInterest: string) => {
     const params = {
-      city: location ? `${location.city}`: 'London',
+      city: city,
       point: typeOfInterest
     }
     const options = {
@@ -70,10 +67,9 @@ export default function Home() {
       body: JSON.stringify(params)  
   }
   const data = await fetch('/api/pointsOfInterest', options)
-  const results = await data.json()
-  console.log(results.results)
-  console.log(location.city)
-
+  setPlacesInfo(await data.json())
+  setShowInfo(!showInfo)
+  setPlacesInfo(prevVal => prevVal.results)
   }
 
   //our final return for home
@@ -89,7 +85,6 @@ export default function Home() {
         <NavBar />
         <div className='info-container'>
           <div className='pointsOfInterest-filter-container' >
-            <Button name='info-sidebar-btn' handler={infoSidebarHandler} value='Holder Value' />
             <div className="pointsOfInterest-btn-container">
             {pointsOfInterest.map((point, index) => <Button key={index} name='here' handler={callApi} value={point} />)}
             </div>
