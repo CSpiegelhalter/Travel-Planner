@@ -68,7 +68,7 @@ export default function Home() {
   }
   const data = await fetch('/api/pointsOfInterest', options)
   setPlacesInfo(await data.json())
-  setShowInfo(!showInfo)
+  setShowInfo(true)
   setPlacesInfo(prevVal => prevVal.results)
   }
 
