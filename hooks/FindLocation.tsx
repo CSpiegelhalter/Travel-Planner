@@ -1,15 +1,21 @@
+export interface Location extends latLng {
+    city: string
+}
 
+export interface latLng {
+    lat: number,
+    lng: number,
+}
 const FindLocation = async () => {
-    interface Location {
-        lat: number,
-        lng: number
-    }
+    
+    
+    
 
     let lat
     let lng
 
     // Creating a promise out of the function
-    let getLocationPromise: Promise<Location> = new Promise((resolve, reject) => {
+    let getLocationPromise: Promise<latLng> = new Promise((resolve, reject) => {
         if (navigator.geolocation) {
 
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -32,7 +38,7 @@ const FindLocation = async () => {
 
 // this sets the center ot the lat and lng of the user that gets returned at the end to center the map  
     const center: any = async () => {
-        let location: Location = await getLocationPromise
+        let location: latLng = await getLocationPromise
         let center = {
             lat: location?.lat,
             lng: location?.lng
@@ -50,7 +56,7 @@ const FindLocation = async () => {
         const cityInformation = await fetch(reverseGeoCodeApi)
         const locationInfo = await cityInformation.json()
         //this is the variable that we will store the city name in
-        let city: string | null = null
+        let city: string  
         //pass the first position of the array (which is an array) into a forEach function to check each of the address_components properties
         locationInfo?.results?.[0]?.address_components?.forEach(function (element: any) {
             //this first if is to check for the postal_town value that a lot of countries use for their city but not all of them
@@ -81,4 +87,4 @@ const FindLocation = async () => {
 
 }
 
-export default FindLocation
+export default FindLocation 
