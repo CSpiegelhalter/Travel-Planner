@@ -1,4 +1,9 @@
 import React from 'react';
+import Button from './Button';
+
+const addToProfile = () => {
+    console.log("I was added!")
+}
 
 function Card(props: any) {
     return (
@@ -9,6 +14,10 @@ function Card(props: any) {
             <p className='address' >{props.address}</p>
             <p className='operatingHours'></p>
             {props.phone && <p className='phone-number'>{props.phone}</p>}
+            <div className='card-btn-container'>
+                <Button handler={addToProfile} name="card-btn-addToProfile" value="Add to profile!"></Button>
+                <Button handler={addToProfile} name="card-btn-addToTrip" value="Add to trip!"></Button>
+            </div>
         </div>
     );
 }
