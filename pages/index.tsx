@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import NavBar from '@/components/NavBar'
-import { useState, useEffect,  } from 'react'
+import { useState, useEffect, MouseEventHandler,  } from 'react'
 import { GoogleMap, useLoadScript, Marker, useJsApiLoader } from '@react-google-maps/api'
 import { env } from 'process'
 import FindLocation, { Location } from '@/hooks/FindLocation'
@@ -72,6 +72,7 @@ export default function Home() {
   setPlacesInfo(prevVal => prevVal.results)
   }
 
+  console.log(placesInfo)
   //our final return for home
   return (
     <>

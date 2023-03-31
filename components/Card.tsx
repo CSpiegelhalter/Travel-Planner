@@ -1,11 +1,15 @@
 import React from 'react';
 import Button from './Button';
 
-const addToProfile = () => {
-    console.log("I was added!")
-}
+
+
 
 function Card(props: any) {
+    const addToProfile = () => {
+        console.log(`${data[0]} was added!`)
+    }
+    const data = [props.name, props.rating, props.address]
+
     return (
         <div  className='card-container'>
             <h3 className='card-title'>{props.name}</h3>
