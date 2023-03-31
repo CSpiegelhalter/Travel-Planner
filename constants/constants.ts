@@ -1,9 +1,3 @@
-// enum Direction {
-//     Up,
-//     Down,
-//     Left,
-//     Right
-//   }
 
 export enum Shopping {
     clothing_store,
