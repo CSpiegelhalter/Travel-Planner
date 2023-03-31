@@ -146,6 +146,11 @@ button:hover {
   margin: 2px;
 }
 
+.card-btn-container{
+  display: flex;
+  justify-content:space-around;
+}
+
 @media (min-width: 62em) {
   .info-sidebar {
 
