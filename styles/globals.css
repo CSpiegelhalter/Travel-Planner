@@ -151,6 +151,38 @@ button:hover {
   justify-content:space-around;
 }
 
+.profile-btn{
+  margin-left: 1rem;
+}
+
+.test{
+  background-color: var(--color-information-sidebar-bg);
+  width: 50%;
+  height: 75vh;
+  border-style: solid;
+  border-width: medium;
+  border-radius: 5%;
+
+}
+.profile-page-container{
+  background-color:  var(--color-tertiary);
+  overflow: scroll;
+  height: 100vh;
+}
+
+.profile-container{
+  display: flex;
+}
+
+.footer-container {
+  width:100vw;
+  height: 30vh;
+  background-color: (--color-secondary);
+  border-style: solid;
+  border-width: medium;
+  border-radius: 5%;
+}
+
 @media (min-width: 62em) {
   .info-sidebar {
 
