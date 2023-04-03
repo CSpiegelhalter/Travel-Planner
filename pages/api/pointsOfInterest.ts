@@ -1,34 +1,37 @@
 import { locationLabels } from "@/constants/constants"
+import { json } from "stream/consumers"
 
 
-export default async function handler(req: any, res: any){
+export default async function handler(req: any, res: any) {
     const body = JSON.parse(req.body)
     let city = body['city']
     let pointOfInterest = body['point']
-    
-    const runThroughKeys = async () => {
-        let keyArr: string[] = []
-        for(let key of Object.keys(locationLabels)){
-            if (key === pointOfInterest ){
-            keyArr.push(locationLabels[key])        
-            }
-        }
-        keyArr = keyArr.flat()
-        
-         let promiseArr = []
-         for (let i of keyArr){
-            promiseArr.push(fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=${i}{+in+${city}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`).then(function(response){
-                return response.json()
-            }))
-         }
-        return Promise.all(promiseArr)
+
+    //creating an array of promises 
+    let promiseArr = []
+    for (let keyword of locationLabels[pointOfInterest]) {
+        promiseArr.push(fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=${keyword}{+in+${city}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`))
     }
-    
+    // assigning the now fullfilled promises to a variable
+    const googleResults = await Promise.all(promiseArr)
 
-    console.log( await runThroughKeys())
-    const placesApi = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${pointOfInterest}{+in+${city}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
-    const results = await fetch(placesApi)
+    //makes the raw data into json 
+    let jsonPromises = []
+    for (let promise of googleResults) {
+        jsonPromises.push(promise.json())
+    }
+    const returnedData = await Promise.all(jsonPromises)
 
+    //lastly we get the information that we want from the object that is returned for each item in the array
+    let resultsArr: any = []
+    for (let data of returnedData) {
+        resultsArr.push(data.results)
+    }
 
-    await res.status(200).send(JSON.stringify(await results.json()))
+    //use .flat() to get rid of any extra brackets
+    resultsArr = resultsArr.flat()
+
+    //set the results and send it 
+    const results = resultsArr
+    await res.status(200).send(JSON.stringify(results))
 }
