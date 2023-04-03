@@ -9,11 +9,10 @@ import Map from '@/components/Map'
 import Button from '@/components/Button'
 import SideBar from '@/components/SideBar'
 import PlaceComponent from '@/components/PlaceComponent'
+import { locationLabels } from '@/constants/constants'
 
 
 export default function Home() {
-
-  const pointsOfInterest: string[] = [ 'restaurant', 'shopping', 'bar']
 
   //These are the two states used to get our location for centering
   const [location, setLocation] = useState({lat: 51.5072, lng:0.1276 })
@@ -87,7 +86,7 @@ export default function Home() {
         <div className='info-container'>
           <div className='pointsOfInterest-filter-container' >
             <div className="pointsOfInterest-btn-container">
-            {pointsOfInterest.map((point, index) => <Button key={index} name='here' handler={callApi} value={point} />)}
+            {Object.keys(locationLabels).map((point, index) => <Button key={index} name='here' handler={callApi} value={point} />)}
             </div>
             <PlaceComponent />
            </div>
