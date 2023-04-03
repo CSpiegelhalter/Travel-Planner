@@ -2,8 +2,6 @@ import React from 'react';
 import Button from './Button';
 
 
-
-
 function Card(props: any) {
     const addToProfile = () => {
         console.log(`${data[0]} was added!`)
