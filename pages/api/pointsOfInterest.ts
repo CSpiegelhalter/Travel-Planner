@@ -1,14 +1,13 @@
 import { locationLabels } from "@/constants/constants"
-import { json } from "stream/consumers"
 
 
 export default async function handler(req: any, res: any) {
     const body = JSON.parse(req.body)
-    let city = body['city']
-    let pointOfInterest = body['point']
+    const city = body['city']
+    const pointOfInterest = body['point']
 
     //creating an array of promises 
-    let promiseArr = []
+    const promiseArr = []
     for (let keyword of locationLabels[pointOfInterest]) {
         promiseArr.push(fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=${keyword}{+in+${city}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`))
     }
@@ -16,9 +15,9 @@ export default async function handler(req: any, res: any) {
     const googleResults = await Promise.all(promiseArr)
 
     //makes the raw data into json 
-    let jsonPromises = []
-    for (let promise of googleResults) {
-        jsonPromises.push(promise.json())
+     const jsonPromises = []
+    for (let obj of googleResults) {
+        jsonPromises.push(obj.json())
     }
     const returnedData = await Promise.all(jsonPromises)
 
