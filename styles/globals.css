@@ -161,11 +161,24 @@ button:hover {
   height: 75vh;
   border-style: solid;
   border-width: medium;
+  border-radius: 5%;
 
+}
+.profile-page-container{
+  background-color:  var(--color-tertiary);
 }
 
 .profile-container{
   display: flex;
+}
+
+.footer-container {
+  width:100vw;
+  height: 100vh;
+  background-color: (--color-secondary);
+  border-style: solid;
+  border-width: medium;
+  border-radius: 5%;
 }
 
 @media (min-width: 62em) {

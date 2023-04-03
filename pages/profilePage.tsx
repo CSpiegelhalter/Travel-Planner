@@ -10,8 +10,8 @@ function profilePage(props) {
                     <div className="test">test</div>
                     <div className="test">test</div>
                 </div>
-                <div>
-                    
+                <div className="footer-container">
+                    Footer 
                 </div>
             </div>
         </>
