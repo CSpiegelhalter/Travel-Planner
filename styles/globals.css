@@ -166,6 +166,8 @@ button:hover {
 }
 .profile-page-container{
   background-color:  var(--color-tertiary);
+  overflow: scroll;
+  height: 100vh;
 }
 
 .profile-container{
@@ -174,7 +176,7 @@ button:hover {
 
 .footer-container {
   width:100vw;
-  height: 100vh;
+  height: 30vh;
   background-color: (--color-secondary);
   border-style: solid;
   border-width: medium;
