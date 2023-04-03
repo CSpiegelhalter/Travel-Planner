@@ -1,4 +1,4 @@
-export const pointsOfInterest = {
+export const locationLabels = {
     'Shopping': [
         'clothing_store',
         'department_store',

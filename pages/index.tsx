@@ -10,6 +10,7 @@ import Button from '@/components/Button'
 import SideBar from '@/components/SideBar'
 import PlaceComponent from '@/components/PlaceComponent'
 
+
 export default function Home() {
 
   const pointsOfInterest: string[] = [ 'restaurant', 'shopping', 'bar']
