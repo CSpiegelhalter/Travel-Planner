@@ -151,6 +151,23 @@ button:hover {
   justify-content:space-around;
 }
 
+.profile-btn{
+  margin-left: 1rem;
+}
+
+.test{
+  background-color: var(--color-information-sidebar-bg);
+  width: 50%;
+  height: 75vh;
+  border-style: solid;
+  border-width: medium;
+
+}
+
+.profile-container{
+  display: flex;
+}
+
 @media (min-width: 62em) {
   .info-sidebar {
 
