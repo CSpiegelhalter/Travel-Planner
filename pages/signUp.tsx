@@ -1,9 +1,20 @@
 import React from 'react'
 import NavBar from '@/components/NavBar'
 
-const test = async () => {
-  await fetch('/api/signup')
-}
+
+const callPointsOfInterestsApi = async () => {
+    const params = {
+      test: 'test'
+    }
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(params),
+    }
+    const data = await fetch('/api/signup', options)
+    
+    console.log(await data.json())
+  }
+
 
 function signUp(props) {
   return (
@@ -20,7 +31,7 @@ function signUp(props) {
         <p>Please comfirm your password:</p>
         <input type="form" placeholder="Confirm password" />
         <button type="submit">Submit</button>
-        <button onClick={test}>ahhhh</button>
+        <button onClick={callPointsOfInterestsApi}>ahhhh</button>
       </div>
     </div>
   )

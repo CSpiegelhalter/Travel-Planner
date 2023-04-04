@@ -50,7 +50,7 @@ export default function Home() {
   // Sidebar handler
   //This is the function that calls the PointsOfInterest api and flips the state to show or not show the information sidebar
 
-  const callApi = async (typeOfInterest: string) => {
+  const callPointsOfInterestsApi = async (typeOfInterest: string) => {
     const params = {
       city: city,
       point: typeOfInterest,
@@ -79,7 +79,7 @@ export default function Home() {
           <div className="pointsOfInterest-filter-container">
             <div className="pointsOfInterest-btn-container">
               {Object.keys(locationLabels).map((point, index) => (
-                <Button key={index} name="here" handler={callApi} value={point} />
+                <Button key={index} name="here" handler={callPointsOfInterestsApi} value={point} />
               ))}
             </div>
             <PlaceComponent />
