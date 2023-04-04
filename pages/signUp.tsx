@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from '@/components/NavBar'
 
 
-const callPointsOfInterestsApi = async () => {
+const callSignUpApi = async () => {
     const params = {
       test: 'test'
     }
@@ -31,7 +31,7 @@ function signUp(props) {
         <p>Please comfirm your password:</p>
         <input type="form" placeholder="Confirm password" />
         <button type="submit">Submit</button>
-        <button onClick={callPointsOfInterestsApi}>ahhhh</button>
+        <button onClick={callSignUpApi}>ahhhh</button>
       </div>
     </div>
   )
