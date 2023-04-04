@@ -1,7 +1,7 @@
 :root {
-  --color-primary: #DC3535;
-  --color-secondary: #F49D1A;
-  --color-tertiary: #B01E68;
+  --color-primary: #dc3535;
+  --color-secondary: #f49d1a;
+  --color-tertiary: #b01e68;
   --color-information-sidebar-bg: rgb(173, 61, 9);
   --color-neutral: #ffffff;
 }
@@ -21,10 +21,9 @@ body {
   display: flex;
   align-items: center;
   height: 3.5rem;
-  background: linear-gradient(90deg, var(--color-primary)1.2%, var(--color-secondary) 100%);
+  background: linear-gradient(90deg, var(--color-primary) 1.2%, var(--color-secondary) 100%);
   color: white;
   padding: 0.5%;
-
 }
 
 .header-title {
@@ -36,9 +35,6 @@ body {
   color: var(--color-neutral);
   margin-right: auto;
   width: 100%;
-
-
-
 }
 
 .nav {
@@ -72,7 +68,7 @@ body {
 }
 
 .pointsOfInterest-filter-container {
-  display:flex; 
+  display: flex;
   background-color: black;
   width: 100vw;
   height: 5vh;
@@ -85,7 +81,6 @@ body {
   height: 100vh;
   z-index: -1;
   position: absolute;
-
 }
 
 .info-sidebar {
@@ -99,9 +94,6 @@ body {
   overflow-y: scroll;
 }
 
-
-
-
 /* CSS */
 button {
   background-color: var(--color-secondary);
@@ -110,7 +102,7 @@ button {
   color: var(--color-neutral);
   cursor: pointer;
   display: inline-block;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Haas Grot Text R Web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 5px;
@@ -127,7 +119,7 @@ button {
 }
 
 button:hover {
-  color: var(--color-tertiary)
+  color: var(--color-tertiary);
 }
 
 .card-container {
@@ -137,45 +129,44 @@ button:hover {
   padding: 5%;
 }
 
-.pointsOfInterest-btn-container{
-  display:flex;
+.pointsOfInterest-btn-container {
+  display: flex;
   justify-content: center;
 }
 
-.info-sidebar-btn{
+.info-sidebar-btn {
   margin: 2px;
 }
 
-.card-btn-container{
+.card-btn-container {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
 }
 
-.profile-btn{
+.profile-btn {
   margin-left: 1rem;
 }
 
-.test{
+.test {
   background-color: var(--color-information-sidebar-bg);
   width: 50%;
   height: 75vh;
   border-style: solid;
   border-width: medium;
   border-radius: 5%;
-
 }
-.profile-page-container{
-  background-color:  var(--color-tertiary);
+.profile-page-container {
+  background-color: var(--color-tertiary);
   overflow: scroll;
   height: 100vh;
 }
 
-.profile-container{
+.profile-container {
   display: flex;
 }
 
 .footer-container {
-  width:100vw;
+  width: 100vw;
   height: 30vh;
   background-color: (--color-secondary);
   border-style: solid;
@@ -185,11 +176,9 @@ button:hover {
 
 @media (min-width: 62em) {
   .info-sidebar {
-
     z-index: 2;
     background-color: var(--color-information-sidebar-bg);
     height: 84.5vh;
     width: 35vw;
   }
-
 }
