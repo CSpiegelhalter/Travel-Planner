@@ -26,7 +26,7 @@ function signUp(props) {
         <input type="form" placeholder="password" />
         <button type="submit">Submit</button>
       </div>
-      <button onClick={callSignInApi}>ahhhh</button>
+      <button onClick={callSignInApi}>test</button>
     </div>
   )
 }

@@ -31,7 +31,7 @@ function signUp(props) {
         <p>Please comfirm your password:</p>
         <input type="form" placeholder="Confirm password" />
         <button type="submit">Submit</button>
-        <button onClick={callSignUpApi}>ahhhh</button>
+        <button onClick={callSignUpApi}>test</button>
       </div>
     </div>
   )
