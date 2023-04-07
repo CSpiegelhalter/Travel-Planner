@@ -19,6 +19,8 @@ const callSignInApi = async () => {
 function signUp(props) {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
+  const [toolTip, setToolTip] = useState(false)
+  const [type, setType] = useState('')
 
 function handleEmailInput(event){  
   setEmail(event.target.value)
@@ -27,6 +29,10 @@ function handleEmailInput(event){
 
 function handlePasswordInput(event){
   setPassword(event.target.value)
+}
+
+const checkLogin = () => {
+  
 }
 
 const bleh = () => {console.log(email, password)}
