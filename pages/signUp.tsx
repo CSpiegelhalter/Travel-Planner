@@ -1,7 +1,5 @@
-import React from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import NavBar from '@/components/NavBar'
-import { useState } from 'react'
-
 
 const callSignUpApi = async () => {
   const params = {
