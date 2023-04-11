@@ -1,20 +1,6 @@
 import React, { ChangeEvent, useState } from 'react'
 import NavBar from '@/components/NavBar'
 
-const callSignUpApi = async () => {
-  const params = {
-    test: 'test'
-  }
-  const options = {
-    method: 'POST',
-    body: JSON.stringify(params),
-  }
-  const data = await fetch('/api/signup', options)
-
-  console.log(await data.json())
-}
-
-
 function signUp(props) {
 
   const [email, setEmail] = useState()
@@ -23,6 +9,20 @@ function signUp(props) {
   const [confirmPassword, setConfirmPassword] = useState()
   const [toolTip, setToolTip] = useState(false)
   const [type, setType] = useState('')
+
+  const callSignUpApi = async () => {
+    const params = {
+      email: email,
+      password: password
+    }
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(params),
+    }
+    const data = await fetch('/api/signup', options)
+  
+    console.log(await data.json())
+  }
 
   function handleEmailChange(event) {
     setEmail(event.target.value)
@@ -37,8 +37,6 @@ function signUp(props) {
     setConfirmPassword(event.target.value)
   }
 
-
-  const testFunction = () => console.log(email, password, confirmEmail, confirmPassword)
   const confirmCheck = () => {
     if (email !== confirmEmail) {
       setToolTip(true)
@@ -49,8 +47,9 @@ function signUp(props) {
       setType('Passwords')
     }
     else {
-      console.log("sign up successful")
+      callSignUpApi()
       setToolTip(false)
+      console.log('I ran!')
     }
   }
   return (
