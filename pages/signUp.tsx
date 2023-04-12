@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useState } from 'react'
 import NavBar from '@/components/NavBar'
+import { useRouter } from 'next/router'
 
 function signUp(props) {
 
@@ -7,8 +8,11 @@ function signUp(props) {
   const [confirmEmail, setConfirmEmail] = useState()
   const [password, setPassword] = useState()
   const [confirmPassword, setConfirmPassword] = useState()
-  const [toolTip, setToolTip] = useState(false)
   const [type, setType] = useState('')
+  const [toolTip, setToolTip] = useState(false)
+  const [alert, setAlert] =useState('')
+  const router = useRouter()
+  
 
   const callSignUpApi = async () => {
     const params = {
@@ -20,8 +24,18 @@ function signUp(props) {
       body: JSON.stringify(params),
     }
     const data = await fetch('/api/signup', options)
-  
-    console.log(await data.json())
+    const dataText = await data.text()
+    if(dataText === 'User made successfully!'){
+      router.push('/')
+    }
+    else if(dataText === "User already exists!"){
+      setAlert("User already exists!")
+    }
+    else{
+      setAlert('Unkown error occured, please try again later')
+    }
+    console.log(dataText)
+    console.log(typeof data.body)
   }
 
   function handleEmailChange(event) {
@@ -38,6 +52,9 @@ function signUp(props) {
   }
 
   const confirmCheck = () => {
+    if(alert){
+      setAlert('')
+    }
     if (email !== confirmEmail) {
       setToolTip(true)
       setType('Emails')
@@ -67,6 +84,7 @@ function signUp(props) {
         <input type="password" placeholder="Confirm password" onChange={handleConfirmPasswordChange} />
         {/* <button className='sign-up-submit' type="submit">Submit</button> */}
         <button onClick={confirmCheck}>test</button>
+        {alert && <div className="tool-tip">User already exsists!</div>}
         {toolTip && <div className="tool-tip">{type} must match</div>}
       </div>
     </div>
