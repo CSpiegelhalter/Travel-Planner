@@ -4,6 +4,7 @@
   --color-tertiary: #b01e68;
   --color-information-sidebar-bg: rgb(173, 61, 9);
   --color-neutral: #ffffff;
+  --color-alert: red;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -172,6 +173,12 @@ button:hover {
   border-style: solid;
   border-width: medium;
   border-radius: 5%;
+}
+
+.tool-tip{
+  color: red;
+  font-style: italic; 
+
 }
 
 @media (min-width: 62em) {
