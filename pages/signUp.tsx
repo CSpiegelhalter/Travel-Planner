@@ -32,12 +32,12 @@ function signUp(props) {
 
     const data = await fetch('/api/signup', options)
     //converts the ReadableStream into a string
-    const dataText = await data.text()
+    const dataCheck = await data.json()
     //decides what to do depending on the data returned, either redirect or tells alert state what to display
-    if (dataText === 'User made successfully!') {
+    if (dataCheck.success) {
       router.push('/')
     }
-    else if (dataText === "User already exists!") {
+    else if (dataCheck.error === "User already exists!") {
       setAlert("User already exists!")
     }
     else {
@@ -47,7 +47,7 @@ function signUp(props) {
 
 
   //This checks if the email/pass and confirm match
-  const validateInput  = () => {
+  const validateInput = () => {
     //this is used to reset the alert to falsy on the first confirm check
     if (alert) {
       setAlert('')
@@ -79,7 +79,7 @@ function signUp(props) {
         <p>Please comfirm your password:</p>
         <input type="password" placeholder="Confirm password" onChange={(e) => { handleStateChange(e, setConfirmPassword) }} />
         <button onClick={validateInput}>test</button>
-        {alert && <div className="tool-tip">User already exsists!</div>}
+        {alert && <div className="tool-tip">{alert}</div>}
         {toolTip && <div className="tool-tip">{type} must match</div>}
       </div>
     </div>
