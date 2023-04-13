@@ -18,7 +18,7 @@ function NavBar(props: any) {
         <ul className="nav">
           <div className="nav-list-container">
             <li>
-              <Link href="/signIn">Login</Link>
+              <Link href="/logIn">Login</Link>
             </li>
           </div>
           <div className="nav-list-container">
