@@ -33,9 +33,12 @@ function signUp(props) {
     const data = await fetch('/api/signup', options)
     //converts the ReadableStream into a string
     const dataCheck = await data.json()
+
+    console.log(dataCheck.jwt)
     //decides what to do depending on the data returned, either redirect or tells alert state what to display
     if (dataCheck.success) {
-      router.push('/')
+      console.log('I worked')
+      // router.push('/')
     }
     else if (dataCheck.error === "User already exists!") {
       setAlert("User already exists!")
