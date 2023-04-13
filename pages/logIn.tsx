@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import NavBar from '@/components/NavBar'
 import { handleStateChange } from '@/helperFunctions/helperFunction'
 import { useRouter } from 'next/router'
-
+import cookie  from 'cookie'
 
 
 
@@ -39,6 +39,8 @@ function LogIn(props) {
     }
 
   }
+
+  
 
   return (
     <div>

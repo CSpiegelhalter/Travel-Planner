@@ -2,6 +2,7 @@ import React, { ChangeEvent, useState } from 'react'
 import NavBar from '@/components/NavBar'
 import { useRouter } from 'next/router'
 import { handleStateChange } from '@/helperFunctions/helperFunction'
+import { cookie } from 'cookie' 
 
 function signUp(props) {
 
@@ -39,6 +40,7 @@ function signUp(props) {
     if (dataCheck.success) {
       console.log('I worked')
       // router.push('/')
+      
     }
     else if (dataCheck.error === "User already exists!") {
       setAlert("User already exists!")
@@ -47,7 +49,6 @@ function signUp(props) {
       setAlert('Unkown error occured, please try again later')
     }
   }
-
 
   //This checks if the email/pass and confirm match
   const validateInput = () => {
