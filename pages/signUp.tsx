@@ -2,7 +2,6 @@ import React, { ChangeEvent, useState } from 'react'
 import NavBar from '@/components/NavBar'
 import { useRouter } from 'next/router'
 import { handleStateChange } from '@/helperFunctions/helperFunction'
-import { cookie } from 'cookie' 
 
 function signUp(props) {
 
