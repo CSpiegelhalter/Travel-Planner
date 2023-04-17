@@ -4,7 +4,6 @@ import { handleStateChange } from '@/helperFunctions/helperFunction'
 import { useRouter } from 'next/router'
 
 
-
 function LogIn(props) {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
@@ -23,13 +22,14 @@ function LogIn(props) {
     }
     const data = await fetch('/api/logIn', options)
 
-    const datacheck = await data.json()
+    const dataCheck = await data.json()
+    console.log(dataCheck.jwt)
 
-    if (datacheck.success) {
+    if (dataCheck.success) {
       // router.push('/')
       console.log('It worked!')
     }
-    else if (!datacheck) {
+    else if (!dataCheck) {
       setAlert('Incorrect email or password')
     }
     else {
@@ -37,6 +37,8 @@ function LogIn(props) {
     }
 
   }
+
+  
 
   return (
     <div>

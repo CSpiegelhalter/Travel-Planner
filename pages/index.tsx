@@ -9,6 +9,8 @@ import Button from '@/components/Button'
 import SideBar from '@/components/SideBar'
 import PlaceComponent from '@/components/PlaceComponent'
 import { locationLabels } from '@/constants/constants'
+import { useUser } from '@auth0/nextjs-auth0/client';
+
 
 export default function Home() {
   //These are the two states used to get our location for centering
@@ -20,11 +22,14 @@ export default function Home() {
 
   // this is to hold onto our data that we get from our api call
   const [placesInfo, setPlacesInfo] = useState()
+  //auth0 user to allow us to know if we are logged in or not
+  const { user, error, isLoading}  = useUser()
+
+console.log(user)
 
   // this sets our location State using this function
   async function setUserLocation() {
     const value: Location = await FindLocation()
-    console.log(value)
     setLocation({ lat: value.lat, lng: value.lng })
     setCity(value.city)
     return value
