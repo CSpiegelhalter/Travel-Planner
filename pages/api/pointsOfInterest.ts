@@ -1,6 +1,8 @@
 import { locationLabels } from '@/constants/constants'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default async function handler(req: any, res: any) {
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const body = JSON.parse(req.body)
   const city = body['city']
   const pointOfInterest = body['point']

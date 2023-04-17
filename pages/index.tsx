@@ -63,6 +63,7 @@ export default function Home() {
     setPlacesInfo(await data.json())
     setShowInfo(true)
   }
+  console.log(placesInfo)
 
   //our final return for home
   return (
