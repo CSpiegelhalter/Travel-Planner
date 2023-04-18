@@ -79,7 +79,7 @@ console.log(user)
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <NavBar />
+      <NavBar user = {user}  />
         <div className="info-container">
           <div className="pointsOfInterest-filter-container">
             <div className="pointsOfInterest-btn-container">

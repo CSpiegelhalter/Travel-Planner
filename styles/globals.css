@@ -61,6 +61,10 @@ body {
 .nav li {
   padding: 0 1.25rem;
   cursor: pointer;
+
+}
+.nav-list-item {
+  list-style-type: none;
 }
 
 .nav li:hover {

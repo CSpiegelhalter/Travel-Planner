@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 function NavBar(props: any) {
+
+
   return (
     <div className="nav-container">
       <header className="main-header">
@@ -15,19 +17,27 @@ function NavBar(props: any) {
         <p className="profile-btn">
           <Link href="/profilePage"> Profile</Link>
         </p>
-        <ul className="nav">
+        {!props.user &&
+          <ul className="nav">
+            <div className="nav-list-container">
+              <li>
+                <Link href="/api/auth/login">Login</Link>
+              </li>
+            </div>
+            <div className="nav-list-container">
+              <li>
+                <Link href="api/auth/signUp">Sign-Up</Link>
+              </li>
+            </div>
+          </ul>
+        }
+        {props.user &&
           <div className="nav-list-container">
-            <li>
-              <Link href="/api/auth/login">Login</Link>
-            </li>
+            <ul>
+              <li className= "nav-list-item"><Link href="/api/auth/logout">logout</Link></li>
+            </ul>
           </div>
-          <div className="nav-list-container">
-            <li>
-              <Link href="api/auth/signUp">Sign-Up</Link>
-            </li>
-          </div>
-        </ul>
-        <p><Link href="/api/auth/logout">logout</Link></p>
+        }
       </header>
     </div>
   )
