@@ -21,12 +21,7 @@ function NavBar(props: any) {
           <ul className="nav">
             <div className="nav-list-container">
               <li>
-                <Link href="/api/auth/login">Login</Link>
-              </li>
-            </div>
-            <div className="nav-list-container">
-              <li>
-                <Link href="api/auth/signUp">Sign-Up</Link>
+                <Link href="/api/auth/login">Login/Signup</Link>
               </li>
             </div>
           </ul>

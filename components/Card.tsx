@@ -2,15 +2,22 @@ import React from 'react'
 import Button from './Button'
 
 function Card(props: any) {
-  const addToProfile = () => {
-    // console.log(`${data[0]} was added!`)
-    console.log(data)
-    
-  }
 
-      //need to be added to data: props?.email,  props?.description props?.image_url,
+  //need to be added to data: props?.email,  props?.description props?.image_url,
 
-  const data = [props?.name, props?.rating, props?.address, props?.lat, props?.lng, props?.attraction_type, props?.ratings_count]
+  const locationData = [props?.name, props?.rating, props?.address, props?.lat, props?.lng, props?.attraction_type, props?.ratings_count]
+
+  // const addToProfile = (dataToSend) => {
+  //   const params = {
+
+  //     data: dataToSend
+  //   }
+  //   const options = {
+  //     method: 'POST',
+  //     body: JSON.stringify(params),
+  //   }
+  //   const data = await fetch('/api/pointsOfInterest', options)
+  // }
 
   return (
     <div className="card-container">

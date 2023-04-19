@@ -10,10 +10,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         },
       }
       
-      const data =
-    
-        const returnedData = 
-    
-        await res.status(200).send(JSON.stringify(returnedData))
+         res.status(200).send('I worked')
   }
   

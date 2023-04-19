@@ -24,8 +24,7 @@ export default function Home() {
   const [placesInfo, setPlacesInfo] = useState()
   //auth0 user to allow us to know if we are logged in or not
   const { user, error, isLoading}  = useUser()
-
-console.log(user)
+  console.log(user)
 
   // this sets our location State using this function
   async function setUserLocation() {
