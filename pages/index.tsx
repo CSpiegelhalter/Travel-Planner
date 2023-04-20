@@ -42,6 +42,11 @@ export default function Home() {
     }
   }, [])
 
+  if(user){
+    console.log(user?.app_metadata)
+
+  }
+
   // this is our key and how we load in our google maps api
   const key: any = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
   const { isLoaded } = useLoadScript({
