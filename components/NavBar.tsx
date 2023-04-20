@@ -10,7 +10,7 @@ function NavBar(props: any) {
       <header className="main-header">
         <Image src="/Globe.png" alt="WorldGlobe or food" width={40} height={40}></Image>
         <h2 className="header-title">Our Travel-Planner</h2>
-       {props.user &&  <p>{props.user.name}</p>}
+       {props.user &&  <p>Hello, {props.user.name}</p>}
         <p className="home-btn">
           <Link href="/">Home</Link>
         </p>
