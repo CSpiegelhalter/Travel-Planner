@@ -24,8 +24,7 @@ export default function Home() {
   const [placesInfo, setPlacesInfo] = useState()
   //auth0 user to allow us to know if we are logged in or not
   const { user, error, isLoading}  = useUser()
-
-console.log(user)
+  console.log(user)
 
   // this sets our location State using this function
   async function setUserLocation() {
@@ -42,6 +41,11 @@ console.log(user)
       setHasLoaded(true)
     }
   }, [])
+
+  if(user){
+    console.log(user?.app_metadata)
+
+  }
 
   // this is our key and how we load in our google maps api
   const key: any = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
@@ -79,7 +83,7 @@ console.log(user)
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <NavBar />
+      <NavBar user = {user}  />
         <div className="info-container">
           <div className="pointsOfInterest-filter-container">
             <div className="pointsOfInterest-btn-container">

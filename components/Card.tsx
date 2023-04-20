@@ -1,16 +1,33 @@
 import React from 'react'
 import Button from './Button'
+import { useUser } from '@auth0/nextjs-auth0/client' 
 
 function Card(props: any) {
-  const addToProfile = () => {
-    // console.log(`${data[0]} was added!`)
-    console.log(data)
-    
+
+  const {user, isLoading, error} = useUser()
+
+  const locationData = [props?.name, props?.rating, props?.address, props?.lat, props?.lng, props?.attraction_type, props?.ratings_count, user?.email, user?.['https://example.com/id']]
+
+  const addToProfile = async () => {
+    const params = {
+      name: locationData?.[0],
+      rating: locationData?.[1],
+      address: locationData?.[2],
+      lat: locationData?.[3],
+      lng: locationData?.[4],
+      attraction_type: locationData?.[5],
+      rating_count: locationData?.[6],
+      email: locationData?.[7],
+      dbId: locationData?.[9]
+
+    }
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(params),
+    }
+    const data = await fetch('/api/pointsOfInterest', options)
+  console.log(locationData)
   }
-
-      //need to be added to data: props?.email,  props?.description props?.image_url,
-
-  const data = [props?.name, props?.rating, props?.address, props?.lat, props?.lng, props?.attraction_type, props?.ratings_count]
 
   return (
     <div className="card-container">
