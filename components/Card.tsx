@@ -8,8 +8,9 @@ function Card(props: any) {
 
   const locationData = [props?.name, props?.rating, props?.address, props?.lat, props?.lng, props?.attraction_type, props?.ratings_count, user?.email, user?.['https://example.com/id']]
 
-  const addToProfile = async () => {
+  const addAttractionToDB = async () => {
     const params = {
+      userId: locationData?.[9],
       name: locationData?.[0],
       rating: locationData?.[1],
       address: locationData?.[2],
@@ -18,15 +19,15 @@ function Card(props: any) {
       attraction_type: locationData?.[5],
       rating_count: locationData?.[6],
       email: locationData?.[7],
-      dbId: locationData?.[9]
 
     }
     const options = {
       method: 'POST',
       body: JSON.stringify(params),
     }
-    const data = await fetch('/api/pointsOfInterest', options)
+    const data = await fetch('/api/saveAttraction', options)
   console.log(locationData)
+  console.log('I worked?')
   }
 
   return (
@@ -39,7 +40,7 @@ function Card(props: any) {
       <p className="operatingHours"></p>
       {props.phone && <p className="phone-number">{props.phone}</p>}
       <div className="card-btn-container">
-        <Button handler={addToProfile} name="card-btn-addToProfile" value="Add to profile!"></Button>
+        <Button handler={addAttractionToDB} name="card-btn-addToProfile" value="Add to profile!"></Button>
         {/* <Button handler={addToProfile} name="card-btn-addToTrip" value="Add to trip!"></Button> */}
       </div>
     </div>

@@ -88,7 +88,7 @@ export default function Home() {
           <div className="pointsOfInterest-filter-container">
             <div className="pointsOfInterest-btn-container">
               {Object.keys(locationLabels).map((point, index) => (
-                <Button key={index} name="here" handler={callPointsOfInterestsApi} value={point} />
+                <Button key={index} name="here" handler={callPointsOfInterestsApi as any} value={point} />
               ))}
             </div>
             <PlaceComponent />
