@@ -1,26 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from './Card'
 
+function SideBar(props: any) {
 
-// image_url, description, email need to be added to props, email will come from auth0 useUser, I am not sure on how to handle the other 2 props
-
-
-function SideBar(props) {
   return (
     <div className="info-sidebar">
-      {props.placesInfo.map((place: any, index: number) => (
-        <Card
-          key={index}
-          name={place?.name}
-          rating={place?.rating}
-          price={place?.price_level}
-          address={place?.formatted_address}
-          ratings_count={place?.user_ratings_total}
-          lat={place.geometry?.location.lat}
-          lng={place.geometry?.location.lng}
-          attraction_type= {place?.types}
-        />
-      ))}
+      {props.showSavedTrips ?
+        <Card name="test" rating="5" price="" address="42 wallaby way Sydney Aus" ratings_count="420" allowAddToProfile={false} />
+        :
+        props.placesInfo ?
+        props.placesInfo.map((place: any, index: number) => (
+          <Card
+            key={index}
+            name={place?.name}
+            rating={place?.rating}
+            price={place?.price_level}
+            address={place?.formatted_address}
+            ratings_count={place?.user_ratings_total}
+            lat={place.geometry?.location.lat}
+            lng={place.geometry?.location.lng}
+            attraction_type={place?.types}
+            allowAddToProfile={true}
+          />
+        ))
+        : null
+      }
     </div>
   )
 }
