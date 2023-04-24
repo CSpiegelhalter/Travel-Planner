@@ -1,7 +1,30 @@
 import NavBar from '@/components/NavBar'
-import React from 'react'
+import { useUser } from '@auth0/nextjs-auth0/client'
+import React, { useEffect, useState } from 'react'
 
-function profilePage(props) {
+function profilePage() {
+  const [attractions, setAttractions] = useState([])
+  const { user } = useUser()
+
+  useEffect( () => {
+   grabUserAttractions()
+
+  }, [])
+
+  const grabUserAttractions = async () => {
+    const params = {
+      userId: user?.['https://example.com/id']
+    }
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(params)
+    }
+    const data = await fetch('/api/grabAttractionsFromDB', options)
+    const attractionsArray = await data.json()
+    setAttractions(attractionsArray)
+  }
+  
+
   return (
     <div className="profile-page-container">
       <NavBar />
@@ -13,9 +36,15 @@ function profilePage(props) {
         <div className="test">
           <h2>Saved locations: </h2>
           <ul>
-            <li>Location one</li>
-            <li>Location two</li>
-            <li>etc...</li>
+          {attractions.length ? attractions.map((attractions, index) => (
+                <li key = {index} ><ul>
+                  <li>{attractions['name']}</li>
+                  <li>{attractions['address']}</li>
+                  <li>{attractions['rating']} (star symbol here)</li>
+                  <li>Description will go here</li>
+                  </ul> 
+                  </li>
+          )) : null}
           </ul>
         </div>
         <div className="test">

@@ -1,16 +1,17 @@
 import React from 'react'
 import Button from './Button'
-import { useUser } from '@auth0/nextjs-auth0/client' 
+import { useUser } from '@auth0/nextjs-auth0/client'
 
 function Card(props: any) {
 
-  const {user, isLoading, error} = useUser()
+  const { user, isLoading, error } = useUser()
 
   const locationData = [props?.name, props?.rating, props?.address, props?.lat, props?.lng, props?.attraction_type, props?.ratings_count, user?.email, user?.['https://example.com/id']]
 
+
   const addAttractionToDB = async () => {
     const params = {
-      userId: locationData?.[9],
+      userId: locationData?.[8],
       name: locationData?.[0],
       rating: locationData?.[1],
       address: locationData?.[2],
@@ -26,8 +27,8 @@ function Card(props: any) {
       body: JSON.stringify(params),
     }
     const data = await fetch('/api/saveAttraction', options)
-  console.log(locationData)
-  console.log('I worked?')
+    console.log(await data.text())
+    console.log('I worked?')
   }
 
   return (
@@ -40,7 +41,7 @@ function Card(props: any) {
       <p className="operatingHours"></p>
       {props.phone && <p className="phone-number">{props.phone}</p>}
       <div className="card-btn-container">
-        <Button handler={addAttractionToDB} name="card-btn-addToProfile" value="Add to profile!"></Button>
+        {props.allowAddToProfile ? <Button handler={addAttractionToDB} name="card-btn-addToProfile" value="Add to profile!"></Button> : null}
         {/* <Button handler={addToProfile} name="card-btn-addToTrip" value="Add to trip!"></Button> */}
       </div>
     </div>
