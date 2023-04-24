@@ -1,10 +1,10 @@
 import React from 'react'
 import Button from './Button'
-import { useUser } from '@auth0/nextjs-auth0/client' 
+import { useUser } from '@auth0/nextjs-auth0/client'
 
 function Card(props: any) {
 
-  const {user, isLoading, error} = useUser()
+  const { user, isLoading, error } = useUser()
 
   const locationData = [props?.name, props?.rating, props?.address, props?.lat, props?.lng, props?.attraction_type, props?.ratings_count, user?.email, user?.['https://example.com/id']]
 
@@ -27,8 +27,8 @@ function Card(props: any) {
       body: JSON.stringify(params),
     }
     const data = await fetch('/api/saveAttraction', options)
-  console.log( await data.text())
-  console.log('I worked?')
+    console.log(await data.text())
+    console.log('I worked?')
   }
 
   return (

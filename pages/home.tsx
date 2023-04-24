@@ -25,7 +25,7 @@ export default function Home() {
   //state to handle whether or not the saved Trips should be displayed
   const [showSavedTrips, setShowSavedTrips] = useState<boolean>(false)
   //auth0 user to allow us to know if we are logged in or not
-  const { user, error, isLoading}  = useUser()
+  const { user, error, isLoading } = useUser()
   console.log(user)
 
   // this sets our location State using this function
@@ -37,11 +37,8 @@ export default function Home() {
   }
   //used to change the t/f for what the sidebar will show 
   const handleSavedTripsDisplay = () => {
-     setShowSavedTrips(prevVal => !prevVal)
-     setShowInfo(true)
-     console.log('I am being clicked')
-     console.log(showSavedTrips, showInfo)
-    
+    setShowSavedTrips(prevVal => !prevVal)
+    setShowInfo(true)
   }
 
   //This is a useEffect used to make sure that the users location is grabbed only once when the page is rendered
@@ -89,18 +86,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-      <NavBar user = {user}  />
+        <NavBar user={user} />
         <div className="info-container">
           <div className="pointsOfInterest-filter-container">
             <div className="pointsOfInterest-btn-container">
-              <Button name="sideBar-data-switch" handler={handleSavedTripsDisplay} value='Show saved trips'/>
+              <Button name="sideBar-data-switch" handler={handleSavedTripsDisplay} value='Show saved trips' />
               {Object.keys(locationLabels).map((point, index) => (
                 <Button key={index} name="here" handler={callPointsOfInterestsApi as any} value={point} />
               ))}
             </div>
             <PlaceComponent />
             <div>
-              
+
             </div>
           </div>
           {showInfo && <SideBar placesInfo={placesInfo} showSavedTrips={showSavedTrips} />}
