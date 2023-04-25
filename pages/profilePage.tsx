@@ -1,28 +1,30 @@
 import NavBar from '@/components/NavBar'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import React, { useEffect, useState } from 'react'
+import { grabUserAttractions } from '@/helperFunctions/grabUserAttractions'
 
 function profilePage() {
   const [attractions, setAttractions] = useState([])
   const { user } = useUser()
+  const userId: number = user?.['https://example.com/id'] as number
 
   useEffect( () => {
-   grabUserAttractions()
+   grabUserAttractions(userId)
 
   }, [])
 
-  const grabUserAttractions = async () => {
-    const params = {
-      userId: user?.['https://example.com/id']
-    }
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(params)
-    }
-    const data = await fetch('/api/grabAttractionsFromDB', options)
-    const attractionsArray = await data.json()
-    setAttractions(attractionsArray)
-  }
+  // const grabUserAttractions = async () => {
+  //   const params = {
+  //     userId: user?.['https://example.com/id']
+  //   }
+  //   const options = {
+  //     method: 'POST',
+  //     body: JSON.stringify(params)
+  //   }
+  //   const data = await fetch('/api/grabAttractionsFromDB', options)
+  //   const attractionsArray = await data.json()
+  //   setAttractions(attractionsArray)
+  // }
   
 
   return (
