@@ -1,0 +1,21 @@
+.title {
+    text-align: center;
+    padding-top: 10rem;
+    color:white;
+}
+
+.getStarted {
+    text-align: center;
+    color:white;
+}
+
+.description {
+    text-align: center;
+    color:white;
+}
+
+.background {
+    background-color: blue;
+    height: 100vh;
+    width: 100vw;
+}
