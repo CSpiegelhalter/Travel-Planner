@@ -3,7 +3,7 @@ import NavBar from '@/components/NavBar'
 import { useRouter } from 'next/router'
 import { handleStateChange } from '@/helperFunctions/helperFunction'
 
-function signUp(props) {
+function signUp(props: any) {
 
   // these are the states that are used to make sure the email/passwords match before the api is called
   const [email, setEmail] = useState()
