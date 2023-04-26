@@ -81,7 +81,7 @@ function signUp(props) {
         <input type="password" placeholder="Password" onChange={(e) => { handleStateChange(e, setPassword) }} />
         <p>Please comfirm your password:</p>
         <input type="password" placeholder="Confirm password" onChange={(e) => { handleStateChange(e, setConfirmPassword) }} />
-        <button onClick={validateInput}>test</button>
+        <button onClick={validateInput as any}>test</button>
         {alert && <div className="tool-tip">{alert}</div>}
         {toolTip && <div className="tool-tip">{type} must match</div>}
       </div>

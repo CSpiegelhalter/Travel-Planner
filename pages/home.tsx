@@ -19,7 +19,7 @@ export default function Home() {
   const [hasLoaded, setHasLoaded] = useState<boolean>(false)
   //This state is used to show (or not show) the information sidebar
   const [showInfo, setShowInfo] = useState<boolean>(false)
-
+  const [disabled, setDisabled] = useState<boolean>(false)
   // this is to hold onto our data that we get from our api call
   const [placesInfo, setPlacesInfo] = useState()
   //state to handle whether or not the saved Trips should be displayed
@@ -72,6 +72,7 @@ export default function Home() {
       body: JSON.stringify(params),
     }
     const data = await fetch('/api/pointsOfInterest', options)
+    console.log('bouta hit callback')
     setPlacesInfo(await data.json())
     setShowInfo(true)
     setShowSavedTrips(false)
@@ -91,9 +92,9 @@ export default function Home() {
         <div className="info-container">
           <div className="pointsOfInterest-filter-container">
             <div className="pointsOfInterest-btn-container">
-              <Button name="sideBar-data-switch" handler={handleSavedTripsDisplay} value='Show saved trips' />
+              <Button name="sideBar-data-switch" handler={handleSavedTripsDisplay as any} value='Show saved trips'  />
               {Object.keys(locationLabels).map((point, index) => (
-                <Button key={index} name="here" handler={callPointsOfInterestsApi as any} value={point} />
+                <Button key={index} name="attractions-filter-btn" handler={callPointsOfInterestsApi as any} value={point} />
               ))}
             </div>
             <PlaceComponent />

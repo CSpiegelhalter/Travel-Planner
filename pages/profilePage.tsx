@@ -10,7 +10,7 @@ function profilePage() {
 
   useEffect( () => {
    grabUserAttractions(userId)
-
+   
   }, [])
 
   // const grabUserAttractions = async () => {

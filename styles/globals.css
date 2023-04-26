@@ -127,6 +127,10 @@ button:hover {
   color: var(--color-tertiary);
 }
 
+.attractions-filter-btn {
+  margin: 0.3rem;
+}
+
 .card-container {
   color: white;
   border: 5px solid var(--color-secondary);
@@ -182,7 +186,10 @@ button:hover {
 .tool-tip{
   color: red;
   font-style: italic; 
+}
 
+Index {
+  background-color: red;
 }
 
 @media (min-width: 62em) {

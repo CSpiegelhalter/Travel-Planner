@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from './Button'
 import { useUser } from '@auth0/nextjs-auth0/client'
 
 function Card(props: any) {
 
   const { user, isLoading, error } = useUser()
-
+  const [disabled, setDisabled] = useState(false)
   const locationData = [props?.name, props?.rating, props?.address, props?.lat, props?.lng, props?.attraction_type, props?.ratings_count, user?.email, user?.['https://example.com/id']]
 
 
@@ -27,8 +27,7 @@ function Card(props: any) {
       body: JSON.stringify(params),
     }
     const data = await fetch('/api/saveAttraction', options)
-    console.log(await data.text())
-    console.log('I worked?')
+    setDisabled(true)
   }
 
   return (
@@ -41,7 +40,7 @@ function Card(props: any) {
       <p className="operatingHours"></p>
       {props.phone && <p className="phone-number">{props.phone}</p>}
       <div className="card-btn-container">
-        {props.allowAddToProfile ? <Button handler={addAttractionToDB} name="card-btn-addToProfile" value="Add to profile!"></Button> : null}
+        {props.allowAddToProfile ? <Button handler={addAttractionToDB as any} name="card-btn-addToProfile" value="Add to profile!" disabled={disabled}></Button> : null}
         {/* <Button handler={addToProfile} name="card-btn-addToTrip" value="Add to trip!"></Button> */}
       </div>
     </div>
