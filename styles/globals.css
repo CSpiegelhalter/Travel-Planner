@@ -188,8 +188,14 @@ button:hover {
   font-style: italic; 
 }
 
-Index {
-  background-color: red;
+.dropdown-item {
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+
+.dropdown-item:hover{
+  background: gainsboro;
 }
 
 @media (min-width: 62em) {
