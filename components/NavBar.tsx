@@ -12,7 +12,7 @@ function NavBar(props: any) {
         <h2 className="header-title">Our Travel-Planner</h2>
        {props.user &&  <p>Hello, {props.user.name}</p>}
         <p className="home-btn">
-          <Link href="/">Home</Link>
+          <Link href="/home">Home</Link>
         </p>
 
         <p className="profile-btn">

@@ -8,11 +8,13 @@ function profilePage() {
   const [attractions, setAttractions] = useState([])
   const { user } = useUser()
   const userId: number = user?.['https://example.com/id'] as number
-  const grabAttraction = new LocalStorageService.getItem 
+
 
 
   useEffect( () => {
- 
+    grabUserAttractions(userId).then((data) => {
+      setAttractions(data)
+    })
   }, [])
 
   // const grabUserAttractions = async () => {

@@ -10,5 +10,6 @@ export const grabUserAttractions = async (userId: number) => {
     }
     const service = new LocalStorageService(`${userId}`)
 
-    return await service.fetchStorageData(async () => await fetch('/api/grabAttractionsFromDB', options))
+    const data =  await service.fetchStorageData(async () => await fetch('/api/grabAttractionsFromDB', options))
+    return data
 }

@@ -27,7 +27,6 @@ export default function Home() {
   //auth0 user to allow us to know if we are logged in or not
   const { user, error, isLoading } = useUser()
   const userId = user?.['https://example.com/id']
-  console.log(typeof userId)
 
   // this sets our location State using this function
   async function setUserLocation() {
@@ -37,7 +36,7 @@ export default function Home() {
     return value
   }
   //used to change the t/f for what the sidebar will show 
-  const handleSavedTripsDisplay = () => {
+  const handleSavedTripsDisplay = async () => {
     setShowSavedTrips(prevVal => !prevVal)
     setShowInfo(true)
   }
