@@ -2,15 +2,17 @@ import NavBar from '@/components/NavBar'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import React, { useEffect, useState } from 'react'
 import { grabUserAttractions } from '@/helperFunctions/grabUserAttractions'
+import { LocalStorageService } from '@/lib/localStorage'
 
 function profilePage() {
   const [attractions, setAttractions] = useState([])
   const { user } = useUser()
   const userId: number = user?.['https://example.com/id'] as number
+  const grabAttraction = new LocalStorageService.getItem 
+
 
   useEffect( () => {
-   grabUserAttractions(userId)
-   
+ 
   }, [])
 
   // const grabUserAttractions = async () => {
