@@ -30,7 +30,7 @@ function Card(props: any) {
     setDisabled(true)
   }
 
-  
+  const clickHandler = async () => {props.setIsOpen(true)}
 
   return (
     <div className="card-container">
@@ -43,7 +43,7 @@ function Card(props: any) {
       {props.phone && <p className="phone-number">{props.phone}</p>}
       <div className="card-btn-container">
         {props.allowAddToProfile ? <Button handler={addAttractionToDB as any} name="card-btn-addToProfile" value="Add to profile!" disabled={disabled}></Button> : null}
-        <Button handler={() => {props.setIsOpen(true)}} name="card-btn-addToTrip" value="Add to trip!"></Button>
+        <Button handler={() => clickHandler()} name="card-btn-addToTrip" value="Add to trip!"></Button>
       </div>
     </div>
   )

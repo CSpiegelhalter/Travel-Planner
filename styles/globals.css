@@ -198,11 +198,11 @@ button:hover {
   background: gainsboro;
 }
 //START MODAL It needs a lot of editing:
-.modal {
+.modal-container {
   width: 800px;
   height:700px;
-  background: white;
-  color: white;
+  background-color: #fff !important;
+  /* color: white; */
   border: 5px solid rgb(16, 110, 216);
   z-index: 10;
   border-radius: 16px;
@@ -269,6 +269,24 @@ button:hover {
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
   transform: translate(-4px, 4px);
 }
+.darkBG {
+  background-color: rgba(0, 0, 0, 0.627);
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position:fixed;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 //END MODAL
 

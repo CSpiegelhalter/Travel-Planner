@@ -7,7 +7,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     console.log('Timer done')
     res.status(200).send(JSON.stringify([{'name': 'hey'}]))
 
-  }, 5000)
+  }, 2000)
 
 }
 
