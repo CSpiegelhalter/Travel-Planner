@@ -30,7 +30,10 @@ function Card(props: any) {
     setDisabled(true)
   }
 
-  const clickHandler = async () => {props.setIsOpen(true)}
+  const clickHandler = async () => {
+    props.setIsOpen(true)
+    props.setShowInfo(false)
+  }
 
   return (
     <div className="card-container">

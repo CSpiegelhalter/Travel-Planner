@@ -197,11 +197,26 @@ button:hover {
 .dropdown-item:hover{
   background: gainsboro;
 }
-//START MODAL It needs a lot of editing:
-.modal-container {
-  width: 800px;
-  height:700px;
-  background-color: #fff !important;
+
+.darkBG {
+  background-color: rgba(0, 0, 0, 0.627);
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position:fixed;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30vw;
+  height: 70vh;
+  background: #fff !important;
   /* color: white; */
   border: 5px solid rgb(16, 110, 216);
   z-index: 10;
@@ -220,7 +235,7 @@ button:hover {
 .heading {
   margin: 0;
   padding: 10px;
-  color: #2c3e50;
+  /* color: #2c3e50; */
   font-weight: 500;
   font-size: 18px;
   text-align: center;
@@ -230,6 +245,7 @@ button:hover {
   padding: 10px;
   font-size: 14px;
   color: #2c3e50;
+  /* background: white; */
   text-align: center;
 }
 
@@ -268,23 +284,6 @@ button:hover {
 .closeBtn:hover {
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
   transform: translate(-4px, 4px);
-}
-.darkBG {
-  background-color: rgba(0, 0, 0, 0.627);
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position:fixed;
-}
-
-.centered {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 

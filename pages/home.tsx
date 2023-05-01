@@ -104,7 +104,7 @@ export default function Home() {
                   {isOpen && <Modal setIsOpen={setIsOpen} />}
             </div>
           </div>
-          {showInfo && <SideBar placesInfo={placesInfo} showSavedTrips={showSavedTrips} setIsOpen={setIsOpen}/>}
+          {showInfo && <SideBar placesInfo={placesInfo} showSavedTrips={showSavedTrips} setIsOpen={setIsOpen} setShowInfo={setShowInfo}/>}
           {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
         </div>
       </main>

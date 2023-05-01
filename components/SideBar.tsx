@@ -22,6 +22,7 @@ function SideBar(props: any) {
               attraction_type={place?.types}
               allowAddToProfile={true}
               setIsOpen={props.setIsOpen}
+              setShowInfo={props.setShowInfo}
             />
           ))
           : null
