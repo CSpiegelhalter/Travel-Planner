@@ -8,18 +8,16 @@ function Modal(props: any) {
             <div className="centered">
                 <div className="modal-container">
                     <div className="modalHeader">
-                        <h5 className="heading">Details</h5>
+                        <h5 className="heading">Create a new Trip!</h5>
                     </div>
                     <button className="closeBtn" onClick={() => props.setIsOpen(false)}>
                         Close
                     </button>
                     <div className="modalContent">
-                        <p>TEST</p>
-                        <p>TEST</p>
-                        <p>TEST</p>
-                        <p>TEST</p>
-                        <p>TEST</p>
-                        <p>TEST</p>
+                        <p>Welcome please fill out the information below to sign up!</p>
+                        <p>Please enter your email:</p>
+                        <input type="form" placeholder="Name of new trip" onChange={(e) => { handleStateChange(e, setEmail) }} />
+                        <button >test</button>
                     </div>
                 </div>
             </div>
