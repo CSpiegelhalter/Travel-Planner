@@ -14,8 +14,7 @@ function Modal(props: any) {
                         Close
                     </button>
                     <div className="modalContent">
-                        <p>Welcome please fill out the information below to sign up!</p>
-                        <p>Please enter your email:</p>
+                        <p>Please enter the name of your trip:</p>
                         <input type="form" placeholder="Name of new trip" onChange={(e) => { handleStateChange(e, setEmail) }} />
                         <button >test</button>
                     </div>
