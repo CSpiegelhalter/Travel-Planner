@@ -10,6 +10,7 @@ import SideBar from '@/components/SideBar'
 import PlaceComponent from '@/components/PlaceComponent'
 import { locationLabels } from '@/constants/constants'
 import { useUser } from '@auth0/nextjs-auth0/client';
+import Modal from '@/components/modal'
 
 
 export default function Home() {
@@ -27,6 +28,8 @@ export default function Home() {
   //auth0 user to allow us to know if we are logged in or not
   const { user, error, isLoading } = useUser()
   const userId = user?.['https://example.com/id']
+  //State for the Modal
+  const [isOpen, setIsOpen] = useState(false);
 
   // this sets our location State using this function
   async function setUserLocation() {
@@ -98,10 +101,10 @@ export default function Home() {
             </div>
             <PlaceComponent />
             <div>
-
+                  {isOpen && <Modal setIsOpen={setIsOpen} />}
             </div>
           </div>
-          {showInfo && <SideBar placesInfo={placesInfo} showSavedTrips={showSavedTrips} />}
+          {showInfo && <SideBar placesInfo={placesInfo} showSavedTrips={showSavedTrips} setIsOpen={setIsOpen}/>}
           {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
         </div>
       </main>
