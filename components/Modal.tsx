@@ -1,5 +1,6 @@
 import { useUser } from '@auth0/nextjs-auth0/client';
 import React, { useState } from 'react';
+import styles from '../styles/Modal.module.css'
 
 function Modal(props: any) {
     const [tripName, setTripName] = useState('')
@@ -26,16 +27,16 @@ function Modal(props: any) {
     
     return (
         <div>
-            <div className="darkBG" onClick={() => props.setIsOpen(false)} />
-            <div className="centered">
-                <div className="modal-container">
-                    <div className="modalHeader">
-                        <h5 className="heading">Create a new Trip!</h5>
+            <div className={styles.darkBG} onClick={() => props.setIsOpen(false)} />
+            <div className={styles.centered}>
+                <div className ={styles.modalContainer}>
+                    <div className= {styles.modalHeader}>
+                        <h5 className={styles.heading}>Create a new Trip!</h5>
                     </div>
-                    <button className="closeBtn" onClick={() => props.setIsOpen(false)}>
+                    <button className= {styles.closeBtn} onClick={() => props.setIsOpen(false)}>
                         Close
                     </button>
-                    <div className="modalContent">
+                    <div className= {styles.modalContent}>
                         <p>Please enter the name of your trip:</p>
                         <input type="form" placeholder="Name of new trip" onChange={(e) => { handleStateChange(e) }} />
                         <button onClick={addTripToDB}>Add Trip!</button>
