@@ -3,6 +3,7 @@ import { useUser } from '@auth0/nextjs-auth0/client'
 import React, { useEffect, useState } from 'react'
 import { grabUserAttractions } from '@/helperFunctions/grabUserAttractions'
 import { LocalStorageService } from '@/lib/localStorage'
+import styles from '../styles/Profile.module.css'
 
 function profilePage() {
   const [attractions, setAttractions] = useState([])
@@ -32,14 +33,14 @@ function profilePage() {
   
 
   return (
-    <div className="profile-page-container">
+    <div className={styles.profilePageContainer}>
       <NavBar />
 
       <div>
         <h1>Welcome back, Brando!</h1>
       </div>
-      <div className="profile-container">
-        <div className="list">
+      <div className={styles.profileContainer}>
+        <div className={styles.profileItemsList}>
           <h2>Saved locations: </h2>
           <ul>
           {attractions.length ? attractions.map((attractions, index) => (
@@ -53,7 +54,7 @@ function profilePage() {
           )) : null}
           </ul>
         </div>
-        <div className="list">
+        <div className={styles.profileItemsList}>
           <h2>My trips:</h2>
           <ul>
             <li>
@@ -73,7 +74,7 @@ function profilePage() {
           </ul>
         </div>
       </div>
-      <div className="footer-container">
+      <div className={styles.footerContainer}>
         <h4>I am not sure what I would want to do with this or if it will stick</h4>
       </div>
     </div>

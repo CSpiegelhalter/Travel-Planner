@@ -57,62 +57,10 @@ button:hover {
   margin: 0.3rem;
 }
 
-.card-container {
-  color: white;
-  border: 5px solid var(--color-secondary);
-  border-radius: 10%;
-  padding: 5%;
-}
-
-.card-btn-container {
-  display: flex;
-  justify-content: space-around;
-}
-
-
-.list {
-  background-color: var(--color-information-sidebar-bg);
-  width: 50%;
-  height: 75vh;
-  border-style: solid;
-  border-width: medium;
-  border-radius: 5%;
-  overflow:scroll;
-}
-.profile-page-container {
-  background-color: var(--color-tertiary);
-  overflow: scroll;
-  height: 100vh;
-}
-
-.profile-container {
-  display: flex;
-}
-
-.footer-container {
-  width: 100vw;
-  height: 30vh;
-  background-color: (--color-secondary);
-  border-style: solid;
-  border-width: medium;
-  border-radius: 5%;
-}
-
 /* .tool-tip{
   color: red;
   font-style: italic; 
 } */
-
-.dropdown-item {
-  background: white;
-  color: black;
-  cursor: pointer;
-}
-
-.dropdown-item:hover{
-  background: gainsboro;
-}
-
 
 @media (min-width: 62em) {
   .info-sidebar {
