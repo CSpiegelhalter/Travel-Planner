@@ -10,7 +10,7 @@ import SideBar from '@/components/SideBar'
 import PlaceComponent from '@/components/PlaceComponent'
 import { locationLabels } from '@/constants/constants'
 import { useUser } from '@auth0/nextjs-auth0/client';
-import Modal from '@/components/modal'
+import Modal from '@/components/Modal'
 
 
 export default function Home() {

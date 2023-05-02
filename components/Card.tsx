@@ -37,6 +37,7 @@ function Card(props: any) {
 
   return (
     <div className="card-container">
+      <p>{props.name}</p>
       <p className="rating">
         {props.rating}, Number of ratings {props.ratings_number}
       </p>

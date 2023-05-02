@@ -163,6 +163,7 @@ button:hover {
   border-style: solid;
   border-width: medium;
   border-radius: 5%;
+  overflow:scroll;
 }
 .profile-page-container {
   background-color: var(--color-tertiary);
