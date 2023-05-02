@@ -39,7 +39,7 @@ function profilePage() {
         <h1>Welcome back, Brando!</h1>
       </div>
       <div className="profile-container">
-        <div className="test">
+        <div className="list">
           <h2>Saved locations: </h2>
           <ul>
           {attractions.length ? attractions.map((attractions, index) => (
@@ -53,7 +53,7 @@ function profilePage() {
           )) : null}
           </ul>
         </div>
-        <div className="test">
+        <div className="list">
           <h2>My trips:</h2>
           <ul>
             <li>

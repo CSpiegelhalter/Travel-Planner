@@ -18,31 +18,11 @@ body {
   overflow: hidden;
 }
 
-.pointsOfInterest-filter-container {
-  display: flex;
-  background-color: black;
-  width: 100vw;
-  height: 5vh;
-  padding: 0.5%;
-  z-index: 5;
-}
-
 .map-container {
   width: 100%;
   height: 100vh;
   z-index: -1;
   position: absolute;
-}
-
-.info-sidebar {
-  z-index: 2;
-  background-color: var(--color-information-sidebar-bg);
-  height: 30vh;
-  width: 100vw;
-  position: absolute;
-  bottom: 0%;
-  overflow: hidden;
-  overflow-y: scroll;
 }
 
 button {
@@ -72,7 +52,8 @@ button:hover {
   color: var(--color-tertiary);
 }
 
-.attractions-filter-btn {
+//these are for buttons where the className is passed as props
+.attractionsFilterBtn {
   margin: 0.3rem;
 }
 
@@ -83,25 +64,13 @@ button:hover {
   padding: 5%;
 }
 
-.pointsOfInterest-btn-container {
-  display: flex;
-  justify-content: center;
-}
-
-.info-sidebar-btn {
-  margin: 2px;
-}
-
 .card-btn-container {
   display: flex;
   justify-content: space-around;
 }
 
-.profile-btn {
-  margin-left: 1rem;
-}
 
-.test {
+.list {
   background-color: var(--color-information-sidebar-bg);
   width: 50%;
   height: 75vh;
@@ -129,10 +98,10 @@ button:hover {
   border-radius: 5%;
 }
 
-.tool-tip{
+/* .tool-tip{
   color: red;
   font-style: italic; 
-}
+} */
 
 .dropdown-item {
   background: white;

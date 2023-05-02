@@ -1,0 +1,18 @@
+.pointsOfInterestFilterContainer {
+    display: flex;
+    background-color: black;
+    width: 100vw;
+    height: 5vh;
+    padding: 0.5%;
+    z-index: 5;
+  }
+
+ 
+
+  .info-sidebar-btn {
+    margin: 2px;
+  }
+
+  .infoContainer {
+    color: black
+  }

@@ -1,0 +1,10 @@
+.infoSidebar {
+    z-index: 2;
+    background-color: var(--color-information-sidebar-bg);
+    height: 30vh;
+    width: 100vw;
+    position: absolute;
+    bottom: 0%;
+    overflow: hidden;
+    overflow-y: scroll;
+  }

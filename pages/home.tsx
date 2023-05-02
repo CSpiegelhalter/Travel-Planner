@@ -13,6 +13,7 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import Modal from '@/components/Modal'
 
 
+
 export default function Home() {
   //These are the two states used to get our location for centering
   const [location, setLocation] = useState({ lat: 51.5072, lng: 0.1276 })
@@ -91,19 +92,17 @@ export default function Home() {
       </Head>
       <main>
         <NavBar user={user} />
-        <div className="info-container">
-          <div className="pointsOfInterest-filter-container">
-            <div className="pointsOfInterest-btn-container">
-              <Button name="sideBar-data-switch" handler={handleSavedTripsDisplay as any} value='Show saved trips'  />
+        <div className={styles.infoContainer}>
+            <div className={styles.pointsOfInterestFilterContainer}>
+              <Button name="sideBarDataSwitch" handler={handleSavedTripsDisplay as any} value='Show saved trips'  />
               {Object.keys(locationLabels).map((point, index) => (
-                <Button key={index} name="attractions-filter-btn" handler={callPointsOfInterestsApi as any} value={point} />
+                <Button key={index} name="attractionsFilterBtn" handler={callPointsOfInterestsApi as any} value={point} />
               ))}
             </div>
             <PlaceComponent />
             <div>
                   {isOpen && <Modal setIsOpen={setIsOpen} />}
             </div>
-          </div>
           {showInfo && <SideBar placesInfo={placesInfo} showSavedTrips={showSavedTrips} setIsOpen={setIsOpen} setShowInfo={setShowInfo}/>}
           {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
         </div>
