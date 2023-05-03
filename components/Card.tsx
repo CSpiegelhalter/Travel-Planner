@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Button from './Button'
 import { useUser } from '@auth0/nextjs-auth0/client'
+import styles from '@/styles/Card.module.css'
+
 
 function Card(props: any) {
 
@@ -30,8 +32,14 @@ function Card(props: any) {
     setDisabled(true)
   }
 
+  const clickHandler = async () => {
+    props.setIsOpen(true)
+    props.setShowInfo(false)
+  }
+
   return (
-    <div className="card-container">
+    <div className={styles.cardContainer}>
+      <p>{props.name}</p>
       <p className="rating">
         {props.rating}, Number of ratings {props.ratings_number}
       </p>
@@ -39,9 +47,9 @@ function Card(props: any) {
       <p className="address">{props.address}</p>
       <p className="operatingHours"></p>
       {props.phone && <p className="phone-number">{props.phone}</p>}
-      <div className="card-btn-container">
+      <div className={styles.cardBtnContainer}>
         {props.allowAddToProfile ? <Button handler={addAttractionToDB as any} name="card-btn-addToProfile" value="Add to profile!" disabled={disabled}></Button> : null}
-        {/* <Button handler={addToProfile} name="card-btn-addToTrip" value="Add to trip!"></Button> */}
+        <Button handler={() => clickHandler()} name="card-btn-addToTrip" value="Add to trip!"></Button>
       </div>
     </div>
   )

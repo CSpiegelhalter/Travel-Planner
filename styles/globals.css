@@ -18,69 +18,6 @@ body {
   overflow: hidden;
 }
 
-.main-header {
-  display: flex;
-  align-items: center;
-  height: 3.5rem;
-  background: linear-gradient(90deg, var(--color-primary) 1.2%, var(--color-secondary) 100%);
-  color: white;
-  padding: 0.5%;
-}
-
-.header-title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-  color: var(--color-neutral);
-  margin-right: auto;
-  width: 100%;
-}
-
-.nav {
-  padding: 1rem;
-  list-style-type: none;
-  text-align: center;
-}
-
-.nav-list-container {
-  display: flex;
-  padding: 0.1%;
-}
-
-.home-btn {
-  cursor: pointer;
-}
-
-.home-btn:hover {
-  color: var(--color-tertiary);
-  text-decoration: none;
-}
-
-.nav li {
-  padding: 0 1.25rem;
-  cursor: pointer;
-
-}
-.nav-list-item {
-  list-style-type: none;
-}
-
-.nav li:hover {
-  color: var(--color-tertiary);
-  text-decoration: none;
-}
-
-.pointsOfInterest-filter-container {
-  display: flex;
-  background-color: black;
-  width: 100vw;
-  height: 5vh;
-  padding: 0.5%;
-  z-index: 5;
-}
-
 .map-container {
   width: 100%;
   height: 100vh;
@@ -88,18 +25,6 @@ body {
   position: absolute;
 }
 
-.info-sidebar {
-  z-index: 2;
-  background-color: var(--color-information-sidebar-bg);
-  height: 30vh;
-  width: 100vw;
-  position: absolute;
-  bottom: 0%;
-  overflow: hidden;
-  overflow-y: scroll;
-}
-
-/* CSS */
 button {
   background-color: var(--color-secondary);
   border-radius: 8px;
@@ -127,70 +52,15 @@ button:hover {
   color: var(--color-tertiary);
 }
 
-.attractions-filter-btn {
+//these are for buttons where the className is passed as props
+.attractionsFilterBtn {
   margin: 0.3rem;
 }
 
-.card-container {
-  color: white;
-  border: 5px solid var(--color-secondary);
-  border-radius: 10%;
-  padding: 5%;
-}
-
-.pointsOfInterest-btn-container {
-  display: flex;
-  justify-content: center;
-}
-
-.info-sidebar-btn {
-  margin: 2px;
-}
-
-.card-btn-container {
-  display: flex;
-  justify-content: space-around;
-}
-
-.profile-btn {
-  margin-left: 1rem;
-}
-
-.test {
-  background-color: var(--color-information-sidebar-bg);
-  width: 50%;
-  height: 75vh;
-  border-style: solid;
-  border-width: medium;
-  border-radius: 5%;
-}
-.profile-page-container {
-  background-color: var(--color-tertiary);
-  overflow: scroll;
-  height: 100vh;
-}
-
-.profile-container {
-  display: flex;
-}
-
-.footer-container {
-  width: 100vw;
-  height: 30vh;
-  background-color: (--color-secondary);
-  border-style: solid;
-  border-width: medium;
-  border-radius: 5%;
-}
-
-.tool-tip{
+/* .tool-tip{
   color: red;
   font-style: italic; 
-}
-
-Index {
-  background-color: red;
-}
+} */
 
 @media (min-width: 62em) {
   .info-sidebar {

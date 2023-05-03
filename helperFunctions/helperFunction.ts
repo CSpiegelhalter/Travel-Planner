@@ -1,4 +1,4 @@
-export   function handleStateChange(event, param){
+export   function handleStateChange(event: any, param: any){
     param(event.target.value)
 }
 

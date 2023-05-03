@@ -1,0 +1,27 @@
+.profileItemsList {
+    background-color: var(--color-information-sidebar-bg);
+    width: 50%;
+    height: 75vh;
+    border-style: solid;
+    border-width: medium;
+    border-radius: 5%;
+    overflow:scroll;
+  }
+  .profilePageContainer {
+    background-color: var(--color-tertiary);
+    overflow: scroll;
+    height: 100vh;
+  }
+  
+  .profileContainer {
+    display: flex;
+  }
+  
+  .footerContainer {
+    width: 100vw;
+    height: 30vh;
+    background-color: (--color-secondary);
+    border-style: solid;
+    border-width: medium;
+    border-radius: 5%;
+  }

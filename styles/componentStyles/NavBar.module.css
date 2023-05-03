@@ -1,0 +1,60 @@
+.mainHeader {
+    display: flex;
+    align-items: center;
+    height: 3.5rem;
+    background: linear-gradient(90deg, var(--color-primary) 1.2%, var(--color-secondary) 100%);
+    color: white;
+    padding: 0.5%;
+  }
+  
+
+.headerTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    color: var(--color-neutral);
+    margin-right: auto;
+    width: 100%;
+  }
+  
+
+.nav {
+    padding: 1rem;
+    list-style-type: none;
+    text-align: center;
+  }
+  
+  .navListContainer {
+    display: flex;
+    padding: 0.1%;
+  }
+  
+  .homeBtn {
+    cursor: pointer;
+  }
+  
+  .homeBtn:hover {
+    color: var(--color-tertiary);
+    text-decoration: none;
+  }
+  
+  .nav li {
+    padding: 0 1.25rem;
+    cursor: pointer;
+  
+  }
+  .navListItem {
+    list-style-type: none;
+  }
+  
+  .nav li:hover {
+    color: var(--color-tertiary);
+    text-decoration: none;
+  }
+
+  .profileBtn {
+    margin-left: 1rem;
+  }
+  
