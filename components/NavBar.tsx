@@ -13,7 +13,7 @@ function NavBar(props: any) {
       <header className={styles.mainHeader}>
         <Dropdown tripsList={testList}/> 
         <h2 className={styles.headerTitle}>Our Travel-Planner</h2>
-       {props.user &&  <p>Hello, {props.user.name}</p>}
+       {/* {props.user &&  <p>Hello, {props.user.name}</p>} */}
         <p className={styles.homeBtn}>
           <Link href="home">Home</Link>
         </p>
