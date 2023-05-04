@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     height: 3.5rem;
-    background: linear-gradient(90deg, var(--color-primary) 1.2%, var(--color-secondary) 100%);
+    background: linear-gradient(90deg, var(--color-primary-light) 1.2%, var(--color-secondary-light) 100%);
     color: white;
     padding: 0.5%;
   }
@@ -14,7 +14,7 @@
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 1.5rem;
-    color: var(--color-neutral);
+    color: var(--color-neutral-light);
     margin-right: auto;
     width: 100%;
   }
@@ -36,7 +36,7 @@
   }
   
   .homeBtn:hover {
-    color: var(--color-tertiary);
+    color: var(--color-tertiary-light);
     text-decoration: none;
   }
   
@@ -50,7 +50,7 @@
   }
   
   .nav li:hover {
-    color: var(--color-tertiary);
+    color: var(--color-tertiary-light);
     text-decoration: none;
   }
 

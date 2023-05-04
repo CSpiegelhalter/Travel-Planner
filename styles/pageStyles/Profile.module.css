@@ -8,7 +8,7 @@
     overflow:scroll;
   }
   .profilePageContainer {
-    background-color: var(--color-tertiary);
+    background-color: var(--color-tertiary-light);
     overflow: scroll;
     height: 100vh;
   }
@@ -20,7 +20,7 @@
   .footerContainer {
     width: 100vw;
     height: 30vh;
-    background-color: (--color-secondary);
+    background-color: (--color-secondary-light);
     border-style: solid;
     border-width: medium;
     border-radius: 5%;
