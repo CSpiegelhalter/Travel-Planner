@@ -6,28 +6,34 @@ import Link from 'next/link';
 import Button from './Button';
 import PlaceComponent from './PlaceComponent';
 
-function HomeHeader(props) {
+interface HomeHeader {
+    locationLabels: object,
+    handleSavedTripsDisplay: Function,
+    apiCall: Function
+}
+
+function HomeHeader(props: HomeHeader) {
     const testList = ['spain', 'rome', 'vacay', 'our getaway']
 
 
     return (
-        <div>
-            <header className={styles.mainHeader}>
-                <Dropdown tripsList={testList} />
-                <div className={styles.pointsOfInterestFilterContainer}>
-              <Button name="sideBarDataSwitch" handler={props.handleSavedTripsDisplay as any} value='Show saved trips'  />
-              {Object.keys(props.locationLabels).map((point, index) => (
-                <Button key={index} name="attractionsFilterBtn" handler={props.apicall} value={point} />
-              ))}
+        <header className={styles.mainHeader}>
+            <Dropdown tripsList={testList} />
+            <div className={styles.pointsOfInterestFilterContainer}>
+                <Button name="sideBarDataSwitch" handler={props.handleSavedTripsDisplay as any} value='Show saved trips' />
             </div>
+            <div className={styles.btnContainer}>
+                {Object.keys(props.locationLabels).map((point, index) => (
+                    <Button key={index} name="attractionsFilterBtn" handler={props.apiCall} value={point} />
+                ))}
+            </div>
+
             <PlaceComponent />
-                <div className={styles.burgerContainer} >
-                    <Hamburger />
-                </div>
-            </header>
-        </div>
+            <div className={styles.burgerContainer} >
+                <Hamburger />
+            </div>
+        </header>
     );
 }
 
 export default HomeHeader;
- 

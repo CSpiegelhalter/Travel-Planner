@@ -1,9 +1,19 @@
 .mainHeader {
     display: flex;
-    align-items: center;
+    align-items: space-between;
     height: 3.5rem;
     background-color: transparent ;
-    color: white;
+    color: red;
     padding: 0.5%;
+    z-index: 10;
   }
   
+  .btnContainer {
+    display:flex;
+    align-items: space-between;
+  }
+
+  .pointsOfInterestFilterContainer {
+    display:flex;
+    align-items: space-between;
+  }

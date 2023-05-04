@@ -80,6 +80,10 @@ export default function Home() {
     setShowSavedTrips(false)
   }
 
+    console.log(typeof locationLabels)
+    console.log(typeof handleSavedTripsDisplay)
+    console.log(typeof callPointsOfInterestsApi)
+
   //our final return for home
   return (
     <>
@@ -90,13 +94,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+          {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
         <div className={styles.infoContainer}>
             <HomeHeader locationLabels={locationLabels} handleSavedTripsDisplay={handleSavedTripsDisplay} apiCall={callPointsOfInterestsApi} />
             <div>
                   {isOpen && <Modal setIsOpen={setIsOpen} />}
             </div>
           {showInfo && <SideBar placesInfo={placesInfo} showSavedTrips={showSavedTrips} setIsOpen={setIsOpen} setShowInfo={setShowInfo}/>}
-          {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
         </div>
       </main>
     </>
