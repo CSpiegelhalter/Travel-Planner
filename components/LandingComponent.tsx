@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/LandingComponent.module.css'
+import styles from '../styles/componentStyles/LandingComponent.module.css'
 import Link from 'next/link';
 import { describe } from 'node:test';
 

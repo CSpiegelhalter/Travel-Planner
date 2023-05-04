@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Dropdown from './Dropdown'
 import { test } from 'node:test'
-import styles from '../styles/NavBar.module.css'
+import styles from '../styles/componentStyles/NavBar.module.css'
 
 function NavBar(props: any) {
   const testList = ['spain', 'rome', 'vacay', 'our getaway']
