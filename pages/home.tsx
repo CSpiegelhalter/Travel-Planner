@@ -11,6 +11,7 @@ import PlaceComponent from '@/components/PlaceComponent'
 import { locationLabels } from '@/constants/constants'
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Modal from '@/components/Modal'
+import HomeHeader from '@/components/HomeHeader'
 
 export default function Home() {
   //These are the two states used to get our location for centering
@@ -89,15 +90,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <NavBar user={user} />
         <div className={styles.infoContainer}>
-            <div className={styles.pointsOfInterestFilterContainer}>
-              <Button name="sideBarDataSwitch" handler={handleSavedTripsDisplay as any} value='Show saved trips'  />
-              {Object.keys(locationLabels).map((point, index) => (
-                <Button key={index} name="attractionsFilterBtn" handler={callPointsOfInterestsApi as any} value={point} />
-              ))}
-            </div>
-            <PlaceComponent />
+            <HomeHeader locationLabels={locationLabels} handleSavedTripsDisplay={handleSavedTripsDisplay} apiCall={callPointsOfInterestsApi} />
             <div>
                   {isOpen && <Modal setIsOpen={setIsOpen} />}
             </div>

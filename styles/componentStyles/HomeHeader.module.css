@@ -1,0 +1,9 @@
+.mainHeader {
+    display: flex;
+    align-items: center;
+    height: 3.5rem;
+    background-color: transparent ;
+    color: white;
+    padding: 0.5%;
+  }
+  

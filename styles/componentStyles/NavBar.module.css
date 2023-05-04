@@ -1,12 +1,11 @@
 .mainHeader {
-    display: flex;
-    align-items: center;
-    height: 3.5rem;
-    background: linear-gradient(90deg, var(--color-primary-light) 1.2%, var(--color-secondary-light) 100%);
-    color: white;
-    padding: 0.5%;
-  }
-  
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  background-color: transparent ;
+  color: white;
+  padding: 0.5%;
+}
 
 .headerTitle {
     font-family: Arial, Helvetica, sans-serif;
@@ -57,4 +56,6 @@
   .profileBtn {
     margin-left: 1rem;
   }
+  
+  
   
