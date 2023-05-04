@@ -1,0 +1,7 @@
+.backgroundContainer  {
+    z-index: 0;
+}
+
+.wordsContainer {
+    z-index: 10;
+}

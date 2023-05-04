@@ -1,19 +1,22 @@
-
+.background {
+    z-index: 10;
+    position: absolute;
+}
 
 .title {
     text-align: center;
     padding-top: 5rem;
-    color:#b3e6cc;
+    color:white;
 }
 
 .getStarted {
     text-align: center;
-    color:#b3e6cc;
+    color:white;
     padding-top: 4rem;
 }
 
 .description {
     padding-top: 12rem;
     text-align: center;
-    color:#b3e6cc;
+    color:white;
 }
