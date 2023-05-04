@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Dropdown from './Dropdown'
 import { test } from 'node:test'
 import styles from '../styles/componentStyles/NavBar.module.css'
+import Hamburger from './Hamburger'
 
 function NavBar(props: any) {
   const testList = ['spain', 'rome', 'vacay', 'our getaway']
@@ -14,12 +15,13 @@ function NavBar(props: any) {
         <Dropdown tripsList={testList}/> 
         <h2 className={styles.headerTitle}>Our Travel-Planner</h2>
        {/* {props.user &&  <p>Hello, {props.user.name}</p>} */}
-        <p className={styles.homeBtn}>
+        {/* <p className={styles.homeBtn}>
           <Link href="home">Home</Link>
         </p>
         <p className={styles.profileBtn}>
           <Link href="/profilePage"> Profile</Link>
-        </p>
+        </p> */}
+        <Hamburger />
         {!props.user &&
           <ul className={styles.nav}>
             <div className={styles.navListContainer}>
