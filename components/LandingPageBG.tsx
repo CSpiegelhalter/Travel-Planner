@@ -2,13 +2,15 @@ import { useState } from 'react';
 import Image from 'next/image';
 import styles from '../styles/pageStyles/LandingPageBGDark.module.css'
 
+interface BGprops{
+    darkmode: boolean
+}
 
-function test(props) {
-   const [darkmode, setDarkMode ] = useState(true)
+function LandingPageBG(props: BGprops) {
    
     return (
         
-        darkmode ? 
+        props.darkmode ? 
         <div className={styles.backgroundConatiner}>
             <div className={styles.darkmodeBackgroundContainer}>
                 <Image src="/darkmode/darkmodeBackground.svg" alt="an svg of a mountain" fill={true} className={styles.darkmodebackground} />
@@ -54,4 +56,4 @@ function test(props) {
     )
 }
 
-export default test;
+export default LandingPageBG;
