@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import styles from '@/styles/Home.module.css'
+import styles from '../styles/pageStyles/Home.module.css'
 import NavBar from '@/components/NavBar'
 import { useState, useEffect } from 'react'
-import { GoogleMap, useLoadScript } from '@react-google-maps/api'
+import { useLoadScript } from '@react-google-maps/api'
 import FindLocation, { Location } from '@/hooks/FindLocation'
 import Map from '@/components/Map'
 import Button from '@/components/Button'
@@ -11,8 +11,7 @@ import PlaceComponent from '@/components/PlaceComponent'
 import { locationLabels } from '@/constants/constants'
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Modal from '@/components/Modal'
-
-
+import HomeHeader from '@/components/HomeHeader'
 
 export default function Home() {
   //These are the two states used to get our location for centering
@@ -81,6 +80,10 @@ export default function Home() {
     setShowSavedTrips(false)
   }
 
+    console.log(typeof locationLabels)
+    console.log(typeof handleSavedTripsDisplay)
+    console.log(typeof callPointsOfInterestsApi)
+
   //our final return for home
   return (
     <>
@@ -91,20 +94,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <NavBar user={user} />
+          {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
         <div className={styles.infoContainer}>
-            <div className={styles.pointsOfInterestFilterContainer}>
-              <Button name="sideBarDataSwitch" handler={handleSavedTripsDisplay as any} value='Show saved trips'  />
-              {Object.keys(locationLabels).map((point, index) => (
-                <Button key={index} name="attractionsFilterBtn" handler={callPointsOfInterestsApi as any} value={point} />
-              ))}
-            </div>
-            <PlaceComponent />
+            <HomeHeader locationLabels={locationLabels} handleSavedTripsDisplay={handleSavedTripsDisplay} apiCall={callPointsOfInterestsApi} />
             <div>
                   {isOpen && <Modal setIsOpen={setIsOpen} />}
             </div>
           {showInfo && <SideBar placesInfo={placesInfo} showSavedTrips={showSavedTrips} setIsOpen={setIsOpen} setShowInfo={setShowInfo}/>}
-          {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
         </div>
       </main>
     </>

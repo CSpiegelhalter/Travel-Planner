@@ -3,7 +3,7 @@ import { useUser } from '@auth0/nextjs-auth0/client'
 import React, { useEffect, useState } from 'react'
 import { grabUserAttractions } from '@/helperFunctions/grabUserAttractions'
 import { LocalStorageService } from '@/lib/localStorage'
-import styles from '../styles/Profile.module.css'
+import styles from '../styles/pageStyles/Profile.module.css'
 
 function profilePage() {
   const [attractions, setAttractions] = useState([])

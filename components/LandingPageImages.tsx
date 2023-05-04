@@ -1,17 +1,18 @@
-import React from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 
 function LandingPageImages(props) {
-    const [darkMode, setDarkMode] = useState(false) 
-    
+    const [darkMode, setDarkMode] = useState(false)
+
     return (
         <div>
-                 {darkMode ? 
-                 <Image src="" alt="Mountains at sunrise" className="landingPageImageDark" />  
-                 <Image src="" alt="Mounatins at sunset" className="landingPageImageLight"/>
-                
-                
-                 :
+            {darkMode ?
+                <div>
+                    <Image src="" alt="Mountains at sunrise" className="landingPageImageDark" />
+                    <Image src="" alt="Mounatins at sunset" className="landingPageImageLight" />
+                </div>
+
+                :
                 }
         </div>
     );

@@ -1,0 +1,11 @@
+.landing-page-container {
+    padding:0;
+    margin:0;
+}
+.backgroundContainer  {
+    z-index: 0;
+}
+
+.wordsContainer {
+    z-index: 10;
+}

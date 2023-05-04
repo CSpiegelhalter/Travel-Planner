@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from './Button'
 import { useUser } from '@auth0/nextjs-auth0/client'
-import styles from '@/styles/Card.module.css'
+import styles from '@/styles/componentStyles/Card.module.css'
 
 
 function Card(props: any) {

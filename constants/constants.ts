@@ -17,5 +17,4 @@ export const locationLabels = {
   ],
   Transportation: ['airport', 'bus_station', 'car_rental', 'taxi_stand', 'train_station', 'travel_agency'],
   Grocery: ['bakery', 'convenience_store', 'liquor_store', 'store', 'supermarket'],
-  Financial: ['bank', 'atm'],
 }

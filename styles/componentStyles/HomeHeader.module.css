@@ -1,0 +1,21 @@
+.mainHeader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap : wrap;
+    height: 3.5rem;
+    align-items: center;
+    background-color: transparent ;
+    color: var(--color-hover-light);
+    padding: 0.5%;
+    z-index: 10;
+  }
+  
+  .btnContainer {
+    display:flex;
+    align-items: space-between;
+  }
+
+  .pointsOfInterestFilterContainer {
+    display:flex;
+    align-items: space-between;
+  }

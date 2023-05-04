@@ -1,6 +1,6 @@
 import { useUser } from '@auth0/nextjs-auth0/client';
 import React, { useState } from 'react';
-import styles from '../styles/Modal.module.css'
+import styles from '../styles/componentStyles/Modal.module.css'
 
 function Modal(props: any) {
     const [tripName, setTripName] = useState('')
