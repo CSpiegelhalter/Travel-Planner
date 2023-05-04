@@ -1,9 +1,11 @@
 .mainHeader {
     display: flex;
-    align-items: space-between;
+    flex-direction: row;
+    flex-wrap : wrap;
     height: 3.5rem;
+    align-items: center;
     background-color: transparent ;
-    color: red;
+    color: var(--color-hover-light);
     padding: 0.5%;
     z-index: 10;
   }

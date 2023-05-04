@@ -1,7 +1,8 @@
 :root {
   --color-primary-light: #e90064;
-  --color-secondary-light: #e64089;
+  --color-secondary-light: #ff5f9e;
   --color-tertiary-light: #fcc8d1;
+  --color-hover-light: #060047;
   --color-information-sidebar-bg: rgb(173, 61, 9);
   --color-neutral: #ffffff;
   --color-alert: red;
@@ -29,7 +30,7 @@ body {
 }
 
 button {
-  background-color: var(--color-secondary-light);
+  background-color: var(--color-primary-light);
   border-radius: 8px;
   border-width: 0;
   color: var(--color-neutral);

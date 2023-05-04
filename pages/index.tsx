@@ -8,16 +8,16 @@ import React, { useEffect, useState } from 'react'
 
 function LandingPage() {
 
- 
-  
+
+
 
   return (
-    <div className='landing-page-container'>
+    <div>
       <div className={styles.wordsContainer}>
-      <LandingComponent />
+        <LandingComponent />
       </div>
-     <div className={styles.backgroundContainer}>
-      <LandingPageBG darkmode={false} />
+      <div className={styles.backgroundContainer}>
+        <LandingPageBG darkmode={false} />
       </div>
     </div>
   );

@@ -1,15 +1,21 @@
 .backgroundConatiner{
  z-index: 0;
+ padding: 0;
+ margin: 0;
 }
 
 .darkmodeBackgroundContainer{
     width: 100vw;
     height: 100vh;
+    position: reltive;
+    top: 0;
 }
 
 .darkmodebackground {
     width: 100vw;
     height: 100vh;
+    position: relative !important;
+    object-fit: cover;
 }
 
 .backContainer {
