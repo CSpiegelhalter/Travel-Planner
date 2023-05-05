@@ -6,6 +6,9 @@ function SideBar(props: any) {
 
   return (
     <div className={styles.infoSidebar}>
+        <button className= {styles.closeBtn} onClick={() => props.setShowInfo(false)}>
+                        Close
+                    </button>
       {props.showSavedTrips ?
         <Card name="test" rating="5" price="" address="42 wallaby way Sydney Aus" ratings_count="420" allowAddToProfile={false} />
         :

@@ -24,8 +24,11 @@ function HomeHeader(props: HomeHeader) {
             <div className={styles.placeContainer}>
                 <PlaceComponent />
             </div>
-            <div className={styles.pointsOfInterestFilterContainer}>
+            {/* <div className={styles.pointsOfInterestFilterContainer}>
                 <Button name="sideBarDataSwitch" handler={props.handleSavedTripsDisplay as any} value='Saved Places' />
+            </div> */}
+            <div className={styles.burgerContainer} >
+                <Hamburger user={props.user}/>
             </div>
             </div>
             <div className={styles.btnContainer}>
@@ -34,9 +37,6 @@ function HomeHeader(props: HomeHeader) {
                 ))}
             </div>
 
-            <div className={styles.burgerContainer} >
-                <Hamburger user={props.user}/>
-            </div>
         </header>
     );
 }

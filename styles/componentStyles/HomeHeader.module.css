@@ -1,5 +1,7 @@
 .mainHeader {
     display: inline-flex;
+    width: 100% !important;
+    height: 100% !important;
     flex-direction: row;
     flex-wrap : wrap;
     height: 3.0rem;
@@ -8,18 +10,21 @@
     color: var(--color-hover-light);
     padding: 0.5%;
     z-index: 10;
-    margin-left: 20%;
+    /* margin-left: 20%; */
     margin-right: 5rem;
   }
 
   .centerTop {
     display: flex;
-    margin-left: 15%
+    /* margin-right: 15%; */
+    margin-left: 7%
   }
   
   .btnContainer {
     display:flex;
     align-items: space-between;
+    flex-wrap : wrap;
+
   }
 
   .pointsOfInterestFilterContainer {
@@ -30,7 +35,7 @@
   }
 
   .burgerContainer {
-   position: absolute;
-   display: block;
-    right: 1%;
+   /* position: fixed; */
+   /* display: inline-block; */
+    right:0;
 }
