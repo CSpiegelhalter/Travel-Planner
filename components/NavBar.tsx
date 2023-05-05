@@ -13,7 +13,6 @@ function NavBar(props: any) {
   const holder = async () => {console.log('cock')}
 
   return (
-    <div className={styles.navContainer}>
       <header className={styles.mainHeader}>
         <div className={styles.buttonContainer}>
         <Dropdown tripsList={testList}/> 
@@ -23,7 +22,6 @@ function NavBar(props: any) {
         <Hamburger />
         </div>
       </header>
-    </div>
   )
 }
 
