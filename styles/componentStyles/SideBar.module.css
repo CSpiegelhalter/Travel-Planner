@@ -3,7 +3,7 @@
     background-color: var(--color-information-sidebar-bg);
     height: 30vh;
     width: 100vw;
-    position: absolute;
+    position: fixed;
     bottom: 0%;
     overflow: hidden;
     overflow-y: scroll;

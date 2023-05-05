@@ -30,10 +30,10 @@ body {
 }
 
 button {
-  background-color: var(--color-secondary-light);
+  background-color: var(--color-primary-light);
   border-radius: 0.5rem;
   border-width: 0;
-  color: var(--color-hover-light);
+  color: var(--color-neutral);
   cursor: pointer;
   display: inline-block;
   font-family: 'Haas Grot Text R Web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -53,7 +53,7 @@ button {
 }
 
 button:hover {
-  color: var(--color-neutral);
+  color: var(--color-hover-lght);
 }
 
 //these are for buttons where the className is passed as props
