@@ -59,7 +59,9 @@ export default function Home() {
   })
 
   //sets the space where the map should be to loading... if it is not yet rendered
-  if (!isLoaded) return <div>Loading...</div>
+  if (!isLoaded){
+    return <div>Loading...</div>
+  } 
 
   // Sidebar handler
   //This is the function that calls the PointsOfInterest api and flips the state to show or not show the information sidebar
@@ -96,7 +98,7 @@ export default function Home() {
       <main>
           {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
         <div className={styles.infoContainer}>
-            <HomeHeader locationLabels={locationLabels} handleSavedTripsDisplay={handleSavedTripsDisplay} apiCall={callPointsOfInterestsApi} />
+            <HomeHeader locationLabels={locationLabels} handleSavedTripsDisplay={handleSavedTripsDisplay} apiCall={callPointsOfInterestsApi} user={user}/>
             <div>
                   {isOpen && <Modal setIsOpen={setIsOpen} />}
             </div>

@@ -41,7 +41,7 @@ button {
   font-weight: 500;
   line-height: 5px;
   list-style: none;
-  margin: 0;
+  margin: 5px;
   padding: 10px 12px;
   text-align: center;
   transition: all 200ms;
@@ -58,7 +58,12 @@ button:hover {
 
 //these are for buttons where the className is passed as props
 .attractionsFilterBtn {
-  margin: 0.3rem;
+  margin: 1rem;
+
+}
+
+.formControl {
+  margin-top: 0.5rem;
 }
 
 /* .tool-tip{

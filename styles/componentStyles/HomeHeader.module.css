@@ -1,9 +1,9 @@
 .mainHeader {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     flex-wrap : wrap;
     height: 3.5rem;
-    align-items: center;
+    align-items: stretch;
     background-color: transparent ;
     color: var(--color-hover-light);
     padding: 0.5%;
@@ -16,6 +16,6 @@
   }
 
   .pointsOfInterestFilterContainer {
-    display:flex;
     align-items: space-between;
   }
+

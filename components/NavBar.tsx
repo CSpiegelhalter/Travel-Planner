@@ -25,13 +25,13 @@ function NavBar(props: any) {
         <p className={styles.profileBtn}>
           <Link href="/profilePage"> Profile</Link>
         </p> */}
-        {props.user &&
+        {/* {props.user &&
           <div className={styles.navListContainer}>
             <ul>
               <li className= {styles.navListItem}><Link href="/api/auth/logout">logout</Link></li>
             </ul>
           </div>
-        }
+        } */}
         <div className={styles.burgerContainer} >
         <Hamburger />
         </div>
