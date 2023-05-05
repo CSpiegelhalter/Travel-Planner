@@ -19,10 +19,14 @@ function HomeHeader(props: HomeHeader) {
 
     return (
         <header className={styles.mainHeader}>
+            <div className={styles.centerTop}>
             <Dropdown tripsList={testList} />
+            <div className={styles.placeContainer}>
                 <PlaceComponent />
+            </div>
             <div className={styles.pointsOfInterestFilterContainer}>
-                <Button name="sideBarDataSwitch" handler={props.handleSavedTripsDisplay as any} value='Show saved trips' />
+                <Button name="sideBarDataSwitch" handler={props.handleSavedTripsDisplay as any} value='Saved Places' />
+            </div>
             </div>
             <div className={styles.btnContainer}>
                 {Object.keys(props.locationLabels).map((point, index) => (

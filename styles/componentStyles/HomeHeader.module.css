@@ -2,12 +2,19 @@
     display: inline-flex;
     flex-direction: row;
     flex-wrap : wrap;
-    height: 3.5rem;
-    align-items: stretch;
+    height: 3.0rem;
+    align-items: center;
     background-color: transparent ;
     color: var(--color-hover-light);
     padding: 0.5%;
     z-index: 10;
+    margin-left: 20%;
+    margin-right: 5rem;
+  }
+
+  .centerTop {
+    display: flex;
+    margin-left: 15%
   }
   
   .btnContainer {
@@ -18,4 +25,12 @@
   .pointsOfInterestFilterContainer {
     align-items: space-between;
   }
+  .PlaceContainer {
 
+  }
+
+  .burgerContainer {
+   position: absolute;
+   display: block;
+    right: 1%;
+}
