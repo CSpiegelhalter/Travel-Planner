@@ -19,7 +19,10 @@
 
 body {
   margin: 0;
-  overflow: hidden;
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .map-container {
@@ -56,7 +59,7 @@ button:hover {
   color: var(--color-tertiary);
 }
 
-//these are for buttons where the className is passed as props
+/* //these are for buttons where the className is passed as props */
 .attractionsFilterBtn {
   margin: 0.3rem;
 }
