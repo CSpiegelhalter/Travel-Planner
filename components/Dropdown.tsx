@@ -16,7 +16,7 @@ function Dropdown(props: any) {
         <DropdownMenu.Root >
           <DropdownMenu.Trigger >{selector}</DropdownMenu.Trigger>
           <DropdownMenu.Content loop>
-            {selector !== 'Bucket List' && <DropdownMenu.Item className='dropdown-item' onClick={() => {selectorHandler('Bucket List')}}>Bucket List</DropdownMenu.Item>} 
+            {selector !== 'Bucket List' && <DropdownMenu.Item className='dropdown-item' onClick={() => {selectorHandler('Bucket List')}}>Bucket List</DropdownMenu.Item>}
             {props.tripsList.map((item: string, index: number) => (
                 <DropdownMenu.Item className={styles.dropDownItem} key={index} onClick={() => {selectorHandler(item)}}>{item}</DropdownMenu.Item>
             ))}

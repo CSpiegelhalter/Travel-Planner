@@ -16,10 +16,25 @@
     color-scheme: dark;
   }
 } */
+'[data-radix-popper-content-wrapper]': {
+  /* translate3d: 'none !important'; */
+  /* position: 'absolute !important'; */
+},
+html {
+  margin: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
 
 body {
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  height: 100vh;
+
+
 }
 
 ::-webkit-scrollbar {
