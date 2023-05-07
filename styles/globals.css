@@ -26,19 +26,14 @@ html {
   height: 100vh;
 }
 
-body {
-  margin: 0;
-  overflow-x: hidden;
-  overflow-y: hidden;
-
-  height: 100vh;
-
-
-}
-
 ::-webkit-scrollbar {
   width: 1rem;
   
+=======
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .map-container {
@@ -75,7 +70,7 @@ button:hover {
   color: var(--color-hover-lght);
 }
 
-//these are for buttons where the className is passed as props
+/* //these are for buttons where the className is passed as props */
 .attractionsFilterBtn {
   margin: 1rem;
 
