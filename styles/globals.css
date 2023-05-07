@@ -16,9 +16,20 @@
     color-scheme: dark;
   }
 } */
-
-body {
+'[data-radix-popper-content-wrapper]': {
+  
+},
+html {
   margin: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+  
+=======
 }
 html, body {
   max-width: 100%;
@@ -34,18 +45,18 @@ html, body {
 
 button {
   background-color: var(--color-primary-light);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   border-width: 0;
   color: var(--color-neutral);
   cursor: pointer;
   display: inline-block;
   font-family: 'Haas Grot Text R Web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 0.6rem;
   font-weight: 500;
-  line-height: 5px;
+  line-height: 0.2rem;
   list-style: none;
-  margin: 0;
-  padding: 10px 12px;
+  margin: 0.3rem;
+  padding: 0.6rem 0.8rem;
   text-align: center;
   transition: all 200ms;
   vertical-align: baseline;
@@ -56,12 +67,17 @@ button {
 }
 
 button:hover {
-  color: var(--color-tertiary);
+  color: var(--color-hover-lght);
 }
 
 /* //these are for buttons where the className is passed as props */
 .attractionsFilterBtn {
-  margin: 0.3rem;
+  margin: 1rem;
+
+}
+
+.formControl {
+  margin-top: 0.5rem;
 }
 
 /* .tool-tip{

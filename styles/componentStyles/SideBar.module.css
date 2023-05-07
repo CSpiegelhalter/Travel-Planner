@@ -1,10 +1,30 @@
+.closeBtn {
+  cursor: pointer;
+  font-weight: 500;
+  /* padding: 4px 8px; */
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 0.75rem;
+  color: #2c3e50;
+  background: rgb(195, 9, 9);
+  transition: all 0.25s ease;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 5%;
+  right: 0;
+  margin-left: 85%;
+}
+
 .infoSidebar {
     z-index: 2;
-    background-color: var(--color-information-sidebar-bg);
+    background-color: grey;
     height: 30vh;
-    width: 100vw;
-    position: absolute;
+    width: 50vw;
+    position: fixed;
     bottom: 0%;
     overflow: hidden;
     overflow-y: scroll;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    right: 25%;
   }

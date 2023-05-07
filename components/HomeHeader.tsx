@@ -9,7 +9,8 @@ import PlaceComponent from './PlaceComponent';
 interface HomeHeader {
     locationLabels: object,
     handleSavedTripsDisplay: Function,
-    apiCall: Function
+    apiCall: Function,
+    user: any
 }
 
 function HomeHeader(props: HomeHeader) {
@@ -18,9 +19,17 @@ function HomeHeader(props: HomeHeader) {
 
     return (
         <header className={styles.mainHeader}>
-            <Dropdown tripsList={testList} />
-            <div className={styles.pointsOfInterestFilterContainer}>
-                <Button name="sideBarDataSwitch" handler={props.handleSavedTripsDisplay as any} value='Show saved trips' />
+            <div className={styles.centerTop}>
+                <Dropdown tripsList={testList} />
+                <div className={styles.placeContainer}>
+                    <PlaceComponent />
+                </div>
+                {/* <div className={styles.pointsOfInterestFilterContainer}>
+                <Button name="sideBarDataSwitch" handler={props.handleSavedTripsDisplay as any} value='Saved Places' />
+            </div> */}
+                <div className={styles.burgerContainer} >
+                    <Hamburger user={props.user} />
+                </div>
             </div>
             <div className={styles.btnContainer}>
                 {Object.keys(props.locationLabels).map((point, index) => (
@@ -28,10 +37,6 @@ function HomeHeader(props: HomeHeader) {
                 ))}
             </div>
 
-            <PlaceComponent />
-            <div className={styles.burgerContainer} >
-                <Hamburger />
-            </div>
         </header>
     );
 }

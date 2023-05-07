@@ -1,21 +1,36 @@
 .mainHeader {
-    display: flex;
+    display: inline-flex;
+    width: 100% !important;
+    height: 100% !important;
     flex-direction: row;
     flex-wrap : wrap;
-    height: 3.5rem;
+    height: 3.0rem;
     align-items: center;
     background-color: transparent ;
     color: var(--color-hover-light);
-    padding: 0.5%;
     z-index: 10;
+  }
+
+  .centerTop {
+    display: flex;
+    justify-content:center;
+    position: relative;
   }
   
   .btnContainer {
     display:flex;
     align-items: space-between;
+    flex-wrap : wrap;
+
   }
 
   .pointsOfInterestFilterContainer {
-    display:flex;
     align-items: space-between;
   }
+  .PlaceContainer {
+
+  }
+
+  .burgerContainer {
+    right:0;
+}
