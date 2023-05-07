@@ -8,18 +8,13 @@
     align-items: center;
     background-color: transparent ;
     color: var(--color-hover-light);
-    /* padding: 0.5%; */  <------- This broke it
-    /* z-index: 10; */
-    /* margin-left: 20%; */
-    /* margin-right: 5rem; */
+    z-index: 10;
   }
 
   .centerTop {
     display: flex;
     justify-content:center;
     position: relative;
-    /* margin-right: 15%; */
-    /* margin-left: 7% */
   }
   
   .btnContainer {
@@ -37,7 +32,5 @@
   }
 
   .burgerContainer {
-   /* position: fixed; */
-   /* display: inline-block; */
     right:0;
 }
