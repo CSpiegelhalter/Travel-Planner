@@ -23,8 +23,6 @@ export default function Home() {
   const [disabled, setDisabled] = useState<boolean>(false)
   // this is to hold onto our data that we get from our api call
   const [placesInfo, setPlacesInfo] = useState()
-  //state to handle whether or not the saved Trips should be displayed
-  const [showSavedTrips, setShowSavedTrips] = useState<boolean>(false)
   //auth0 user to allow us to know if we are logged in or not
   const { user, error, isLoading } = useUser()
   const userId = user?.['https://example.com/id']
@@ -40,7 +38,6 @@ export default function Home() {
   }
   //used to change the t/f for what the sidebar will show 
   const handleSavedTripsDisplay = async () => {
-    setShowSavedTrips(prevVal => !prevVal)
     setShowInfo(true)
   }
 
@@ -79,7 +76,6 @@ export default function Home() {
     console.log('bouta hit callback')
     setPlacesInfo(await data.json())
     setShowInfo(true)
-    setShowSavedTrips(false)
   }
 
  
@@ -100,7 +96,7 @@ export default function Home() {
             <div>
                   {isOpen && <Modal setIsOpen={setIsOpen} />}
             </div>
-          {showInfo && <SideBar placesInfo={placesInfo} showSavedTrips={showSavedTrips} setIsOpen={setIsOpen} setShowInfo={setShowInfo}/>}
+          {showInfo && <SideBar placesInfo={placesInfo} setIsOpen={setIsOpen} setShowInfo={setShowInfo}/>}
         </div>
       </main>
     </>
