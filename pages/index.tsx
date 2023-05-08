@@ -3,27 +3,28 @@ import LandingPageBG from '@/components/LandingPageBG'
 import styles from '../styles/pageStyles/LandingPage.module.css'
 import NavBar from '@/components/NavBar'
 import { useUser } from '@auth0/nextjs-auth0/client'
-import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 function LandingPage() {
+  const [darkMode, setDarkMode] = useState(false)
+
+  useEffect(() => {
+    console.log(darkMode)
+  }, [darkMode])
   return (
     <div className={styles.landingContainer}>
       <div className={styles.backContainer}>
-        <Image
-          src="/darkmode/darkmodeBackgroundMobile.svg"
-          alt="background night sky"
-          layout="responsive"
-          width={100}
-          height={0}
-          style={{ position: 'absolute' }}
-        />
+        
         <LandingComponent />
-        <LandingPageBG darkmode={false} />
+        <LandingPageBG darkmode={darkMode} />
       </div>
+      {darkMode ? <div className={styles.additionalContentDark}>
+      <button onClick={() => setDarkMode(!darkMode)}>Toggle Darkmode</button>
+      </div> :
       <div className={styles.additionalContent}>
-        {/* <p >onvonwoeinvw</p> */}
-      </div>
+      <button onClick={() => setDarkMode(!darkMode)}>Toggle Darkmode</button>
+      </div>}
+      
     </div>
   )
 }

@@ -5,11 +5,18 @@ import styles from '../styles/pageStyles/LandingPageBGDark.module.css'
 interface BGprops {
   darkmode: boolean
 }
-const darkmode = true
 
 function LandingPageBG(props: BGprops) {
-  return darkmode ? (
+  return props.darkmode ? (
     <div className={styles.backgroundConatiner}>
+        <Image
+          src="/darkmode/darkmodeBackgroundMobile.svg"
+          alt="background night sky"
+          layout="responsive"
+          width={100}
+          height={0}
+          style={{ position: 'absolute' }}
+        />
       <Image
         src="/darkmode/darkmodeBackMobile.svg"
         alt="farthest away mountain"
@@ -53,54 +60,54 @@ function LandingPageBG(props: BGprops) {
     </div>
   ) : (
     <div className={styles.backgroundConatiner}>
-      <div className={styles.lightmodeBackgroundContainer}>
         <Image
           src="/lightmode/lightmodeBackgroundMobile.svg"
           alt="an svg of a mountain"
-          fill={true}
-          className={styles.darkmodebackground}
+          layout="responsive"
+          width={100}
+          height={0}
+          style={{ position: 'absolute' }}
         />
-      </div>
-      <div className={styles.backContainer}>
         <Image
           src="/lightmode/lightmodeBackMobile.svg"
           alt="an svg of a mountain"
-          fill={true}
-          className={styles.lightmodeBack}
+          layout="responsive"
+          width={100}
+          height={0}
+          style={{ position: 'absolute' }}
         />
-      </div>
-      <div className={styles.Front3Container}>
         <Image
           src="/lightmode/lightmodeFrontMobile3.svg"
           alt="an svg of a mountain"
-          fill={true}
-          className={styles.lightmodeFront3}
+          layout="responsive"
+          width={100}
+          height={0}
+          style={{ position: 'absolute' }}
         />
-      </div>
-      <div className={styles.Front2Container}>
         <Image
           src="/lightmode/lightmodeFrontMobile2.svg"
           alt="an svg of a mountain"
-          fill={true}
-          className={styles.lightmodeFront2}
+          layout="responsive"
+          width={100}
+          height={0}
+          style={{ position: 'absolute' }}
         />
-      </div>
-      <div className={styles.Front1Container}>
         <Image
           src="/lightmode/lightmodeFrontMobile1.svg"
           alt="an svg of a mountain"
-          fill={true}
-          className={styles.lightmodeFront1}
+          layout="responsive"
+          width={100}
+          height={0}
+          style={{ position: 'absolute' }}
         />
-      </div>
-      <div className={styles.FrontContainer}>
         <Image
           src="/lightmode/lightmodeFrontMobile.svg"
           alt="an svg of a mountain"
-          fill={true}
-          className={styles.lightmodeFront}
+          layout="responsive"
+        width={100}
+        height={0}
+        style={{ zIndex: 10, display: 'block', position: 'relative' }}
         />
-      </div>
     </div>
   )
 }
