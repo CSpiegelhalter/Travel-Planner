@@ -28,7 +28,6 @@ export default function Home() {
   const userId = user?.['https://example.com/id']
   //State for the Modal
   const [isOpen, setIsOpen] = useState(false);
-
   // this sets our location State using this function
   async function setUserLocation() {
     const value: Location = await FindLocation()
@@ -40,7 +39,6 @@ export default function Home() {
   const handleSavedTripsDisplay = async () => {
     setShowInfo(true)
   }
-
   //This is a useEffect used to make sure that the users location is grabbed only once when the page is rendered
   useEffect(() => {
     if (!hasLoaded) {
@@ -48,21 +46,16 @@ export default function Home() {
       setHasLoaded(true)
     }
   }, [])
-
   // this is our key and how we load in our google maps api
   const key: any = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: key,
   })
-
   //sets the space where the map should be to loading... if it is not yet rendered
-  if (!isLoaded){
+  if (!isLoaded) {
     return <div>Loading...</div>
-  } 
-
-  // Sidebar handler
+  }
   //This is the function that calls the PointsOfInterest api and flips the state to show or not show the information sidebar
-
   const callPointsOfInterestsApi = async (typeOfInterest: string) => {
     const params = {
       city: city,
@@ -77,8 +70,6 @@ export default function Home() {
     setPlacesInfo(await data.json())
     setShowInfo(true)
   }
-
- 
   //our final return for home
   return (
     <>
@@ -90,13 +81,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main >
-          {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
+        {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
         <div className={styles.infoContainer}>
-            <HomeHeader locationLabels={locationLabels} handleSavedTripsDisplay={handleSavedTripsDisplay} apiCall={callPointsOfInterestsApi} user={user} />
-            <div>
-                  {isOpen && <Modal setIsOpen={setIsOpen} />}
-            </div>
-          {showInfo && <SideBar placesInfo={placesInfo} setIsOpen={setIsOpen} setShowInfo={setShowInfo}/>}
+          <HomeHeader locationLabels={locationLabels} handleSavedTripsDisplay={handleSavedTripsDisplay} apiCall={callPointsOfInterestsApi} user={user} />
+          <div>
+            {isOpen && <Modal setIsOpen={setIsOpen} />}
+          </div>
+          {showInfo && <SideBar placesInfo={placesInfo} setIsOpen={setIsOpen} setShowInfo={setShowInfo} />}
         </div>
       </main>
     </>
