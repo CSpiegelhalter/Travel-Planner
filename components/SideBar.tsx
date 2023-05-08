@@ -4,15 +4,16 @@ import styles from '../styles/componentStyles/SideBar.module.css'
 import * as Tabs from '@radix-ui/react-tabs';
 
 function SideBar(props: any) {
-
+ 
   return (
+
     <div className={styles.infoSidebar}>
       <Tabs.Root defaultValue="tab1" orientation="vertical">
         <div className={styles.btnContainer}>
-          <Tabs.List aria-label="All trips">
+          <Tabs.List className={styles.tabLists} aria-label="All trips">
             <div className={styles.triggerContainer}>
-              <Tabs.Trigger className={styles.newLocationTab} value="newLoctaionsTab">New locations</Tabs.Trigger>
-              <Tabs.Trigger className={styles.savedLocationTab} value="savedLocationsTab">Saved Locations</Tabs.Trigger>
+              <Tabs.Trigger className={`${styles.tabLabel} ${styles.leftTab}`} value="newLoctaionsTab">New locations</Tabs.Trigger>
+              <Tabs.Trigger className={styles.tabLabel} value="savedLocationsTab">Saved Locations</Tabs.Trigger>
             </div>
           </Tabs.List>
           <button className={styles.closeBtn} onClick={() => props.setShowInfo(false)}>
