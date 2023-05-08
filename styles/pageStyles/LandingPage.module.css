@@ -5,9 +5,15 @@
 .backContainer {
     width: 100vw;
 }
-.additionalContent {
-    background-color: #051c32;
+.additionalContent, .additionalContentDark {
     color:white;
     height: 300px;
     width: 100vw;
+}
+
+.additionalContentDark {
+    background-color: #051c32;
+}
+.additionalContent {
+    background-color: #060047;
 }
