@@ -11,29 +11,32 @@
   .tab-switch {
     display: none;
   }
+
   .tabLabel {
     position: relative;
     margin: 0;
     line-height: 2.75em;
     padding: 0 1.618em;
-    background: #8d8d8d;
+    background: #5e5e5e;
     border-right: 0.125rem solid #8d8d8d;
     color: #fff;
     cursor: pointer;
     top: -0.5rem;
     left: -0.5rem;
     transition: all 0.25s;
-    border-radius: 0;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+    border: 1px;
+    border-radius: 8%;
   }
+
+  .tabLabel[data-state='active'] {
+    background-color: #8d8d8d;
+
+    }
   .leftTab {
     border-top-left-radius: 1rem;
   }
   
-  .tabLabel:active {
-  /* background: #5e5e5e; */
-  background: red;
-  }
+
 
   /* .tabLabel:hover {
     top: 0rem;
@@ -41,8 +44,9 @@
   } */
 
 .infoSidebar {
-  z-index: 2;
-  background-color: grey;
+  /* box-sizing: border-box; */
+  z-index: 1;
+  background-color: #8d8d8d;
   height: 30vh;
     width: 80vw;
     position: fixed;
@@ -52,6 +56,18 @@
     border-radius: 1rem;
     margin: 0.5rem;
     right: 10%;
+    padding-right: 0; 
+  }
+
+  .greyBG {
+    position: relative;
+    background: #5e5e5e;
+    margin: 0;
+    width: 70rem;
+    padding-bottom: 1rem;
+    top: -0.5rem;
+    left: -0.5rem;
+    border-top-right-radius:0.5rem ;
   }
 
   .btnContainer {
@@ -71,11 +87,11 @@
     background: rgb(195, 9, 9);
     transition: all 0.25s ease;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
-    position: sticky;
-    padding:0.5rem;
-    top: 0%;
-    right: 0;
+    top: -2rem;
+    right: 0rem;
     margin-left: 80%;
+    margin-top: 0;
+    position: sticky;
   }
 
   .triggerContainer {

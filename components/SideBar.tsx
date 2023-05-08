@@ -14,6 +14,7 @@ function SideBar(props: any) {
             <div className={styles.triggerContainer}>
               <Tabs.Trigger className={`${styles.tabLabel} ${styles.leftTab}`} value="newLoctaionsTab">New locations</Tabs.Trigger>
               <Tabs.Trigger className={styles.tabLabel} value="savedLocationsTab">Saved Locations</Tabs.Trigger>
+              <div className={styles.greyBG}></div>
             </div>
           </Tabs.List>
           <button className={styles.closeBtn} onClick={() => props.setShowInfo(false)}>
