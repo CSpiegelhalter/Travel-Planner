@@ -1,44 +1,40 @@
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
-import {
-    HamburgerMenuIcon
-} from '@radix-ui/react-icons';
+import { Root, Trigger, Portal, Content, Item } from '@radix-ui/react-dropdown-menu'
+import { HamburgerMenuIcon } from '@radix-ui/react-icons'
 import styles from '../styles/componentStyles/Hamburger.module.css'
 import Link from 'next/link'
-import { useUser } from '@auth0/nextjs-auth0/client';
-
+import { useUser } from '@auth0/nextjs-auth0/client'
 
 function Hamburger(props: any) {
+  return (
+    <Root>
+      <Trigger asChild>
+        <button className="IconButton" aria-label="Customise options">
+          <HamburgerMenuIcon />
+        </button>
+      </Trigger>
 
-    return (
-        <DropdownMenu.Root>
-            <DropdownMenu.Trigger asChild>
-                <button className="IconButton" aria-label="Customise options">
-                    <HamburgerMenuIcon />
-                </button>
-            </DropdownMenu.Trigger>
-
-            <DropdownMenu.Portal>
-                <DropdownMenu.Content className="DropdownMenuContent" sideOffset={5}>
-                   { props.user as any &&
-                   <DropdownMenu.Item  className={styles.DropdownMenuItem}>
-                    <Link href="/api/auth/logout">Logout</Link>
-                    </DropdownMenu.Item>
-                        }
-                        {!props.user &&
-                    <DropdownMenu.Item  className={styles.DropdownMenuItem}>
-                        <Link href="/api/auth/login">Login/Signup</Link>
-                    </DropdownMenu.Item> 
-                   }
-                    <DropdownMenu.Item className={styles.DropdownMenuItem}>
-                    <Link href="/profilePage"> Profile</Link>
-                    </DropdownMenu.Item>
-                    <DropdownMenu.Item className={styles.DropdownMenuItem}>
-                    <Link href="/home">Home</Link>
-                    </DropdownMenu.Item>
-                </DropdownMenu.Content>
-            </DropdownMenu.Portal>
-        </DropdownMenu.Root>
-    );
+      <Portal>
+        <Content className="DropdownMenuContent" sideOffset={5}>
+          {(props.user as any) && (
+            <Item className={styles.DropdownMenuItem}>
+              <Link href="/api/auth/logout">Logout</Link>
+            </Item>
+          )}
+          {!props.user && (
+            <Item className={styles.DropdownMenuItem}>
+              <Link href="/api/auth/login">Login/Signup</Link>
+            </Item>
+          )}
+          <Item className={styles.DropdownMenuItem}>
+            <Link href="/profilePage"> Profile</Link>
+          </Item>
+          <Item className={styles.DropdownMenuItem}>
+            <Link href="/home">Home</Link>
+          </Item>
+        </Content>
+      </Portal>
+    </Root>
+  )
 }
 
-export default Hamburger;
+export default Hamburger

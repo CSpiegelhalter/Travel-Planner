@@ -19,10 +19,10 @@ function LandingPage() {
       </div>
         <LandingComponent />
       {darkMode ? <div className={styles.additionalContentDark}>
-      <button onClick={() => setDarkMode(!darkMode)}>Toggle Darkmode</button>
+      {/* <button onClick={() => setDarkMode(!darkMode)}>Toggle Darkmode</button> */}
       </div> :
       <div className={styles.additionalContent}>
-      <button onClick={() => setDarkMode(!darkMode)}>Toggle Darkmode</button>
+      {/* <button onClick={() => setDarkMode(!darkMode)}>Toggle Darkmode</button> */}
       </div>}
       
     </div>

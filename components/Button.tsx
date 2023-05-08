@@ -2,10 +2,9 @@ import React, { MouseEventHandler, useState, useEffect } from 'react'
 
 
 type ButtonProps = {
-  handler: any
+  handler?: any
   name: string
   value: string
-  // disabled: boolean
 }
 
 function Button(props: ButtonProps) {

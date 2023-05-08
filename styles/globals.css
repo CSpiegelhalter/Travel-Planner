@@ -77,6 +77,38 @@ button:hover {
 
 }
 
+.landingPageFindPlaces {
+  box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 14px 40px;
+gap: 5px;
+
+width: 174px;
+height: 42px;
+
+background: #E64089;
+border: 1px solid #060047;
+box-shadow: 4px 4px 0px #000000;
+border-radius: 4px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 1;
+font-weight: 600;
+font-size: 16px;
+line-height: 100%;
+margin-bottom: 50vh;
+}
+
 .formControl {
   margin-top: 0.5rem;
 }
