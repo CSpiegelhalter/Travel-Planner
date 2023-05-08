@@ -1,11 +1,21 @@
 .cardContainer {
     color: white;
     border: 5px solid var(--color-secondary);
-    border-radius: 10%;
+    border-radius: 3%/10%;
     padding: 5%;
+    margin-left:1.7rem;
+    margin-right:1rem;
+    margin-top:0.1rem;
+    margin-bottom: 1rem;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    background: #636363;
   }
   
   .cardBtnContainer {
     display: flex;
     justify-content: space-around;
   }
+
+  /* border-radius: 7%/10%; for mobile  */
