@@ -1,13 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/pageStyles/Home.module.css'
-import NavBar from '@/components/NavBar'
 import { useState, useEffect } from 'react'
 import { useLoadScript } from '@react-google-maps/api'
 import FindLocation, { Location } from '@/hooks/FindLocation'
 import Map from '@/components/Map'
-import Button from '@/components/Button'
 import SideBar from '@/components/SideBar'
-import PlaceComponent from '@/components/PlaceComponent'
 import { locationLabels } from '@/constants/constants'
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Modal from '@/components/Modal'
