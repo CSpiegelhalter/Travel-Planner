@@ -33,7 +33,7 @@ function SideBar(props: any) {
             />)) : null}
           </Tabs.Content>
         <Tabs.Content value="savedLocationsTab">
-        <Card name="test" rating="5" price="" address="42 wallaby way Sydney Aus" ratings_count="420" allowAddToProfile={false} />
+        <Card name="test" rating="5" price="" address="42 wallaby way Sydney Aus" ratings_count="420" allowAddToProfile={false} setIsOpen={props.setIsOpen}  setShowInfo={props.setShowInfo}/>
         </Tabs.Content>
       </Tabs.Root>
     </div>
