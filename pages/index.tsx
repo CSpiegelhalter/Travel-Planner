@@ -15,9 +15,9 @@ function LandingPage() {
     <div className={styles.landingContainer}>
       <div className={styles.backContainer}>
         
-        <LandingComponent />
         <LandingPageBG darkmode={darkMode} />
       </div>
+        <LandingComponent />
       {darkMode ? <div className={styles.additionalContentDark}>
       <button onClick={() => setDarkMode(!darkMode)}>Toggle Darkmode</button>
       </div> :

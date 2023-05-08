@@ -1,13 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/pageStyles/Home.module.css'
-import NavBar from '@/components/NavBar'
 import { useState, useEffect } from 'react'
 import { useLoadScript } from '@react-google-maps/api'
 import FindLocation, { Location } from '@/hooks/FindLocation'
 import Map from '@/components/Map'
-import Button from '@/components/Button'
 import SideBar from '@/components/SideBar'
-import PlaceComponent from '@/components/PlaceComponent'
 import { locationLabels } from '@/constants/constants'
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Modal from '@/components/Modal'
@@ -23,14 +20,11 @@ export default function Home() {
   const [disabled, setDisabled] = useState<boolean>(false)
   // this is to hold onto our data that we get from our api call
   const [placesInfo, setPlacesInfo] = useState()
-  //state to handle whether or not the saved Trips should be displayed
-  const [showSavedTrips, setShowSavedTrips] = useState<boolean>(false)
   //auth0 user to allow us to know if we are logged in or not
   const { user, error, isLoading } = useUser()
   const userId = user?.['https://example.com/id']
   //State for the Modal
   const [isOpen, setIsOpen] = useState(false);
-
   // this sets our location State using this function
   async function setUserLocation() {
     const value: Location = await FindLocation()
@@ -40,10 +34,8 @@ export default function Home() {
   }
   //used to change the t/f for what the sidebar will show 
   const handleSavedTripsDisplay = async () => {
-    setShowSavedTrips(prevVal => !prevVal)
     setShowInfo(true)
   }
-
   //This is a useEffect used to make sure that the users location is grabbed only once when the page is rendered
   useEffect(() => {
     if (!hasLoaded) {
@@ -51,21 +43,16 @@ export default function Home() {
       setHasLoaded(true)
     }
   }, [])
-
   // this is our key and how we load in our google maps api
   const key: any = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: key,
   })
-
   //sets the space where the map should be to loading... if it is not yet rendered
-  if (!isLoaded){
+  if (!isLoaded) {
     return <div>Loading...</div>
-  } 
-
-  // Sidebar handler
+  }
   //This is the function that calls the PointsOfInterest api and flips the state to show or not show the information sidebar
-
   const callPointsOfInterestsApi = async (typeOfInterest: string) => {
     const params = {
       city: city,
@@ -79,10 +66,7 @@ export default function Home() {
     console.log('bouta hit callback')
     setPlacesInfo(await data.json())
     setShowInfo(true)
-    setShowSavedTrips(false)
   }
-
- 
   //our final return for home
   return (
     <>
@@ -94,13 +78,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main >
-          {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
+        {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
         <div className={styles.infoContainer}>
-            <HomeHeader locationLabels={locationLabels} handleSavedTripsDisplay={handleSavedTripsDisplay} apiCall={callPointsOfInterestsApi} user={user} />
-            <div>
-                  {isOpen && <Modal setIsOpen={setIsOpen} />}
-            </div>
-          {showInfo && <SideBar placesInfo={placesInfo} showSavedTrips={showSavedTrips} setIsOpen={setIsOpen} setShowInfo={setShowInfo}/>}
+          <HomeHeader locationLabels={locationLabels} handleSavedTripsDisplay={handleSavedTripsDisplay} apiCall={callPointsOfInterestsApi} user={user} />
+          <div>
+            {isOpen && <Modal setIsOpen={setIsOpen} />}
+          </div>
+          {showInfo && <SideBar placesInfo={placesInfo} setIsOpen={setIsOpen} setShowInfo={setShowInfo} />}
         </div>
       </main>
     </>

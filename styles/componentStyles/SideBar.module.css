@@ -1,30 +1,84 @@
-.closeBtn {
-  cursor: pointer;
-  font-weight: 500;
-  /* padding: 4px 8px; */
-  border-radius: 0.5rem;
-  border: none;
-  font-size: 0.75rem;
-  color: #2c3e50;
-  background: rgb(195, 9, 9);
-  transition: all 0.25s ease;
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
-  position: sticky;
-  top: 5%;
-  right: 0;
-  margin-left: 85%;
-}
+  .tabLists {
+  }
+  .tabLists::before,
+  .tabLists::after {
+    content: "";
+    display: table;
+  }
+  .tabLists::after {
+    clear: both;
+  }
+  .tab-switch {
+    display: none;
+  }
+  .tabLabel {
+    position: relative;
+    margin: 0;
+    line-height: 2.75em;
+    padding: 0 1.618em;
+    background: #8d8d8d;
+    border-right: 0.125rem solid #8d8d8d;
+    color: #fff;
+    cursor: pointer;
+    top: -0.5rem;
+    left: -0.5rem;
+    transition: all 0.25s;
+    border-radius: 0;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+  }
+  .leftTab {
+    border-top-left-radius: 1rem;
+  }
+  
+  .tabLabel:active {
+  /* background: #5e5e5e; */
+  background: red;
+  }
+
+  /* .tabLabel:hover {
+    top: 0rem;
+    transition: top 0.25s;
+  } */
 
 .infoSidebar {
-    z-index: 2;
-    background-color: grey;
-    height: 30vh;
-    width: 50vw;
+  z-index: 2;
+  background-color: grey;
+  height: 30vh;
+    width: 80vw;
     position: fixed;
     bottom: 0%;
     overflow: hidden;
     overflow-y: scroll;
     border-radius: 1rem;
     margin: 0.5rem;
-    right: 25%;
+    right: 10%;
+  }
+
+  .btnContainer {
+    display:flex;
+    justify-content:space-between;
+    /* margin: 0; */
+  }
+  
+  .closeBtn {
+    cursor: pointer;
+    font-weight: 500;
+    /* padding: 4px 8px; */
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 0.75rem;
+    color: #2c3e50;
+    background: rgb(195, 9, 9);
+    transition: all 0.25s ease;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+    position: sticky;
+    padding:0.5rem;
+    top: 0%;
+    right: 0;
+    margin-left: 80%;
+  }
+
+  .triggerContainer {
+    padding: 0.5rem;
+    display: flex;
   }
