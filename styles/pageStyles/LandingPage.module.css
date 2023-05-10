@@ -7,8 +7,9 @@
 }
 .additionalContent, .additionalContentDark {
     color:white;
-    height: 300px;
+    height: auto;
     width: 100vw;
+    z-index: 100;
 }
 
 .additionalContentDark {
@@ -16,4 +17,9 @@
 }
 .additionalContent {
     background-color: #060047;
+}
+
+.testButton {
+    margin-top: 20vh;
+    z-index: 100;
 }

@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Hamburger from './Hamburger';
 import Dropdown from './Dropdown';
 import styles from '../styles/componentStyles/HomeHeader.module.css'
-import Link from 'next/link';
 import Button from './Button';
 import PlaceComponent from './PlaceComponent';
 
@@ -28,7 +27,7 @@ function HomeHeader(props: HomeHeader) {
                 <Button name="sideBarDataSwitch" handler={props.handleSavedTripsDisplay as any} value='Saved Places' />
             </div> */}
                 <div className={styles.burgerContainer} >
-                    <Hamburger user={props.user} />
+                    <Hamburger style={{ lineHeight: '0.2rem', padding: '0.4rem 0.5rem' }} user={props.user} />
                 </div>
             </div>
             <div className={styles.btnContainer}>

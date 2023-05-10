@@ -8,8 +8,8 @@ function Hamburger(props: any) {
   return (
     <Root>
       <Trigger asChild>
-        <button className="IconButton" aria-label="Customise options">
-          <HamburgerMenuIcon />
+        <button style={props.style} className="IconButton" aria-label="Customise options">
+          <HamburgerMenuIcon height={25} width={25} />
         </button>
       </Trigger>
 

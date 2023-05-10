@@ -5,6 +5,8 @@ type ButtonProps = {
   handler?: any
   name: string
   value: string
+  style?: React.CSSProperties
+
 }
 
 function Button(props: ButtonProps) {
@@ -21,7 +23,7 @@ function Button(props: ButtonProps) {
   }, [])
   return (
     <div>
-      <button onClick={() => handleClick()} disabled={disabled} className={props.name}>
+      <button style={props.style} onClick={() => handleClick()} disabled={disabled} className={props.name}>
         {props.value}
       </button>
     </div>

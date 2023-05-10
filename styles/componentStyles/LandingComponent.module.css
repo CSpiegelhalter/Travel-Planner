@@ -1,5 +1,5 @@
 .background {
-    /* z-index: 10; */
+    z-index: 20;
     position: absolute;
     top: 0;
     height: 100vh;
@@ -12,8 +12,8 @@
 .title {
     text-align: center;
     font-weight: 700;
-font-size: 40px;
-line-height: 47px;
+    font-size: 40px;
+    line-height: 47px;
     padding-top: 5rem;
     color:white;
     margin: 2rem;
@@ -39,5 +39,5 @@ line-height: 47px;
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 10;
+    z-index: 25;
 }
