@@ -1,18 +1,24 @@
+'use-client'
+
 import React from 'react'
 import styles from '../styles/componentStyles/LandingComponent.module.css'
-import Link from 'next/link'
+import Button from './Button'
+import { useRouter } from 'next/router'
+import Hamburger from './Hamburger'
 
-function LandingComponent() {
+function LandingComponent({ darkmode }) {
+  const router = useRouter()
+
   return (
-    <div className={styles.background}>
-      <h1 className={styles.title}>You are so stinky.</h1>
-      <h2 className={styles.description}>
-        It is honestly sickening, I would not believe a mere mortal could great such a stench.It is appalling
-      </h2>
-      <h3 className={styles.getStarted}>
-        click <Link href="/home">here</Link> to get started
-      </h3>
+    <>
+    <div className={styles.ham}>
+    <Hamburger style={{ background: 'none' }} />
     </div>
+      <div className={styles.background}>
+        <p className={styles.title}>A tool to help you find fun and unique things to do on your travels.</p>
+        <Button style={darkmode ? {background: '#19376d', border: '1px solid #060047'} : {background: '#E64089', border: '1px solid #051c32'}}  name="landingPageFindPlaces" value="Find Places >>" handler={() => router.push('/home')} />
+      </div>
+    </>
   )
 }
 
