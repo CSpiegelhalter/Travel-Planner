@@ -2,7 +2,7 @@ import Button from './Button'
 import styles from '../styles/componentStyles/LandingPageAdditionalContent.module.css'
 import Image from 'next/image'
 
-function LandingPageAddtionalContent({ darkmode }) {
+function LandingPageAddtionalContent({ darkmode, router }) {
   return (
     <>
       <div className={styles.infoContainer}>
@@ -21,6 +21,11 @@ function LandingPageAddtionalContent({ darkmode }) {
           layout="responsive"
           width={100}
           height={0}
+          style={{
+            borderRadius: '3%/5%',
+            filter: 'brightness(0.85)',
+            boxShadow: 'rgb(255 255 255 / 20%) 0px 0px 0px 2px',
+          }}
         />
 
         <p className={styles.descriptions}>
@@ -39,51 +44,80 @@ function LandingPageAddtionalContent({ darkmode }) {
         </p>
       </div>
       <div className={styles.examplePlaces}>
-      <p className={styles.headers}>KattenKabinet (Amsterdam)</p>
-      <Image
+        <p className={styles.headers}>KattenKabinet (Amsterdam)</p>
+        <Image
           src="/cat.jpg"
           alt="Cat painting"
           layout="responsive"
           width={100}
           height={0}
-          style={{ marginTop: '2vh' }}
-
+          style={{ marginTop: '2vh', borderRadius: '3%/5%', boxShadow: 'rgb(255 255 255 / 20%) 0px 0px 0px 2px' }}
         />
-      <p>This one of a kind museum is dedicated to cat art. Also featuring art by Pablo Picasso, Rembrandt, Henri de Toulouse-Lautrec, Corneille, Sal Meijer, Théophile Steinlen, and Jože Ciuha, among others this museum cannot be missed!</p>
+        <p>
+          This one of a kind museum is dedicated to cat art. Also featuring art by Pablo Picasso, Rembrandt, Henri de
+          Toulouse-Lautrec, Corneille, Sal Meijer, Théophile Steinlen, and Jože Ciuha, among others this museum cannot
+          be missed!
+        </p>
 
-      <p className={styles.headers}>Landschaftspark Diving Gasometer (Germany)</p>
-      <Image
+        <p className={styles.headers}>Landschaftspark Diving Gasometer (Germany)</p>
+        <Image
           src="/diving.jpg"
           alt="Diver"
           layout="responsive"
           width={100}
           height={0}
-          style={{ marginTop: '2vh' }}
+          style={{ marginTop: '2vh', borderRadius: '3%/5%', boxShadow: 'rgb(255 255 255 / 20%) 0px 0px 0px 2px' }}
         />
-      <p>The diving gasometer in the Landscape Park Duisburg Nord is the largest indoor diving basin in Europe. Float down and find a shipwreck, an aircraft wreck, two cars, an artificial reef and lots of other objects are an invitation to every diver to come and explore and discover.</p>
+        <p>
+          The diving gasometer in the Landscape Park Duisburg Nord is the largest indoor diving basin in Europe. Float
+          down and find a shipwreck, an aircraft wreck, two cars, an artificial reef and lots of other objects are an
+          invitation to every diver to come and explore and discover.
+        </p>
 
-      <p className={styles.headers}>THE UFO (Sweden)</p>
-      <Image
+        <p className={styles.headers}>THE UFO (Sweden)</p>
+        <Image
           src="/ufo.jpg"
           alt="Diver"
           layout="responsive"
           width={100}
           height={0}
-          style={{ marginTop: '2vh' }}
+          style={{
+            marginTop: '2vh',
+            borderRadius: '5%',
+            filter: 'brightness(2)',
+            boxShadow: 'rgb(255 255 255 / 20%) 0px 0px 0px 2px',
+          }}
         />
-      <p>Designed to be the most unexpected thing you can encounter in the forest, you are able to get this unique hotel along with 4 other guests.</p>
+        <p>
+          Designed to be the most unexpected thing you can encounter in the forest, you are able to get this unique
+          hotel along with 4 other guests.
+        </p>
 
-      <p className={styles.headers}>These are just some examples of places to see. There are many more to explore!</p>
-      <Button
-        style={
-          darkmode
-            ? { background: '#19376d', border: '1px solid #060047' }
-            : { background: '#E64089', border: '1px solid #051c32' }
-        }
-        name="landingPageFindPlaces"
-        value="Get Started"
-        handler={() => router.push('/home')}
-      />
+        <p className={styles.headers}>These are just some examples of places to see. There are many more to explore!</p>
+        <Button
+          style={
+            darkmode
+              ? {
+                  background: '#19376d',
+                  border: '1px solid #141e61',
+                  boxShadow: '4px 4px 0px #061933',
+                  margin: '17vh auto 17vh auto',
+                  padding: '30px 110px',
+                  height: '60px',
+                }
+              : {
+                  background: '#e64089',
+                  border: '1px solid #060047',
+                  boxShadow: 'none',
+                  margin: '17vh auto 17vh auto',
+                  padding: '30px 110px',
+                  height: '60px',
+                }
+          }
+          name="landingPageFindPlaces"
+          value="Get Started"
+          handler={() => router.push('/home')}
+        />
       </div>
     </>
   )
