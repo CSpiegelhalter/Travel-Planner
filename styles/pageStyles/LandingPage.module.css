@@ -17,6 +17,7 @@
 }
 .additionalContent {
     background-color: #060047;
+    overflow:auto;
 }
 
 .testButton {
