@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import styles from '../styles/pageStyles/LandingPageBGDark.module.css'
+import { Darkmode } from '@/Types/types'
 
-interface BGprops {
-  darkmode: boolean
-}
 
-function LandingPageBG(props: BGprops) {
+function LandingPageBG(props: Darkmode) {
   return props.darkmode ? (
     <div className={styles.backgroundConatiner}>
         <Image

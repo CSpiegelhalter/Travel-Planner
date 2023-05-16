@@ -16,7 +16,6 @@ interface HomeHeader {
 function HomeHeader(props: HomeHeader) {
     const testList = ['spain', 'rome', 'vacay', 'our getaway']
 
-
     return (
         <header className={styles.mainHeader}>
             <div className={styles.centerTop}>

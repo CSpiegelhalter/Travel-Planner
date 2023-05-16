@@ -1,8 +1,14 @@
 import Button from './Button'
 import styles from '../styles/componentStyles/LandingPageAdditionalContent.module.css'
 import Image from 'next/image'
+import { Darkmode } from '@/Types/types'
+import { useReducer } from 'react'
+import { useRouter } from 'next/router'
 
-function LandingPageAddtionalContent({ darkmode }) {
+
+function LandingPageAddtionalContent({ darkmode }: Darkmode) {
+  const router = useRouter()
+ 
   return (
     <>
       <div className={styles.infoContainer}>

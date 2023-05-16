@@ -2,7 +2,6 @@ import { Root, Trigger, Portal, Content, Item } from '@radix-ui/react-dropdown-m
 import { HamburgerMenuIcon } from '@radix-ui/react-icons'
 import styles from '../styles/componentStyles/Hamburger.module.css'
 import Link from 'next/link'
-import { useUser } from '@auth0/nextjs-auth0/client'
 
 function Hamburger(props: any) {
   return (

@@ -5,8 +5,11 @@ import styles from '../styles/componentStyles/LandingComponent.module.css'
 import Button from './Button'
 import { useRouter } from 'next/router'
 import Hamburger from './Hamburger'
+import { Darkmode } from '@/Types/types'
 
-function LandingComponent({ darkmode }) {
+
+
+function LandingComponent({ darkmode }: Darkmode) {
   const router = useRouter()
 
   return (
