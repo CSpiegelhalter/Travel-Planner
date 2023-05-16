@@ -21,7 +21,7 @@ function HomeHeader(props: HomeHeader) {
             <div className={styles.centerTop}>
                 <Dropdown tripsList={testList} />
                 <div className={styles.placeContainer}>
-                    <PlaceComponent isLoaded={props.isLoaded}/>
+                    <PlaceComponent isLoaded={props.isLoaded} />
                 </div>
                 <div className={styles.burgerContainer} >
                     <Hamburger style={{ lineHeight: '0.2rem', padding: '0.4rem 0.5rem' }} user={props.user} />
@@ -29,7 +29,7 @@ function HomeHeader(props: HomeHeader) {
             </div>
             <div className={styles.btnContainer}>
                 {Object.keys(props.locationLabels).map((point, index) => (
-                    <Button key={index} name="attractionsFilterBtn" handler={props.apiCall} value={point} disabled=""/>
+                    <Button key={index} name="attractionsFilterBtn" handler={props.apiCall} value={point} disabled="" />
                 ))}
             </div>
 

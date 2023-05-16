@@ -1,7 +1,6 @@
 import { GoogleMap } from '@react-google-maps/api'
 
 //This is where we make the map. We pass the location from the home component as a prop
-
 export default function Map(props: any) {
   return (
     <GoogleMap

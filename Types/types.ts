@@ -20,11 +20,13 @@ export interface Darkmode {
     lng: number
     attractionType: object
     ratingsCount:number
-    email: any 
-    user: number
     setIsOpen: Function
     setShowInfo: Function
 
+  }
+
+  export interface Modal{
+    setIsOpen: Function
   }
 
   export interface Dropdown {

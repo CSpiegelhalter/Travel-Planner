@@ -4,7 +4,7 @@ import styles from '../styles/componentStyles/SideBar.module.css'
 import * as Tabs from '@radix-ui/react-tabs';
 
 function SideBar(props: any) {
- 
+
   return (
 
     <div className={styles.infoSidebar}>
@@ -37,7 +37,7 @@ function SideBar(props: any) {
             />)) : null}
         </Tabs.Content>
         <Tabs.Content value="savedLocationsTab">
-          <Card name="test" rating={69}  address="42 wallaby way Sydney Aus" ratingsCount={420} setIsOpen={props.setIsOpen} setShowInfo={props.setShowInfo} />
+          <Card name="test" rating={69} address="42 wallaby way Sydney Aus" ratingsCount={420} setIsOpen={props.setIsOpen} setShowInfo={props.setShowInfo} lat={12.3123} lng={12.3123} attractionType={{}} />
         </Tabs.Content>
       </Tabs.Root>
     </div>

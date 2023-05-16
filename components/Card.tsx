@@ -7,18 +7,8 @@ import { Card } from '@/Types/types'
 
 function Card(props: Card) {
 
-  const checkTypes = (arr: any) => {
-    for (let i of arr) {
-
-      console.log(i, typeof i)
-    }
-  }
-
-  const { user } = useUser()
   const [disabled, setDisabled] = useState(false)
-  const locationData = [props?.name, props?.rating, props?.address, props?.lat, props?.lng, props?.attractionType, props?.ratingsCount, user?.email, user?.['https://example.com/id']]
-
-  checkTypes(locationData)
+  const locationData = [props?.name, props?.rating, props?.address, props?.lat, props?.lng, props?.attractionType, props?.ratingsCount]
 
   const addAttractionToDB = async () => {
     const params = {
