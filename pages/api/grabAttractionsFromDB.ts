@@ -7,7 +7,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         method: 'POST',
         body: req.body,
         headers: {
-            // 'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
     })
