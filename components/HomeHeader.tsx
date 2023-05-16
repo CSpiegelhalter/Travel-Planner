@@ -29,7 +29,7 @@ function HomeHeader(props: HomeHeader) {
             </div>
             <div className={styles.btnContainer}>
                 {Object.keys(props.locationLabels).map((point, index) => (
-                    <Button key={index} name="attractionsFilterBtn" handler={props.apiCall} value={point} />
+                    <Button key={index} name="attractionsFilterBtn" handler={props.apiCall} value={point} disabled=""/>
                 ))}
             </div>
 

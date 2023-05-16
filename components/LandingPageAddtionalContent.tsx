@@ -2,11 +2,10 @@ import Button from './Button'
 import styles from '../styles/componentStyles/LandingPageAdditionalContent.module.css'
 import Image from 'next/image'
 import { Darkmode } from '@/Types/types'
-import { useReducer } from 'react'
-import { useRouter } from 'next/router'
 
 
-function LandingPageAddtionalContent({ darkmode, router }) {
+
+function LandingPageAddtionalContent({ darkmode, router }: Darkmode) {
   return (
     <>
       <div className={styles.infoContainer}>
@@ -121,6 +120,7 @@ function LandingPageAddtionalContent({ darkmode, router }) {
           name="landingPageFindPlaces"
           value="Get Started"
           handler={() => router.push('/home')}
+          disabled=""
         />
       </div>
     </>

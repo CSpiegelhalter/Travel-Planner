@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import styles from '../styles/componentStyles/DropDown.module.css'
+import { Dropdown } from '@/Types/types';
 
 
-function Dropdown(props: any) {
+function Dropdown(props: Dropdown) {
     const [selector, setSelector] = useState('Bucket List')
 
     const selectorHandler = (val: any) => {
