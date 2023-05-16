@@ -28,9 +28,13 @@ export default function Home() {
   // this sets our location State using this function
   async function setUserLocation() {
     const value: Location = await FindLocation()
-    setLocation({ lat: value.lat, lng: value.lng })
-    setCity(value.city)
-    return value
+    if (value) {
+      setLocation({ lat: value.lat, lng: value.lng })
+      setCity(value.city)
+    }
+    else{
+      setLocation({ lat: 51.5072, lng: 0.1276 })
+    }
   }
   //used to change the t/f for what the sidebar will show 
   const handleSavedTripsDisplay = async () => {
@@ -45,8 +49,10 @@ export default function Home() {
   }, [])
   // this is our key and how we load in our google maps api
   const key: any = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+  const libraries: Array<'places'> = ['places']
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: key,
+    libraries: libraries,
   })
   //sets the space where the map should be to loading... if it is not yet rendered
   if (!isLoaded) {
@@ -78,9 +84,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main >
-        {location ? <Map location={location} /> : <Map location={{ lat: 51.5072, lng: 0.1276 }} />}
+         <Map location={location} /> 
         <div className={styles.infoContainer}>
-          <HomeHeader locationLabels={locationLabels} handleSavedTripsDisplay={handleSavedTripsDisplay} apiCall={callPointsOfInterestsApi} user={user} />
+          <HomeHeader isLoaded={isLoaded} locationLabels={locationLabels} handleSavedTripsDisplay={handleSavedTripsDisplay} apiCall={callPointsOfInterestsApi} user={user} />
           <div>
             {isOpen && <Modal setIsOpen={setIsOpen} />}
           </div>

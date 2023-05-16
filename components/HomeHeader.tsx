@@ -10,6 +10,7 @@ interface HomeHeader {
     handleSavedTripsDisplay: Function,
     apiCall: Function,
     user: any
+    isLoaded: any
 }
 
 function HomeHeader(props: HomeHeader) {
@@ -21,11 +22,8 @@ function HomeHeader(props: HomeHeader) {
             <div className={styles.centerTop}>
                 <Dropdown tripsList={testList} />
                 <div className={styles.placeContainer}>
-                    <PlaceComponent />
+                    <PlaceComponent isLoaded={props.isLoaded}/>
                 </div>
-                {/* <div className={styles.pointsOfInterestFilterContainer}>
-                <Button name="sideBarDataSwitch" handler={props.handleSavedTripsDisplay as any} value='Saved Places' />
-            </div> */}
                 <div className={styles.burgerContainer} >
                     <Hamburger style={{ lineHeight: '0.2rem', padding: '0.4rem 0.5rem' }} user={props.user} />
                 </div>
