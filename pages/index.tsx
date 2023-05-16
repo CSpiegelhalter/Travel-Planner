@@ -17,7 +17,7 @@ function LandingPage() {
   return (
     <div className={styles.landingContainer}>
       <div className={styles.backContainer}>
-        <LandingPageBG darkmode={darkMode} />
+        <LandingPageBG darkmode={darkMode} router />
       </div>
         <LandingComponent router={router} darkmode={darkMode} />
       <div style={darkMode ? { backgroundColor: '#051c32' } : { backgroundColor: '#060047' }} className={styles.additionalContent}>

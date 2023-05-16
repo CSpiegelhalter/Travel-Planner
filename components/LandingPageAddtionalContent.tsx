@@ -1,8 +1,9 @@
 import Button from './Button'
 import styles from '../styles/componentStyles/LandingPageAdditionalContent.module.css'
 import Image from 'next/image'
+import { Darkmode } from '@/Types/types'
 
-function LandingPageAddtionalContent({ darkmode, router }) {
+function LandingPageAddtionalContent({ darkmode, router }: Darkmode) {
   return (
     <>
       <div className={styles.infoContainer}>
@@ -98,25 +99,26 @@ function LandingPageAddtionalContent({ darkmode, router }) {
           style={
             darkmode
               ? {
-                  background: '#19376d',
-                  border: '1px solid #141e61',
-                  boxShadow: '4px 4px 0px #061933',
-                  margin: '17vh auto 17vh auto',
-                  padding: '30px 110px',
-                  height: '60px',
-                }
+                background: '#19376d',
+                border: '1px solid #141e61',
+                boxShadow: '4px 4px 0px #061933',
+                margin: '17vh auto 17vh auto',
+                padding: '30px 110px',
+                height: '60px',
+              }
               : {
-                  background: '#e64089',
-                  border: '1px solid #060047',
-                  boxShadow: 'none',
-                  margin: '17vh auto 17vh auto',
-                  padding: '30px 110px',
-                  height: '60px',
-                }
+                background: '#e64089',
+                border: '1px solid #060047',
+                boxShadow: 'none',
+                margin: '17vh auto 17vh auto',
+                padding: '30px 110px',
+                height: '60px',
+              }
           }
           name="landingPageFindPlaces"
           value="Get Started"
           handler={() => router.push('/home')}
+          disabled=""
         />
       </div>
     </>

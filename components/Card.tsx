@@ -2,14 +2,13 @@ import React, { useState } from 'react'
 import Button from './Button'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import styles from '@/styles/componentStyles/Card.module.css'
+import { Card } from '@/Types/types'
 
 
-function Card(props: any) {
+function Card(props: Card) {
 
-  const { user, isLoading, error } = useUser()
   const [disabled, setDisabled] = useState(false)
-  const locationData = [props?.name, props?.rating, props?.address, props?.lat, props?.lng, props?.attraction_type, props?.ratings_count, user?.email, user?.['https://example.com/id']]
-
+  const locationData = [props?.name, props?.rating, props?.address, props?.lat, props?.lng, props?.attractionType, props?.ratingsCount]
 
   const addAttractionToDB = async () => {
     const params = {
@@ -41,15 +40,14 @@ function Card(props: any) {
     <div className={styles.cardContainer}>
       <p>{props.name}</p>
       <p className="rating">
-        {props.rating}, Number of ratings {props.ratings_number}
+        {props.rating}, Number of ratings {props.ratingsCount}
       </p>
-      <p className="priceRange">Price Level: {props.price}</p>
       <p className="address">{props.address}</p>
-      <p className="operatingHours"></p>
-      {props.phone && <p className="phone-number">{props.phone}</p>}
+      <p>{props.lat}, {props.lng}</p>
+      {props.attractionType ? <p>{Object.keys(props.attractionType)}</p> : null}
       <div className={styles.cardBtnContainer}>
-        {props.allowAddToProfile ? <Button handler={addAttractionToDB as any} name="card-btn-addToProfile" value="Add to profile!" disabled={disabled}></Button> : null}
-        <Button handler={() => clickHandler()} name="card-btn-addToTrip" value="Add to trip!"></Button>
+        <Button handler={addAttractionToDB as any} name="card-btn-addToProfile" value="Add to profile!" disabled={disabled}></Button>
+        <Button handler={() => clickHandler()} name="card-btn-addToTrip" value="Add to trip!" disabled=''></Button>
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Dropdown from './Dropdown'
@@ -10,18 +10,15 @@ import Button from './Button'
 function NavBar(props: any) {
   const testList = ['spain', 'rome', 'vacay', 'our getaway']
 
-  const holder = async () => {console.log('cock')}
-
   return (
-      <header className={styles.mainHeader}>
-        <div className={styles.buttonContainer}>
-        <Dropdown tripsList={testList}/> 
-        </div>
-
-        <div className={styles.burgerContainer} >
+    <header className={styles.mainHeader}>
+      <div className={styles.buttonContainer}>
+        <Dropdown tripsList={testList} />
+      </div>
+      <div className={styles.burgerContainer} >
         <Hamburger />
-        </div>
-      </header>
+      </div>
+    </header>
   )
 }
 

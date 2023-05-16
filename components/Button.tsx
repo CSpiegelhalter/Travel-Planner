@@ -1,13 +1,5 @@
 import React, { MouseEventHandler, useState, useEffect } from 'react'
-
-
-type ButtonProps = {
-  handler?: any
-  name: string
-  value: string
-  style?: React.CSSProperties
-
-}
+import { ButtonProps } from '@/Types/types'
 
 function Button(props: ButtonProps) {
   const [disabled, setDisabled] = useState(false)

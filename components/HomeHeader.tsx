@@ -10,29 +10,26 @@ interface HomeHeader {
     handleSavedTripsDisplay: Function,
     apiCall: Function,
     user: any
+    isLoaded: any
 }
 
 function HomeHeader(props: HomeHeader) {
     const testList = ['spain', 'rome', 'vacay', 'our getaway']
-
 
     return (
         <header className={styles.mainHeader}>
             <div className={styles.centerTop}>
                 <Dropdown tripsList={testList} />
                 <div className={styles.placeContainer}>
-                    <PlaceComponent />
+                    <PlaceComponent isLoaded={props.isLoaded} />
                 </div>
-                {/* <div className={styles.pointsOfInterestFilterContainer}>
-                <Button name="sideBarDataSwitch" handler={props.handleSavedTripsDisplay as any} value='Saved Places' />
-            </div> */}
                 <div className={styles.burgerContainer} >
                     <Hamburger style={{ lineHeight: '0.2rem', padding: '0.4rem 0.5rem' }} user={props.user} />
                 </div>
             </div>
             <div className={styles.btnContainer}>
                 {Object.keys(props.locationLabels).map((point, index) => (
-                    <Button key={index} name="attractionsFilterBtn" handler={props.apiCall} value={point} />
+                    <Button key={index} name="attractionsFilterBtn" handler={props.apiCall} value={point} disabled="" />
                 ))}
             </div>
 
