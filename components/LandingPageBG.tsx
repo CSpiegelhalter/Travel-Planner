@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Image from 'next/image'
 import styles from '../styles/pageStyles/LandingPageBGDark.module.css'
 import { Darkmode } from '@/Types/types'
