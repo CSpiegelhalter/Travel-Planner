@@ -10,9 +10,7 @@ function profilePage() {
   const { user } = useUser()
   const userId: number = user?.['https://example.com/id'] as number
 
-
-
-  useEffect( () => {
+  useEffect(() => {
     grabUserAttractions(userId).then((data) => {
       setAttractions(data)
     })
@@ -30,7 +28,6 @@ function profilePage() {
   //   const attractionsArray = await data.json()
   //   setAttractions(attractionsArray)
   // }
-  
 
   return (
     <div className={styles.profilePageContainer}>
@@ -43,15 +40,15 @@ function profilePage() {
         <div className={styles.profileItemsList}>
           <h2>Saved locations: </h2>
           <ul>
-          {attractions.length ? attractions.map((attractions, index) => (
-                <li key = {index} ><ul>
-                  <li>{attractions['name']}</li>
-                  <li>{attractions['address']}</li>
-                  <li>{attractions['rating']} (star symbol here)</li>
-                  <li>Description will go here</li>
-                  </ul> 
-                  </li>
-          )) : null}
+            {attractions.length ? attractions.map((attractions, index) => (
+              <li key={index} ><ul>
+                <li>{attractions['name']}</li>
+                <li>{attractions['address']}</li>
+                <li>{attractions['rating']} (star symbol here)</li>
+                <li>Description will go here</li>
+              </ul>
+              </li>
+            )) : null}
           </ul>
         </div>
       </div>
