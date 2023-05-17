@@ -2,13 +2,14 @@ import Head from 'next/head'
 import styles from '../styles/pageStyles/Home.module.css'
 import { useState, useEffect } from 'react'
 import { useLoadScript } from '@react-google-maps/api'
-import FindLocation, { Location } from '@/hooks/FindLocation'
+import FindLocation from '@/hooks/FindLocation'
 import Map from '@/components/Map'
 import SideBar from '@/components/SideBar'
 import { locationLabels } from '@/constants/constants'
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Modal from '@/components/Modal'
 import HomeHeader from '@/components/HomeHeader'
+import { Location } from '@/Types/types'
 
 export default function Home() {
   //These are the two states used to get our location for centering

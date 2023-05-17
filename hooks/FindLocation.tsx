@@ -1,21 +1,13 @@
-export interface Location extends latLng {
-  city: string
-}
+import { latLng, Location } from "@/Types/types"
 
-export interface latLng {
-  lat: number
-  lng: number
-}
 const FindLocation = async () => {
-  let lat
-  let lng
 
   // Creating a promise out of the function
   let getLocationPromise: Promise<latLng> = new Promise((resolve, reject) => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (position) {
-        lat = position?.coords?.latitude
-        lng = position?.coords?.longitude
+        const lat = position?.coords?.latitude
+        const lng = position?.coords?.longitude
 
         // Resolving the values which I need
         resolve({
@@ -48,7 +40,7 @@ const FindLocation = async () => {
     const cityInformation = await fetch(reverseGeoCodeApi)
     const locationInfo = await cityInformation.json()
     //this is the variable that we will store the city name in
-    let city: string
+    let city: string = ''
     //pass the first position of the array (which is an array) into a forEach function to check each of the address_components properties
     locationInfo?.results?.[0]?.address_components?.forEach(function (element: any) {
       //this first if is to check for the postal_town value that a lot of countries use for their city but not all of them

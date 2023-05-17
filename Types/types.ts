@@ -32,3 +32,12 @@ export interface Darkmode {
   export interface Dropdown {
     tripsList: string[]
   }
+
+  export interface Location extends latLng {
+    city: string
+  }
+  
+  export interface latLng {
+    lat: number
+    lng: number
+  }
