@@ -61,8 +61,5 @@ export interface LocationLabels {
   Shopping: string[]
   Restaurants: string[]
   Bars: string[]
-  Lodging: string[]
   Attractions: string[]
-  Transportation: string[]
-  Grocery: string[]
 }

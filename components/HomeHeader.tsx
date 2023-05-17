@@ -15,11 +15,6 @@ function HomeHeader(props: HomeHeader) {
         city: props.city
     }
 
-   
-    // const test = { typeOfInterest: "point" , ...params}
-    // console.log(test)
-    // console.log(...Object.values(test))
-
     return (
         <header className={styles.mainHeader}>
             <div className={styles.centerTop}>

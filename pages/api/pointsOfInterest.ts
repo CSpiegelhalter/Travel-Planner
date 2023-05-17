@@ -12,7 +12,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 // }
 //TODO:
-//make it to where it hits our DB first and if there are not atleast 25 locations and if not then 
+//make it to where it hits our DB first and if there are not atleast 25 locations and if not then
 //Limit api request so that we only get 25 locations at a time, and add a load more that would make it to where you can load 25 more
 //
 
@@ -20,20 +20,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const body = JSON.parse(req.body)
   const city: string = body['city']
   const pointOfInterest: keyof LocationLabels = body['point']
-  console.log(body)
-
-  console.log('In the api')
-  console.log(locationLabels[pointOfInterest])
-  console.log(pointOfInterest)
-
 
   const hardCode = ['cafe']
   //creating an array of promises
   const promiseArr = []
   for (let keyword of hardCode) {
-    console.log('keyword is: ', keyword)
-    console.log('City is: ', city)
-    console.log('URL is: ', `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${keyword}+in+${city}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`)
     promiseArr.push(
       fetch(
         `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${keyword}%20in%20${city}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`,
@@ -41,15 +32,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     )
   }
 
-  console.log(promiseArr)
-  let googleResults = []
-  try {
   // assigning the now fullfilled promises to a variable
-      googleResults = await Promise.all(promiseArr)
-  } catch (e) {
-    console.log('FAILED ME BUCKO')
-    console.log(e)
-  }
+  const googleResults = await Promise.all(promiseArr)
 
   //makes the raw data into json
   const jsonPromises = []
@@ -69,5 +53,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   //set the results and send it
   const results = resultsArr
-  await res.status(200).send(JSON.stringify(results))
+  res.status(200).send(JSON.stringify(results))
 }
