@@ -74,7 +74,7 @@ export default function Home() {
   //   setShowInfo(true)
   // }
 
-  const updatePlaces = (data) => {
+  const updatePlaces = (data:  any) => {
     setPlacesInfo(data)
     setShowInfo(true)
 
