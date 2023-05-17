@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { StandaloneSearchBox, useLoadScript } from '@react-google-maps/api'
+import { StandaloneSearchBox } from '@react-google-maps/api'
 
 const PlaceComponent = (props: any) => {
   //useRef that holds the value of the searched itmes even if the page re-renders

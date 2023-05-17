@@ -5,7 +5,7 @@ import { useLoadScript } from '@react-google-maps/api'
 import FindLocation from '@/hooks/FindLocation'
 import Map from '@/components/Map'
 import SideBar from '@/components/SideBar'
-import { locationLabels } from '@/constants/constants'
+import { locationLabels, libraries } from '@/constants/constants'
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Modal from '@/components/Modal'
 import HomeHeader from '@/components/HomeHeader'
@@ -28,8 +28,8 @@ export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   // this sets our location State using this function
   async function setUserLocation() {
-    const value: Location = await FindLocation()
-    if (value) {
+    const value: Location | undefined= await FindLocation()
+    if (!!value) {
       setLocation({ lat: value.lat, lng: value.lng })
       setCity(value.city)
     }
@@ -50,7 +50,6 @@ export default function Home() {
   }, [])
   // this is our key and how we load in our google maps api
   const key: any = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-  const libraries: Array<'places'> = ['places']
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: key,
     libraries: libraries,

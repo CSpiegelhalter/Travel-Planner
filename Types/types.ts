@@ -38,6 +38,7 @@ export interface Darkmode {
   }
   
   export interface latLng {
-    lat: number
-    lng: number
+    lat: number 
+    lng: number 
+    city ?: string 
   }

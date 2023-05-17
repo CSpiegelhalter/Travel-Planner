@@ -10,12 +10,15 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 //   }, 100)
 
 // }
-
+//TODO:
+//make it to where it hits our DB first and if there are not atleast 25 locations and if not then 
+//Limit api request so that we only get 25 locations at a time, and add a load more that would make it to where you can load 25 more
+//
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const body = JSON.parse(req.body)
   const city = body['city']
-  const pointOfInterest:  = body['point']
+  const pointOfInterest  = body['point']
 
   //creating an array of promises
   const promiseArr = []
