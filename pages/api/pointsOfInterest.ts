@@ -1,3 +1,4 @@
+import { LocationLabels } from '@/Types/types'
 import { locationLabels } from '@/constants/constants'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
@@ -17,20 +18,38 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const body = JSON.parse(req.body)
-  const city = body['city']
-  const pointOfInterest  = body['point']
+  const city: string = body['city']
+  const pointOfInterest: keyof LocationLabels = body['point']
+  console.log(body)
 
+  console.log('In the api')
+  console.log(locationLabels[pointOfInterest])
+  console.log(pointOfInterest)
+
+
+  const hardCode = ['cafe']
   //creating an array of promises
   const promiseArr = []
-  for (let keyword of locationLabels[pointOfInterest]) {
+  for (let keyword of hardCode) {
+    console.log('keyword is: ', keyword)
+    console.log('City is: ', city)
+    console.log('URL is: ', `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${keyword}+in+${city}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`)
     promiseArr.push(
       fetch(
-        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${keyword}{+in+${city}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`,
+        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${keyword}%20in%20${city}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`,
       ),
     )
   }
+
+  console.log(promiseArr)
+  let googleResults = []
+  try {
   // assigning the now fullfilled promises to a variable
-  const googleResults = await Promise.all(promiseArr)
+      googleResults = await Promise.all(promiseArr)
+  } catch (e) {
+    console.log('FAILED ME BUCKO')
+    console.log(e)
+  }
 
   //makes the raw data into json
   const jsonPromises = []

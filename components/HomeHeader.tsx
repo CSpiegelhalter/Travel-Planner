@@ -4,17 +4,21 @@ import Dropdown from './Dropdown';
 import styles from '../styles/componentStyles/HomeHeader.module.css'
 import Button from './Button';
 import PlaceComponent from './PlaceComponent';
-
-interface HomeHeader {
-    locationLabels: object,
-    handleSavedTripsDisplay: Function,
-    apiCall: Function,
-    user: any
-    isLoaded: any
-}
+import { callPointsOfInterestsApi } from '@/helperFunctions/helperFunction';
+import { HomeHeader, PointsOfInterestApiParams } from '@/Types/types';
+import { locationLabels } from '@/constants/constants';
 
 function HomeHeader(props: HomeHeader) {
     const testList = ['spain', 'rome', 'vacay', 'our getaway']
+    const params: PointsOfInterestApiParams = {
+        callback: props.callback,
+        city: props.city
+    }
+
+   
+    // const test = { typeOfInterest: "point" , ...params}
+    // console.log(test)
+    // console.log(...Object.values(test))
 
     return (
         <header className={styles.mainHeader}>
@@ -28,8 +32,8 @@ function HomeHeader(props: HomeHeader) {
                 </div>
             </div>
             <div className={styles.btnContainer}>
-                {Object.keys(props.locationLabels).map((point, index) => (
-                    <Button key={index} name="attractionsFilterBtn" handler={props.apiCall} value={point} disabled="" />
+                {Object.keys(locationLabels).map((point, index) => (
+                    <Button key={index} name="attractionsFilterBtn" handler={callPointsOfInterestsApi} value={point} params={{typeOfInterest: point, ...params}} disabled="" />
                 ))}
             </div>
 

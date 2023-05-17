@@ -5,7 +5,7 @@ import { useLoadScript } from '@react-google-maps/api'
 import FindLocation from '@/hooks/FindLocation'
 import Map from '@/components/Map'
 import SideBar from '@/components/SideBar'
-import { locationLabels, libraries } from '@/constants/constants'
+import { libraries } from '@/constants/constants'
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Modal from '@/components/Modal'
 import HomeHeader from '@/components/HomeHeader'
@@ -59,19 +59,25 @@ export default function Home() {
     return <div>Loading...</div>
   }
   //This is the function that calls the PointsOfInterest api and flips the state to show or not show the information sidebar
-  const callPointsOfInterestsApi = async (typeOfInterest: string) => {
-    const params = {
-      city: city,
-      point: typeOfInterest,
-    }
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(params),
-    }
-    const data = await fetch('/api/pointsOfInterest', options)
-    console.log('bouta hit callback')
-    setPlacesInfo(await data.json())
+  // const callPointsOfInterestsApi = async (typeOfInterest: string) => {
+  //   const params = {
+  //     city: city,
+  //     point: typeOfInterest,
+  //   }
+  //   const options = {
+  //     method: 'POST',
+  //     body: JSON.stringify(params),
+  //   }
+  //   const data = await fetch('/api/pointsOfInterest', options)
+  //   console.log('bouta hit callback')
+  //   setPlacesInfo(await data.json())
+  //   setShowInfo(true)
+  // }
+
+  const updatePlaces = (data) => {
+    setPlacesInfo(data)
     setShowInfo(true)
+
   }
   //our final return for home
   return (
@@ -86,7 +92,7 @@ export default function Home() {
       <main >
          <Map location={location} /> 
         <div className={styles.infoContainer}>
-          <HomeHeader isLoaded={isLoaded} locationLabels={locationLabels} handleSavedTripsDisplay={handleSavedTripsDisplay} apiCall={callPointsOfInterestsApi} user={user} />
+          <HomeHeader isLoaded={isLoaded} handleSavedTripsDisplay={handleSavedTripsDisplay} user={user} callback={updatePlaces} city={city} />
           <div>
             {isOpen && <Modal setIsOpen={setIsOpen} />}
           </div>

@@ -1,4 +1,6 @@
-export const locationLabels = {
+import { LocationLabels } from '@/Types/types'
+
+export const locationLabels: LocationLabels = {
   Shopping: ['clothing_store', 'department_store', 'electronics_store', 'shoe_store', 'shopping_mall'],
   Restaurants: ['cafe', 'meal_delivery', 'meal_takeaway', 'restaurant'],
   Bars: ['bar', 'night_club'],

@@ -5,8 +5,11 @@ function Button(props: ButtonProps) {
   const [disabled, setDisabled] = useState(false)
 
   const handleClick = () => {
+    console.log(props.params)
+    console.log(Object.values(props.params))
+    
     setDisabled(true)
-    props.handler(props.value).then(() => {
+    props.handler(props.params).then(() => {
       setDisabled(false)
     })
   }
