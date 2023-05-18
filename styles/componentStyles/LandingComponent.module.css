@@ -1,43 +1,14 @@
-.background {
-    z-index: 20;
-    position: absolute;
-    top: 0;
-    height: 100vh;
-    justify-content: space-between;
-    align-items: center;
+.landingContainer {
     display: flex;
     flex-direction: column;
-}
-
-.title {
+    margin: auto;
+    width: 75vw;
+    height: 100vh;
     text-align: center;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 47px;
-    padding-top: 5rem;
-    color:white;
-    margin: 2rem;
-    margin-top: 5rem;
-    padding: 0;
+    justify-content: center;
+
 }
 
-
-
-.getStarted {
-    text-align: center;
-    color:white;
-    padding-top: 4rem;
-}
-
-.description {
-    padding-top: 12rem;
-    text-align: center;
-    color:white;
-}
-
-.ham {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 25;
+.landingContent {
+    height: fit-content;
 }
