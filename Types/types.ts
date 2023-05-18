@@ -9,7 +9,7 @@ export interface ButtonProps {
   value: string
   style?: React.CSSProperties
   disabled: any
-  params: any
+  params?: any
 
 
 }

@@ -11,6 +11,73 @@
   --color-tertiary-dark:
 }
 
+body, html {
+  font-family: "Geliat", sans-serif;
+}
+
+
+@font-face {
+  font-family: "Geliat";
+  font-weight: 400;
+  src: url("/fonts/Geliat-Regular.ttf") format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geliat";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/fonts/Geliat-Italic.ttf") format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geliat";
+  font-weight: 500;
+  src: url("/fonts/Geliat-Medium.ttf") format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geliat";
+  font-weight: 500;
+  font-style: italic;
+  src: url("/fonts/Geliat-MediumItalic.ttf") format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geliat";
+  src: url("/fonts/Geliat-SemiBold.ttf") format('truetype');
+  font-display: swap;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Geliat";
+  font-style: italic;
+  src: url("/fonts/Geliat-SemiBoldItalic.ttf") format('truetype');
+  font-display: swap;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Geliat";
+  src: url("/fonts/Geliat-Bold.ttf") format('truetype');
+  font-display: swap;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Geliat";
+  font-style: italic;
+  src: url("/fonts/Geliat-BoldItalic.ttf") format('truetype');
+  font-display: swap;
+  font-weight: 700;
+}
+
+
+
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -52,25 +119,19 @@ html, body {
 }
 
 button {
-  background-color: var(--color-primary-light);
-  border-radius: 0.5rem;
-  border-width: 0;
-  color: var(--color-neutral);
-  cursor: pointer;
-  font-family: 'Haas Grot Text R Web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  /* font-size: 0.6rem; */
-  /* font-weight: 500; */
-  /* line-height: 0.2rem; */
-  /* list-style: none; */
-  margin: 0.3rem;
-  padding: 0.6rem 0.8rem;
-  text-align: center;
-  transition: all 200ms;
-  vertical-align: baseline;
-  white-space: nowrap;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 223px;
+  height: 68px;
+  background: #FC266B;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+  border: none;
+  color: #FFFFFF;
 }
 
 button:hover {
@@ -107,11 +168,6 @@ margin-bottom: 50vh;
 .formControl {
   margin-top: 0.5rem;
 }
-
-/* .tool-tip{
-  color: red;
-  font-style: italic; 
-} */
 
 @media (min-width: 62em) {
   .info-sidebar {

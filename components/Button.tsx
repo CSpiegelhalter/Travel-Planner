@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { ButtonProps } from '@/Types/types'
 
 function Button(props: ButtonProps) {
