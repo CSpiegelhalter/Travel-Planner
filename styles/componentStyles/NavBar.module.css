@@ -1,12 +1,19 @@
 .mainHeader {
-  display: flex;
-  align-items: center;
-  height: 0.1rem;
-  background-color: transparent ;
-  color: white;
-  padding: 0.5%;
+  position: fixed;
+  z-index: 10;
+  width: 100vw;
+  height: 10vh;
+  background: white;
+  bottom: 0;
+  left:0;
 }
 
-
+.buttonContainer{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1.5vh;  
+  padding-right:2%;
+  padding-left:2%;
+}
   
   

@@ -1,5 +1,5 @@
 :root {
-  --color-primary-light: #e90064;
+  --color-primary-light: #E2E2FF;
   --color-secondary-light: #ff5f9e;
   --color-tertiary-light: #fcc8d1;
   --color-hover-light: #060047;
@@ -55,7 +55,7 @@ button {
   background-color: var(--color-primary-light);
   border-radius: 0.5rem;
   border-width: 0;
-  color: var(--color-neutral);
+  color: #0000EF;
   cursor: pointer;
   font-family: 'Haas Grot Text R Web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   /* font-size: 0.6rem; */

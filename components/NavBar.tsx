@@ -1,11 +1,6 @@
 import React, { useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import Dropdown from './Dropdown'
 import styles from '../styles/componentStyles/NavBar.module.css'
-import Hamburger from './Hamburger'
-import { locationLabels } from '@/constants/constants'
-import Button from './Button'
+import Image from 'next/image'
 
 function NavBar(props: any) {
   const testList = ['spain', 'rome', 'vacay', 'our getaway']
@@ -13,10 +8,18 @@ function NavBar(props: any) {
   return (
     <header className={styles.mainHeader}>
       <div className={styles.buttonContainer}>
-        <Dropdown tripsList={testList} />
-      </div>
-      <div className={styles.burgerContainer} >
-        <Hamburger />
+        <div className={styles.mapBtn}>
+        <Image src="/mapIconSelected.svg" alt="Backpack Icon" width={50} height={50}/>
+        </div>
+        <div className={styles.tripsBtn}>
+          <Image src="/backpackIconSelected.svg" alt="Backpack Icon" width={50} height={50}/>
+        </div>
+        <div className={styles.bucketListBtn}>
+        <Image src="/saveIconSelected.svg" alt="Backpack Icon" width={50} height={50}/>
+        </div>
+        <div className={styles.ProfileBtn}>
+        <Image src="/backpackIconSelected.svg" alt="Backpack Icon" width={50} height={50}/>
+        </div>
       </div>
     </header>
   )

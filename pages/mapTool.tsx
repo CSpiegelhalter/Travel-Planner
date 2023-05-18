@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../styles/pageStyles/Home.module.css'
+import styles from '../styles/pageStyles/mapTool.module.css'
 import { useState, useEffect } from 'react'
 import { useLoadScript } from '@react-google-maps/api'
 import FindLocation from '@/hooks/FindLocation'
@@ -10,6 +10,7 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import Modal from '@/components/Modal'
 import HomeHeader from '@/components/HomeHeader'
 import { Location } from '@/Types/types'
+import NavBar from '@/components/NavBar'
 
 export default function Home() {
   //These are the two states used to get our location for centering
@@ -98,6 +99,7 @@ export default function Home() {
           </div>
           {showInfo && <SideBar placesInfo={placesInfo} setIsOpen={setIsOpen} setShowInfo={setShowInfo} />}
         </div>
+        <NavBar />
       </main>
     </>
   )
