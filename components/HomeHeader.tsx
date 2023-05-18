@@ -18,18 +18,15 @@ function HomeHeader(props: HomeHeader) {
     return (
         <header className={styles.mainHeader}>
             <div className={styles.centerTop}>
-                <Dropdown tripsList={testList} />
                 <div className={styles.placeContainer}>
-                    <PlaceComponent isLoaded={props.isLoaded} />
+                    <PlaceComponent isLoaded={props.isLoaded} style={{paddingRight:'0', marginRight:'0'}} />
+                    <Hamburger style={{width:'4rem',marginTop: '1rem',marginBottom: '0.5rem', borderRadius:'3rem', background:'white', paddingTop:'0.3rem', marginRight:'1rem' }} user={props.user} />
                 </div>
-                <div className={styles.burgerContainer} >
-                    <Hamburger style={{ lineHeight: '0.2rem', padding: '0.4rem 0.5rem' }} user={props.user} />
+                <div className={styles.btnContainer}>
+                    {Object.keys(locationLabels).map((point, index) => (
+                        <Button key={index} name="attractionsFilterBtn" handler={callPointsOfInterestsApi} value={point} params={{ typeOfInterest: point, ...params }} disabled="" style={{padding:'0.3rem', height:'2rem', }} />
+                    ))}
                 </div>
-            </div>
-            <div className={styles.btnContainer}>
-                {Object.keys(locationLabels).map((point, index) => (
-                    <Button key={index} name="attractionsFilterBtn" handler={callPointsOfInterestsApi} value={point} params={{typeOfInterest: point, ...params}} disabled="" />
-                ))}
             </div>
 
         </header>

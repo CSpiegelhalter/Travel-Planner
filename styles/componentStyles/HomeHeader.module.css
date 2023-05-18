@@ -1,34 +1,46 @@
+.btnContainer::-webkit-scrollbar {
+  display: none; 
+}
+.btnContainer {
+    /* position: relative; */
+  display:flex;
+  z-index: 11;
+  padding-left: 0.85rem;
+  overflow-x: scroll;    
+}
+
 .mainHeader {
-    display: inline-flex;
+  display: block;
+  position: fixed;
+  width: 100% !important;
+  height: 100% !important;
+  height: 3.0rem;
+  background-color: transparent ;
+  z-index: 10;
+}
+
+
+/* I want this for desktop */
+/* .centerTop {
+  display: block;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  } */
+ 
+  .placeContainer {
+   display: flex;
+   padding-left: 7.5%;
+  padding-top: 1rem;
+  } 
+
+  .mainHeader {
+    display: block;
+    position: absolute;
     width: 100% !important;
-    height: 100% !important;
-    flex-direction: row;
-    flex-wrap : wrap;
+    height: 20% !important;
     height: 3.0rem;
-    align-items: center;
     background-color: transparent ;
-    color: var(--color-hover-light);
     z-index: 10;
   }
-
-  .centerTop {
-    display: flex;
-    justify-content:center;
-    position: relative;
-  }
-  
-  .btnContainer {
-    display:flex;
-    align-items: space-between;
-    flex-wrap : wrap;
-    z-index: 11;
-
-  }
-
-  .pointsOfInterestFilterContainer {
-    align-items: space-between;
-  }
-
-  .burgerContainer {
-    right:0;
-}
