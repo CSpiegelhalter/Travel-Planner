@@ -1,30 +1,31 @@
+// import LoadingPage from '@/components/LoadingPage'
+// import dynamic from 'next/dynamic';
 import LandingComponent from '@/components/LandingComponent'
-import LandingPageBG from '@/components/LandingPageBG'
-import styles from '../styles/pageStyles/LandingPage.module.css'
-import { useEffect, useState } from 'react'
-import LandingPageAddtionalContent from '@/components/LandingPageAddtionalContent'
+import { Main } from 'next/document'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 
+// const LandingComponentWithLoading = dynamic(
+//   () => import('@/components/LandingComponent'),
+//   {
+//     loading: () => <LoadingPage />,
+//   },
+// );
+
 function LandingPage() {
+
   const router = useRouter()
 
-  const [darkMode, setDarkMode] = useState(false)
-
-  useEffect(() => {
-    console.log(darkMode)
-  }, [darkMode])
   return (
-    <div className={styles.landingContainer}>
-      <div className={styles.backContainer}>
-        <LandingPageBG darkmode={darkMode} router />
-      </div>
-        <LandingComponent router={router} darkmode={darkMode} />
-      <div style={darkMode ? { backgroundColor: '#051c32' } : { backgroundColor: '#060047' }} className={styles.additionalContent}>
-      {/* <button className={styles.testButton} onClick={() => setDarkMode(!darkMode)}>Toggle Darkmode</button> */}
-      <LandingPageAddtionalContent router={router} darkmode={darkMode} />   
-      </div>   
-    </div>
+    <>
+      <Head>
+        <title>Curious Visits</title>
+        <meta name="description" content="Find cool things to do in... " />
+      </Head>
+
+      <LandingComponent router={router} />
+    </>
   )
 }
 

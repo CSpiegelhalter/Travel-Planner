@@ -24,7 +24,7 @@ function HomeHeader(props: HomeHeader) {
                 </div>
                 <div className={styles.btnContainer}>
                     {Object.keys(locationLabels).map((point, index) => (
-                        <Button key={index} name="attractionsFilterBtn" handler={callPointsOfInterestsApi} value={point} params={{ typeOfInterest: point, ...params }} disabled="" style={{padding:'0.3rem', height:'2rem', }} />
+                        <Button key={index} name="attractionsFilterBtn" handler={callPointsOfInterestsApi} value={point} params={{ typeOfInterest: point, ...params }} disabled="" style={{padding:'0.3rem', height:'2rem',fontWeight:'700' }} />
                     ))}
                 </div>
             </div>
