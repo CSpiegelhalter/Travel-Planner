@@ -13,7 +13,7 @@ function Button(props: ButtonProps) {
       setDisabled(false)
     })
   }
-  useEffect(() => {
+    useEffect(() => {
 
   }, [])
   return (
