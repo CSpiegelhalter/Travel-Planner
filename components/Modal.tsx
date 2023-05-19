@@ -32,15 +32,16 @@ function Modal(props: Modal) {
             <div className={styles.centered}>
                 <div className={styles.modalContainer}>
                     <div className={styles.modalHeader}>
-                        <h5 className={styles.heading}>Create a new Trip!</h5>
+                        <h1 className={styles.heading}>Create a new Trip!</h1>
                     </div>
                     <button className={styles.closeBtn} onClick={() => props.setIsOpen(false)}>
-                        Close
+                        x
                     </button>
                     <div className={styles.modalContent}>
-                        <p>Please enter the name of your trip:</p>
-                        <input type="form" placeholder="Name of new trip" onChange={(e) => { handleStateChange(e) }} />
-                        <button onClick={addTripToDB}>Add Trip!</button>
+                        <p className={styles.modalP}>Please enter the name of your trip:</p>
+                        <div className={styles.spacingContainer}></div>
+                        <input type="form" placeholder="Name of new trip" onChange={(e) => { handleStateChange(e) }} className={styles.inputBar} />
+                        <button className={styles.addToTripBtn} onClick={addTripToDB}>Add Trip!</button>
                     </div>
                 </div>
             </div>

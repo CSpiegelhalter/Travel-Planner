@@ -16,7 +16,7 @@ const PlaceComponent = (props: any) => {
   //The final return that checks if isLoaded is true and if so renders the searchBox  and inputs.
   return props.isLoaded ? (
     <StandaloneSearchBox onLoad={(ref) => (inputRef.current = ref)} onPlacesChanged={handlePlaceChanged}>
-      <input type="text" className="formControl" placeholder="Enter Location" />
+      <input type="text" className="formControl" placeholder="What are you searching for?" />
     </StandaloneSearchBox>
   ) : (
     <div>Loading...</div>

@@ -11,8 +11,9 @@ function Button(props: ButtonProps) {
         setDisabled(false)
       })
   }
-  useEffect(() => {
-  }, [disabled])
+
+  useEffect(() => {}, [disabled])
+
   return (
     <div>
       <button style={props.style} onClick={() => handleClick()} disabled={disabled} className={props.name}>
