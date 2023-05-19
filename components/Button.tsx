@@ -8,12 +8,15 @@ function Button(props: ButtonProps) {
     console.log(props.params)
     console.log(Object.values(props.params))
     
-    setDisabled(true)
-    props.handler(props.params).then(() => {
-      setDisabled(false)
-    })
+    // setDisabled(true)
+    props.handler(props.params)
+    
+    //I moved this .then to test the Modal cause idk whats happenin here
+    // .then(() => {
+    //   setDisabled(false)
+    // })
   }
-  useEffect(() => {
+    useEffect(() => {
 
   }, [])
   return (

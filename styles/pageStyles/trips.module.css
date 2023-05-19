@@ -1,0 +1,38 @@
+.mainContainer {
+    width: 100%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.imageContainer{
+    display: block;
+    position: fixed;
+    top: 7%;
+    left: 2.5%;
+    /* transform: translate(-50%, -50%); */
+}
+
+.tripHeader {
+    display: block;
+    position:relative;
+    top:0;
+    left:0;
+    padding-left: 1rem;
+}
+
+.imageCaption{
+    color: grey;
+    padding-left: 3%;
+    padding-right:4%;
+    padding-bottom: 20%
+}
+
+
+.btnContainer {
+    display: block;
+    position: fixed;
+    bottom: 100px;
+    right: 80px;
+}
