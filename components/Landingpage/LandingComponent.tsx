@@ -1,0 +1,39 @@
+import styles from '../../styles/componentStyles/LandingComponent.module.css'
+import Image from 'next/image'
+import Button from '../Button'
+import { RouterProps } from '@/Types/types';
+
+function LandingComponent({ router }: RouterProps) {
+
+  return (
+    <>
+      <section className={styles.landingContainer}>
+        <div className={styles.landingContent}>
+          <Image width={50} height={50} src="/Logo.svg" alt="Logo" />
+          <div className={styles.imageContainer}>
+            <Image
+              width={0}
+              height={300}
+              layout="responsive"
+              src="/landingpageTopIllustration.svg"
+              alt="Illustration of finding things to do on phones"
+              style={{ marginTop: '60px' }}
+              priority={true}
+            />
+          </div>
+          <p style={{ fontWeight: '700', fontSize: 'xx-large', marginTop: '60px' }}>Discover hidden gems around you.</p>
+          <Button
+            style={{ marginTop: '60px' }}
+            name="getStarted"
+            value="Get Started"
+            handler={() => router.push('/home')}
+            disabled=""
+          />
+          <p style={{ fontSize: 'large', marginBottom: '0', marginTop: '15vh', lineHeight: '40px' }}>Our aim is to provide you with a platform to discover remarkable hidden gems that may not appear on the 1st page of your Google search.</p>
+        </div>
+      </section>
+    </>
+  )
+}
+
+export default LandingComponent

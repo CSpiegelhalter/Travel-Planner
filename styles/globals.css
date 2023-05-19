@@ -11,10 +11,6 @@
   --color-tertiary-dark:
 }
 
-body, html {
-  font-family: "Geliat", sans-serif;
-}
-
 
 @font-face {
   font-family: "Geliat";
@@ -76,16 +72,10 @@ body, html {
   font-weight: 700;
 }
 
-
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-} */
 '[data-radix-popper-content-wrapper]': {
   
 },
+
 html {
   margin: 0;
   overflow: hidden;
@@ -107,7 +97,9 @@ html {
 }
 
 html, body {
+  font-family: "Geliat", sans-serif;
   margin: 0;
+  overflow-x: hidden;
   width: 100vw;
   height: 100vh;
 }
@@ -135,9 +127,9 @@ button {
   color: #FFFFFF;
 }
 
-button:hover {
-  color: var(--color-hover-lght);
-}
+
+button:focus, button:active{background-color:#ff6396;}
+
 
 /* //these are for buttons where the className is passed as props */
 .attractionsFilterBtn {
