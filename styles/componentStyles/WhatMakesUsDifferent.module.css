@@ -1,0 +1,27 @@
+.differentContainer {
+    width: 75vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.contentHeader {
+    font-weight: 700;
+    font-size: x-large;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.contentDescription, .emphasisDescription {
+    line-height: 30px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.emphasisDescription {
+    font-weight: 600;
+}
+.googleContainer {
+    margin-top: 15px;
+}
