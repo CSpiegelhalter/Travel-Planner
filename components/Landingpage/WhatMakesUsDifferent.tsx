@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import styles from '../../styles/componentStyles/WhatMakesUsDifferent.module.css'
+import { HandlerProps } from '@/Types/types'
 
-function WhatMakesUsDifferent() {
+function WhatMakesUsDifferent({ handler }: HandlerProps) {
   return (
     <div className={styles.differentContainer}>
       <p className={styles.contentHeader}>What makes us different?</p>
@@ -10,8 +11,9 @@ function WhatMakesUsDifferent() {
           width={0}
           height={300}
           layout="responsive"
-          src="/google.png"
+          src="/google.webp"
           alt="Illustration of finding things to do on phones"
+          onLoad={() => handler()}
         />
         <div>
           <p className={styles.contentDescription}>

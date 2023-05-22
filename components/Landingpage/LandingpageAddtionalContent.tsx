@@ -1,17 +1,27 @@
 import styles from '../../styles/componentStyles/LandingpageAdditionalContent.module.css'
-import WhatMakesUsDifferent from './WhatMakesUsDifferent'
-import MemorableTrips from './MemorableTrips'
-import { RouterProps } from '@/Types/types';
-import DiscoverAndExplore from './DiscoverAndExplore';
+import { HandlerProps } from '@/Types/types'
+import dynamic from 'next/dynamic'
+import { useState } from 'react'
 
+function LandingpageAddtionalContent({ handler }: HandlerProps) {
+  const DiscoverAndExplore = dynamic(() => import('@/components/Landingpage/DiscoverAndExplore'))
+  const MemorableTrips = dynamic(() => import('@/components/Landingpage/MemorableTrips'))
+  const WhatMakesUsDifferent = dynamic(() => import('@/components/Landingpage/WhatMakesUsDifferent'))
+  const [loadMemorableTrips, setLoadMemorableTrips] = useState(false)
+  const [loadDifferent, setLoadDifferent] = useState(false)
 
-function LandingpageAddtionalContent({ router }: RouterProps) {
+  const triggerMemorableTrips = () => {
+    setLoadMemorableTrips(true)
+  }
+  const triggerDifferent = () => {
+    setLoadDifferent(true)
+  }
+
   return (
     <div className={styles.additionalContentContainer}>
-      <DiscoverAndExplore />
-      <WhatMakesUsDifferent />
-      <MemorableTrips router={router} />
-
+      <DiscoverAndExplore handler={() => triggerDifferent()} />
+      {loadDifferent && <WhatMakesUsDifferent handler={() => triggerMemorableTrips()} />}
+      {loadMemorableTrips && <MemorableTrips handler={() => handler()} />}
     </div>
   )
 }

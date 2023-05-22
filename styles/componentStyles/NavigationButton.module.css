@@ -1,0 +1,13 @@
+.navigationButtonText {
+  background-color: #fc266b;
+  color: #fff;
+  text-decoration: none;
+  width: 223px;
+  height: 68px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+  border: none;
+  padding: 1%;
+}
