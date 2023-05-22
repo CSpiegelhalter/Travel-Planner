@@ -1,5 +1,8 @@
+import type { NextRouter } from 'next/router'
+import { CSSProperties } from 'react'
+
 export interface Darkmode {
-  darkmode: boolean,
+  darkmode: boolean
   router: any
 }
 
@@ -10,8 +13,6 @@ export interface ButtonProps {
   style?: React.CSSProperties
   disabled: any
   params?: any
-
-
 }
 
 export interface Card {
@@ -24,7 +25,6 @@ export interface Card {
   ratingsCount: number
   setIsOpen: Function
   setShowInfo: Function
-
 }
 
 export interface Modal {
@@ -45,14 +45,14 @@ export interface latLng {
   city?: string
 }
 export interface HomeHeader {
-  handleSavedTripsDisplay: Function,
+  handleSavedTripsDisplay: Function
   user: any
   isLoaded: any
-  city: string,
+  city: string
   callback: Function
 }
 export interface PointsOfInterestApiParams {
-  city?: string,
+  city?: string
   typeOfInterest?: string
   callback?: Function
 }
@@ -62,4 +62,38 @@ export interface LocationLabels {
   Restaurants: string[]
   Bars: string[]
   Attractions: string[]
+}
+
+export interface RouterProps {
+  router: NextRouter
+}
+
+export interface Attraction {
+  src: string
+  name: string
+  location: string
+  alt: string
+}
+
+export interface SmallCardProps {
+  attraction: Attraction
+}
+
+export interface ScrollableProps {
+  pictureArray: Attraction[]
+}
+
+export interface HandlerProps {
+  handler: Function
+}
+
+export interface HandlerAndRouter {
+  handler: Function
+  router: NextRouter
+}
+
+export interface NavigationButtonProps {
+  displayText: string
+  href: string
+  textStyle?: CSSProperties
 }

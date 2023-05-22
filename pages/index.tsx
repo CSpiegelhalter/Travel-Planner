@@ -1,31 +1,35 @@
-// import LoadingPage from '@/components/LoadingPage'
-// import dynamic from 'next/dynamic';
-import LandingComponent from '@/components/LandingComponent'
-import { Main } from 'next/document'
+import dynamic from 'next/dynamic'
+import LandingComponent from '@/components/Landingpage/LandingComponent'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
-
-
-// const LandingComponentWithLoading = dynamic(
-//   () => import('@/components/LandingComponent'),
-//   {
-//     loading: () => <LoadingPage />,
-//   },
-// );
+import { useState } from 'react'
 
 function LandingPage() {
+  const LandingpageAddtionalContent = dynamic(() => import('@/components/Landingpage/LandingpageAddtionalContent'))
+  const Footer = dynamic(() => import('@/components/Footer'))
 
-  const router = useRouter()
+  const [loadFooter, setLoadFooter] = useState(false)
+  const [loadAdditionalContent, setLoadAdditionalContent] = useState(false)
+
+  const triggerLoadFooter = () => {
+    setLoadFooter(true)
+  }
+
+  const triggerAdditionalContent = () => {
+    setLoadAdditionalContent(true)
+  }
 
   return (
-    <>
+    <div style={{ margin: 'auto', width: '100vw', justifySelf: 'center' }}>
       <Head>
         <title>Curious Visits</title>
         <meta name="description" content="Find cool things to do in... " />
+        <link rel="preload" fetch-priority="high" as="image" href="landingpageTopIllustration.svg" />
       </Head>
 
-      <LandingComponent router={router} />
-    </>
+      <LandingComponent handler={() => triggerAdditionalContent()} />
+      {loadAdditionalContent && <LandingpageAddtionalContent handler={() => triggerLoadFooter()} />}
+      {loadFooter && <Footer />}
+    </div>
   )
 }
 
