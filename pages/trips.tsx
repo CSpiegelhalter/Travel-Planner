@@ -16,10 +16,10 @@ function trips(props: any) {
       <section className={styles.mainContent}>
         <div className={styles.contentContainer}>
           <div className={styles.imageContainer}>
-          <Image src="/walkingUpStairsIllustration.webp" alt="walking up stairs" fill />
+            <Image src="/walkingUpStairsIllustration.webp" alt="walking up stairs" fill />
           </div>
           <div className={styles.captionContainer}>
-          <p className={styles.imageCaption}>You don't have any trips saved. Create a trip to get started!</p>
+            <p className={styles.imageCaption}>You don't have any trips saved. Create a trip to get started!</p>
           </div>
         </div>
       </section>
@@ -27,7 +27,7 @@ function trips(props: any) {
         <Button name="createTripBtn" value="Create New Trip" disabled handler={setModalDisplay} params={true} />
       </div>
       {modalDisplay && <Modal setIsOpen={setModalDisplay} />}
-      <NavBar />
+      <NavBar trips={true} map={false} bucketList={false} profile={false} />
     </div>
   )
 }

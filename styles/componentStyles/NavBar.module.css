@@ -17,7 +17,7 @@
 }
   
 .btnLabels {
-  color: #0000EF;
+  /* color: #0000EF; */
   position: absolute;
   top:5vh;
   padding-left: 0.5rem;
@@ -33,6 +33,42 @@
   position: fixed;
   bottom:10%;
   right:46%;
+}
+
+.mapBtn:hover{ 
+  border: 2px solid #0000EF;
+  border-radius: 1rem;
+  padding-bottom: 1.5%;
+  padding-right: 0.5%;
+  transition: border-width 0.1s ease-in;
+
+}
+
+.tripsBtn:hover {
+  border: 2px solid #0000EF;
+  border-radius: 1rem;
+  padding-bottom:1.5%;
+  transition: border-width 0.1s ease-in;
+
+
+}
+
+.bucketListBtn:hover {
+  border: 2px solid #0000EF;
+  border-radius: 1rem;
+  padding-bottom: 1.5%;
+  padding-left:1%;
+  padding-right:2%;
+  margin-right:-3%;
+  transition: border-width 0.1s ease-in;
+}
+
+.ProfileBtn:hover {
+  border: 2px solid #0000EF;
+  border-radius: 1rem;
+  padding-bottom: 1.5%;
+  transition: border-width 0.1s ease-in;
+
 }
 
 @media (min-width: 28.125rem) {

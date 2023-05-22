@@ -31,7 +31,7 @@ function profilePage() {
 
   return (
     <div className={styles.profilePageContainer}>
-      <NavBar />
+      <NavBar profile={true} bucketList={false} trips={false} map={false} />
 
       <div>
         <h1>Welcome back, Brando!</h1>
