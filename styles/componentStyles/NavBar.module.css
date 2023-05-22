@@ -27,3 +27,19 @@
 .meLabel {
   padding-left: .3rem;
 }
+
+.bucketLabel {
+  display:block;
+  position: fixed;
+  bottom:10%;
+  right:46%;
+}
+
+@media (min-width: 28.125rem) {
+  .bucketLabel {
+    display:block;
+    position: fixed;
+    bottom:10%;
+    right:40%;
+  }
+}
