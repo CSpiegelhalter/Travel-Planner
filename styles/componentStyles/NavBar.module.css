@@ -2,7 +2,7 @@
   position: fixed;
   z-index: 10;
   width: 100vw;
-  height: 10vh;
+  height: 12vh;
   background: white;
   bottom: 0;
   left:0;
@@ -38,7 +38,7 @@
 .mapBtn:hover{ 
   border: 2px solid #0000EF;
   border-radius: 1rem;
-  padding-bottom: 1.5%;
+  padding-bottom: 1%;
   padding-right: 0.5%;
   transition: border-width 0.1s ease-in;
 
@@ -47,7 +47,7 @@
 .tripsBtn:hover {
   border: 2px solid #0000EF;
   border-radius: 1rem;
-  padding-bottom:1.5%;
+  padding-bottom:1%;
   transition: border-width 0.1s ease-in;
 
 
@@ -56,26 +56,28 @@
 .bucketListBtn:hover {
   border: 2px solid #0000EF;
   border-radius: 1rem;
-  padding-bottom: 1.5%;
-  padding-left:1%;
-  padding-right:2%;
+  padding-bottom: 1.9%;
+  padding-left:2%;
+  padding-right:1%;
   margin-right:-3%;
+  margin-left:-3%;
   transition: border-width 0.1s ease-in;
 }
 
 .ProfileBtn:hover {
   border: 2px solid #0000EF;
   border-radius: 1rem;
-  padding-bottom: 1.5%;
+  padding-bottom: 1%;
   transition: border-width 0.1s ease-in;
 
 }
 
+
 @media (min-width: 28.125rem) {
   .bucketLabel {
-    display:block;
+    display:relative;
     position: fixed;
-    bottom:10%;
+    bottom:12%;
     right:40%;
   }
 }

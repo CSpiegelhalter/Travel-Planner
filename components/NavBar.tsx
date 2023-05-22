@@ -22,7 +22,7 @@ function NavBar(props: any) {
         </div>
         <div className={styles.bucketListBtn}>
           <Link href='/bucketList' prefetch={false}>
-            <Image src={props.bucketList ? "/saveIconSelected.webp" : "/savedIconUnselected.webp"} alt="Backpack Icon" width={50} height={50} />
+            <Image className={styles.saveIcon}src={props.bucketList ? "/saveIconSelected.webp" : "/savedIconUnselected.webp"} alt="Backpack Icon" width={50} height={50} />
             <div className={styles.bucketLabel}>
               <p className={styles.btnLabels} style={props.bucketList ? { color: '#0000EF' } : { color: 'grey' }}>Bucket List</p>
             </div>
