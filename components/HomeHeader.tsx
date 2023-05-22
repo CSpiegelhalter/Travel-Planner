@@ -9,12 +9,12 @@ function HomeHeader(props: HomeHeader) {
   const Button = dynamic(() => import('@/components/Button'))
   const PlaceComponent = dynamic(() => import('@/components/PlaceComponent'))
 
+
   const testList = ['spain', 'rome', 'vacay', 'our getaway']
   const params: PointsOfInterestApiParams = {
     callback: props.callback,
     city: props.city,
   }
-
   return (
     <header className={styles.mainHeader}>
       <div className={styles.centerTop}>

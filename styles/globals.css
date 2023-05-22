@@ -171,11 +171,15 @@ input::placeholder {
   
 }
 
-@media (min-width: 62em) {
-  .info-sidebar {
-    z-index: 2;
-    background-color: var(--color-information-sidebar-bg);
-    height: 84.5vh;
-    width: 35vw;
+@media (min-width:28.125rem) {
+  .formControl {
+    border-radius: 3.75rem;
+    width: 25rem;
+    height: 3.5rem;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    box-shadow: 0px 1px 5px #E2E2FF;
+    border: none;
   }
+  
 }
