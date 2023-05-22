@@ -14,9 +14,13 @@ function trips(props: any) {
         <h1>My Trips:</h1>
       </header>
       <section className={styles.mainContent}>
-        <div className={styles.imageContainer}>
-          <Image src="/walkingUpStairsIllustration.webp" alt="walking up stairs" width={350} height={350} />
+        <div className={styles.contentContainer}>
+          <div className={styles.imageContainer}>
+          <Image src="/walkingUpStairsIllustration.webp" alt="walking up stairs" fill />
+          </div>
+          <div className={styles.captionContainer}>
           <p className={styles.imageCaption}>You don't have any trips saved. Create a trip to get started!</p>
+          </div>
         </div>
       </section>
       <div className={styles.btnContainer}>

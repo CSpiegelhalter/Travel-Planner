@@ -9,14 +9,12 @@ function bucketList(props: any) {
         <h1 className={styles.headerCaption}>My Bucketlist:</h1>
       </header>
       <section className={styles.contentContainer}>
-        <div>
           <div className={styles.imageContainer}>
             <Image src="/paperAirplaneIllustration.webp" alt="walking up stairs" fill />
           </div>
           <div className={styles.captionContainer}>
           <p className={styles.imageCaption}>Save points of interest here to collect them.</p>
           </div>
-        </div>
       </section>
       <NavBar />
     </div>
