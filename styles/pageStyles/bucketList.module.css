@@ -32,3 +32,24 @@
 .headerCaption {
     padding-left: 1rem;
 }
+
+@media (min-width: 28.125rem) {
+    .imageContainer{
+        display: block;
+        position: fixed;
+        top: 13%;
+        left:36%;
+        /* transform: translate(-50%, -50%); */
+    }
+    .btnContainer {
+        display: block;
+        position: fixed;
+        bottom: 18%;
+        right: 44%;
+    }
+    .headerCaption {
+        padding-left: 2rem;
+        padding-top: 1rem;
+    }
+    
+      }
