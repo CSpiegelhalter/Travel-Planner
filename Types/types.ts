@@ -1,4 +1,5 @@
 import type { NextRouter } from 'next/router'
+import { CSSProperties } from 'react'
 
 export interface Darkmode {
   darkmode: boolean
@@ -80,4 +81,19 @@ export interface SmallCardProps {
 
 export interface ScrollableProps {
   pictureArray: Attraction[]
+}
+
+export interface HandlerProps {
+  handler: Function
+}
+
+export interface HandlerAndRouter {
+  handler: Function
+  router: NextRouter
+}
+
+export interface NavigationButtonProps {
+  displayText: string
+  href: string
+  textStyle?: CSSProperties
 }
