@@ -6,7 +6,12 @@
   background: white;
   bottom: 0;
   left:0;
+  border: 1px solid black;
+
+  
 }
+
+
 
 .buttonContainer{
   display: flex;
@@ -15,69 +20,86 @@
   padding-right:2%;
   padding-left:2%;
 }
+
+.link {
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  
+}
   
 .btnLabels {
   /* color: #0000EF; */
   position: absolute;
-  top:5vh;
+  bottom: 0;
   padding-left: 0.5rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0rem;
 }
 
-.meLabel {
-  padding-left: .3rem;
-}
-
-.bucketLabel {
-  display:block;
-  position: fixed;
-  bottom:10%;
-  right:46%;
-}
-
-.mapBtn:hover{ 
-  border: 2px solid #0000EF;
+.navBtn{
+  padding-bottom:0%;
+  padding-right:0%;
   border-radius: 1rem;
-  padding-bottom: 1%;
-  padding-right: 0.5%;
-  transition: border-width 0.1s ease-in;
-
 }
 
-.tripsBtn:hover {
+.link:hover {
   border: 2px solid #0000EF;
-  border-radius: 1rem;
-  padding-bottom:1%;
-  transition: border-width 0.1s ease-in;
-
-
-}
-
-.bucketListBtn:hover {
-  border: 2px solid #0000EF;
-  border-radius: 1rem;
-  padding-bottom: 1.9%;
-  padding-left:2%;
-  padding-right:1%;
-  margin-right:-3%;
-  margin-left:-3%;
   transition: border-width 0.1s ease-in;
 }
-
-.ProfileBtn:hover {
-  border: 2px solid #0000EF;
-  border-radius: 1rem;
-  padding-bottom: 1%;
-  transition: border-width 0.1s ease-in;
-
-}
-
 
 @media (min-width: 28.125rem) {
-  .bucketLabel {
-    display:relative;
+  .mainHeader {
     position: fixed;
-    bottom:12%;
-    right:40%;
+    z-index: 10;
+    width: 10vw;
+    height: 100vh;
+    background: white;
+    top: 0;
+    left:0;
+    /* border: 2px solid #0000EF */
+  }
+  
+  .logo {
+    padding-left: 35%;
+    padding-top:20%;
+  
+  }
+
+  .buttonContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 7vh;  
+    padding-left:1%;
+    height: 75vh;
+    margin-left: 0;
+  }
+
+  .btnLabels {
+    position: relative;
+    top:0vh;
+    padding-left: 0rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .navBtn{
+    border: 2px solid transparent;
+    border-radius: 1rem;
+    padding-left: 5%;
+    padding-top: 10%;
+  }
+  .link {
+    padding-left: 20%;
+    border: 2px solid transparent;
+    border-radius: 1rem;
+    margin-left:0;
+    margin-right: -2%;
+  }
+
+}
+
+@media(max-width: 28.124rem){
+  .logo {
+    display: none
+  
   }
 }

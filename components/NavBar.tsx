@@ -1,41 +1,72 @@
 import Link from 'next/link'
 import styles from '../styles/componentStyles/NavBar.module.css'
 import Image from 'next/image'
+import { NavBarProps } from '@/Types/types'
 
-function NavBar(props: any) {
+function NavBar(props: NavBarProps) {
   const testList = ['spain', 'rome', 'vacay', 'our getaway']
+
+  const iconItems = [
+    {
+      selected: props.map,
+      selectedImage: '/mapIconSelected.webp',
+      unselectedImage: '/mapIconUnselected.webp',
+      href: '/mapTool',
+      name: 'Maps',
+      alt: 'Map icon'
+    },
+    {
+      selected: props.trips,
+      selectedImage: "/backpackIconSelected.webp",
+      unselectedImage: "/backpackUnhighlighted.webp",
+      href: '/trips',
+      name: "Trips",
+      alt: "Backpack Icon",
+    },
+    {
+      selected: props.bucketList,
+      selectedImage: "/saveIconSelected.webp",
+      unselectedImage: "/savedIconUnselected.webp",
+      href: "/bucketList",
+      name: "Bucket List",
+      alt: "Save Icon",
+    },
+    {
+      selected: props.profile,
+      selectedImage: "/backpackIconSelected.webp",
+      unselectedImage: "/backpackUnhighlighted.webp",
+      href: "/profilePage",
+      name: "Profile",
+      alt: "Backpack Icon",
+    },
+  ]
 
   return (
     <header className={styles.mainHeader}>
+      <Image className={styles.logo}
+        src='/Logo.webp'
+        alt='Logo'
+        width={60}
+        height={60}
+      />
       <div className={styles.buttonContainer}>
-        <div className={styles.mapBtn}>
-          <Link href='/mapTool' prefetch={false}>
-            <Image src={props.map ? "/mapIconSelected.webp" : "/mapIconUnselected.webp"} alt="Backpack Icon" width={50} height={50} />
-            <p className={styles.btnLabels} style={props.map ? { color: '#0000EF' } : { color: 'grey' }}>Maps</p>
-          </Link>
-        </div>
-        <div className={styles.tripsBtn}>
-          <Link href='/trips' prefetch={false}>
-            <Image src={props.trips ? "/backpackIconSelected.webp" : "/backpackUnhighlighted.webp"} alt="Backpack Icon" width={50} height={50} />
-            <p className={styles.btnLabels} style={props.trips ? { color: '#0000EF' } : { color: 'grey' }}>Trips</p>
-          </Link>
-        </div>
-        <div className={styles.bucketListBtn}>
-          <Link href='/bucketList' prefetch={false}>
-            <Image className={styles.saveIcon}src={props.bucketList ? "/saveIconSelected.webp" : "/savedIconUnselected.webp"} alt="Backpack Icon" width={50} height={50} />
-            <div className={styles.bucketLabel}>
-              <p className={styles.btnLabels} style={props.bucketList ? { color: '#0000EF' } : { color: 'grey' }}>Bucket List</p>
-            </div>
-          </Link>
-        </div>
-        <div className={styles.ProfileBtn}>
-          <Link href='/profilePage' prefetch={false}>
-            <Image src={props.profile ? "/backpackIconSelected.webp" : "/backpackUnhighlighted.webp"} alt="Backpack Icon" width={50} height={50} />
-            <div className={styles.meLabel}>
-              <p className={styles.btnLabels} style={props.profile ? { color: '#0000EF' } : { color: 'grey' }}>Me</p>
-            </div>
-          </Link>
-        </div>
+        {iconItems.map((info, index) => (
+        <Link key={index} className={styles.link}
+          href={info.href}
+          prefetch={false}
+          style={{ textDecoration: 'none' }}
+        >
+          <div className={styles.navBtn}>
+            <Image
+              src={info.selected ? info.selectedImage : info.unselectedImage}
+              alt={info.alt}
+              width={50}
+              height={50}
+            />
+            <p className={styles.btnLabels} style={info.selected ? { color: '#0000EF' } : { color: 'grey' }}>{info.name}</p>
+          </div>
+        </Link>
+        ))}
       </div>
     </header>
   )

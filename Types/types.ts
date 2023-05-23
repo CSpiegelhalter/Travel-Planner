@@ -97,3 +97,10 @@ export interface NavigationButtonProps {
   href: string
   textStyle?: CSSProperties
 }
+
+export interface NavBarProps {
+  map: boolean 
+  trips: boolean
+  bucketList: boolean
+  profile: boolean
+}
