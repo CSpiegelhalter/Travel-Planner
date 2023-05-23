@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import styles from '../styles/pageStyles/trips.module.css'
-import NavBar from '@/components/NavBar'
 import Image from 'next/image'
-import Button from '@/components/Button'
-import Modal from '@/components/Modal'
+import dynamic from 'next/dynamic'
+
 
 function trips(props: any) {
   const [modalDisplay, setModalDisplay] = useState()
+
+  const NavBar = dynamic(() => import('@/components/NavBar'))
+  const Modal =  dynamic(() => import('@/components/Modal'))
+  const Button =  dynamic(() => import('@/components/Button'))
+
 
   return (
     <div className={styles.mainContainer}>

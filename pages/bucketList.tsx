@@ -1,8 +1,12 @@
 import Image from 'next/image'
 import styles from '../styles/pageStyles/bucketList.module.css'
-import NavBar from '@/components/NavBar'
+import dynamic from 'next/dynamic'
+
 
 function bucketList(props: any) {
+  const NavBar = dynamic(() => import('@/components/NavBar'))
+
+
   return (
     <div>
       <header>

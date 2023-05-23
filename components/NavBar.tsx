@@ -3,6 +3,7 @@ import styles from '../styles/componentStyles/NavBar.module.css'
 import Image from 'next/image'
 import { NavBarProps } from '@/Types/types'
 
+
 function NavBar(props: NavBarProps) {
   const testList = ['spain', 'rome', 'vacay', 'our getaway']
 
