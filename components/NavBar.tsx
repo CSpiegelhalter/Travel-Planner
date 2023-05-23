@@ -48,7 +48,6 @@ function NavBar(props: NavBarProps) {
         alt='Logo'
         width={60}
         height={60}
-        style={{ margin: 'auto' }}
       />
       <div className={styles.buttonContainer}>
         {iconItems.map((info, index) => (
