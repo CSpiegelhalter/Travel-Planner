@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import styles from '../styles/pageStyles/trips.module.css'
-import NavBar from '@/components/NavBar'
 import Image from 'next/image'
-import Button from '@/components/Button'
-import Modal from '@/components/Modal'
+import dynamic from 'next/dynamic'
+
 
 function trips(props: any) {
   const [modalDisplay, setModalDisplay] = useState()
+
+  const NavBar = dynamic(() => import('@/components/NavBar'))
+  const Modal =  dynamic(() => import('@/components/Modal'))
+  const Button =  dynamic(() => import('@/components/Button'))
+
 
   return (
     <div className={styles.mainContainer}>
@@ -14,16 +18,20 @@ function trips(props: any) {
         <h1>My Trips:</h1>
       </header>
       <section className={styles.mainContent}>
-        <div className={styles.imageContainer}>
-          <Image src="/walkingUpStairsIllustration.svg" alt="walking up stairs" width={350} height={350} />
-          <p className={styles.imageCaption}>You don't have any trips saved. Create a trip to get started!</p>
+        <div className={styles.contentContainer}>
+          <div className={styles.imageContainer}>
+            <Image src="/walkingUpStairsIllustration.webp" alt="walking up stairs" fill />
+          </div>
+          <div className={styles.captionContainer}>
+            <p className={styles.imageCaption}>You don't have any trips saved. Create a trip to get started!</p>
+          </div>
         </div>
       </section>
       <div className={styles.btnContainer}>
         <Button name="createTripBtn" value="Create New Trip" disabled handler={setModalDisplay} params={true} />
       </div>
       {modalDisplay && <Modal setIsOpen={setModalDisplay} />}
-      <NavBar />
+      <NavBar trips={true} map={false} bucketList={false} profile={false} />
     </div>
   )
 }

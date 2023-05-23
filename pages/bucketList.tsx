@@ -1,20 +1,26 @@
 import Image from 'next/image'
 import styles from '../styles/pageStyles/bucketList.module.css'
-import NavBar from '@/components/NavBar'
+import dynamic from 'next/dynamic'
+
 
 function bucketList(props: any) {
+  const NavBar = dynamic(() => import('@/components/NavBar'))
+
+
   return (
     <div>
       <header>
         <h1 className={styles.headerCaption}>My Bucketlist:</h1>
       </header>
-      <section className={styles.imageContainer}>
-        <div>
-          <Image src="/paperAirplaneIllustration.svg" alt="walking up stairs" width={350} height={350} />
+      <section className={styles.contentContainer}>
+        <div className={styles.imageContainer}>
+          <Image src="/paperAirplaneIllustration.webp" alt="walking up stairs" fill />
+        </div>
+        <div className={styles.captionContainer}>
           <p className={styles.imageCaption}>Save points of interest here to collect them.</p>
         </div>
       </section>
-      <NavBar />
+      <NavBar bucketList={true} map={false} trips={false} profile={false} />
     </div>
   )
 }

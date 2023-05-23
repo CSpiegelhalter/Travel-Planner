@@ -103,7 +103,7 @@ export default function Home() {
           <div>{isOpen && <Modal setIsOpen={setIsOpen} />}</div>
           {showInfo && <SideBar placesInfo={placesInfo} setIsOpen={setIsOpen} setShowInfo={setShowInfo} />}
         </div>
-        <NavBar />
+        <NavBar map={true} trips={false} bucketList={false} profile={false} />
       </main>
     </>
   )
