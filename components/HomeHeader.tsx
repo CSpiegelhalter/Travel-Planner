@@ -21,15 +21,6 @@ function HomeHeader(props: HomeHeader) {
         <div className={styles.placeContainer}>
           <PlaceComponent isLoaded={props.isLoaded} style={{ paddingRight: '0', marginRight: '0' }} />
           <Hamburger
-            style={{
-              width: '4rem',
-              marginTop: '1rem',
-              marginBottom: '0.5rem',
-              borderRadius: '3rem',
-              background: 'white',
-              paddingTop: '0.3rem',
-              marginRight: '1rem',
-            }}
             user={props.user}
           />
         </div>
