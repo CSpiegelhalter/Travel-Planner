@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
 import styles from '../styles/pageStyles/trips.module.css'
-import Image from 'next/image'
 import dynamic from 'next/dynamic'
-
 
 function trips(props: any) {
   const testData =
@@ -69,40 +67,40 @@ function trips(props: any) {
   const TripDisplay = dynamic(() => import('@/components/TripDisplay'))
   const NavBar = dynamic(() => import('@/components/NavBar'))
   const Modal = dynamic(() => import('@/components/Modal'))
-  const Button = dynamic(() => import('@/components/Button'))
+  const TripInfoCard = dynamic(() => import('@/components/TripInfoCard'))
+  const TripsDefault = dynamic(() => import('@/components/TripsDefault'))
+
+
   const [modalDisplay, setModalDisplay] = useState()
   const [tripData, setTripData] = useState({})
+  const [showDetails, setShowDetails] = useState(false)
+  const [locationDetails, setLocationDetails] = useState([])
 
   useEffect(() => {
-    //we will call the api to check localStorage and if not then ping DB here
+    // we will call the api to check localStorage and if not then ping DB here
     if (testData) {
       setTripData(testData)
     }
     else setTripData(false)
+    
   }, [])
-
 
   return (
     <div className={styles.mainContainer}>
       <header className={styles.tripHeader}>
         <h1>My Trips:</h1>
       </header>
-      {tripData ? 
-        <TripDisplay data={tripData}/>
-        : 
-        <section className={styles.mainContent}>
-          <div className={styles.contentContainer}>
-            <div className={styles.imageContainer}>
-              <Image src="/walkingUpStairsIllustration.webp" alt="walking up stairs" fill />
-            </div>
-            <div className={styles.captionContainer}>
-              <p className={styles.imageCaption}>You don't have any trips saved. Create a trip to get started!</p>
-            </div>
-          </div>
-          <div className={styles.btnContainer}>
-            <Button name="createTripBtn" value="Create New Trip" disabled handler={setModalDisplay} params={true} />
-          </div>
-        </section>
+      {tripData ?
+        Object.entries(tripData).map(([key, value]: any, index) => (
+          <TripDisplay key={index} name={key} setLocationDetails={setLocationDetails} value={value}  length={value.length}/>
+        ))
+        :
+        <TripsDefault setModalDisplay={setModalDisplay}/>
+      }
+      {!!locationDetails.length &&
+      (locationDetails.map((value: any, index) => (
+        <TripInfoCard key={index} name={value.name} description={value.description} />
+      )))
       }
 
       {modalDisplay && <Modal setIsOpen={setModalDisplay} />}

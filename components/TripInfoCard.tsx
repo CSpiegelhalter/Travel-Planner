@@ -1,16 +1,12 @@
 import React from 'react';
 
-function TripInfoCard(props) {
+function TripInfoCard(props: any) {
     return (
         <div>
-            {props.tripDetails.map((location, index) => {
-                return (
-                    <div key={index}>
-                    <p>{location.name}</p>
-                    <p>{location.description}</p>
-                    </div>
-                )
-            })}
+            <div >
+                <p>{props.name}</p>
+                <p>{props.description}</p>
+            </div>
         </div>
     );
 }

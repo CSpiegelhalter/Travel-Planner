@@ -1,10 +1,10 @@
-import Image from 'next/image'
 import styles from '../styles/pageStyles/bucketList.module.css'
 import dynamic from 'next/dynamic'
 
 
 function bucketList(props: any) {
   const NavBar = dynamic(() => import('@/components/NavBar'))
+  const BucketListDefault = dynamic(() => import('@/components/BucketListDefault'))
 
 
   return (
@@ -12,14 +12,7 @@ function bucketList(props: any) {
       <header>
         <h1 className={styles.headerCaption}>My Bucketlist:</h1>
       </header>
-      <section className={styles.contentContainer}>
-        <div className={styles.imageContainer}>
-          <Image src="/paperAirplaneIllustration.webp" alt="walking up stairs" fill />
-        </div>
-        <div className={styles.captionContainer}>
-          <p className={styles.imageCaption}>Save points of interest here to collect them.</p>
-        </div>
-      </section>
+      <BucketListDefault />
       <NavBar bucketList={true} map={false} trips={false} profile={false} />
     </div>
   )
