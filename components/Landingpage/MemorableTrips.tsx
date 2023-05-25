@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from '@/@/styles/componentStyles/MemorableTrips.module.css'
+import styles from '@/styles/componentStyles/MemorableTrips.module.css'
 import { HandlerProps } from '@/Types/types'
 import { exampleAttractions } from '@/constants/constants'
 import dynamic from 'next/dynamic'
@@ -27,7 +27,7 @@ function MemorableTrips({ handler }: HandlerProps) {
       <p className={styles.boldedLastSentence}>
         These are just some examples of places to see. There are many more to explore!
       </p>
-      <NavigationButton href="/home" displayText="Get Started" />
+      <NavigationButton href="/map" displayText="Get Started" />
     </div>
   )
 }

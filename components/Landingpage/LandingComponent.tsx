@@ -1,4 +1,4 @@
-import styles from '@/@/styles/componentStyles/LandingComponent.module.css'
+import styles from '@/styles/componentStyles/LandingComponent.module.css'
 import Image from 'next/image'
 import { HandlerProps } from '@/Types/types'
 import dynamic from 'next/dynamic'
@@ -25,7 +25,7 @@ function LandingComponent({ handler }: HandlerProps) {
             />
           </div>
           <p style={{ fontWeight: '700', fontSize: 'xx-large', marginTop: '60px' }}>Discover hidden gems around you.</p>
-          <NavigationButton href="/mapTool" displayText="Get Started" />
+          <NavigationButton href="/map" displayText="Get Started" />
           <p style={{ fontSize: 'large', marginBottom: '0', marginTop: '15vh', lineHeight: '40px' }}>
             Our aim is to provide you with a platform to discover remarkable hidden gems that may not appear on the 1st
             page of your Google search.
