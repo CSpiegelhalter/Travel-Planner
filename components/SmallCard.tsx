@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { SmallCardProps } from '@/Types/types'
-import styles from '../styles/componentStyles/SmallCard.module.css'
+import styles from '@/styles/componentStyles/SmallCard.module.css'
 
 function SmallCard({ attraction }: SmallCardProps) {
   const { src, alt, name, location } = attraction

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from '../styles/pageStyles/LandingPageBGDark.module.css'
+import styles from '@/styles/pageStyles/LandingPageBGDark.module.css'
 import { Darkmode } from '@/Types/types'
 
 function LandingPageBG(props: Darkmode) {

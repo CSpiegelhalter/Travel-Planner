@@ -1,6 +1,6 @@
 import { ScrollableProps, Attraction, SmallCardProps } from '@/Types/types'
 import SmallCard from './SmallCard'
-import styles from '../styles/componentStyles/ScrollablePicsHorizontal.module.css'
+import styles from '@/styles/componentStyles/ScrollablePicsHorizontal.module.css'
 
 function ScrollablePicsHorizantal({ pictureArray }: ScrollableProps) {
   return (

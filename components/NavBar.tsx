@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from '../styles/componentStyles/NavBar.module.css'
+import styles from '@/styles/componentStyles/NavBar.module.css'
 import Image from 'next/image'
 import { NavBarProps } from '@/Types/types'
 
