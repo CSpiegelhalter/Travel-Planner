@@ -113,7 +113,7 @@ function trips(props: any) {
       }
 
       {modalDisplay && <Modal setIsOpen={setModalDisplay} />}
-      {/* <NavBar trips={true} map={false} bucketList={false} profile={false} /> */}
+      <NavBar trips={true} map={false} bucketList={false} profile={false} />
     </div>
   )
 }
