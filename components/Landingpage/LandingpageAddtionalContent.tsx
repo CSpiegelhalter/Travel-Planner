@@ -1,4 +1,4 @@
-import styles from '@/@/styles/componentStyles/LandingpageAdditionalContent.module.css'
+import styles from '@/styles/componentStyles/LandingpageAdditionalContent.module.css'
 import { HandlerProps } from '@/Types/types'
 import dynamic from 'next/dynamic'
 import { useState } from 'react'

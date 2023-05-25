@@ -12,7 +12,7 @@ function Hamburger(props: any) {
   const items: Record<string, any>[] = [
     {
       id: 1,
-      href: '/home',
+      href: '/map',
       name: 'Home',
     },
     {

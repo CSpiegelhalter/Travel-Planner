@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from '@/@/styles/componentStyles/DiscoverAndExplore.module.css'
+import styles from '@/styles/componentStyles/DiscoverAndExplore.module.css'
 import { HandlerProps } from '@/Types/types'
 
 function DiscoverAndExplore({ handler }: HandlerProps) {
