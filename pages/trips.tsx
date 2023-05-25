@@ -36,7 +36,6 @@ function trips(props: any) {
         lat: "4.32",
         lng: "4.34",
         attractionType: "Building",
-
       }
     ],
     Germany: [
@@ -69,6 +68,7 @@ function trips(props: any) {
   const Modal = dynamic(() => import('@/components/Modal'))
   const TripInfoCard = dynamic(() => import('@/components/TripInfoCard'))
   const TripsDefault = dynamic(() => import('@/components/TripsDefault'))
+  const CreateTrip = dynamic(() => import('@/components/CreateTrip'))
 
 
   const [modalDisplay, setModalDisplay] = useState()
@@ -76,28 +76,37 @@ function trips(props: any) {
   const [showDetails, setShowDetails] = useState(false)
   const [locationDetails, setLocationDetails] = useState([])
 
+  const detailDisplayHandler = (details: any) => {
+    setShowDetails(prevVal => !prevVal)
+    setLocationDetails(details)
+  }
+
   useEffect(() => {
     // we will call the api to check localStorage and if not then ping DB here
-    if (testData) {
-      setTripData(testData)
-    }
-    else setTripData(false)
-    
+    // if (testData) {
+    //   setTripData(testData)
+    // }
+    // else setTripData(false)
+    setTripData(false)
   }, [])
 
   return (
     <div className={styles.mainContainer}>
       <header className={styles.tripHeader}>
         <h1>My Trips:</h1>
+        {tripData && <CreateTrip />}
       </header>
+      
       {tripData ?
-        Object.entries(tripData).map(([key, value]: any, index) => (
-          <TripDisplay key={index} name={key} setLocationDetails={setLocationDetails} value={value}  length={value.length}/>
-        ))
+        <div className={styles.cardContainer}>
+        {Object.entries(tripData).map(([key, value]: any, index) => (
+          <TripDisplay key={index} name={key} handler={detailDisplayHandler} value={value}  length={value.length}/>
+        ))}
+        </div>
         :
         <TripsDefault setModalDisplay={setModalDisplay}/>
       }
-      {!!locationDetails.length &&
+      {showDetails &&
       (locationDetails.map((value: any, index) => (
         <TripInfoCard key={index} name={value.name} description={value.description} />
       )))

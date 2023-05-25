@@ -1,14 +1,24 @@
-import styles from '../styles/componentStyles/TripDisplay.module.css'
+import styles from '../styles/componentStyles/TripComponents.module.css'
+import Image from 'next/image'
 
 function TripDisplay(props: any) {
 
-
-
-
   return (
-    <div onClick={() => props.setLocationDetails(props.value)} className={styles.cardContainer}>
-      <h3>{props.name}</h3>
-      <h3>{props.length} Saved Locations</h3>
+    <div onClick={() => props.handler(props.value)} className={styles.cardContainer}>
+      <div className={styles.imageContainer}>
+        <Image
+          src='/tiltedPin.webp'
+          alt='Pin'
+          width={20}
+          height={20}
+          style={{
+            paddingTop: '0.4rem',
+            paddingLeft: '0.4rem'
+          }}
+        />
+      </div>
+        <p className={styles.name}>{props.name} </p>
+        <p className={styles.savedLocations}>{`${props.length} Saved Locations  >`}</p>
     </div>
   )
 
