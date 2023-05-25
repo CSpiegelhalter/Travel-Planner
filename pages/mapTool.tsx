@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../styles/pageStyles/mapTool.module.css'
+import styles from '@/styles/pageStyles/mapTool.module.css'
 import { useState, useEffect } from 'react'
 import { useLoadScript } from '@react-google-maps/api'
 import FindLocation from '@/hooks/FindLocation'

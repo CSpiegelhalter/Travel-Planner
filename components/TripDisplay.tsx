@@ -1,4 +1,4 @@
-import styles from '../styles/componentStyles/TripComponents.module.css'
+import styles from '@/styles/componentStyles/TripComponents.module.css'
 import Image from 'next/image'
 
 function TripDisplay(props: any) {

@@ -1,4 +1,4 @@
-import styles from '../styles/pageStyles/bucketList.module.css'
+import styles from '@/styles/pageStyles/bucketList.module.css'
 import dynamic from 'next/dynamic'
 
 

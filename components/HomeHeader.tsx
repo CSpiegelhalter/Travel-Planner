@@ -1,4 +1,4 @@
-import styles from '../styles/componentStyles/HomeHeader.module.css'
+import styles from '@/styles/componentStyles/HomeHeader.module.css'
 import { callPointsOfInterestsApi } from '@/helperFunctions/helperFunction'
 import { HomeHeader, PointsOfInterestApiParams } from '@/Types/types'
 import { locationLabels } from '@/constants/constants'

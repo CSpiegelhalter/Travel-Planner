@@ -1,4 +1,4 @@
-import styles from '../styles/componentStyles/LoadingSpinner.module.css'
+import styles from '@/styles/componentStyles/LoadingSpinner.module.css'
 
 
 function LoadingSpinner() {

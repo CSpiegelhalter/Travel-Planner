@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '../styles/pageStyles/bucketList.module.css'
+import styles from '@/styles/pageStyles/bucketList.module.css'
 
 
 function BucketListDefault(props) {

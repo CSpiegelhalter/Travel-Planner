@@ -1,6 +1,6 @@
 import { Root, Trigger, Portal, Content, Item } from '@radix-ui/react-dropdown-menu'
 import { HamburgerMenuIcon } from '@radix-ui/react-icons'
-import styles from '../styles/componentStyles/Hamburger.module.css'
+import styles from '@/styles/componentStyles/Hamburger.module.css'
 import Link from 'next/link'
 
 function Hamburger(props: any) {

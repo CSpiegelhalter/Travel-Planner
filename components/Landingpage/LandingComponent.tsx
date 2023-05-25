@@ -1,4 +1,4 @@
-import styles from '../../styles/componentStyles/LandingComponent.module.css'
+import styles from '@/@/styles/componentStyles/LandingComponent.module.css'
 import Image from 'next/image'
 import { HandlerProps } from '@/Types/types'
 import dynamic from 'next/dynamic'

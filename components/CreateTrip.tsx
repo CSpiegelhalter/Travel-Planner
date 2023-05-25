@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from '../styles/componentStyles/TripComponents.module.css'
+import styles from '@/styles/componentStyles/TripComponents.module.css'
 
 
 function CreateTrip(props) {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import styles from '../styles/pageStyles/trips.module.css'
+import styles from '@/styles/pageStyles/trips.module.css'
 import dynamic from 'next/dynamic'
 
 function trips(props: any) {

@@ -1,4 +1,4 @@
-import styles from '../styles/componentStyles/TripComponents.module.css'
+import styles from '@/styles/componentStyles/TripComponents.module.css'
 
 function TripInfoCard(props: any) {
     return (

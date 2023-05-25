@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Card from './Card'
-import styles from '../styles/componentStyles/SideBar.module.css'
+import styles from '@/styles/componentStyles/SideBar.module.css'
 import * as Tabs from '@radix-ui/react-tabs';
 
 function SideBar(props: any) {
