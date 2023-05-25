@@ -28,8 +28,8 @@
     position: relative;
     display: block;
     left: 5%;
-    width: 350px;;
-    height:250px;
+    width: 85vw;;
+    height:35vh;
 }
 
 .captionContainer {
@@ -53,8 +53,8 @@
     }
 
     .imageContainer{
-        width: 500px;;
-        height:330px;
+        width: 36vw;
+        height:44vh;
     }
     
     .captionContainer {
