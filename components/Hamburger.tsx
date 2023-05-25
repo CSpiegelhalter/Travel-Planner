@@ -1,6 +1,6 @@
 
 "use client";
-import styles from '../styles/componentStyles/Hamburger.module.css'
+import styles from '@/styles/componentStyles/Hamburger.module.css'
 import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
@@ -12,7 +12,7 @@ function Hamburger(props: any) {
   const items: Record<string, any>[] = [
     {
       id: 1,
-      href: '/map',
+      href: '/',
       name: 'Home',
     },
     {
