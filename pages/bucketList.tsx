@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 
 function bucketList(props: any) {
   const NavBar = dynamic(() => import('@/components/NavBar'))
-  const BucketListDefault = dynamic(() => import('@/components/BucketListDefault'))
+  const BucketListDefault = dynamic(() => import('@/components/BucketListPage/BucketListDefault'))
 
 
   return (

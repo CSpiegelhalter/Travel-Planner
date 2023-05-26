@@ -3,7 +3,7 @@ import styles from '@/styles/pageStyles/mapTool.module.css'
 import { useState, useEffect } from 'react'
 import { useLoadScript } from '@react-google-maps/api'
 import FindLocation from '@/hooks/FindLocation'
-import Map from '@/components/Map'
+import Map from '@/components/Mappage/Map'
 import { libraries } from '@/constants/constants'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import { Location } from '@/Types/types'
@@ -77,8 +77,8 @@ export default function Home() {
   }
 
   const Modal = dynamic(() => import('@/components/Modal'))
-  const SideBar = dynamic(() => import('@/components/SideBar'))
-  const HomeHeader = dynamic(() => import('@/components/HomeHeader'))
+  const SideBar = dynamic(() => import('@/components/Mappage/SideBar'))
+  const HomeHeader = dynamic(() => import('@/components/Mappage/HomeHeader'))
   const NavBar = dynamic(() => import('@/components/NavBar'))
 
   //our final return for home

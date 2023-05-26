@@ -63,12 +63,12 @@ function trips(props: any) {
     ]
   }
 
-  const TripDisplay = dynamic(() => import('@/components/TripDisplay'))
+  const TripDisplay = dynamic(() => import('@/components/Tripspage/TripDisplay'))
   const NavBar = dynamic(() => import('@/components/NavBar'))
   const Modal = dynamic(() => import('@/components/Modal'))
-  const TripInfoCard = dynamic(() => import('@/components/TripInfoCard'))
-  const TripsDefault = dynamic(() => import('@/components/TripsDefault'))
-  const CreateTrip = dynamic(() => import('@/components/CreateTrip'))
+  const TripInfoCard = dynamic(() => import('@/components/Tripspage/TripInfoCard'))
+  const TripsDefault = dynamic(() => import('@/components/Tripspage/TripsDefault'))
+  const CreateTrip = dynamic(() => import('@/components/Tripspage/CreateTrip'))
 
 
   const [modalDisplay, setModalDisplay] = useState()

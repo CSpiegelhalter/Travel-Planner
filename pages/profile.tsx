@@ -4,8 +4,8 @@ import dynamic from 'next/dynamic'
 
 function profilePage() {
   const NavBar = dynamic(() => import('@/components/NavBar'))
-  const ProfileComponent = dynamic(() => import('@/components/ProfileComponent'))
-  const ProfileDefault = dynamic(() => import('@/components/ProfileDefault'))
+  const ProfileComponent = dynamic(() => import('@/components/Profilepage/ProfileComponent'))
+  const ProfileDefault = dynamic(() => import('@/components/Profilepage/ProfileDefault'))
   const { user } = useUser()
   const userId: number = user?.['https://example.com/id'] as number
   const profilepicture = user?.picture
