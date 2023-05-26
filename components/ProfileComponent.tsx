@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from '@/styles/pageStyles/Profile.module.css'
 import Link from 'next/link'
 
