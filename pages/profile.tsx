@@ -1,56 +1,31 @@
-import NavBar from '@/components/NavBar'
 import { useUser } from '@auth0/nextjs-auth0/client'
-import React, { useEffect, useState } from 'react'
-import { grabUserAttractions } from '@/helperFunctions/grabUserAttractions'
-import { LocalStorageService } from '@/lib/localStorage'
+import Link from 'next/link'
 import styles from '@/styles/pageStyles/Profile.module.css'
+import dynamic from 'next/dynamic'
 
 function profilePage() {
-  const [attractions, setAttractions] = useState([])
+  const NavBar = dynamic(() => import('@/components/NavBar'))
   const { user } = useUser()
   const userId: number = user?.['https://example.com/id'] as number
-
-  useEffect(() => {
-    grabUserAttractions(userId).then((data) => {
-      setAttractions(data)
-    })
-  }, [])
-
-  // const grabUserAttractions = async () => {
-  //   const params = {
-  //     userId: user?.['https://example.com/id']
-  //   }
-  //   const options = {
-  //     method: 'POST',
-  //     body: JSON.stringify(params)
-  //   }
-  //   const data = await fetch('/api/grabAttractionsFromDB', options)
-  //   const attractionsArray = await data.json()
-  //   setAttractions(attractionsArray)
-  // }
-
+  const profilepicture = user?.picture
+  //TODO Check local storage OR get trips for length
+  const trips: any = ['1', '2', '3'] 
+  
   return (
-    <div className={styles.profilePageContainer}>
+    <div className={styles.mainContainer}>
       <NavBar profile={true} bucketList={false} trips={false} map={false} />
-
-      <div>
-        <h1>Welcome back, Brando!</h1>
-      </div>
       <div className={styles.profileContainer}>
+        <h1>{`${user?.given_name} ${user?.family_name}`}</h1>
+        <p className={styles.savedTrips}>{`${trips.length} Trips`}</p>
         <div className={styles.profileItemsList}>
-          <h2>Saved locations: </h2>
-          <ul>
-            {attractions.length ? attractions.map((attractions, index) => (
-              <li key={index} ><ul>
-                <li>{attractions['name']}</li>
-                <li>{attractions['address']}</li>
-                <li>{attractions['rating']} (star symbol here)</li>
-                <li>Description will go here</li>
-              </ul>
-              </li>
-            )) : null}
+          <ul className={styles.profileList}> 
+            <li className={styles.listItem}>{user?.given_name as string}</li>
+            <li className={styles.listItem}>{user?.family_name as string}</li>
+            <li className={styles.listItem}>{user?.nickname}</li>
+            <li className={styles.listItem}>{user?.email}</li>
           </ul>
         </div>
+        <Link className={styles.logout} href="api/auth/logout" prefetch={false}>Logout</Link>
       </div>
     </div>
   )

@@ -22,7 +22,7 @@ function Hamburger(props: any) {
     },
     {
       id: 3,
-      href: props.user ? '/logout' : '/login',
+      href: props.user ? 'api/auth/logout' : 'api/auth/login',
       name: props.user ? 'Logout' : 'Login',
     },
   ]
