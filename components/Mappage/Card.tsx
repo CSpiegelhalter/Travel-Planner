@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Button from '../Button'
+import Button from '@/components/Button'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import styles from '@/styles/componentStyles/Card.module.css'
 import { Card } from '@/Types/types'
