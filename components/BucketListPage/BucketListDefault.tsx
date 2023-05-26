@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from '@/styles/pageStyles/bucketList.module.css'
 
 
-function BucketListDefault(props) {
+function BucketListDefault(props: any) {
     return (
         <section className={styles.contentContainer}>
         <div className={styles.imageContainer}>
