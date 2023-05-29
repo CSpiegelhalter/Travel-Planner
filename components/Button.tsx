@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { ButtonProps } from '@/Types/types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Button(props: ButtonProps) {
   const [disabled, setDisabled] = useState(false)
@@ -17,7 +18,8 @@ function Button(props: ButtonProps) {
   return (
     <div>
       <button style={props.style} onClick={() => handleClick()} disabled={disabled} className={props.name}>
-        {props.value}
+      {props.img && <FontAwesomeIcon icon={props.img as any} /> }
+        <p className='buttonText'>{props.value}</p>
       </button>
     </div>
   )

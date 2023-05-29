@@ -1,7 +1,7 @@
 import styles from '../styles/componentStyles/HomeHeader.module.css'
 import { callPointsOfInterestsApi } from '@/helperFunctions/helperFunction'
 import { HomeHeader, PointsOfInterestApiParams } from '@/Types/types'
-import { locationLabels } from '@/constants/constants'
+import { locationButtons } from '@/constants/constants'
 import dynamic from 'next/dynamic'
 
 function HomeHeader(props: HomeHeader) {
@@ -17,7 +17,6 @@ function HomeHeader(props: HomeHeader) {
   }
   return (
     <header className={styles.mainHeader}>
-      <div className={styles.centerTop}>
         <div className={styles.placeContainer}>
           <PlaceComponent isLoaded={props.isLoaded} style={{ paddingRight: '0', marginRight: '0' }} />
           <Hamburger
@@ -25,18 +24,18 @@ function HomeHeader(props: HomeHeader) {
           />
         </div>
         <div className={styles.btnContainer}>
-          {Object.keys(locationLabels).map((point, index) => (
+          {locationButtons.map((point, index) => (
             <Button
               key={index}
               name="attractionsFilterBtn"
               handler={callPointsOfInterestsApi}
-              value={point}
+              value={point.name}
+              img={point.img}
+              alt={point.alt}
               params={{ typeOfInterest: point, ...params }}
               disabled=""
-              style={{ padding: '0.3rem', height: '2rem', fontWeight: '700' }}
             />
           ))}
-        </div>
       </div>
     </header>
   )

@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Card from './Card'
 import styles from '../styles/componentStyles/SideBar.module.css'
-import * as Tabs from '@radix-ui/react-tabs';
 
 function SideBar(props: any) {
 
   return (
 
     <div className={styles.infoSidebar}>
-      <Tabs.Root defaultValue="tab1" orientation="vertical">
+      {/* <Tabs.Root defaultValue="tab1" orientation="vertical">
         <div className={styles.btnContainer}>
           <Tabs.List className={styles.tabLists} aria-label="All trips">
             <div className={styles.triggerContainer}>
@@ -39,7 +38,7 @@ function SideBar(props: any) {
         <Tabs.Content value="savedLocationsTab">
           <Card name="test" rating={69} address="42 wallaby way Sydney Aus" ratingsCount={420} setIsOpen={props.setIsOpen} setShowInfo={props.setShowInfo} lat={12.3123} lng={12.3123} attractionType={{}} />
         </Tabs.Content>
-      </Tabs.Root>
+      </Tabs.Root> */}
     </div>
   )
 }

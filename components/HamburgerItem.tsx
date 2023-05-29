@@ -1,12 +1,18 @@
-'use client'
 import Link from 'next/link'
 import styles from '../styles/componentStyles/Hamburger.module.css'
 
-function HamburgerItem({ item, active }: any) {
+interface HamburgerItemProps {
+  actives: boolean;
+  item: Record<string, any>;
+  setSelected: any;
+  setHovered: any;
+  className: string
+}
+function HamburgerItem({ item, actives }: HamburgerItemProps) {
   return (
     <>
       <Link
-        className={active ? styles.burgerLinkSelected : styles.burgerLinkDeselected}
+        className={actives ? styles.burgerLinkSelected : styles.burgerLinkDeselected}
         href={item.href}
         prefetch={false}
       >
