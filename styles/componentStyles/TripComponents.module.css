@@ -1,0 +1,40 @@
+.cardContainer {
+    display: flex;
+    background: #A8E4F4;
+    padding: 0 0.75rem;
+    border-radius: 1.25rem;
+}
+
+.detailsContainer {
+    display: flex;
+}
+
+
+
+.name {
+    color: #0000EF;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.savedLocations {
+    padding-left: 1rem;
+    color: #0000EF;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.imageContainer {
+    background: white;
+    border-radius: 1rem;
+    height: 2rem;
+    width: 2rem;
+    padding: auto;
+    margin: auto;
+}
+
+.createTripContainer {
+    display: flex;
+    justify-content: center;
+    padding:auto;
+}

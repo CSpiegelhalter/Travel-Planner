@@ -1,5 +1,5 @@
 import LoadingSpinner from "./LoadingSpinner";
-import styles from '../styles/componentStyles/LoadingPage.module.css'
+import styles from '@/styles/componentStyles/LoadingPage.module.css'
 
 
 function LoadingPage() {

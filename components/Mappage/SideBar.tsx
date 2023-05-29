@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Card from './Card'
-import styles from '../styles/componentStyles/SideBar.module.css'
+import styles from '@/styles/componentStyles/SideBar.module.css'
 
 function SideBar(props: any) {
 

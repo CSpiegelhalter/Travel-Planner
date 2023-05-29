@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from '../styles/componentStyles/NavBar.module.css'
+import styles from '@/styles/componentStyles/NavBar.module.css'
 import Image from 'next/image'
 import { NavBarProps } from '@/Types/types'
 
@@ -12,7 +12,7 @@ function NavBar(props: NavBarProps) {
       selected: props.map,
       selectedImage: '/mapIconSelected.webp',
       unselectedImage: '/mapIconUnselected.webp',
-      href: '/mapTool',
+      href: '/map',
       name: 'Maps',
       alt: 'Map icon'
     },
@@ -36,7 +36,7 @@ function NavBar(props: NavBarProps) {
       selected: props.profile,
       selectedImage: "/backpackIconSelected.webp",
       unselectedImage: "/backpackUnhighlighted.webp",
-      href: "/profilePage",
+      href: "/profile",
       name: "Profile",
       alt: "Backpack Icon",
     },

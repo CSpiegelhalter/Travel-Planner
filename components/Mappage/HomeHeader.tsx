@@ -1,4 +1,4 @@
-import styles from '../styles/componentStyles/HomeHeader.module.css'
+import styles from '@/styles/componentStyles/HomeHeader.module.css'
 import { callPointsOfInterestsApi } from '@/helperFunctions/helperFunction'
 import { HomeHeader, PointsOfInterestApiParams } from '@/Types/types'
 import { locationButtons } from '@/constants/constants'
@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic'
 function HomeHeader(props: HomeHeader) {
   const Hamburger = dynamic(() => import('@/components/Hamburger'))
   const Button = dynamic(() => import('@/components/Button'))
-  const PlaceComponent = dynamic(() => import('@/components/PlaceComponent'))
+  const PlaceComponent = dynamic(() => import('@/components/Mappage/PlaceComponent'))
 
 
   const testList = ['spain', 'rome', 'vacay', 'our getaway']

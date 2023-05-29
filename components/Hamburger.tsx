@@ -1,5 +1,5 @@
-'use client'
-import styles from '../styles/componentStyles/Hamburger.module.css'
+"use client";
+import styles from '@/styles/componentStyles/Hamburger.module.css'
 import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
@@ -22,7 +22,7 @@ function Hamburger(props: any) {
     },
     {
       id: 3,
-      href: props.user ? '/logout' : '/login',
+      href: props.user ? 'api/auth/logout' : 'api/auth/login',
       name: props.user ? 'Logout' : 'Login',
     },
   ]
