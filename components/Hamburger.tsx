@@ -17,7 +17,7 @@ function Hamburger(props: any) {
     },
     {
       id: 2,
-      href: '/profilePage',
+      href: '/profile',
       name: 'Profile',
     },
     {
