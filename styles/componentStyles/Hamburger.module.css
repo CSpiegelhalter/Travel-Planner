@@ -1,51 +1,72 @@
-.hamburger {
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  justify-content: space-around;
-  flex-flow: column nowrap;
-}
 .hamburgerContainer {
+  width: 100%;
+  margin-top: 2.5vw;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  right: 20vw;
-  width: 30vw;
-  height: auto;
+  height: fit-content;
+  justify-content: right;
+  position: relative;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 20;
+  margin: auto;
+  background-color: white;
+  border-radius: 50%;
+  height: 3.5rem;
+  width: 3.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-shadow: 0px 1px 5px #8d8d8d;
+
 }
 
 .burger {
-  width: 2rem;
-  height: 0.25rem;
+  width: 1.5rem;
+  height: 0.15rem;
   border-radius: 10px;
   background-color: black;
+  margin: auto;
 }
 
-.burgerDropdown {
+.burgerDropdownCLOSE {
   background-color: white;
-  border-radius: 2%;
-  z-index: 20;
+  border-radius: 5%;
+  z-index: 50;
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 2rem;
-  width: 30vw;
+  top: 4rem;
+  right: 4vw;
+  width: 10rem;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .burgerLinkSelected,
 .burgerLinkDeselected {
+  border-radius: 5%;
   text-decoration: none;
   color: black;
   font-size: large;
   font-weight: 500;
   line-height: 5vh;
-  padding: 2rem;
+  padding-left: 1rem;
   z-index: 100;
 }
 
-.burgerLinkSelected, .burgerLinkSelected:hover, .burgerLinkDeselected:hover {
+.burgerLinkSelected,
+.burgerLinkSelected:hover,
+.burgerLinkDeselected:hover {
   background-color: gainsboro;
   color: black;
+}
+
+@media (min-width: 51.25rem) {
+  .burgerDropdownCLOSE {
+    top: 4rem;
+    right: 2vw;
+  }
 }

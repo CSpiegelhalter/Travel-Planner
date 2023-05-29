@@ -1,4 +1,4 @@
-import { ScrollableProps, Attraction, SmallCardProps } from '@/Types/types'
+import { ScrollableProps, Attraction } from '@/Types/types'
 import SmallCard from './SmallCard'
 import styles from '@/styles/componentStyles/ScrollablePicsHorizontal.module.css'
 

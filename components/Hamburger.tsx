@@ -1,9 +1,9 @@
-
 "use client";
 import styles from '@/styles/componentStyles/Hamburger.module.css'
 import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 function Hamburger(props: any) {
   const HamburgerItem = dynamic(() => import('@/components/HamburgerItem'))
@@ -69,7 +69,7 @@ function Hamburger(props: any) {
 
   useEffect(() => {
     const closeDropdown = (e: any) => {
-      if (!e?.target?.className?.includes('burger')) {
+      if (!e?.target?.className?.includes('CLOSE')  && isOpen) {
         setIsOpen(false)
       }
     }
@@ -110,24 +110,31 @@ function Hamburger(props: any) {
   return (
     <>
       <div className={styles.hamburgerContainer}>
-        <div className={styles.hamburger} onClick={() => toggleOpen()}>
-          <div className={styles.burger} />
-          <div className={styles.burger} />
-          <div className={styles.burger} />
+        <div className={styles.circle} onClick={() => toggleOpen()}>
+          <Image
+            width={32}
+            height={0}
+            src="/hamburger.svg"
+            alt="Hamburger dropdown list"
+            loading="lazy"
+            style={{ height: '50%', width: '50%' }}
+          />
+            
         </div>
         {isOpen && (
-          <div className={styles.burgerDropdown}>
-            {items.map((item, i) => (
-              <HamburgerItem
-                key={item.id}
-                active={i === cursor}
-                item={item}
-                setSelected={setSelected}
-                setHovered={setHovered}
-              />
-            ))}
-          </div>
-        )}
+        <div className={styles.burgerDropdownCLOSE}>
+          {items.map((item, i) => (
+            <HamburgerItem
+              className="burger"
+              key={item.id}
+              actives={i === cursor}
+              item={item}
+              setSelected={setSelected}
+              setHovered={setHovered}
+            />
+          ))}
+        </div>
+      )}
       </div>
     </>
   )

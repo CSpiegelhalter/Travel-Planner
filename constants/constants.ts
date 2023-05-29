@@ -1,11 +1,47 @@
-import { LocationLabels, Attraction } from '@/Types/types'
+import { LocationLabels, Attraction, LocationButtons } from '@/Types/types'
+import { faCoffee, faBinoculars, faUtensils, faBeerMugEmpty, faTree, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 export const locationLabels: LocationLabels = {
   Shopping: ['clothing_store', 'shopping_mall'],
   Restaurants: ['cafe', 'restaurant'],
   Bars: ['bar', 'night_club'],
   Attractions: ['amusement_park', 'museum', 'park', 'tourist_attraction'],
+  Cafes: [],
+  Nature: [],
 }
+
+export const locationButtons: LocationButtons[] = [
+  {
+    name: 'Attractions',
+    img: faBinoculars,
+    alt: 'Attractions'
+  },
+  {
+    name: 'Restaurants',
+    img: faUtensils,
+    alt: 'Restaurants'
+  },
+  {
+    name: 'Nature',
+    img: faTree,
+    alt: 'Nature'
+  },
+  {
+    name: 'Bars',
+    img: faBeerMugEmpty,
+    alt: 'Bars/Nightlife'
+  },
+  {
+    name: 'Shops',
+    img: faShoppingCart,
+    alt: 'Shopping'
+  },
+  {
+    name: 'Cafes',
+    img: faCoffee,
+    alt: 'Cafes'
+  },
+]
 
 export const libraries: Array<'places'> = ['places']
 

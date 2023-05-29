@@ -7,10 +7,12 @@ export interface Darkmode {
 }
 
 export interface ButtonProps {
+  img?: string
+  alt?: string
   handler?: any
   name: string
   value: string
-  style?: React.CSSProperties
+  style?: any
   disabled: any
   params?: any
 }
@@ -57,11 +59,19 @@ export interface PointsOfInterestApiParams {
   callback?: Function
 }
 
+export interface LocationButtons {
+  name: string
+  img: any
+  alt: string
+}
+
 export interface LocationLabels {
   Shopping: string[]
   Restaurants: string[]
   Bars: string[]
   Attractions: string[]
+  Cafes: any
+  Nature: any
 }
 
 export interface RouterProps {

@@ -1,67 +1,48 @@
+.mainHeader {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeContainer {
+  display: flex;
+  width: 100vw;
+}
+
 .btnContainer::-webkit-scrollbar {
   display: none;
 }
 .btnContainer {
   display: flex;
   z-index: 11;
-  padding-left: 0.85rem;
+  width: 95vw;
   overflow-x: scroll;
+  height: fit-content;
 }
 
-.mainHeader {
-  display: block;
-  position: fixed;
-  width: 100% !important;
-  height: 100% !important;
-  height: 3rem;
-  background-color: transparent;
-  z-index: 10;
-}
-
-/* I want this for desktop */
-
-.placeContainer {
-  display: flex;
-  align-items: center;
-  width: 75vw;
-}
-
-.mainHeader {
-  display: block;
-  position: absolute;
-  width: 100% !important;
-  height: 20% !important;
-  height: 3rem;
-  background-color: transparent;
-  z-index: 10;
-}
-
-@media (min-width: 28.125rem) {
-  .centerTop {
-    display: block;
-    position: fixed;
-    top: 10%;
-    left: 65%;
-    transform: translate(-50%, -50%);
+@media (min-width: 70rem) {
+  .placeContainer,
+  .btnContainer {
+    margin-left: 10vw;
   }
   .btnContainer {
-    position: relative;
-    display: flex;
-    z-index: 11;
-    overflow-x: scroll;
-    right: 27%;
-    top: 0;
-    margin-top: -2%;
+    width: fit-content;
   }
+}
 
+@media (min-width: 51.25rem) {
+  .mainHeader {
+    width: fit-content;
+    margin: auto;
+  }
   .placeContainer {
-    display: flex;
-    padding-left: 5%;
-    padding-top: 1rem;
+    width: 58vw;
   }
 
-  .hamburgerContainer {
-    left: 50%;
-    top: 0%;
+  .btnContainer {
+    justify-content: center;
   }
 }
