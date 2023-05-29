@@ -28,7 +28,7 @@ function NavBar(props: NavBarProps) {
       selected: props.bucketList,
       selectedImage: "/saveIconSelected.webp",
       unselectedImage: "/savedIconUnselected.webp",
-      href: "/bucketlist",
+      href: "/bucketList",
       name: "Bucket List",
       alt: "Save Icon",
     },
