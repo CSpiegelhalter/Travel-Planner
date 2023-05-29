@@ -1,14 +1,42 @@
 .landingContainer {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    width: 75vw;
-    height: fit-content;
-    text-align: center;
-    margin-top: 15vh;
-
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 75vw;
+  height: auto;
+  text-align: center;
+  margin-top: 15vh;
 }
 
 .landingContent {
-    height: fit-content;
+  height: fit-content;
+}
+
+.imageContainer {
+  width: 75vw;
+  height: auto;
+  margin-top: 10vh;
+}
+
+.logoContainer {
+  width: 10vw;
+  height: auto;
+  margin: auto;
+}
+
+.headerText {
+  font-weight: 700;
+  font-size: xx-large;
+}
+
+.followupText {
+  font-weight: 500;
+  font-size: large;
+  margin-bottom: 0;
+  line-height: 5vh;
+}
+
+.followupText,
+.headerText {
+  margin-top: 10vh;
 }

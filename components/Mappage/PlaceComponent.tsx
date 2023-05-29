@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { StandaloneSearchBox } from '@react-google-maps/api'
-import styles from '../styles/componentStyles/PlaceSearchInput.module.css'
+import styles from '@/styles/componentStyles/PlaceSearchInput.module.css'
 
 const PlaceComponent = (props: any) => {
   //useRef that holds the value of the searched itmes even if the page re-renders

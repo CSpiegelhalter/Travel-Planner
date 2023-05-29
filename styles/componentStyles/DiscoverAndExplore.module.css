@@ -1,34 +1,39 @@
 .discoverContainer {
-    width: 75vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
+  width: 75vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }
 
-.pin, .contentHeader, .contentDescription {
-    margin: auto
+.pin,
+.contentHeader,
+.contentDescription {
+  margin: auto;
 }
 
 .pin {
-    margin-top: 120px;
+  margin-top: 120px;
+  width: 7vw;
+  height: auto;
 }
 
 .contentHeader {
-    font-weight: 700;
-    font-size: x-large;
-    margin-top: 20px;
+  font-weight: 700;
+  font-size: x-large;
+  margin-top: 20px;
 }
 
 .contentDescription {
-    line-height: 30px;
-    text-align: center;
-    margin-top: 15px;
+  line-height: 30px;
+  text-align: center;
+  margin-top: 15px;
 }
 
 .dotContainer {
-    width: 50vw;
-    display: flex;
-    margin: auto;
-    margin-top: 60px;
+  width: 50vw;
+  height: auto;
+  display: flex;
+  margin: auto;
+  margin-top: 60px;
 }

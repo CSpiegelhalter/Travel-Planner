@@ -20,8 +20,8 @@ function LandingpageAddtionalContent({ handler }: HandlerProps) {
   return (
     <div className={styles.additionalContentContainer}>
       <DiscoverAndExplore handler={() => triggerDifferent()} />
-      {loadDifferent && <WhatMakesUsDifferent handler={() => triggerMemorableTrips()} />}
-      {loadMemorableTrips && <MemorableTrips handler={() => handler()} />}
+      <WhatMakesUsDifferent handler={() => triggerMemorableTrips()} />
+      <MemorableTrips handler={() => handler()} />
     </div>
   )
 }
