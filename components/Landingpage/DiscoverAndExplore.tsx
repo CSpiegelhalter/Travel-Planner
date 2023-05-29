@@ -14,7 +14,9 @@ function DiscoverAndExplore({ handler }: HandlerProps) {
         loading="lazy"
         onLoad={() => handler()}
       />
-      <Image className={styles.pin} width={60} height={60} loading="lazy" src="/tiltedPin.svg" alt="Map pin" />
+      <div className={styles.pin}>
+        <Image layout="responsive" width={0} height={0} loading="lazy" src="/tiltedPin.webp" alt="Map pin" />
+      </div>
       <p className={styles.contentHeader}>Discover and Explore</p>
       <p className={styles.contentDescription}>
         Whether you're an adventurous explorer, a cultural enthusiast, or a food lover, our tool is designed to help you
@@ -27,7 +29,7 @@ function DiscoverAndExplore({ handler }: HandlerProps) {
           height={50}
           loading="lazy"
           layout="responsive"
-          src="/dottedLine.svg"
+          src="/dottedLine.webp"
           alt="Travel route dotted line"
         />
       </div>

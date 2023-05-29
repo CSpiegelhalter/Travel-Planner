@@ -1,29 +1,37 @@
 .footerContainer {
-    background-color: #FFF0F3;
-    width: 100vw;
-    height: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 60px;
-    flex-direction: column;
-    font-weight: 700;
+  background-color: #fff0f3;
+  width: 100vw;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  flex-direction: column;
+  font-weight: 700;
 }
 
 .socials {
-    display: flex;
-    margin: auto;
-    width: 50vw;
-    margin-top: 5vh;
+  display: flex;
+  margin: auto;
+  width: 50vw;
+  margin-top: 5vh;
 }
 
 .socialIcon {
-    margin: auto;
-    margin-bottom: 5vh;
+  margin: auto;
+  margin-bottom: 5vh;
+  width: 7vw;
+  height: auto;
 }
 
 .generalPages {
-    margin-bottom: 2vh;
-    text-decoration: none;
-    color: black
+  margin-bottom: 2vh;
+  text-decoration: none;
+  color: black;
+}
+
+.nameIcon {
+  width: 20vw;
+  height: auto;
+  margin: 5vh;
 }
