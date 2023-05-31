@@ -49,8 +49,6 @@
 
 @media (min-width: 28.125rem) {
     .contentContainer{
-        display: block;
-        position: fixed;
         top: 25%;
         left:36%;
     }
@@ -66,8 +64,6 @@
     }
     
     .captionContainer {
-        display: block;
-        position: fixed;
         padding-top: 3%;
         padding-left: 2%; 
     }
