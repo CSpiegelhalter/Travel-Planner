@@ -38,7 +38,7 @@ function trips(props: any) {
         attractionType: "Building",
       }
     ],
-    Germany: [
+    abcdefghijklmno: [
       {
         name: "BrandenBurg Gate",
         address: "123 berlin",
@@ -83,25 +83,24 @@ function trips(props: any) {
 
   useEffect(() => {
     // we will call the api to check localStorage and if not then ping DB here
-    // if (testData) {
-    //   setTripData(testData)
-    // }
-    // else setTripData(false)
-    setTripData(false)
+    if (testData) {
+      setTripData(testData)
+    }
+    else setTripData(false)
   }, [])
-
+  
   return (
     <div className={styles.mainContainer}>
       <header className={styles.tripHeader}>
         <h1>My Trips:</h1>
-        {tripData && <CreateTrip />}
+        <CreateTrip setModalDisplay={setModalDisplay}/>
+
       </header>
-      
       {tripData ?
         <div className={styles.cardContainer}>
         {Object.entries(tripData).map(([key, value]: any, index) => (
           <TripDisplay key={index} name={key} handler={detailDisplayHandler} value={value}  length={value.length}/>
-        ))}
+          ))}
         </div>
         :
         <TripsDefault setModalDisplay={setModalDisplay}/>
@@ -109,7 +108,7 @@ function trips(props: any) {
       {showDetails &&
       (locationDetails.map((value: any, index) => (
         <TripInfoCard key={index} name={value.name} description={value.description} />
-      )))
+        )))
       }
 
       {modalDisplay && <Modal setIsOpen={setModalDisplay} />}

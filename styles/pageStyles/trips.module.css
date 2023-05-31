@@ -1,6 +1,9 @@
  .mainContainer {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
     height:100%;
+    margin: auto;
 }
 
 .mainContent{
@@ -44,10 +47,20 @@
     padding: auto;
     display: flex;
 }
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    padding: auto;
+    margin: auto;
+    padding-top: 2rem;
+}
 
 
 
 @media (min-width: 28.125rem) {
+    
     .mainContent{
         padding-top: 5%;
     }
@@ -69,3 +82,12 @@
     }
     
       }
+
+      
+@media(min-width: 500px){
+    .tripHeader {
+        display:flex;
+        justify-content: space-between;
+        margin-left: 5vw;
+    }
+}

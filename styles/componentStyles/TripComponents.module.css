@@ -1,12 +1,18 @@
 .cardContainer {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: #A8E4F4;
     padding: 0 0.75rem;
+    margin: 1rem;
     border-radius: 1.25rem;
+    width: 70vw;
+ 
 }
 
 .detailsContainer {
     display: flex;
+    
 }
 
 
@@ -18,9 +24,8 @@
 }
 
 .savedLocations {
-    padding-left: 1rem;
     color: #0000EF;
-    font-weight: 600;
+    font-weight: 400 ;
     font-size: 1rem;
 }
 
@@ -31,10 +36,69 @@
     width: 2rem;
     padding: auto;
     margin: auto;
+    
+    
+}
+
+
+.title {
+    display: flex;
+    align-self: left;
+    padding-left:1rem;
+}
+
+.leftContainer {
+    display: flex;
+    align-items: left;
 }
 
 .createTripContainer {
     display: flex;
+    position: absolute;
     justify-content: center;
-    padding:auto;
+    align-items: bottom;
+    bottom: 17.5%;
+    left: 25%;
+    background:#A8E4F4;
+    border: 1px solid #0000EF;
+    border-radius: 1rem;
+    padding: 0 1rem;
+}
+
+.createTripImage {
+    margin: auto 0;
+    padding-right: 0.5rem;
+    padding: auto ;
+}
+
+.createTripContainer:hover{
+    cursor: pointer;
+}
+
+.cardContainer:hover{
+    cursor: pointer;
+}
+
+@media(min-width: 500px){
+    .createTripContainer {
+        position: static;
+        margin-top: 1rem;
+    }
+    
+    .cardContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #A8E4F4;
+        padding: 0 0.75rem;
+        margin: 1rem;
+        border-radius: 1.25rem;
+        width: 30vw;
+    }
+
+    .leftContainer {
+        display: flex;
+        /* align-items: left; */
+    }
+    
 }
