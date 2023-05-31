@@ -6,7 +6,6 @@ function CreateTrip(props) {
     const onClickHandler = () => {
         props.setModalDisplay(prevVal => !prevVal)
     }
-
     return (
         <div className={styles.createTripContainer} onClick={() => onClickHandler()} >
             <div className={styles.createTripImage}>

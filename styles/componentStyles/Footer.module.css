@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 60px;
+  margin-top: 8rem;
   flex-direction: column;
   font-weight: 700;
 }
@@ -20,18 +20,25 @@
 .socialIcon {
   margin: auto;
   margin-bottom: 5vh;
-  width: 7vw;
+  width: 3rem;
   height: auto;
 }
 
 .generalPages {
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
   text-decoration: none;
   color: black;
 }
 
 .nameIcon {
-  width: 20vw;
+  width: 8rem;
   height: auto;
   margin: 5vh;
+  margin-bottom: 3vh;
+}
+
+@media (min-width: 56rem) {
+  .socialIcon {
+    /* width: 4vw; */
+  }
 }

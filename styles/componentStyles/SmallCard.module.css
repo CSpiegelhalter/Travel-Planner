@@ -1,38 +1,47 @@
 .smallCardContainer {
-    position: relative;
-    height: fit-content;
-    margin: auto;
-    margin-left: 3vw;
+  position: relative;
+  height: fit-content;
+  margin: auto;
+  margin-left: 3vw;
 }
 
 .descriptionContainer {
-    position: absolute;
-    bottom: 2vh;
-    margin-left: 3vw;
-    z-index: 10;
+  position: absolute;
+  bottom: 2vh;
+  margin-left: 3vw;
+  z-index: 10;
 }
 
-.name, .location {
-    margin: 0;
+.name,
+.location {
+  margin: 0;
 }
 
 .name {
-    font-weight: 600;
-    font-size: large;
-    color: #ffff;
+  font-weight: 600;
+  font-size: large;
+  color: #ffff;
 }
 
 .location {
-    font-weight: 600;
-    font-size: small;
-    color: #C9C9C9;
+  font-weight: 600;
+  font-size: small;
+  color: #c9c9c9;
 }
 
 .cardImageOverlay {
-    background: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
-    position: inherit;
-    width: 65vw;
-    height: 25vh;
-    border-radius: 25px;
-  }
+  background: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
+  position: inherit;
+  width: 15rem;
+  height: 9rem;
+  border-radius: 25px;
+}
 
+
+
+@media (min-width: 56rem) {
+    .cardImageOverlay {
+        width: 19rem;
+        height: 12rem;
+      }
+    }
