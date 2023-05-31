@@ -1,8 +1,8 @@
 .scrollableContainer {
-    display: flex;
-    width: auto;
-     height: 25vh;
-     flex-wrap: nowrap;
+  display: flex;
+  width: auto;
+  height: 25vh;
+  flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;

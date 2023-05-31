@@ -15,3 +15,9 @@
   margin: auto;
   margin-top: 8vh;
 }
+
+@media (min-width: 56rem) {
+  .navigationButtonText {
+    margin-top: 5vh;
+  }
+}

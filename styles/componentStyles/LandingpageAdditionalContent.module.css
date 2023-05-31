@@ -1,8 +1,8 @@
 .additionalContentContainer {
-    width: 75vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 15vh;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 15vh;
 }

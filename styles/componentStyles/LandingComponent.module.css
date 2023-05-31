@@ -5,7 +5,7 @@
   width: 75vw;
   height: auto;
   text-align: center;
-  margin-top: 15vh;
+  margin-top: 10vh;
 }
 
 .landingContent {
@@ -15,11 +15,11 @@
 .imageContainer {
   width: 75vw;
   height: auto;
-  margin-top: 10vh;
+  margin-top: 5vh;
 }
 
 .logoContainer {
-  width: 10vw;
+  width: 3rem;
   height: auto;
   margin: auto;
 }
@@ -39,4 +39,41 @@
 .followupText,
 .headerText {
   margin-top: 10vh;
+}
+
+@media (min-width: 56rem) {
+  /* These change the order of elements on page */
+  .landingContent {
+    display: flex;
+    flex-direction: column;
+  }
+  .landingContent :nth-child(2) {
+    order: 4;
+  }
+  .landingContent :nth-child(3) {
+    order: 2;
+  }
+  .landingContent :nth-child(4) {
+    order: 3;
+  }
+  .landingContent :nth-child(5) {
+    order: 5;
+  }
+  /* ^^^^^^^^^^^^^^ */
+
+  .headerText {
+    margin-top: 5vh;
+    font-size: 3.5rem;
+    margin-bottom: 0;
+  }
+
+  .logoContainer {
+    width: 5rem;
+  }
+}
+
+@media (min-width: 94rem) {
+  .followupText {
+    font-size: 1.5rem;
+  }
 }
