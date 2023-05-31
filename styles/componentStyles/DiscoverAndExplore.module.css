@@ -1,9 +1,19 @@
 .discoverContainer {
   width: 75vw;
   height: fit-content;
+  flex-direction: column;
+  display: flex;
+  margin: auto;
+}
+
+.imageContainer {
+  width: 75vw;
+}
+
+.otherContentContainer {
+  width: 75vw;
   display: flex;
   flex-direction: column;
-  margin: auto;
 }
 
 .pin,
@@ -36,4 +46,41 @@
   display: flex;
   margin: auto;
   margin-top: 60px;
+}
+
+@media (min-width: 56rem) {
+  .discoverContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 85vw;
+  }
+  .pin {
+    width: 4vw;
+    margin: 0;
+  }
+  .contentHeader {
+    margin: 0;
+  }
+
+  .contentDescription {
+    text-align: left;
+  }
+
+  .otherContentContainer,
+  .imageContainer {
+    width: 40vw;
+  }
+
+  .dotContainer {
+    width: 20vw;
+  }
+}
+
+@media (min-width: 94rem) {
+  .contentHeader {
+    font-size: 3rem;
+  }
+  .contentDescription {
+    font-size: 1.5rem;
+  }
 }

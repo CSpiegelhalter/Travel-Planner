@@ -23,7 +23,6 @@ function LandingPage() {
       <Head>
         <title>Curious Visits</title>
         <meta name="description" content="Find cool things to do in... " />
-        <link rel="preload" fetch-priority="high" as="image" href="landingpageTopIllustration.svg" />
       </Head>
 
       <LandingComponent handler={() => triggerAdditionalContent()} />
