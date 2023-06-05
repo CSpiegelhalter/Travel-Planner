@@ -9,12 +9,6 @@
     width: 70vw;
 }
 
-.detailsContainer {
-    display: flex;
-}
-
-
-
 .name {
     color: #0000EF;
     font-weight: 600;
@@ -99,3 +93,10 @@
     }
     
 }
+
+.showDetails {
+    display: flex;
+    justify-content: left;
+    align-itens: left;
+}
+
