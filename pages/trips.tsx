@@ -66,20 +66,14 @@ function trips(props: any) {
   const TripDisplay = dynamic(() => import('@/components/Tripspage/TripDisplay'))
   const NavBar = dynamic(() => import('@/components/NavBar'))
   const Modal = dynamic(() => import('@/components/Modal'))
-  const TripInfoCard = dynamic(() => import('@/components/Tripspage/TripInfoCard'))
+  const TripInfoCard = dynamic(() => import('@/components/Tripspage/TripInfoModal'))
   const TripsDefault = dynamic(() => import('@/components/Tripspage/TripsDefault'))
   const CreateTrip = dynamic(() => import('@/components/Tripspage/CreateTrip'))
 
 
   const [modalDisplay, setModalDisplay] = useState()
   const [tripData, setTripData] = useState({})
-  const [showDetails, setShowDetails] = useState(false)
-  const [locationDetails, setLocationDetails] = useState([])
 
-  const detailDisplayHandler = (details: any) => {
-    setShowDetails(prevVal => !prevVal)
-    setLocationDetails(details)
-  }
 
   useEffect(() => {
     // we will call the api to check localStorage and if not then ping DB here
@@ -87,30 +81,25 @@ function trips(props: any) {
       setTripData(testData)
     }
     else setTripData(false)
+    // setTripData(false)
   }, [])
-  
+
   return (
     <div className={styles.mainContainer}>
       <header className={styles.tripHeader}>
         <h1>My Trips:</h1>
-        <CreateTrip setModalDisplay={setModalDisplay}/>
+        <CreateTrip setModalDisplay={setModalDisplay} />
 
       </header>
       {tripData ?
         <div className={styles.cardContainer}>
-        {Object.entries(tripData).map(([key, value]: any, index) => (
-          <TripDisplay key={index} name={key} handler={detailDisplayHandler} value={value}  length={value.length}/>
+          {Object.entries(tripData).map(([key, value]: any, index) => (
+            <TripDisplay key={index} name={key} value={value} length={value.length} tripdata={tripData} />
           ))}
         </div>
         :
-        <TripsDefault setModalDisplay={setModalDisplay}/>
+        <TripsDefault setModalDisplay={setModalDisplay} />
       }
-      {showDetails &&
-      (locationDetails.map((value: any, index) => (
-        <TripInfoCard key={index} name={value.name} description={value.description} />
-        )))
-      }
-
       {modalDisplay && <Modal setIsOpen={setModalDisplay} />}
       <NavBar trips={true} map={false} bucketList={false} profile={false} />
     </div>

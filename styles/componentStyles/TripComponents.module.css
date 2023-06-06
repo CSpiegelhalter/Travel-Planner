@@ -9,12 +9,6 @@
     width: 70vw;
 }
 
-.detailsContainer {
-    display: flex;
-}
-
-
-
 .name {
     color: #0000EF;
     font-weight: 600;
@@ -77,7 +71,7 @@
     cursor: pointer;
 }
 
-@media(min-width: 500px){
+@media(min-width: 650px){
     .createTripContainer {
         position: static;
         margin-top: 1rem;
@@ -99,3 +93,10 @@
     }
     
 }
+
+.showDetails {
+    display: flex;
+    justify-content: left;
+    align-itens: left;
+}
+
