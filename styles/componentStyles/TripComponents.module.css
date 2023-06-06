@@ -71,7 +71,7 @@
     cursor: pointer;
 }
 
-@media(min-width: 500px){
+@media(min-width: 650px){
     .createTripContainer {
         position: static;
         margin-top: 1rem;

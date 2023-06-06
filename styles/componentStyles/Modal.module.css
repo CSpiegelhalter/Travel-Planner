@@ -10,18 +10,20 @@
   }
   
   .centered {
+    display:flex;
+    flex-direction: column;
+    /* justify-content:center; */
+    align-items:top;
     position: fixed;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90vw;
-    height: 50vh;
+    width: 50vw;
+    height: 60vh;
     background: #fff !important;
-    /* color: white; */
     z-index: 10;
     border-radius: 16px;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-    /* border: 4px solid #E2E2FF; */
   }
   
   .modalHeader {
@@ -44,6 +46,8 @@
   
   .modalContent {
     display: flex;
+    flex-direction:column;
+    align-items:center;
     padding: 10px;
     font-size: 14px;
     color: #2c3e50;
@@ -92,9 +96,7 @@
   }
   
 .addToTripBtn {
-  position: absolute;
-  display: block;
-  margin-top:2rem;
+  margin-top:4rem;
   width:15rem;
   height:4.5rem;
   bottom: 1.6rem;

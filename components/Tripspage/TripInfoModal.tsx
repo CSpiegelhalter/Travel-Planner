@@ -9,7 +9,7 @@ function TripInfoModal(props: any) {
             <div className={styles.centered}>
                 <div className={styles.modalContainer}>
                     <div className={styles.modalHeader}>
-                        <h1 className={styles.heading}>Create a new Trip!</h1>
+                        <h1 className={styles.heading}>View Trip Locations!</h1>
                     </div>
                     <button className={styles.closeBtn} onClick={() => props.setShowDetails(false)}>
                         x
