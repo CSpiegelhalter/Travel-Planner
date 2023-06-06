@@ -37,8 +37,6 @@
   
   .heading {
     margin: 1.125rem;
-    /* padding: 0.4rem; */
-    /* color: #2c3e50; */
     font-weight: 700;
     font-size: 1.5rem;
     text-align: center;
@@ -51,7 +49,6 @@
     padding: 10px;
     font-size: 14px;
     color: #2c3e50;
-    /* background: white; */
     text-align: center;
     margin-top: 1rem;
   }
@@ -103,10 +100,6 @@
   left: 15%;
   background-color: #FC266B;
 
-}
-
-.spacingContainer {
-  /* padding: 0.2rem; */
 }
   
 .inputBar {
