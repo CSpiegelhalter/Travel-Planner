@@ -54,13 +54,13 @@ function NavBar(props: NavBarProps) {
             style={{ textDecoration: 'none' }}
           >
             <div className={styles.navBtn}>
-              <Image
-                src={info.selected ? info.selectedImage : info.unselectedImage}
-                alt={info.alt}
-                width={50}
-                height={50}
-                layout="responsive"
-              />
+              <div className={styles.imageContainer}>
+                <Image
+                  src={info.selected ? info.selectedImage : info.unselectedImage}
+                  alt={info.alt}
+                  fill
+                />
+              </div>
               <p className={styles.btnLabels} style={info.selected ? { color: '#0000EF' } : { color: 'grey' }}>
                 {info.name}
               </p>
