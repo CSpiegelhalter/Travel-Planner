@@ -55,6 +55,7 @@
 
 @media(min-width:1080px){
   .detailsContainer {
+    /*The width of 39rem is three cards side by side + their margins*/
     width: 39rem;
     flex-direction: row;
     flex-wrap: wrap;

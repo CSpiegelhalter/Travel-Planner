@@ -46,26 +46,28 @@ function NavBar(props: NavBarProps) {
       <Image className={styles.logo} src="/Logo.webp" alt="Logo" width={60} height={60} />
       <div className={styles.buttonContainer}>
         {iconItems.map((info, index) => (
-          <Link
-            key={index}
-            className={styles.link}
-            href={info.href}
-            prefetch={false}
-            style={{ textDecoration: 'none' }}
-          >
-            <div className={styles.navBtn}>
-              <div className={styles.imageContainer}>
-                <Image
-                  src={info.selected ? info.selectedImage : info.unselectedImage}
-                  alt={info.alt}
-                  fill
-                />
+          <div className={styles.btnBorder}>
+            <Link
+              key={index}
+              className={styles.link}
+              href={info.href}
+              prefetch={false}
+              style={{ textDecoration: 'none' }}
+            >
+              <div className={styles.navBtn}>
+                <div className={styles.imageContainer}>
+                  <Image
+                    src={info.selected ? info.selectedImage : info.unselectedImage}
+                    alt={info.alt}
+                    fill
+                  />
+                </div>
+                <p className={styles.btnLabels} style={info.selected ? { color: '#0000EF' } : { color: 'grey' }}>
+                  {info.name}
+                </p>
               </div>
-              <p className={styles.btnLabels} style={info.selected ? { color: '#0000EF' } : { color: 'grey' }}>
-                {info.name}
-              </p>
-            </div>
-          </Link>
+            </Link>
+          </div>
         ))}
       </div>
     </header>

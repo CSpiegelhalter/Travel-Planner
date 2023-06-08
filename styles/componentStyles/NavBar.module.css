@@ -90,14 +90,22 @@
     border-radius: 1rem;
   } 
 
-  .link:hover {
-    border: 2px solid #0000ef;
-    transition: border-width 0.1s ease-in;
-  }
   .imageContainer{
     width: 50px;
     height:50px;
   }
+}
+
+.btnBorder {
+  width: 100%;
+  margin-left: 1rem;
+  margin-top:0.1rem;
+}
+
+.btnBorder:hover {
+  outline: 2px solid #0000ef;
+  transition: border-width 0.1s ease-in;
+  border-radius: 1rem;
 }
 
 @media (max-width: 70rem) {
