@@ -64,25 +64,16 @@
 }
 
 .createTripBtn{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
     position: absolute;
     width: 100%;
     max-width: 300px;
     height: 68px;
-    left: calc(50% - 300px/2);
     top: 70%;
     background: #FC266B;
     border-radius: 10px;
     color: white;
-    font-family: 'Geliat';
-    font-style: normal;
     font-weight: 600;
     font-size: 18px;
-    line-height: 18px;
     border: none;
 }
 
