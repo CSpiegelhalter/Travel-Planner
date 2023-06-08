@@ -1,6 +1,8 @@
 import styles from '@/styles/componentStyles/tripInfoModal.module.css'
+import LocationDetailsCard from '../LocationDetailsCard';
 
 function TripInfoModal(props: any) {
+
     return (
 
 
@@ -14,24 +16,10 @@ function TripInfoModal(props: any) {
                     <button className={styles.closeBtn} onClick={() => props.setShowDetails(false)}>
                         x
                     </button>
-                    <div className={styles.modalContent}>
-                        <div className={styles.detailsContainer}>
-                            {props.locationDetails.map((value: any, index: number) => (
-                            <ul className={styles.tripList}>
-                                <li className={styles.listItem}>{value.name}</li>
-                                <li className={styles.listItem}>{value.address}</li>
-                                <li className={styles.listItem}>{value.rating} stars</li>
-                                <li className={styles.listItem}>{value.reviewCount}</li>
-                                <li className={styles.listItem}>{value.description}</li>
-                            </ul>
-          ))}
-                        </div>
-                    </div>
+\                        <LocationDetailsCard locationDetails={props.locationDetails}/>
                 </div>
             </div>
         </div>
-
-    
     );
 }
 
