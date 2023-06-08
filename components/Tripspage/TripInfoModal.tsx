@@ -16,9 +16,7 @@ function TripInfoModal(props: any) {
                     <button className={styles.closeBtn} onClick={() => props.setShowDetails(false)}>
                         x
                     </button>
-                    {/* <div className={styles.modalContent}> */}
-                        <LocationDetailsCard locationDetails={props.locationDetails}/>
-                    {/* </div> */}
+\                        <LocationDetailsCard locationDetails={props.locationDetails}/>
                 </div>
             </div>
         </div>
