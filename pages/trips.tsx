@@ -19,6 +19,55 @@ function trips(props: any) {
         imageUrl: "https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no"
       },
       {
+        name: "Eiffel Tower",
+        address: "123 somewhere in Paris",
+        rating: "4",
+        reviewCount: "123",
+        descriptionShort: "Could be bigger",
+        descritptionLong: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        lat: "1.232",
+        lng: "1.232",
+        attractionType: "Tourist",
+        imageUrl: "https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no"
+      },
+      {
+        name: "Eiffel Tower",
+        address: "123 somewhere in Paris",
+        rating: "4",
+        reviewCount: "123",
+        descriptionShort: "Could be bigger",
+        descritptionLong: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        lat: "1.232",
+        lng: "1.232",
+        attractionType: "Tourist",
+        imageUrl: "https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no"
+      },
+      {
+        name: "Eiffel Tower",
+        address: "123 somewhere in Paris",
+        rating: "4",
+        reviewCount: "123",
+        descriptionShort: "Could be bigger",
+        descritptionLong: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        lat: "1.232",
+        lng: "1.232",
+        attractionType: "Tourist",
+        imageUrl: "https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no"
+      },
+      {
+        name: "Eiffel Tower",
+        address: "123 somewhere in Paris",
+        rating: "4",
+        reviewCount: "123",
+        descriptionShort: "Could be bigger",
+        descritptionLong: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        lat: "1.232",
+        lng: "1.232",
+        attractionType: "Tourist",
+        imageUrl: "https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no"
+      },
+      
+      {
         name: "Louve",
         address: "321 somewhere in Paris",
         rating: "4.5",
