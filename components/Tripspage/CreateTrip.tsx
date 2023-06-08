@@ -12,11 +12,11 @@ function CreateTrip(props) {
             <Image 
                 src="/createTripPlus.webp"
                 alt="Plus Sign"
-                height={30}
-                width={30}
+                height={20}
+                width={20}
             />
             </div>
-            <h2>Create Trip</h2>
+            <h3>Create Trip</h3>
         </div>
     );
 }

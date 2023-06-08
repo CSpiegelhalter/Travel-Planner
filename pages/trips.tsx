@@ -158,6 +158,7 @@ function trips(props: any) {
         <TripsDefault setModalDisplay={setModalDisplay} />
       }
       {modalDisplay && <Modal setIsOpen={setModalDisplay} />}
+      <button className={styles.createTripBtn}>Create Trip</button>
       <NavBar trips={true} map={false} bucketList={false} profile={false} />
     </div>
   )
