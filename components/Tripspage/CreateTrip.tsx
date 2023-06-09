@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import styles from '@/styles/componentStyles/TripComponents.module.css'
 
-
-function CreateTrip(props) {
+function CreateTrip(props: any) {
     const onClickHandler = () => {
         props.setModalDisplay(prevVal => !prevVal)
     }

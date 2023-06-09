@@ -1,9 +1,10 @@
 import styles from '@/styles/componentStyles/TripComponents.module.css'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import TripInfoModal from './TripInfoModal'
 import { useState } from 'react'
 
 function TripDisplay(props: any) {
+  const TripInfoModal = dynamic(() => import('@/components/Tripspage/TripInfoModal'))
   
   const [showDetails, setShowDetails] = useState(false)
   const [locationDetails, setLocationDetails] = useState([])

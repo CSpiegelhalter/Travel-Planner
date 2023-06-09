@@ -1,7 +1,10 @@
 import styles from '@/styles/componentStyles/tripInfoModal.module.css'
-import LocationDetailsCard from '../LocationDetailsCard';
+import dynamic from 'next/dynamic'
+
 
 function TripInfoModal(props: any) {
+    const LocationDetailsCard = dynamic(() => import('@/components/LocationDetailsCard'))
+    
 
     return (
 
