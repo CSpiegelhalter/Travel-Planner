@@ -7,11 +7,11 @@
 }
 
 .contentContainer{
-    display: block;
-    position: fixed;
-    top: 35%;
-    left: 3%;
-    padding-bottom: 0;
+display: flex;
+flex-direction: column;
+align-items:center;
+justify-content: center;
+margin-top: 4rem;
 }
 
 .imageCaption{
@@ -29,21 +29,12 @@
     left:5%
 }
 
- .captionContainer {
-    display: block;
-    position: fixed;
-    padding-top: 5%;
-    }
+
 
 @media (min-width: 28.125rem) {
-    .contentContainer{
-        top: 25%;
-        left:36%;
-    }
 
-    .headerCaption {
-        padding-left: 2rem;
-        padding-top: 1rem;
+    .contentContainer{
+        margin-top: 8rem;
     }
 
     .imageContainer{
@@ -51,10 +42,5 @@
         height:230px;
     }
     
-    .captionContainer {
-        padding-top: 3%;
-        padding-left: 2%; 
-    }
-
 
       }

@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from '@/styles/componentStyles/bucketListDisplay.module.css'
 import dynamic from 'next/dynamic';
 
