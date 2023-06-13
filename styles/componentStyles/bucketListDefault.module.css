@@ -1,0 +1,60 @@
+.mainContainer {
+    width: 80%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    margin:auto;
+}
+
+.contentContainer{
+    display: block;
+    position: fixed;
+    top: 35%;
+    left: 3%;
+    padding-bottom: 0;
+}
+
+.imageCaption{
+    color: grey;
+    padding-left: 10%;
+    padding-right:4%;
+    padding-bottom: 20%
+}
+
+.imageContainer{
+    position: relative;
+    display:block;
+    width: 300px;
+    height:150px;
+    left:5%
+}
+
+ .captionContainer {
+    display: block;
+    position: fixed;
+    padding-top: 5%;
+    }
+
+@media (min-width: 28.125rem) {
+    .contentContainer{
+        top: 25%;
+        left:36%;
+    }
+
+    .headerCaption {
+        padding-left: 2rem;
+        padding-top: 1rem;
+    }
+
+    .imageContainer{
+        width: 400px;
+        height:230px;
+    }
+    
+    .captionContainer {
+        padding-top: 3%;
+        padding-left: 2%; 
+    }
+
+
+      }
