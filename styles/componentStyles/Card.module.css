@@ -1,45 +1,64 @@
 .cardContainer {
-    /* border: 5px solid black;
-    border-radius: 1rem; */
-    width: 90%;
-    height: auto;
-    margin-top: 1rem;
-    display: flex;
-    /* flex-direction: column; */
-    jusify-content: center;
-    align-items: center;
-  
-  }
-  
-  .cardBtnContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-left: 0.5rem;
-    /* align-items: center; */
-  }
+  width: 90%;
+  height: auto;
+  margin-top: 1rem;
+  display: flex;
 
-  .imageContainer{
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width: 100%;
-    max-width: 125px;
+  jusify-content: center;
+  align-items: center;
+}
+
+.cardBtnContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 0.5rem;
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 125px;
+  height: 100px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  padding: auto;
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 1rem;
+}
+
+.infoContainer {
+  margin-left: 0.5rem;
+}
+
+.infoContent {
+  font-size: 10px;
+}
+
+.cardContentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 550px) {
+  .imageContainer {
+    max-width: 300px;
+    height: 200px;
+  }
+  .infoContent {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1120px) {
+  .imageContainer {
     height: 100px;
-    border-radius: 0.5rem;
-    overflow:hidden;
-    padding:auto;
-    margin:auto;
-    border: 2px solid black;
-    border-radius: 1rem;
 
   }
+}
 
-  .infoContainer{
-    margin-left:0.5rem;
-  }
 
-  .infoContent{
-    font-size: 10px;
-  }

@@ -19,7 +19,7 @@ function Button(props: ButtonProps) {
     <div>
       <button style={props.style} onClick={() => handleClick()} disabled={disabled} className={props.name}>
       {props.img && <FontAwesomeIcon icon={props.img as any} /> }
-        <p className='buttonText'>{props.value}</p>
+        <p className={props.buttonText ?? 'buttonText'}>{props.value}</p>
       </button>
     </div>
   )

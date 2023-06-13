@@ -15,6 +15,7 @@ export interface ButtonProps {
   style?: any
   disabled: any
   params?: any
+  buttonText?: string
 }
 
 export interface Card {

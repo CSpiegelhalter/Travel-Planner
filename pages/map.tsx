@@ -111,17 +111,17 @@ export default function Home() {
                 locationHandler={setUserLocation}
                 displayHandler={handleSavedTripsDisplay}
               />
+              {showInfo && <SideBar
+                /*we to change this back changed for testing below*/
+                placesInfo={testLocations}
+                setIsOpen={setIsOpen}
+                setShowInfo={setShowInfo}
+              />}
             </div>
           </div>
           <NavBar map={true} trips={false} bucketList={false} profile={false} />
         </div>
         {isOpen && <Modal setIsOpen={setIsOpen} />}
-        {showInfo && <SideBar 
-        /*we to change this back changed for testing below*/ 
-        placesInfo={testLocations} 
-        setIsOpen={setIsOpen} 
-        setShowInfo={setShowInfo} 
-        />}
       </main>
     </>
   )

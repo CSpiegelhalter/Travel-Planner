@@ -45,14 +45,16 @@ function Card(props: Card) {
           fill
         />
       </div>
+      <div className={styles.cardContentContainer}>
       <div className={styles.infoContainer}>
-        <p className={styles.infoContent}>{props.name}</p>
+        <h3 className={styles.infoContent}>{props.name}</h3>
         <p className={styles.infoContent}>{props.address}</p>
         <p className={styles.infoContent}>{props.descriptionShort}</p>
       </div>
       <div className={styles.cardBtnContainer}>
-        <Button handler={addAttractionToDB as any} name="card-btn-addToProfile" value="Add to profile!" disabled={disabled}></Button>
-        <Button handler={() => clickHandler()} name="card-btn-addToTrip" value="Add to trip!" disabled=''></Button>
+        <Button handler={addAttractionToDB as any} name="cardBtn" buttonText='cardBtnText'  value="Add to profile!" disabled={disabled}></Button>
+        <Button handler={() => clickHandler()} name="cardBtn" buttonText='cardBtnText' value="Add to trip!" disabled=''></Button>
+      </div>
       </div>
     </div>
   )

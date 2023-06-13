@@ -1,19 +1,15 @@
-
-
 .infoSidebar {
-  z-index: 1;
+  z-index: 90;
   background-color: #ffffff;
-  height: 35vh;
+  height: 40vh;
   width: 100vw;
   position: fixed;
-  bottom: 16.25%;
+  bottom: 0%;
   overflow: hidden;
   overflow-y: scroll;
-  border-radius: 1rem;
-  /* margin: 1rem; */
+  border-radius: 2rem;
   display: flex; 
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   }
 
@@ -41,3 +37,13 @@
     position: sticky;
   }
 
+@media (min-width: 70rem){
+    .infoSidebar{
+      position:relative;
+      z-index: 10;
+      bottom:0;
+      right:0;
+      height: 100vh;
+      width: 40vw;
+    }
+  }
