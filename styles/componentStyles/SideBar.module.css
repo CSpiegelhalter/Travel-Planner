@@ -1,73 +1,20 @@
-  .tabLists {
-  }
-  .tabLists::before,
-  .tabLists::after {
-    content: "";
-    display: table;
-  }
-  .tabLists::after {
-    clear: both;
-  }
-  .tab-switch {
-    display: none;
-  }
 
-  .tabLabel {
-    position: relative;
-    margin: 0;
-    line-height: 2.75em;
-    padding: 0 1.618em;
-    background: #5e5e5e;
-    border-right: 0.125rem solid #8d8d8d;
-    color: #fff;
-    cursor: pointer;
-    top: -0.5rem;
-    left: -0.5rem;
-    transition: all 0.25s;
-    border: 1px;
-    border-radius: 8%;
-  }
-
-  .tabLabel[data-state='active'] {
-    background-color: #8d8d8d;
-
-    }
-  .leftTab {
-    border-top-left-radius: 1rem;
-  }
-  
-
-
-  /* .tabLabel:hover {
-    top: 0rem;
-    transition: top 0.25s;
-  } */
 
 .infoSidebar {
-  /* box-sizing: border-box; */
   z-index: 1;
-  background-color: #8d8d8d;
-  height: 40vh;
-    width: 80vw;
-    position: fixed;
-    bottom: 0%;
-    overflow: hidden;
-    overflow-y: scroll;
-    border-radius: 1rem;
-    margin: 0.5rem;
-    right: 10%;
-    padding-right: 0; 
-  }
-
-  .greyBG {
-    position: relative;
-    background: #5e5e5e;
-    margin: 0;
-    width: 70rem;
-    padding-bottom: 1rem;
-    top: -0.5rem;
-    left: -0.5rem;
-    border-top-right-radius:0.5rem ;
+  background-color: #ffffff;
+  height: 35vh;
+  width: 100vw;
+  position: fixed;
+  bottom: 16.25%;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-radius: 1rem;
+  /* margin: 1rem; */
+  display: flex; 
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
   }
 
   .btnContainer {
@@ -94,7 +41,3 @@
     position: sticky;
   }
 
-  .triggerContainer {
-    padding: 0.5rem;
-    display: flex;
-  }

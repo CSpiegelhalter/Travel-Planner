@@ -1,21 +1,45 @@
 .cardContainer {
-    color: white;
-    border: 5px solid var(--color-secondary);
-    border-radius: 3%/10%;
-    padding: 5%;
-    margin-left:1.7rem;
-    margin-right:1rem;
-    margin-top:0.1rem;
-    margin-bottom: 1rem;
-    border-width: 1px;
-    border-color: black;
-    border-style: solid;
-    background: #636363;
+    /* border: 5px solid black;
+    border-radius: 1rem; */
+    width: 90%;
+    height: auto;
+    margin-top: 1rem;
+    display: flex;
+    /* flex-direction: column; */
+    jusify-content: center;
+    align-items: center;
+  
   }
   
   .cardBtnContainer {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    margin-left: 0.5rem;
+    /* align-items: center; */
   }
 
-  /* border-radius: 7%/10%; for mobile  */
+  .imageContainer{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width: 100%;
+    max-width: 125px;
+    height: 100px;
+    border-radius: 0.5rem;
+    overflow:hidden;
+    padding:auto;
+    margin:auto;
+    border: 2px solid black;
+    border-radius: 1rem;
+
+  }
+
+  .infoContainer{
+    margin-left:0.5rem;
+  }
+
+  .infoContent{
+    font-size: 10px;
+  }

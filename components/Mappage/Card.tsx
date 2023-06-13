@@ -3,6 +3,7 @@ import Button from '@/components/Button'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import styles from '@/styles/componentStyles/Card.module.css'
 import { Card } from '@/Types/types'
+import Image from 'next/image';
 
 
 function Card(props: Card) {
@@ -35,16 +36,20 @@ function Card(props: Card) {
     props.setIsOpen(true)
     props.setShowInfo(false)
   }
-
   return (
     <div className={styles.cardContainer}>
-      <p>{props.name}</p>
-      <p className="rating">
-        {props.rating}, Number of ratings {props.ratingsCount}
-      </p>
-      <p className="address">{props.address}</p>
-      <p>{props.lat}, {props.lng}</p>
-      {props.attractionType ? <p>{Object.keys(props.attractionType)}</p> : null}
+      <div className={styles.imageContainer}>
+        <Image
+          src={props.imageUrl}
+          alt={props.name}
+          fill
+        />
+      </div>
+      <div className={styles.infoContainer}>
+        <p className={styles.infoContent}>{props.name}</p>
+        <p className={styles.infoContent}>{props.address}</p>
+        <p className={styles.infoContent}>{props.descriptionShort}</p>
+      </div>
       <div className={styles.cardBtnContainer}>
         <Button handler={addAttractionToDB as any} name="card-btn-addToProfile" value="Add to profile!" disabled={disabled}></Button>
         <Button handler={() => clickHandler()} name="card-btn-addToTrip" value="Add to trip!" disabled=''></Button>

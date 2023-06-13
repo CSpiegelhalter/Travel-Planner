@@ -7,11 +7,17 @@ const PlaceComponent = (props: any) => {
   const inputRef: any = useRef()
   //This handles if the place has changed meaning that you have selected one of the suggestions.It currently just console.logs out the information that it is given
   const handlePlaceChanged = () => {
-    const [place] = inputRef.current.getPlaces()
-    if (place) {
-      console.log(place.formatted_address)
-      console.log(place.geometry.location.lat())
-      console.log(place.geometry.location.lng())
+    // Grabs the whole array not destructered so that we can do an if statement on it
+    const placeArr = inputRef?.current?.getPlaces()
+    if (placeArr?.[0]) {
+      const [place] = placeArr
+      const location = {
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng(),
+        city: place.formated_address
+      }
+      props.locationHandler(location)
+      props.displayHandler(true)
     }
   }
   //The final return that checks if isLoaded is true and if so renders the searchBox  and inputs.

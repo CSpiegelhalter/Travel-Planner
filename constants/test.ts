@@ -1,6 +1,6 @@
 export const testLocations: object = [
     {
-        name: "Eiffel Tower",
+        name: "Eiffel Tower start",
         address: "123 somewhere in Paris",
         rating: "4",
         reviewCount: "123",
