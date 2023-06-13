@@ -1,9 +1,11 @@
 import Image from 'next/image';
-import styles from '@/styles/pageStyles/bucketList.module.css'
+import styles from '@/styles/componentStyles/bucketListDefault.module.css'
+import { useEffect, useState } from 'react';
 
 
 function BucketListDefault(props: any) {
-    return (
+
+  return (
         <section className={styles.contentContainer}>
         <div className={styles.imageContainer}>
           <Image src="/paperAirplaneIllustration.webp" alt="walking up stairs" fill />
