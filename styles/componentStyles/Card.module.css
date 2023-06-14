@@ -44,6 +44,7 @@
   justify-content: center;
 }
 
+
 @media (min-width: 550px) {
   .imageContainer {
     max-width: 300px;
@@ -54,10 +55,19 @@
   }
 }
 
+
 @media (min-width: 1120px) {
   .imageContainer {
-    height: 100px;
+    min-widh:100px;
+    height: 75px;
+     }
+}
 
+@media (min-width: 1300px) {
+  .imageContainer {
+    min-width:175px;
+    height: 175px;   
+    
   }
 }
 
