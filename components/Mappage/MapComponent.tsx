@@ -18,8 +18,6 @@ export default function Map(props: any) {
       },
     ],
   }
-  // console.log(typeof parseFloat(testLocations[0].lat))
-  // console.log(typeof parseFloat(testLocations[0].lng))
   return (
     <GoogleMap options={mapOptions} z-index={1} zoom={15} center={props.location} mapContainerClassName="map-container">
       {testLocations.map((marker: any, index: any) => (
