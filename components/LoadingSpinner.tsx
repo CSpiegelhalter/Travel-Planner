@@ -1,6 +1,5 @@
 import styles from '@/styles/componentStyles/LoadingSpinner.module.css'
 
-
 function LoadingSpinner() {
   return (
     <div className={styles.ldsRoller}>

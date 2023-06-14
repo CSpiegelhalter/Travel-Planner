@@ -14,7 +14,7 @@ const PlaceComponent = (props: any) => {
       const location = {
         lat: place.geometry.location.lat(),
         lng: place.geometry.location.lng(),
-        city: place.formated_address
+        city: place.formated_address,
       }
       props.locationHandler(location)
       props.displayHandler(true)

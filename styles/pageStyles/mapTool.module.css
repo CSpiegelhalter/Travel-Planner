@@ -14,18 +14,7 @@
 }
 
 .infoContainer {
-  display: flex; 
-
-  /* position: relative; */
-  /* z-index: 100; */
-  /* top: 0; */
-  /* width: fit-content; */
-  /* width: 100vw; */
-  /* height: auto; */
-  /* left: 0; 
-  right: 0; 
-  margin-left: auto; 
-  margin-right: auto;  */
+  display: flex;
 }
 
 .mapContents {

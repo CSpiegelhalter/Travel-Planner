@@ -9,7 +9,6 @@ function HomeHeader(props: HomeHeader) {
   const Button = dynamic(() => import('@/components/Button'))
   const PlaceComponent = dynamic(() => import('@/components/Mappage/PlaceComponent'))
 
-
   const params: PointsOfInterestApiParams = {
     callback: props.callback,
     city: props.city,
@@ -23,9 +22,7 @@ function HomeHeader(props: HomeHeader) {
           locationHandler={props.locationHandler}
           displayHandler={props.displayHandler}
         />
-        <Hamburger
-          user={props.user}
-        />
+        <Hamburger user={props.user} />
       </div>
       <div className={styles.btnContainer}>
         {locationButtons.map((point, index) => (

@@ -115,7 +115,7 @@ export interface NavigationButtonProps {
 }
 
 export interface NavBarProps {
-  map: boolean 
+  map: boolean
   trips: boolean
   bucketList: boolean
   profile: boolean

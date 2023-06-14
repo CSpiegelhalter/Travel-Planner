@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import styles from '@/styles/componentStyles/Hamburger.module.css'
 import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
@@ -69,7 +69,7 @@ function Hamburger(props: any) {
 
   useEffect(() => {
     const closeDropdown = (e: any) => {
-      if (!e?.target?.className?.includes('CLOSE')  && isOpen) {
+      if (!e?.target?.className?.includes('CLOSE') && isOpen) {
         setIsOpen(false)
       }
     }
@@ -119,22 +119,21 @@ function Hamburger(props: any) {
             loading="lazy"
             style={{ height: '50%', width: '50%' }}
           />
-            
         </div>
         {isOpen && (
-        <div className={styles.burgerDropdownCLOSE}>
-          {items.map((item, i) => (
-            <HamburgerItem
-              className="burger"
-              key={item.id}
-              actives={i === cursor}
-              item={item}
-              setSelected={setSelected}
-              setHovered={setHovered}
-            />
-          ))}
-        </div>
-      )}
+          <div className={styles.burgerDropdownCLOSE}>
+            {items.map((item, i) => (
+              <HamburgerItem
+                className="burger"
+                key={item.id}
+                actives={i === cursor}
+                item={item}
+                setSelected={setSelected}
+                setHovered={setHovered}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </>
   )

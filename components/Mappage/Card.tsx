@@ -3,13 +3,19 @@ import Button from '@/components/Button'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import styles from '@/styles/componentStyles/Card.module.css'
 import { Card } from '@/Types/types'
-import Image from 'next/image';
-
+import Image from 'next/image'
 
 function Card(props: Card) {
-
   const [disabled, setDisabled] = useState(false)
-  const locationData = [props?.name, props?.rating, props?.address, props?.lat, props?.lng, props?.attractionType, props?.ratingsCount]
+  const locationData = [
+    props?.name,
+    props?.rating,
+    props?.address,
+    props?.lat,
+    props?.lng,
+    props?.attractionType,
+    props?.ratingsCount,
+  ]
 
   const addAttractionToDB = async () => {
     const params = {
@@ -22,7 +28,6 @@ function Card(props: Card) {
       attraction_type: locationData?.[5],
       rating_count: locationData?.[6],
       email: locationData?.[7],
-
     }
     const options = {
       method: 'POST',
@@ -39,22 +44,30 @@ function Card(props: Card) {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.imageContainer}>
-        <Image
-          src={props.imageUrl}
-          alt={props.name}
-          fill
-        />
+        <Image src={props.imageUrl} alt={props.name} fill />
       </div>
       <div className={styles.cardContentContainer}>
-      <div className={styles.infoContainer}>
-        <h3 className={styles.infoContent}>{props.name}</h3>
-        <p className={styles.infoContent}>{props.address}</p>
-        <p className={styles.infoContent}>{props.descriptionShort}</p>
-      </div>
-      <div className={styles.cardBtnContainer}>
-        <Button handler={addAttractionToDB as any} name="cardBtn" buttonText='cardBtnText'  value="Add to profile!" disabled={disabled}></Button>
-        <Button handler={() => clickHandler()} name="cardBtn" buttonText='cardBtnText' value="Add to trip!" disabled=''></Button>
-      </div>
+        <div className={styles.infoContainer}>
+          <h3 className={styles.infoContent}>{props.name}</h3>
+          <p className={styles.infoContent}>{props.address}</p>
+          <p className={styles.infoContent}>{props.descriptionShort}</p>
+        </div>
+        <div className={styles.cardBtnContainer}>
+          <Button
+            handler={addAttractionToDB as any}
+            name="cardBtn"
+            buttonText="cardBtnText"
+            value="Add to profile!"
+            disabled={disabled}
+          ></Button>
+          <Button
+            handler={() => clickHandler()}
+            name="cardBtn"
+            buttonText="cardBtnText"
+            value="Add to trip!"
+            disabled=""
+          ></Button>
+        </div>
       </div>
     </div>
   )

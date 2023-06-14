@@ -32,8 +32,7 @@ export default function Home() {
     if (!!location) {
       setLocation({ lat: location.lat, lng: location.lng })
       setCity(location.city)
-    }
-    else if (!!defaultLocation) {
+    } else if (!!defaultLocation) {
       setLocation({ lat: defaultLocation.lat, lng: defaultLocation.lng })
       setCity(defaultLocation.city)
     } else {
@@ -78,7 +77,6 @@ export default function Home() {
   //   setShowInfo(true)
   // }
 
-
   const updatePlaces = (data: any) => {
     setPlacesInfo(data)
     setShowInfo(true)
@@ -111,12 +109,14 @@ export default function Home() {
                 locationHandler={setUserLocation}
                 displayHandler={handleSavedTripsDisplay}
               />
-              {showInfo && <SideBar
-                /*we to change this back changed for testing below*/
-                placesInfo={testLocations}
-                setIsOpen={setIsOpen}
-                setShowInfo={setShowInfo}
-              />}
+              {showInfo && (
+                <SideBar
+                  /*we to change this back changed for testing below*/
+                  placesInfo={testLocations}
+                  setIsOpen={setIsOpen}
+                  setShowInfo={setShowInfo}
+                />
+              )}
             </div>
           </div>
           <NavBar map={true} trips={false} bucketList={false} profile={false} />
