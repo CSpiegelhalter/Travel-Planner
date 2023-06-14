@@ -1,4 +1,4 @@
-export const testLocations: object = [
+export const testLocations: any = [
   {
     name: 'Eiffel Tower start',
     address: '123 somewhere in Paris',
@@ -7,8 +7,8 @@ export const testLocations: object = [
     descriptionShort: 'Could be bigger',
     descritptionLong:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    lat: '1.232',
-    lng: '1.232',
+    lat: '48.8584',
+    lng: '2.2945',
     attractionType: 'Tourist',
     imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
   },
@@ -20,8 +20,8 @@ export const testLocations: object = [
     descriptionShort: 'Could be bigger',
     descritptionLong:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    lat: '1.232',
-    lng: '1.232',
+    lat: '49.1231',
+    lng: '3.2321',
     attractionType: 'Tourist',
     imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
   },
@@ -33,8 +33,8 @@ export const testLocations: object = [
     descriptionShort: 'Could be bigger',
     descritptionLong:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    lat: '1.232',
-    lng: '1.232',
+    lat: '48.0001',
+    lng: '2.3321',
     attractionType: 'Tourist',
     imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
   },
@@ -46,8 +46,8 @@ export const testLocations: object = [
     descriptionShort: 'Could be bigger',
     descritptionLong:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    lat: '1.232',
-    lng: '1.232',
+    lat: '48.8738',
+    lng: '2.2950',
     attractionType: 'Tourist',
     imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
   },
@@ -59,8 +59,8 @@ export const testLocations: object = [
     descriptionShort: 'Could be bigger',
     descritptionLong:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    lat: '1.232',
-    lng: '1.232',
+    lat: '48.8338',
+    lng: '2.3324',
     attractionType: 'Tourist',
     imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
   },
@@ -71,8 +71,8 @@ export const testLocations: object = [
     rating: '4.5',
     reviewCount: '123',
     description: 'Art Art Art',
-    lat: '2.123',
-    lng: '2.123',
+    lat: '48.8606',
+    lng: '2.3376',
     attractionType: 'Museum',
     imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
   },
@@ -82,8 +82,8 @@ export const testLocations: object = [
     rating: '2',
     reviewCount: '123',
     description: 'Big building',
-    lat: '4.32',
-    lng: '4.34',
+    lat: '48.852966',
+    lng: '2.349902',
     attractionType: 'Building',
     imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
   },
