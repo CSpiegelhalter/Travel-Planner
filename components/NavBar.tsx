@@ -56,11 +56,7 @@ function NavBar(props: NavBarProps) {
             >
               <div className={styles.navBtn}>
                 <div className={styles.imageContainer}>
-                  <Image
-                    src={info.selected ? info.selectedImage : info.unselectedImage}
-                    alt={info.alt}
-                    fill
-                  />
+                  <Image src={info.selected ? info.selectedImage : info.unselectedImage} alt={info.alt} fill />
                 </div>
                 <p className={styles.btnLabels} style={info.selected ? { color: '#0000EF' } : { color: 'grey' }}>
                   {info.name}

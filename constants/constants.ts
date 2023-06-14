@@ -1,5 +1,12 @@
 import { LocationLabels, Attraction, LocationButtons } from '@/Types/types'
-import { faCoffee, faBinoculars, faUtensils, faBeerMugEmpty, faTree, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import {
+  faCoffee,
+  faBinoculars,
+  faUtensils,
+  faBeerMugEmpty,
+  faTree,
+  faShoppingCart,
+} from '@fortawesome/free-solid-svg-icons'
 
 export const locationLabels: LocationLabels = {
   Shopping: ['clothing_store', 'shopping_mall'],
@@ -14,32 +21,32 @@ export const locationButtons: LocationButtons[] = [
   {
     name: 'Attractions',
     img: faBinoculars,
-    alt: 'Attractions'
+    alt: 'Attractions',
   },
   {
     name: 'Restaurants',
     img: faUtensils,
-    alt: 'Restaurants'
+    alt: 'Restaurants',
   },
   {
     name: 'Nature',
     img: faTree,
-    alt: 'Nature'
+    alt: 'Nature',
   },
   {
     name: 'Bars',
     img: faBeerMugEmpty,
-    alt: 'Bars/Nightlife'
+    alt: 'Bars/Nightlife',
   },
   {
     name: 'Shops',
     img: faShoppingCart,
-    alt: 'Shopping'
+    alt: 'Shopping',
   },
   {
     name: 'Cafes',
     img: faCoffee,
-    alt: 'Cafes'
+    alt: 'Cafes',
   },
 ]
 

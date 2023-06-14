@@ -1,100 +1,49 @@
-  .tabLists {
-  }
-  .tabLists::before,
-  .tabLists::after {
-    content: "";
-    display: table;
-  }
-  .tabLists::after {
-    clear: both;
-  }
-  .tab-switch {
-    display: none;
-  }
-
-  .tabLabel {
-    position: relative;
-    margin: 0;
-    line-height: 2.75em;
-    padding: 0 1.618em;
-    background: #5e5e5e;
-    border-right: 0.125rem solid #8d8d8d;
-    color: #fff;
-    cursor: pointer;
-    top: -0.5rem;
-    left: -0.5rem;
-    transition: all 0.25s;
-    border: 1px;
-    border-radius: 8%;
-  }
-
-  .tabLabel[data-state='active'] {
-    background-color: #8d8d8d;
-
-    }
-  .leftTab {
-    border-top-left-radius: 1rem;
-  }
-  
-
-
-  /* .tabLabel:hover {
-    top: 0rem;
-    transition: top 0.25s;
-  } */
-
 .infoSidebar {
-  /* box-sizing: border-box; */
-  z-index: 1;
-  background-color: #8d8d8d;
+  z-index: 90;
+  background-color: #ffffff;
   height: 40vh;
-    width: 80vw;
-    position: fixed;
-    bottom: 0%;
-    overflow: hidden;
-    overflow-y: scroll;
-    border-radius: 1rem;
-    margin: 0.5rem;
-    right: 10%;
-    padding-right: 0; 
-  }
+  width: 100vw;
+  position: fixed;
+  bottom: 0%;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .greyBG {
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  /* margin: 0; */
+}
+
+.closeBtn {
+  cursor: pointer;
+  font-weight: 500;
+  /* padding: 4px 8px; */
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 0.75rem;
+  color: #2c3e50;
+  background: rgb(195, 9, 9);
+  transition: all 0.25s ease;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+  top: -2rem;
+  right: 0rem;
+  margin-left: 80%;
+  margin-top: 0;
+  position: sticky;
+}
+
+@media (min-width: 70rem) {
+  .infoSidebar {
     position: relative;
-    background: #5e5e5e;
-    margin: 0;
-    width: 70rem;
-    padding-bottom: 1rem;
-    top: -0.5rem;
-    left: -0.5rem;
-    border-top-right-radius:0.5rem ;
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    width: 40vw;
   }
-
-  .btnContainer {
-    display:flex;
-    justify-content:space-between;
-    /* margin: 0; */
-  }
-  
-  .closeBtn {
-    cursor: pointer;
-    font-weight: 500;
-    /* padding: 4px 8px; */
-    border-radius: 0.5rem;
-    border: none;
-    font-size: 0.75rem;
-    color: #2c3e50;
-    background: rgb(195, 9, 9);
-    transition: all 0.25s ease;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
-    top: -2rem;
-    right: 0rem;
-    margin-left: 80%;
-    margin-top: 0;
-    position: sticky;
-  }
-
-  .triggerContainer {
-    padding: 0.5rem;
-    display: flex;
-  }
+}

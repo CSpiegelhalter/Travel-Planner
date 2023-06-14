@@ -1,46 +1,41 @@
 .mainContainer {
-    width: 80%;
-    height:100%;
-    display:flex;
-    flex-direction: column;
-    margin:auto;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }
 
-.contentContainer{
-display: flex;
-flex-direction: column;
-align-items:center;
-justify-content: center;
-margin-top: 4rem;
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
 }
 
-.imageCaption{
-    color: grey;
-    padding-left: 10%;
-    padding-right:4%;
-    padding-bottom: 20%
+.imageCaption {
+  color: grey;
+  padding-left: 10%;
+  padding-right: 4%;
+  padding-bottom: 20%;
 }
 
-.imageContainer{
-    position: relative;
-    display:block;
-    width: 300px;
-    height:150px;
-    left:5%
+.imageContainer {
+  position: relative;
+  display: block;
+  width: 300px;
+  height: 150px;
+  left: 5%;
 }
-
-
 
 @media (min-width: 28.125rem) {
+  .contentContainer {
+    margin-top: 8rem;
+  }
 
-    .contentContainer{
-        margin-top: 8rem;
-    }
-
-    .imageContainer{
-        width: 400px;
-        height:230px;
-    }
-    
-
-      }
+  .imageContainer {
+    width: 400px;
+    height: 230px;
+  }
+}

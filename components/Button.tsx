@@ -9,8 +9,8 @@ function Button(props: ButtonProps) {
     if (disabled) return
     setDisabled(true)
     props.handler().then(() => {
-        setDisabled(false)
-      })
+      setDisabled(false)
+    })
   }
 
   useEffect(() => {}, [disabled])
@@ -18,8 +18,8 @@ function Button(props: ButtonProps) {
   return (
     <div>
       <button style={props.style} onClick={() => handleClick()} disabled={disabled} className={props.name}>
-      {props.img && <FontAwesomeIcon icon={props.img as any} /> }
-        <p className='buttonText'>{props.value}</p>
+        {props.img && <FontAwesomeIcon icon={props.img as any} />}
+        <p className={props.buttonText ?? 'buttonText'}>{props.value}</p>
       </button>
     </div>
   )

@@ -9,6 +9,8 @@ import { useUser } from '@auth0/nextjs-auth0/client'
 import { Location } from '@/Types/types'
 import LoadingPage from '@/components/LoadingPage'
 import dynamic from 'next/dynamic'
+//DELETE ME I AM FOR TESTING
+import { testLocations } from '@/constants/test'
 
 export default function Home() {
   //These are the two states used to get our location for centering
@@ -25,12 +27,16 @@ export default function Home() {
   //State for the Modal
   const [isOpen, setIsOpen] = useState(false)
   // this sets our location State using this function
-  async function setUserLocation() {
-    const value: Location | undefined = await FindLocation()
-    if (!!value) {
-      setLocation({ lat: value.lat, lng: value.lng })
-      setCity(value.city)
+  async function setUserLocation(location: any) {
+    const defaultLocation: Location | undefined = await FindLocation()
+    if (!!location) {
+      setLocation({ lat: location.lat, lng: location.lng })
+      setCity(location.city)
+    } else if (!!defaultLocation) {
+      setLocation({ lat: defaultLocation.lat, lng: defaultLocation.lng })
+      setCity(defaultLocation.city)
     } else {
+      //this is a default location that we chose
       setLocation({ lat: 51.5072, lng: 0.1276 })
     }
   }
@@ -41,7 +47,7 @@ export default function Home() {
   //This is a useEffect used to make sure that the users location is grabbed only once when the page is rendered
   useEffect(() => {
     if (!hasLoaded) {
-      setUserLocation()
+      setUserLocation(null)
       setHasLoaded(true)
     }
   }, [])
@@ -100,13 +106,22 @@ export default function Home() {
                 user={user}
                 callback={updatePlaces}
                 city={city}
+                locationHandler={setUserLocation}
+                displayHandler={handleSavedTripsDisplay}
               />
+              {showInfo && (
+                <SideBar
+                  /*we to change this back changed for testing below*/
+                  placesInfo={testLocations}
+                  setIsOpen={setIsOpen}
+                  setShowInfo={setShowInfo}
+                />
+              )}
             </div>
           </div>
           <NavBar map={true} trips={false} bucketList={false} profile={false} />
         </div>
         {isOpen && <Modal setIsOpen={setIsOpen} />}
-        {showInfo && <SideBar placesInfo={placesInfo} setIsOpen={setIsOpen} setShowInfo={setShowInfo} />}
       </main>
     </>
   )

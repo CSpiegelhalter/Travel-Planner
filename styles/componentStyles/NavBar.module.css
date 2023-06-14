@@ -16,7 +16,6 @@
   width: 100%;
   padding: 0;
   align-items: center;
-  
 }
 
 .link {
@@ -47,13 +46,13 @@
 }
 
 .imageContainer {
-  position:relative;
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 35px;
   height: 35px;
-  overflow: visible
+  overflow: visible;
 }
 
 @media (min-width: 70rem) {
@@ -83,23 +82,23 @@
     top: 0vh;
     line-height: 2vh;
     margin-top: 2vh;
-  } 
+  }
 
- .navBtn {
+  .navBtn {
     border: 2px solid transparent;
     border-radius: 1rem;
-  } 
+  }
 
-  .imageContainer{
+  .imageContainer {
     width: 50px;
-    height:50px;
+    height: 50px;
   }
 }
 
 .btnBorder {
   width: 100%;
   margin-left: 1rem;
-  margin-top:0.1rem;
+  margin-top: 0.1rem;
 }
 
 .btnBorder:hover {
@@ -112,4 +111,4 @@
   .logo {
     display: none;
   }
-} 
+}

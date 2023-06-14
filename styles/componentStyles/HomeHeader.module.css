@@ -36,7 +36,6 @@
 @media (min-width: 51.25rem) {
   .mainHeader {
     width: fit-content;
-    margin: auto;
   }
   .placeContainer {
     width: 58vw;
@@ -46,3 +45,11 @@
     justify-content: center;
   }
 }
+
+@media (min-width: 1275px) {
+  .placeContainer,
+  .btnContainer {
+    margin-left: 12vw;
+  }
+}
+

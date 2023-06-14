@@ -15,9 +15,11 @@ export interface ButtonProps {
   style?: any
   disabled: any
   params?: any
+  buttonText?: string
 }
 
 export interface Card {
+  imageUrl: string
   name: string
   rating: number
   address: string
@@ -25,6 +27,8 @@ export interface Card {
   lng: number
   attractionType: object
   ratingsCount: number
+  descriptionShort: string
+  descriptionLong: string
   setIsOpen: Function
   setShowInfo: Function
 }
@@ -52,6 +56,8 @@ export interface HomeHeader {
   isLoaded: any
   city: string
   callback: Function
+  locationHandler: Function
+  displayHandler: Function
 }
 export interface PointsOfInterestApiParams {
   city?: string
@@ -109,7 +115,7 @@ export interface NavigationButtonProps {
 }
 
 export interface NavBarProps {
-  map: boolean 
+  map: boolean
   trips: boolean
   bucketList: boolean
   profile: boolean

@@ -1,4 +1,4 @@
-import { latLng, Location } from "@/Types/types"
+import { latLng, Location } from '@/Types/types'
 
 const FindLocation = async () => {
   ///////////
@@ -22,7 +22,6 @@ const FindLocation = async () => {
         reject("your browser doesn't support geolocation API")
       }
     })
-
 
     // this sets the center ot the lat and lng of the user that gets returned at the end to center the map
     const center: any = async () => {
