@@ -16,15 +16,15 @@ function SideBar(props: any) {
             <Card
               key={index}
               imageUrl={place.imageUrl}
-              name={place?.name}
-              rating={place?.rating}
-              address={place?.address}
-              ratingsCount={place?.reviewCount}
-              lat={place?.lat}
-              lng={place?.lng}
-              attractionType={place?.types}
-              descriptionShort={place?.descriptionShort}
-              descriptionLong={place?.descriptionLong}
+              name={place.name}
+              rating={place.rating}
+              address={place.address}
+              ratingsCount={place.reviewCount}
+              lat={place.lat}
+              lng={place.lng}
+              attractionType={place.types}
+              descriptionShort={place.descriptionShort}
+              descriptionLong={place.descriptionLong}
               setIsOpen={props.setIsOpen}
               setShowInfo={props.setShowInfo}
             />
