@@ -2,9 +2,12 @@ import Link from 'next/link'
 import styles from '@/styles/componentStyles/NavBar.module.css'
 import Image from 'next/image'
 import { NavBarProps } from '@/Types/types'
+import { useRouter } from 'next/router'
 
 function NavBar(props: NavBarProps) {
   const testList = ['spain', 'rome', 'vacay', 'our getaway']
+
+  const router = useRouter()
 
   const iconItems = [
     {
@@ -43,7 +46,7 @@ function NavBar(props: NavBarProps) {
 
   return (
     <header className={styles.mainHeader}>
-      <Image className={styles.logo} src="/Logo.webp" alt="Logo" width={60} height={60} />
+      <Image className={styles.logo} onClick={() =>router.push('/') } src="/Logo.webp" alt="Logo" width={60} height={60} />
       <div className={styles.buttonContainer}>
         {iconItems.map((info, index) => (
           <div className={styles.btnBorder}>

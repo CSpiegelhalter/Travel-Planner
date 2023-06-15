@@ -31,23 +31,26 @@ function Modal(props: Modal) {
       <div className={styles.darkBG} onClick={() => props.setIsOpen(false)} />
       <div className={styles.centered}>
         <div className={styles.modalContainer}>
-          <div className={styles.modalHeader}>
+          <div className={styles.topContainer}>
+            <button className={styles.closeBtn} onClick={() => props.setIsOpen(false)}>
+              x
+            </button>
             <h1 className={styles.heading}>Create a new Trip!</h1>
+
+            <div className={styles.modalContent}>
+              <p className={styles.modalP}>Please enter the name of your trip:</p>
+              <div className={styles.spacingContainer}></div>
+              <input
+                type="form"
+                placeholder="Name of new trip"
+                onChange={(e) => {
+                  handleStateChange(e)
+                }}
+                className={styles.inputBar}
+              />
+            </div>
           </div>
-          <button className={styles.closeBtn} onClick={() => props.setIsOpen(false)}>
-            x
-          </button>
-          <div className={styles.modalContent}>
-            <p className={styles.modalP}>Please enter the name of your trip:</p>
-            <div className={styles.spacingContainer}></div>
-            <input
-              type="form"
-              placeholder="Name of new trip"
-              onChange={(e) => {
-                handleStateChange(e)
-              }}
-              className={styles.inputBar}
-            />
+          <div className={styles.bottomContainer}>
             <button className={styles.addToTripBtn} onClick={addTripToDB}>
               Add Trip!
             </button>
