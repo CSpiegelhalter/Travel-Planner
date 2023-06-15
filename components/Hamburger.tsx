@@ -91,7 +91,7 @@ function Hamburger(props: any) {
     }
   }, [upPress])
   useEffect(() => {
-    if (items.length && enterPress) {
+    if (items.length && isOpen && enterPress) {
       setSelected(items[cursor])
       router.push(items?.[cursor]?.href)
     }
