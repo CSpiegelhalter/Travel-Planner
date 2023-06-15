@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { StandaloneSearchBox } from '@react-google-maps/api'
 import styles from '@/styles/componentStyles/PlaceSearchInput.module.css'
 
@@ -20,6 +20,10 @@ const PlaceComponent = (props: any) => {
       props.displayHandler(true)
     }
   }
+
+  useEffect(() => {
+    handlePlaceChanged()
+  }, [props])
   //The final return that checks if isLoaded is true and if so renders the searchBox  and inputs.
   return props.isLoaded ? (
     <StandaloneSearchBox onLoad={(ref) => (inputRef.current = ref)} onPlacesChanged={handlePlaceChanged}>
