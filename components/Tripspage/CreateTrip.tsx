@@ -3,7 +3,7 @@ import styles from '@/styles/componentStyles/TripComponents.module.css'
 
 function CreateTrip(props: any) {
     const onClickHandler = () => {
-        props.setModalDisplay(prevVal => !prevVal)
+        props.setModalDisplay((prevVal: any) => !prevVal)
     }
     return (
         <div className={styles.createTripContainer} onClick={() => onClickHandler()} >
