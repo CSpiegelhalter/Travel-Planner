@@ -1,119 +1,135 @@
 .darkBG {
-    background-color: rgba(0, 0, 0, 0.627);
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position:fixed;
-  }
-  
-  .centered {
-    display:flex;
-    flex-direction: column;
-    /* justify-content:center; */
-    align-items:top;
-    position: fixed;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50vw;
-    height: 60vh;
-    background: #fff !important;
-    z-index: 10;
-    border-radius: 16px;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-  }
-  
-  .modalHeader {
-    height: 5rem;
-    background: white;
-    overflow: hidden;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-    margin-top: 2rem;
-  }
-  
-  .heading {
-    margin: 1.125rem;
-    font-weight: 700;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  
-  .modalContent {
-    display: flex;
-    flex-direction:column;
-    align-items:center;
-    padding: 10px;
-    font-size: 14px;
-    color: #2c3e50;
-    text-align: center;
-    margin-top: 1rem;
-  }
-  
-  .modalActions {
-    position: absolute;
-    bottom: 2px;
-    margin-bottom: 10px;
-    width: 100%;
-  }
-  
-  .actionsContainer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .closeBtn {
-    cursor: pointer;
-    font-weight: 500;
-    padding: 0.4rem 0.5rem;
-    border-radius: .75rem;
-    border: none;
-    font-size: 1.0rem;
-    color: #fffff;
-    background: #FF0F0F;
-    transition: all 0.25s ease;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
-    position: absolute;
-    right: 0;
-    top: 0;
-    align-self: flex-end;
-    margin-top: -0.4rem;
-    margin-right: -0.4rem;
-    width:2.5rem;
-    height:2rem;
-  }
-  
-  .closeBtn:hover {
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-    transform: translate(-4px, 4px);
-  }
+  background-color: rgba(0, 0, 0, 0.627);
+  width: 100vw;
+  height: 100vh;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  /* The height is = 100vh - navBar height */
+  height: 87vh;
+  z-index: 10;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  width: 80%;
+  height: 85%;
+  border-radius: 15px;
+}
+
+.topContainer,
+.bottomContainer {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+}
+
+.bottomContainer {
+  justify-content: center;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.modalContent {
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+}
+
+.modalActions {
+  position: absolute;
+  bottom: 2px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.actionsContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.closeBtn {
+  cursor: pointer;
+  border-radius: 0.75rem;
+  border: none;
+  font-size: 1rem;
+  background: #ff0f0f;
+  transition: all 0.25s ease;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+  margin-top: -0.4rem;
+  margin-right: -0.4rem;
+  align-self: flex-end;
+  width: 2.5rem;
+  height: 2rem;
+}
+
+.closeBtn:hover {
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+  transform: translate(-4px, 4px);
+}
 
 .addToTripBtn {
-  position: absolute;
-  width: 100%;
-  max-width: 300px;
-  height: 68px;
-  top: 70%;
-  background: #FC266B;
+  height: 4rem;
+  width: 70%;
+  background: #fc266b;
   border-radius: 10px;
   color: white;
   font-weight: 600;
   font-size: 18px;
   border: none;
+  margin: auto;
 }
-  
+
 .inputBar {
-  width: 75%;
-  border-radius: 1rem;
+  width: 85%;
+  border-radius: 3rem;
+  box-shadow: 0px 1px 5px #383838;
+  border: none;
   height: 3rem;
+  padding-left: 1rem;
 }
 
 .modalP {
-  color:#9a9a9a;
+  color: #9a9a9a;
   font-size: 1rem;
   font-weight: 600;
+  margin-top: 0;
+}
+
+@media (min-width: 700px) {
+  .addToTripBtn {
+    width: 25rem;
+  }
+
+  .inputBar {
+    width: 30rem;
+  }
+
+  .modalContainer {
+    width: 40rem;
+  }
+}
+
+@media (min-width: 70rem) {
+  .modalContainer {
+    margin-left: 10vw;
+  }
 }
