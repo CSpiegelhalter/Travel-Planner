@@ -5,12 +5,10 @@ import styles from '@/styles/componentStyles/Card.module.css'
 import { Card } from '@/Types/types'
 import Image from 'next/image'
 import { ratingsTrimmer } from '@/helperFunctions/helperFunction'
-// import SideBarModal from './SideBarModal'
 
 function Card(props: Card) {
   const [disabled, setDisabled] = useState(false)
   const [showMore, setShowMore] = useState(false)
-  // const [modalDisplay, setModalDisplay] = useState(true) //CHANGE TO FALSE
   const locationData = [
     props?.name,
     props?.rating,
