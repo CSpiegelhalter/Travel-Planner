@@ -5,18 +5,7 @@ import { testLocations } from '@/constants/test'
 export default function Map(props: any) {
   const mapOptions = {
     disableDefaultUI: true,
-    styles: [
-      {
-        featureType: 'poi',
-        elementType: 'labels',
-        stylers: [{ visibility: 'off' }],
-      },
-      {
-        featureType: 'poi',
-        elementType: 'geometry',
-        stylers: [{ visibility: 'off' }],
-      },
-    ],
+
   }
   return (
     <GoogleMap options={mapOptions} z-index={1} zoom={15} center={props.location} mapContainerClassName="map-container">

@@ -13,6 +13,9 @@ import dynamic from 'next/dynamic'
 import { testLocations } from '@/constants/test'
 
 export default function Home() {
+  const [modalDisplay, setModalDisplay] = useState(false) //CHANGE TO FALSE\
+  const [locationDetails, setLocationDetails] = useState({})
+
   //These are the two states used to get our location for centering
   const [location, setLocation] = useState({ lat: 51.5072, lng: 0.1276 })
   const [city, setCity] = useState('london')
@@ -86,6 +89,7 @@ export default function Home() {
   const SideBar = dynamic(() => import('@/components/Mappage/SideBar'))
   const HomeHeader = dynamic(() => import('@/components/Mappage/HomeHeader'))
   const NavBar = dynamic(() => import('@/components/NavBar'))
+  const SideBarModal = dynamic(() => import('@/components/Mappage/SideBarModal'))
 
   return (
     <>
@@ -96,6 +100,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
+        {modalDisplay && <SideBarModal locationDetails={locationDetails} modalDisplay={setModalDisplay} />}
         <div className={styles.mapScreenContainer}>
           <div className={styles.mapContents}>
             <Map location={location} />
@@ -115,6 +120,8 @@ export default function Home() {
                   placesInfo={testLocations}
                   setIsOpen={setIsOpen}
                   setShowInfo={setShowInfo}
+                  setLocationDetails={setLocationDetails}
+                  setModalDisplay={setModalDisplay}
                 />
               )}
             </div>

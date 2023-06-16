@@ -26,11 +26,13 @@ export interface Card {
   lat: number
   lng: number
   attractionType: object
-  ratingsCount: number
+  reviewCount: string
   descriptionShort: string
   descriptionLong: string
   setIsOpen: Function
   setShowInfo: Function
+  setLocationDetails: Function
+  setModalDisplay: Function
 }
 
 export interface Modal {
