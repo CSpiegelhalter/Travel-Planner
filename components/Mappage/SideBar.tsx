@@ -19,7 +19,7 @@ function SideBar(props: any) {
               name={place.name}
               rating={place.rating}
               address={place.address}
-              ratingsCount={place.reviewCount}
+              reviewCount={place.reviewCount}
               lat={place.lat}
               lng={place.lng}
               attractionType={place.types}
@@ -27,6 +27,8 @@ function SideBar(props: any) {
               descriptionLong={place.descriptionLong}
               setIsOpen={props.setIsOpen}
               setShowInfo={props.setShowInfo}
+              setLocationDetails={props.setLocationDetails}
+              setModalDisplay={props.setModalDisplay}
             />
           ))
         : null}

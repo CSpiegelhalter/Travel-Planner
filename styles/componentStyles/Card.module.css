@@ -1,6 +1,6 @@
 .cardContainer {
-  width: 90%;
-  height: auto;
+  width: 100%;
+  height: fit-content;
   margin-top: 1rem;
   display: flex;
 
@@ -15,17 +15,18 @@
 }
 
 .imageContainer {
-  position: relative;
   display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 125px;
-  height: 100px;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  padding: auto;
-  margin: auto;
-  border: 2px solid black;
+  position: relative;
+  /* display: flex; */
+  /* align-items: center; */
+  width: 16rem;
+  height: 9rem;
+  /* border-radius: 0.5rem; */
+  /* overflow: hidden; */
+  /* padding: auto; */
+  /* margin: auto; */
+  margin-left: 1rem;
+  /* border: 2px solid black; */
   border-radius: 1rem;
 }
 
@@ -40,30 +41,73 @@
 .cardContentContainer {
   display: flex;
   flex-direction: column;
+  width: 30rem;
+}
+
+.starContainer{
+  height: 10px;
+  width: 10px;
+}
+
+.cardContentHeader{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  /* justify-content: space-around; */
+  /* align-items: baseline; */
+  
+}
+
+.reviewContainer{
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  align-self: flex-end;
+
+  /* align-items: flex-end; */
+}
+
+.reviewCount{
+  font-size: 6px;
+  color: grey;
   align-items: center;
-  justify-content: center;
+}
+
+.latLngContainer{
+  display: flex;
+}
+
+.showMore {
+  font-size: 8px;
+  color: blue;
 }
 
 @media (min-width: 550px) {
-  .imageContainer {
+  /* .imageContainer {
     max-width: 300px;
     height: 200px;
   }
   .infoContent {
     font-size: 1rem;
   }
+
+  .reviewCount{
+  font-size: 8px;
+  color: grey;
+  align-items: center; */
+/* } */
 }
 
 @media (min-width: 1120px) {
-  .imageContainer {
+  /* .imageContainer {
     min-widh: 100px;
     height: 75px;
-  }
+  } */
 }
 
 @media (min-width: 1300px) {
-  .imageContainer {
+  /* .imageContainer {
     min-width: 175px;
     height: 175px;
-  }
+  } */
 }

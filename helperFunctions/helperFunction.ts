@@ -39,3 +39,27 @@ export const callPointsOfInterestsApi = async (args: PointsOfInterestApiParams) 
 //       setLocation({ lat: 51.5072, lng: 0.1276 })
 //     }
 //   }
+
+export const ratingsTrimmer = (reviewCount: string) => {
+  try {
+    if (reviewCount.includes(',')) {
+      if (reviewCount.length > 3 && reviewCount.length <= 6) {
+        let newCount = reviewCount.split(',')
+        return newCount[0].trim() + 'K'
+      } else {
+        let newCount = reviewCount.split(',')
+        console.log(newCount)
+        return `${newCount[0]}${newCount[1]}K`
+      }
+    } else if (reviewCount.length > 3) {
+      let newCount = ''
+      for (let i = 0; i < reviewCount.length - 3; i++) {
+        newCount += reviewCount[i]
+      }
+      return newCount + 'K'
+    } else return reviewCount
+  } catch {
+    return null
+  }
+}
+
