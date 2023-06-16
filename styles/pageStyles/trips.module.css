@@ -2,24 +2,47 @@
   display: flex;
   flex-direction: column;
   width: 80%;
-  height: 100%;
+  /* Height is 100vh - navbar height */
+  height: 87vh;
   margin: auto;
+}
+
+.header {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.topContainer {
+  display: flex;
+  flex-direction: column;
+  height: 65%;
+}
+
+.bottomContainer {
+  display: flex;
+  flex-direction: column;
+  height: 35%;
+  justify-content: center;
+  align-items: center;
 }
 
 .mainContent {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: center;
   height: 100%;
-  padding-top: 15%;
 }
 
 .contentContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.imageCaption {
+  text-align: center;
 }
 
 .headerCaption {
@@ -29,10 +52,9 @@
 
 .imageContainer {
   position: relative;
-  display: block;
-  left: 5%;
-  width: 85vw;
-  height: 35vh;
+  display: flex;
+  width: 22rem;
+  height: 12rem;
 }
 
 .captionContainer {
@@ -50,11 +72,8 @@
 .cardContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: auto;
-  margin: auto;
-  padding-top: 2rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .tripHeader {
@@ -64,11 +83,8 @@
 }
 
 .createTripBtn {
-  position: absolute;
-  width: 100%;
-  max-width: 300px;
-  height: 68px;
-  top: 70%;
+  width: 20rem;
+  height: 4rem;
   background: #fc266b;
   border-radius: 10px;
   color: white;
@@ -78,15 +94,6 @@
 }
 
 @media (min-width: 28.125rem) {
-  .mainContent {
-    padding-top: 5%;
-  }
-
-  .imageContainer {
-    width: 36vw;
-    height: 44vh;
-  }
-
   .captionContainer {
     display: flex;
     justify-content: center;
@@ -100,7 +107,35 @@
 }
 
 @media (min-width: 650px) {
-  .createTripBtn {
+  .createTripBtn,
+  .bottomContainer {
     visibility: hidden;
+    height: 0;
+    position: absolute;
+  }
+
+  .topContainer {
+    height: 75vh;
+  }
+
+  .cardContainer {
+    align-items: center;
+  }
+}
+
+@media (min-width: 70rem) {
+  .mainContainer {
+    margin-left: 13vw;
+  }
+
+  .topContainer {
+    height: 95vh;
+  }
+}
+
+@media (min-width: 815px) {
+  .imageContainer {
+    width: 48rem;
+    height: 28rem;
   }
 }

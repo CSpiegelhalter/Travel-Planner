@@ -2,22 +2,17 @@ import Image from 'next/image'
 import styles from '@/styles/componentStyles/TripComponents.module.css'
 
 function CreateTrip(props: any) {
-    const onClickHandler = () => {
-        props.setModalDisplay((prevVal: any) => !prevVal)
-    }
-    return (
-        <div className={styles.createTripContainer} onClick={() => onClickHandler()} >
-            <div className={styles.createTripImage}>
-            <Image 
-                src="/createTripPlus.webp"
-                alt="Plus Sign"
-                height={20}
-                width={20}
-            />
-            </div>
-            <h3>Create Trip</h3>
-        </div>
-    );
+  const onClickHandler = () => {
+    props.setModalDisplay((prevVal: any) => !prevVal)
+  }
+  return (
+    <div className={styles.createTripContainer} onClick={() => onClickHandler()}>
+      <div className={styles.createTripImage}>
+        <Image src="/createTripPlus.svg" alt="Plus Sign" height={20} width={20} />
+      </div>
+      <p className={styles.buttonText}>Create Trip</p>
+    </div>
+  )
 }
 
-export default CreateTrip;
+export default CreateTrip

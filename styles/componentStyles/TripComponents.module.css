@@ -1,106 +1,115 @@
 .cardContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #A8E4F4;
-    padding: 0 0.75rem;
-    margin: 1rem;
-    border-radius: 1.25rem;
-    width: 70vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #a8e4f4;
+  padding: 0 0.75rem;
+  margin: 1rem;
+  border-radius: 1.25rem;
+  width: 70vw;
 }
 
 .name {
-    color: #0000EF;
-    font-weight: 600;
-    font-size: 1rem;
+  color: #0000ef;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .savedLocations {
-    color: #0000EF;
-    font-weight: 400 ;
-    font-size: 1rem;
+  color: #0000ef;
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 .imageContainer {
-    background: white;
-    border-radius: 1rem;
-    height: 2rem;
-    width: 2rem;
-    padding: auto;
-    margin: auto;
-    
-    
+  background: white;
+  border-radius: 1rem;
+  height: 2rem;
+  width: 2rem;
+  padding: auto;
+  margin: auto;
 }
 
-
 .title {
-    display: flex;
-    align-self: left;
-    padding-left:1rem;
+  display: flex;
+  align-self: left;
+  padding-left: 1rem;
 }
 
 .leftContainer {
-    display: flex;
-    align-items: left;
+  display: flex;
+  align-items: left;
+}
+
+.buttonText {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .createTripContainer {
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    bottom: 17.5%;
-    left: 0%;
-    border-radius: 1rem;
-    padding: 0 1rem;
-    width: auto;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  bottom: 17.5%;
+  left: 0%;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  width: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .createTripImage {
-    margin: auto 0;
-    padding-right: 0.5rem;
-    padding: auto ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-right: 0.5rem;
+  /* padding: auto; */
 }
 
-.createTripContainer:hover{
-    cursor: pointer;
+.createTripContainer:hover {
+  cursor: pointer;
+  outline: 2px solid #fc266b;
+  transition: border-width 0.1s ease-in;
+  border-radius: 1rem;
 }
 
-.cardContainer:hover{
-    cursor: pointer;
+.cardContainer:hover {
+  cursor: pointer;
 }
 
-@media(min-width: 650px){
-    .createTripContainer {
-        position: static;
-        margin-top: 1rem;
-    }
-    
-    .cardContainer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: #A8E4F4;
-        padding: 0 0.75rem;
-        margin: 1rem;
-        border-radius: 1.25rem;
-        width: 30vw;
-    }
+@media (min-width: 650px) {
+  .createTripContainer {
+    position: static;
+    /* margin-top: 1rem; */
+  }
 
-    .leftContainer {
-        display: flex;
-    }
-    
+  .cardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #a8e4f4;
+    padding: 0 0.75rem;
+    margin: 1rem;
+    border-radius: 1.25rem;
+    width: 25rem;
+  }
+
+  .leftContainer {
+    display: flex;
+  }
 }
 
 .showDetails {
-    display: flex;
-    justify-content: left;
-    align-itens: left;
+  display: flex;
+  justify-content: left;
+  align-items: left;
 }
 
-@media(max-width: 650px){
-    .createTripContainer{
-        visibility: hidden;
-    }
+@media (max-width: 650px) {
+  .createTripContainer {
+    visibility: hidden;
+  }
 }
