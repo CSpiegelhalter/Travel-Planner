@@ -41,14 +41,24 @@
 .title {
   font-weight: 600;
 }
-.moreDetailsContainer {
-  position: relative;
-}
 
 .seeMoreDetails {
-  position: relative;
-  left: 50%;
   cursor: pointer;
+}
+
+.bottomContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+
+.deleteBtn {
+  cursor: pointer;
+  color: red;
+}
+
+.deleteBtn:hover {
+  font-weight: bold;
 }
 
 @media (min-width: 1080px) {

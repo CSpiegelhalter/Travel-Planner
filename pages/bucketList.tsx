@@ -3,7 +3,8 @@ import dynamic from 'next/dynamic'
 import { testLocations } from '@/constants/test'
 import { useEffect, useState } from 'react'
 import BucketListDisplay from '@/components/BucketListPage/BucketListDisplay'
-
+import ProfileDefault from '@/components/Profilepage/ProfileDefault'
+import { useUser } from '@auth0/nextjs-auth0/client'
 
 function bucketList(props: any) {
   const NavBar = dynamic(() => import('@/components/NavBar'))
@@ -12,28 +13,32 @@ function bucketList(props: any) {
   const [locationData, setLocationData] = useState({})
   const [display, setDisplay] = useState(false)
   const testData = testLocations
+  const { user } = useUser()
 
   useEffect(() => {
-   if(testData){
-    setLocationData(testData)
-    setDisplay(true)
-  }
+    if (testData) {
+      setLocationData(testData)
+      setDisplay(true)
+    }
   }, [])
-  
 
   return (
-    <div className={styles.mainContainer}>
-      <header className={styles.header}>
-        <h1 className={styles.headerCaption}>My Bucketlist:</h1>
-      </header>
-
-      {display ?
-        <BucketListDisplay locationsDetails={locationData}/>
-        :
-        <BucketListDefault />
-      }
+    <>
       <NavBar bucketList={true} map={false} trips={false} profile={false} />
-    </div>
+
+      {user ? (
+        <div className={styles.mainContainer}>
+          <div className={styles.contentContainer}>
+            <header className={styles.header}>
+              <h1 className={styles.headerCaption}>My Bucketlist:</h1>
+            </header>
+            {display ? <BucketListDisplay locationsDetails={locationData} /> : <BucketListDefault />}
+          </div>
+        </div>
+      ) : (
+        <ProfileDefault />
+      )}
+    </>
   )
 }
 
