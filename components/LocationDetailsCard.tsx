@@ -4,6 +4,9 @@ import { useState } from 'react'
 
 function LocationDetailsCard(props: any) {
   const [showDetails, setShowDetails] = useState(false)
+  const deleteHandler = () => {
+    console.log('I have been deleted')
+  }
 
   return (
     <div className={styles.detailsContainer}>
@@ -22,6 +25,8 @@ function LocationDetailsCard(props: any) {
               {showDetails && <li className={styles.listItem}>{value.descritptionLong}</li>}
             </ul>
           </div>
+          <div className={styles.bottomContainer}>
+          <p className={styles.deleteBtn} onClick={() => deleteHandler()}>Delete</p>
           {showDetails ? (
             <div className={styles.moreDetailsContainer} onClick={() => setShowDetails((prevVal) => !prevVal)}>
               <p className={styles.seeMoreDetails}>Show less details..</p>
@@ -31,6 +36,7 @@ function LocationDetailsCard(props: any) {
               <p className={styles.seeMoreDetails}>See more details..</p>
             </div>
           )}
+          </div>
         </div>
       ))}
     </div>

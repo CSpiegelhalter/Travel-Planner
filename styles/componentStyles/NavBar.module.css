@@ -69,6 +69,10 @@
     margin: auto;
   }
 
+  .logo:hover{
+    cursor:pointer;
+  }
+
   .buttonContainer {
     display: flex;
     flex-direction: column;
