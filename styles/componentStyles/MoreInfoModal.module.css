@@ -14,12 +14,124 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80vw;
+  width: 22em;
   height: 70vh;
   background-color: #fff !important;
   border-radius: 16px;
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
   overflow-y: scroll;
+  box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.06);
+
+}
+
+.fillContainer {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.closeBtn {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.75rem;
+  border: none;
+  font-size: 1rem;
+  color: #ffff;
+  background: #ff0f0f;
+  transition: all 0.25s ease;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+  position: fixed;
+  right: 0;
+  top: 0;
+  align-self: flex-end;
+  margin-top: -0.4rem;
+  margin-right: -0.4rem;
+  width: 2.5rem;
+  height: 2rem;
+  overflow: visible;
+  z-index: 999;
+}
+
+.header {
+  display: flex;
+  margin-top: 0;
+  width: 100%;
+  height: fit-content;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviewContainer {
+  display: flex;
+  align-items: baseline;
+}
+
+.nameLabel {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+
+}
+
+.reviewCount {
+  font-size: .7rem;
+  align-items: center;
+}
+
+.rating {
+  font-size: 1rem;
+}
+
+.reviewCount, .rating, .starContainer, .sideInfo {
+  margin: 0;
+  color: #858585;
+}
+
+.starContainer {
+  height: 10px;
+  width: 10px;
+}
+
+.contentContainer {
+  width: 20em;
+  margin: auto;
+}
+
+.sideInfo {
+  font-size: .7rem;
+}
+
+.content {
+  margin-top: 2rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 1000px) {
+  .contentContainer {
+    width: 30em;
+  }
+
+  .mainContainer {
+    width: 35em;
+  }
+
+  .nameLabel {
+    font-size: 2rem;
+  }
+
+  .reviewCount {
+    font-size: 1rem;
+  }
+  
+  .rating {
+    font-size: 1.3rem;
+  }
+
+  .sideInfo {
+    font-size: .9rem;
+  }
+
+  .content {
+    margin-top: 2.2rem;
+    line-height: 1.5;
+  }
 }
