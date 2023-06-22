@@ -37,7 +37,7 @@ function bucketList(props: any) {
   // })
 
   if(isLoading){
-     <LoadingPage />
+    return  <LoadingPage />
   }
 
   return (
