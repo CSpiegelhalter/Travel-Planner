@@ -86,7 +86,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
-        {/* {modalDisplay && <SideBarModal locationDetails={locationDetails} modalDisplay={setModalDisplay} />} */}
         <div className={styles.mapScreenContainer}>
           <div className={styles.mapContents}>
             <Map location={location} />

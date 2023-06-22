@@ -24,9 +24,9 @@ function bucketList(props: any) {
       grabDataToDisplay(userId, 'trips').then((val) => {
         setLocationData(val)
       })
-      // if (Object.keys(locationData).length > 0) {
-      //   setDisplay(true)
-      // }
+      if (locationData.length > 0) {
+        setDisplay(true)
+      }
     }
   }, [isLoading, user])
 
