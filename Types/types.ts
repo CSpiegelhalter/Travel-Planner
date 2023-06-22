@@ -122,3 +122,5 @@ export interface NavBarProps {
   bucketList: boolean
   profile: boolean
 }
+
+export type LocalStorageKeyType = 'trips' | 'bucketList'
