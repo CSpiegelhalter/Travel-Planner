@@ -17,8 +17,7 @@ function trips(props: any) {
   const userId: number | any = process.env.NEXT_PUBLIC_AUTH0_USER_ID
     ? user?.[process.env.NEXT_PUBLIC_AUTH0_USER_ID]
     : null
-  // console.log(process.env.NEXT_PUBLIC_AUTH0_USER_ID)
-  // const userId: number = user?.['https://example.com/id'] as number
+
   console.log(userId, typeof userId)
 
   const [modalDisplay, setModalDisplay] = useState(false)
