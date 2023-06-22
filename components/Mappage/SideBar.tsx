@@ -12,6 +12,7 @@ function SideBar(props: any) {
           Close
         </button>
       </div>
+      <div className={styles.cardContainer} >
       {props.placesInfo
         ? props.placesInfo.map((place: any, index: number) => (
             <Card
@@ -34,6 +35,7 @@ function SideBar(props: any) {
             />
           ))
         : null}
+        </div>
     </div>
   )
 }
