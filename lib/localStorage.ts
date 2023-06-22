@@ -1,9 +1,3 @@
-
-
-// const stringifyAttractionData = async () => {
-//     await 
-//   }
-
 import { LocalStorageKeyType } from "@/Types/types"
 
 // const setLocalStorage = async (userId, data) => {

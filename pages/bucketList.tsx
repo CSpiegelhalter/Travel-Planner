@@ -33,8 +33,8 @@ function bucketList(props: any) {
           <header className={styles.header}>
             <h1 className={styles.headerCaption}>My Bucketlist:</h1>
           </header>
-          <div className={styles.scrollableArea}>
             {display ? (
+          <div className={styles.scrollableArea}>
               locationData.map((location: any, index: number) => (
                 <Card
                   name={location.name}
@@ -50,10 +50,10 @@ function bucketList(props: any) {
                   hideButtons={true}
                 />
               ))
+          </div>
             ) : (
               <BucketListDefault />
             )}
-          </div>
         </div>
       ) : (
         <ProfileDefault />

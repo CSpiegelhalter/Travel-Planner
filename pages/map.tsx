@@ -26,7 +26,9 @@ export default function Home() {
   const [placesInfo, setPlacesInfo] = useState()
   //auth0 user to allow us to know if we are logged in or not
   const { user, error, isLoading } = useUser()
-  const userId =process.env.AUTH0_USER_ID ?  user?.[process.env.AUTH0_USER_ID] : null
+  // const userId =process.env.AUTH0_USER_ID ?  user?.[process.env.AUTH0_USER_ID] : null
+  const userId = user?.['https://example.com/id']
+  console.log(userId)
   //State for the Modal
   const [isOpen, setIsOpen] = useState(false)
   // this sets our location State using this function

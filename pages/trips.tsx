@@ -13,16 +13,23 @@ function trips(props: any) {
   const TripsDefault = dynamic(() => import('@/components/Tripspage/TripsDefault'))
   const CreateTrip = dynamic(() => import('@/components/Tripspage/CreateTrip'))
   const { user } = useUser()
-  const userId: number | any = process.env.AUTH0_USER_ID ? user?.[process.env.AUTH0_USER_ID] : null
+  const userId: number | any = process.env.NEXT_PUBLIC_AUTH0_USER_ID ? user?.[process.env.NEXT_PUBLIC_AUTH0_USER_ID] : null
+  // console.log(process.env.NEXT_PUBLIC_AUTH0_USER_ID)
+  // const userId: number = user?.['https://example.com/id'] as number
+  console.log(userId, typeof userId)
 
   const [modalDisplay, setModalDisplay] = useState(false)
   const [tripData, setTripData] = useState({})
+  const [tripDisplay, setTripDisplay] = useState(false)
 
   useEffect(() => {
     if (!!user) {
       grabDataToDisplay(userId, 'trips').then((val) => {
         setTripData(val)
       })
+      if(Object.keys(tripData).length > 0 ){
+        setTripDisplay(true)
+      }
     }
   }, [])
 
@@ -36,7 +43,7 @@ function trips(props: any) {
               <p className={styles.header}>My Trips:</p>
               <CreateTrip setModalDisplay={setModalDisplay} />
             </header>
-            {!!tripData ? (
+            {tripDisplay ? (
               <div className={styles.cardContainer}>
                 {Object.entries(tripData).map(([key, value]: any, index) => (
                   <TripDisplay key={index} name={key} value={value} length={value.length} tripdata={tripData} />
