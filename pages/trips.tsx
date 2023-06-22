@@ -27,13 +27,6 @@ function trips(props: any) {
     }
   }, [])
 
-  useEffect(() => {
-    // we will call the api to check localStorage and if not then ping DB here
-    if (testTrips) {
-      setTripData(testTrips)
-    } else setTripData(false)
-    // setTripData(false)
-  }, [])
 
   return (
     <>
