@@ -68,19 +68,6 @@ function Hamburger(props: any) {
   }
 
   useEffect(() => {
-    const closeDropdown = (e: any) => {
-      if (!e?.target?.className?.includes('CLOSE') && isOpen) {
-        setIsOpen(false)
-      }
-    }
-    document.body.addEventListener('click', closeDropdown)
-
-    return () => {
-      document.body.removeEventListener('click', closeDropdown)
-    }
-  }, [])
-
-  useEffect(() => {
     if (items.length && downPress) {
       setCursor((prevState) => (prevState < items.length - 1 ? prevState + 1 : prevState))
     }
@@ -109,7 +96,7 @@ function Hamburger(props: any) {
 
   return (
     <>
-      <div className={styles.hamburgerContainer}>
+      <div className={styles.hamburgerContainer} >
         <div className={styles.circle} onClick={() => toggleOpen()}>
           <Image
             width={32}
@@ -121,6 +108,8 @@ function Hamburger(props: any) {
           />
         </div>
         {isOpen && (
+          <>
+          <div className={styles.burgerBackground} onClick={() => setIsOpen(false)} ></div>
           <div className={styles.burgerDropdownCLOSE}>
             {items.map((item, i) => (
               <HamburgerItem
@@ -133,6 +122,7 @@ function Hamburger(props: any) {
               />
             ))}
           </div>
+          </>
         )}
       </div>
     </>
