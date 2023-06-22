@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react'
 import { locationObj } from '@/Types/types'
 import ProfileDefault from '@/components/Profilepage/ProfileDefault'
 import { useUser } from '@auth0/nextjs-auth0/client'
+import { grabDataToDisplay } from '@/helperFunctions/grabDataToDisplay'
+import LoadingPage from '@/components/LoadingPage'
 
 function bucketList(props: any) {
   const NavBar = dynamic(() => import('@/components/NavBar'))
@@ -14,14 +16,29 @@ function bucketList(props: any) {
   const [locationData, setLocationData] = useState<locationObj[]>([])
   const [display, setDisplay] = useState(false)
   const testData = testLocations
-  const { user } = useUser()
+  const { user, isLoading } = useUser()
+  const userId: number | any = process.env.AUTH0_USER_ID ? user?.[process.env.AUTH0_USER_ID] : null
 
   useEffect(() => {
-    if (testData) {
-      setLocationData(testData)
-      setDisplay(true)
+    if (!!user) {
+      grabDataToDisplay(userId, 'trips').then((val) => {
+        setLocationData(val)
+      })
+      if (Object.keys(locationData).length > 0) {
+        setDisplay(true)
+      }
     }
-  }, [])
+  }, [isLoading, user])
+
+  //I AM FOR TESTING!
+  // useEffect(() => {
+  //   setLocationData(testData)
+  //   setDisplay(true)
+  // })
+
+  if(isLoading){
+    return  <LoadingPage />
+  }
 
   return (
     <>
@@ -30,27 +47,30 @@ function bucketList(props: any) {
           <header className={styles.header}>
             <h1 className={styles.headerCaption}>My Bucketlist:</h1>
           </header>
-          <div className={styles.scrollableArea}>
+          <>
             {display ? (
-              locationData.map((location: any, index: number) => (
-                <Card
-                  name={location.name}
-                  rating={location.rating}
-                  address={location.address}
-                  lat={location.lat}
-                  lng={location.lng}
-                  attractionType={location.attractionType}
-                  reviewCount={location.reviewCount}
-                  imageUrl={location.imageUrl}
-                  descriptionShort={location.descriptionShort}
-                  descriptionLong={location.descriptionLong}
-                  hideButtons={true}
-                />
-              ))
+              <div className={styles.scrollableArea}>
+                {locationData.map((location: any, index: number) => (
+                  <Card
+                    name={location.name}
+                    rating={location.rating}
+                    address={location.address}
+                    lat={location.lat}
+                    lng={location.lng}
+                    attractionType={location.attractionType}
+                    reviewCount={location.reviewCount}
+                    imageUrl={location.imageUrl}
+                    descriptionShort={location.descriptionShort}
+                    descriptionLong={location.descriptionLong}
+                    hideButtons={true}
+                    key={index}
+                  />
+                ))}
+              </div>
             ) : (
               <BucketListDefault />
             )}
-          </div>
+          </>
         </div>
       ) : (
         <ProfileDefault />

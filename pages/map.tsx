@@ -26,7 +26,9 @@ export default function Home() {
   const [placesInfo, setPlacesInfo] = useState()
   //auth0 user to allow us to know if we are logged in or not
   const { user, error, isLoading } = useUser()
+  // const userId =process.env.AUTH0_USER_ID ?  user?.[process.env.AUTH0_USER_ID] : null
   const userId = user?.['https://example.com/id']
+  console.log(userId)
   //State for the Modal
   const [isOpen, setIsOpen] = useState(false)
   // this sets our location State using this function
@@ -64,21 +66,6 @@ export default function Home() {
   if (!isLoaded) {
     return <LoadingPage />
   }
-  //This is the function that calls the PointsOfInterest api and flips the state to show or not show the information sidebar
-  // const callPointsOfInterestsApi = async (typeOfInterest: string) => {
-  //   const params = {
-  //     city: city,
-  //     point: typeOfInterest,
-  //   }
-  //   const options = {
-  //     method: 'POST',
-  //     body: JSON.stringify(params),
-  //   }
-  //   const data = await fetch('/api/pointsOfInterest', options)
-  //   console.log('bouta hit callback')
-  //   setPlacesInfo(await data.json())
-  //   setShowInfo(true)
-  // }
 
   const updatePlaces = (data: any) => {
     setPlacesInfo(data)
