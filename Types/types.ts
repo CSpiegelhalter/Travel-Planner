@@ -18,21 +18,12 @@ export interface ButtonProps {
   buttonText?: string
 }
 
-export interface Card {
-  imageUrl: string
-  name: string
-  rating: number
-  address: string
-  lat: number
-  lng: number
-  attractionType: object
-  reviewCount: string
-  descriptionShort: string
-  descriptionLong: string
-  setIsOpen: Function
-  setShowInfo: Function
-  setLocationDetails: Function
-  setModalDisplay: Function
+export interface Card extends locationObj {
+  setIsOpen?: Function
+  setShowInfo?: Function
+  setLocationDetails?: Function
+  setModalDisplay?: Function
+  hideButtons?: boolean
 }
 
 export interface Modal {
@@ -123,4 +114,15 @@ export interface NavBarProps {
   profile: boolean
 }
 
-export type LocalStorageKeyType = 'trips' | 'bucketList'
+export interface locationObj {
+  imageUrl: string
+  name: string
+  rating: number | string
+  address: string
+  lat: number | string
+  lng: number | string
+  attractionType: string
+  reviewCount: string
+  descriptionShort: string
+  descriptionLong?: string
+}

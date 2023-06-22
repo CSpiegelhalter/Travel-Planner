@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import styles from '@/styles/componentStyles/bucketListDefault.module.css'
-import { useEffect, useState } from 'react'
 
 function BucketListDefault(props: any) {
   return (
