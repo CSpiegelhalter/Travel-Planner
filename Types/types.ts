@@ -24,6 +24,7 @@ export interface Card extends locationObj {
   setLocationDetails?: Function
   setModalDisplay?: Function
   hideButtons?: boolean
+  className?: string
 }
 
 export interface Modal {

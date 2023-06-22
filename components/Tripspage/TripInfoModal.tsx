@@ -29,6 +29,7 @@ function TripInfoModal(props: any) {
                 descriptionShort={location.descriptionShort}
                 descriptionLong={location.descriptionLong}
                 hideButtons={true}
+                className={'tripsCardDarkBG'}
               />
             ))}
             </div>

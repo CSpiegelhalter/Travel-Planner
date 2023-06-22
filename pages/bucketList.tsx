@@ -45,6 +45,7 @@ function bucketList(props: any) {
                   descriptionShort={location.descriptionShort}
                   descriptionLong={location.descriptionLong}
                   hideButtons={true}
+                  className={'bucketListCardDarkBG'}
                 />
               ))
             ) : (

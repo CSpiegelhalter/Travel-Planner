@@ -178,3 +178,26 @@ margin-bottom: 50vh;
   font-size: 8px;
   color: #ffffff;
 }
+
+.tripsCardDarkBG {
+  background-color: grey;
+  opacity: 0.5;
+  position: fixed;
+  width: 150vw !important;
+  height: 2000vh !important;
+  margin: none;
+  background-size: cover;
+}
+
+.bucketListCardDarkBG{
+  background-color: grey;
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100vw !important;
+  height: 110vh;
+  margin: none;
+  background-size: cover;
+  z-index: 100;
+}
