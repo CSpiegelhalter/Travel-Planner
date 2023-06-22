@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import Card from './Card'
+import dynamic from 'next/dynamic'
 import styles from '@/styles/componentStyles/SideBar.module.css'
 import Image from 'next/image'
 
 function SideBar(props: any) {
+  const Card = dynamic(() => import('@/components/Card'))
+
   return (
     <div className={styles.infoSidebar}>
       <div className={styles.btnContainer}>
