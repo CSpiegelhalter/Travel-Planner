@@ -9,7 +9,6 @@ function trips(props: any) {
   const TripDisplay = dynamic(() => import('@/components/Tripspage/TripDisplay'))
   const NavBar = dynamic(() => import('@/components/NavBar'))
   const Modal = dynamic(() => import('@/components/Modal'))
-  const TripInfoCard = dynamic(() => import('@/components/Tripspage/TripInfoModal'))
   const TripsDefault = dynamic(() => import('@/components/Tripspage/TripsDefault'))
   const CreateTrip = dynamic(() => import('@/components/Tripspage/CreateTrip'))
   const { user } = useUser()
