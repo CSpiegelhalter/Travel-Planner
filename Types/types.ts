@@ -127,3 +127,5 @@ export interface locationObj {
   descriptionShort: string
   descriptionLong?: string
 }
+
+export type LocalStorageKeyType = 'bucketList' | 'trips'

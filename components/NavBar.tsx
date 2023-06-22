@@ -49,7 +49,7 @@ function NavBar(props: NavBarProps) {
       <Image className={styles.logo} onClick={() =>router.push('/') } src="/Logo.webp" alt="Logo" width={60} height={60} />
       <div className={styles.buttonContainer}>
         {iconItems.map((info, index) => (
-          <div className={styles.btnBorder}>
+          <div id={index.toString()} className={styles.btnBorder}>
             <Link
               key={index}
               className={styles.link}

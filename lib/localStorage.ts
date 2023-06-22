@@ -1,8 +1,4 @@
-
-
-// const stringifyAttractionData = async () => {
-//     await 
-//   }
+import { LocalStorageKeyType } from "@/Types/types"
 
 // const setLocalStorage = async (userId, data) => {
 //     await grabUserAttractions()
@@ -23,6 +19,7 @@
 //   }
 
 export class LocalStorageService {
+    //Storage is a value that is provided by the localStorage API
     storage: Storage
     key: string
     data?: string
@@ -46,8 +43,13 @@ export class LocalStorageService {
         return null;
     }
 
-    public async fetchStorageData(callback: () => Promise<Response>) {
-        const data = this.getItem(this.key)
+/**
+ * @param callback pass it an api to be called if the data is is not found in local storage
+ * @param keyType  whichever data table needs to be hit (either trips or bucketList as of 6/21/23)
+ */ 
+    public async fetchStorageData(callback: () => Promise<Response>, keyType: LocalStorageKeyType) {
+        const formattedKey = `${this.key}-${keyType}`
+        const data = this.getItem(formattedKey)
         if (!!data) {
             console.log(typeof data)
             // return JSON.parse(data)

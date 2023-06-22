@@ -7,7 +7,7 @@ function ProfileComponent(props: any) {
         <div className={styles.profileContainer}>
         <h1>{`${props.user?.given_name} ${props.user?.family_name}`}</h1>
         <Link href='/trips' prefetch={false} className={styles.link}>
-        <p className={styles.savedTrips}>{`${props.trips.length} Trips`}</p>
+        <p className={styles.savedTrips}>{`${props.trips} Trips`}</p>
         </Link>
         <div className={styles.profileItemsList}>
           <ul className={styles.profileList}> 
