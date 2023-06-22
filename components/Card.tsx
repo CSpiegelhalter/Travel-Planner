@@ -8,12 +8,11 @@ import { ratingsTrimmer } from '@/helperFunctions/helperFunction'
 
 function Card(props: Card) {
   const Button = dynamic(() => import('@/components/Button'))
-  const Modal = dynamic(() => import('@/components/Modal'))
+  const MoreInfoModal = dynamic(() => import('@/components/MoreInfoModal'))
 
   const [disabled, setDisabled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
 
-  // const [showMore, setShowMore] = useState(false)
   const locationData = [
     props?.name,
     props?.rating,
@@ -50,22 +49,27 @@ function Card(props: Card) {
   // }
 
   const showMoreInfo = () => {
-    // setShowMore(!showMore)
-    // props.setModalDisplay(true)
-    // props.setLocationDetails({
-    //   name: props.name,
-    //   address: props.address,
-    //   rating: props.rating,
-    //   reviewCount: props.reviewCount,
-    //   descriptionShort: props.descriptionShort,
-    //   descriptionLong: props.descriptionLong,
-    //   imageUrl: props.imageUrl,
-    // })
+    setIsOpen(!isOpen)
   }
 
   return (
     <div className={styles.cardContainer}>
-        {isOpen && <Modal setIsOpen={setIsOpen} />}
+      {isOpen && (
+        <MoreInfoModal
+          imageUrl={props.imageUrl}
+          name={props.name}
+          rating={props.rating}
+          address={props.address}
+          lat={props.lat}
+          lng={props.address}
+          reviewCount={props.reviewCount}
+          attractionType={props.attractionType}
+          descriptionShort={props.descriptionShort}
+          descriptionLong={props.descriptionLong}
+          setIsOpen={setIsOpen}
+          className={props.className}
+        />
+      )}
 
       <div className={styles.imageContainer}>
         <div className={styles.fillContainer} onClick={() => showMoreInfo()}>

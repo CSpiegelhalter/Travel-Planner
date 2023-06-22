@@ -49,6 +49,7 @@ function bucketList(props: any) {
           </header>
           <>
             {display ? (
+
               <div className={styles.scrollableArea}>
                 {locationData.map((location: any, index: number) => (
                   <Card
