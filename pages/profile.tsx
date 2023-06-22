@@ -19,8 +19,8 @@ function profilePage() {
   useEffect(() => {
     if (!!user) {
       grabDataToDisplay(userId, 'trips').then((val) => {
-        if (Object.keys(val).length > 0) {
-          setTripsNumber(Object.keys(val).length)
+        if (Object.keys(val)?.length > 0) {
+          setTripsNumber(Object.keys(val)?.length)
         }
       })
     }
