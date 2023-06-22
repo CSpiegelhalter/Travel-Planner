@@ -76,7 +76,6 @@ export default function Home() {
   const SideBar = dynamic(() => import('@/components/Mappage/SideBar'))
   const HomeHeader = dynamic(() => import('@/components/Mappage/HomeHeader'))
   const NavBar = dynamic(() => import('@/components/NavBar'))
-  const SideBarModal = dynamic(() => import('@/components/Mappage/SideBarModal'))
 
   return (
     <>
@@ -87,7 +86,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
-        {modalDisplay && <SideBarModal locationDetails={locationDetails} modalDisplay={setModalDisplay} />}
+        {/* {modalDisplay && <SideBarModal locationDetails={locationDetails} modalDisplay={setModalDisplay} />} */}
         <div className={styles.mapScreenContainer}>
           <div className={styles.mapContents}>
             <Map location={location} />

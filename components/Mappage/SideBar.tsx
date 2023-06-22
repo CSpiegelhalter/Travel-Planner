@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import styles from '@/styles/componentStyles/SideBar.module.css'
-import Image from 'next/image'
 
 function SideBar(props: any) {
   const Card = dynamic(() => import('@/components/Card'))
@@ -31,6 +30,7 @@ function SideBar(props: any) {
               setShowInfo={props.setShowInfo}
               setLocationDetails={props.setLocationDetails}
               setModalDisplay={props.setModalDisplay}
+              className='tripsCardDarkBG'
             />
           ))
         : null}

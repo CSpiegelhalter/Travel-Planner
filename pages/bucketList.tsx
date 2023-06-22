@@ -24,17 +24,17 @@ function bucketList(props: any) {
       grabDataToDisplay(userId, 'trips').then((val) => {
         setLocationData(val)
       })
-      if (Object.keys(locationData).length > 0) {
-        setDisplay(true)
-      }
+      // if (Object.keys(locationData).length > 0) {
+      //   setDisplay(true)
+      // }
     }
   }, [isLoading, user])
 
   //I AM FOR TESTING!
-  // useEffect(() => {
-  //   setLocationData(testData)
-  //   setDisplay(true)
-  // })
+  useEffect(() => {
+    setLocationData(testData)
+    setDisplay(true)
+  })
 
   if(isLoading){
     return  <LoadingPage />
@@ -48,7 +48,7 @@ function bucketList(props: any) {
             <h1 className={styles.headerCaption}>My Bucketlist:</h1>
           </header>
           <>
-            {display ? (
+            {locationData.length ? (
 
               <div className={styles.scrollableArea}>
                 {locationData.map((location: any, index: number) => (
@@ -65,6 +65,7 @@ function bucketList(props: any) {
                     descriptionLong={location.descriptionLong}
                     hideButtons={true}
                     key={index}
+                    className='bucketListCardDarkBG'
                   />
                 ))}
               </div>
