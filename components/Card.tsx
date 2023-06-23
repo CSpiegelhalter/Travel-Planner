@@ -79,10 +79,10 @@ function Card(props: Card) {
       <div className={styles.cardContentContainer}>
         <div className={styles.infoContainer} onClick={() => showMoreInfo()}>
           <div className={styles.cardContentHeader}>
-            <h3 className={styles.placeName}>{props.name}</h3>
+            <p className={styles.placeName}>{props.name}</p>
             {props.rating ? (
               <div className={styles.reviewContainer}>
-                <p className={styles.infoContent}>{props.rating}</p>
+                <p className={styles.rating}>{props.rating}</p>
                 <Image src="/star.svg" alt="a start" height={15} width={15} />
                 <p className={styles.reviewCount}>({ratingsTrimmer(props.reviewCount)})</p>
               </div>

@@ -17,7 +17,7 @@
 }
 .btnContainer {
   display: flex;
-  z-index: 11;
+  z-index: 1;
   width: 95vw;
   overflow-x: scroll;
   height: fit-content;
@@ -27,6 +27,8 @@
   .placeContainer,
   .btnContainer {
     margin-left: 10vw;
+    margin-right: 18rem;
+
   }
   .btnContainer {
     width: fit-content;

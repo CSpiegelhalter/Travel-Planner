@@ -37,12 +37,17 @@
 }
 
 .placeName {
-  font-size: 20px;
+  font-size: 1.2em;
   margin: 0;
 }
 
-.infoContent, .descriptionShort {
-  font-size: 10px;
+.rating {
+  font-size: 1em;
+}
+
+.descriptionShort {
+  font-size: .6em;
+  line-height: 1.5;
 }
 
 .descriptionShort {
@@ -71,11 +76,15 @@
 
 .reviewContainer {
   display: flex;
-  align-items: center;
+  align-items: baseline;
+}
+
+.rating , .reviewCount {
+  margin: 0;
 }
 
 .reviewCount {
-  font-size: 6px;
+  font-size: .8em;
   color: grey;
   align-items: center;
 }
@@ -85,6 +94,6 @@
 }
 
 .showMore {
-  font-size: 8px;
+  font-size: .9em;
   color: blue;
 }

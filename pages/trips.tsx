@@ -25,52 +25,59 @@ function trips(props: any) {
   const [tripDisplay, setTripDisplay] = useState(false)
 
   useEffect(() => {
-    if (!!user) {
-      grabDataToDisplay(userId, 'trips').then((val) => {
-        setTripData(val)
-      })
-      if (Object.keys(tripData).length > 0) {
-        setTripDisplay(true)
+    // SET TO TRUE IF YOU ARE TESTING
+    const testingComponent = true
+
+    if (testingComponent) {
+      setTripData(testTrips)
+      setTripDisplay(true)
+    } else {
+      if (!!user) {
+        grabDataToDisplay(userId, 'trips').then((val) => {
+          setTripData(val)
+        })
+        if (Object.keys(tripData).length > 0) {
+          setTripDisplay(true)
+        }
       }
     }
-  }, [isLoading, user])
+  }, [isLoading, user, tripData])
 
-  if(isLoading){
+  if (isLoading) {
     return <LoadingPage />
-
   }
 
   return (
-        <>
-          {user ? (
-            <div className={styles.mainContainer}>
-              <div className={styles.topContainer}>
-                <header className={styles.tripHeader}>
-                  <p className={styles.header}>My Trips:</p>
-                  <CreateTrip setModalDisplay={setModalDisplay} />
-                </header>
-                {tripDisplay ? (
-                  <div className={styles.cardContainer}>
-                    {Object.entries(tripData).map(([key, value]: any, index) => (
-                      <TripDisplay key={index} name={key} value={value} length={value.length} tripdata={tripData} />
-                    ))}
-                  </div>
-                ) : (
-                  <TripsDefault setModalDisplay={setModalDisplay} />
-                )}
+    <>
+      {user ? (
+        <div className={styles.mainContainer}>
+          <div className={styles.topContainer}>
+            <header className={styles.tripHeader}>
+              <p className={styles.header}>My Trips:</p>
+              <CreateTrip setModalDisplay={setModalDisplay} />
+            </header>
+            {tripDisplay ? (
+              <div className={styles.cardContainer}>
+                {Object.entries(tripData).map(([key, value]: any, index) => (
+                  <TripDisplay key={index} name={key} value={value} length={value.length} tripdata={tripData} />
+                ))}
               </div>
-              {modalDisplay && <Modal setIsOpen={setModalDisplay} />}
-              <div className={styles.bottomContainer}>
-                <button onClick={() => setModalDisplay(true)} className={styles.createTripBtn}>
-                  Create Trip
-                </button>
-              </div>
-            </div>
-          ) : (
-            <ProfileDefault />
-          )}
-          <NavBar trips={true} map={false} bucketList={false} profile={false} />
-        </>
-      )
+            ) : (
+              <TripsDefault setModalDisplay={setModalDisplay} />
+            )}
+          </div>
+          {modalDisplay && <Modal setIsOpen={setModalDisplay} />}
+          <div className={styles.bottomContainer}>
+            <button onClick={() => setModalDisplay(true)} className={styles.createTripBtn}>
+              Create Trip
+            </button>
+          </div>
+        </div>
+      ) : (
+        <ProfileDefault />
+      )}
+      <NavBar trips={true} map={false} bucketList={false} profile={false} />
+    </>
+  )
 }
 export default trips
