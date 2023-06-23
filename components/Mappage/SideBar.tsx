@@ -9,19 +9,25 @@ function SideBar(props: any) {
   const Modal = dynamic(() => import('@/components/Modal'))
 
   const [createNewTrip, setCreateNewTrip] = useState(false)
-  console.log(createNewTrip)
+  const [selectedValue, setSelectedValue] = useState(null)
 
   return (
     <div className={styles.infoSidebar}>
       <header className={styles.sidebarHeader}>
         <div className={styles.dropdownContainer}>
-          <Dropdown trips={Object.keys(testTrips)} placeHolder={'Select a trip!'} createNewTrip={setCreateNewTrip} />
+          <Dropdown
+            trips={Object.keys(testTrips)}
+            placeHolder={'Select a trip!'}
+            createNewTrip={setCreateNewTrip}
+            selectedValue={selectedValue}
+            setSelectedValue={setSelectedValue}
+          />
         </div>
         <button className={styles.closeBtn} onClick={() => props.setShowInfo(false)}>
           X
         </button>
       </header>
-      {createNewTrip && <Modal setIsOpen={setCreateNewTrip}/>} 
+      {createNewTrip && <Modal setIsOpen={setCreateNewTrip} setSelectedValue={setSelectedValue} />}
       <div className={styles.cardContainer}>
         {props.placesInfo
           ? props.placesInfo.map((place: any, index: number) => (

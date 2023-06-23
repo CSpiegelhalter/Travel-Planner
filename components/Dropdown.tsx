@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 
 const Dropdown = (props: any) => {
   const [showMenu, setShowMenu] = useState(false)
-  const [selectedValue, setSelectedValue] = useState(null)
 
   useEffect(() => {
       const handler = () => setShowMenu(false)
@@ -20,22 +19,22 @@ const Dropdown = (props: any) => {
   }
 
   const getDisplay = () => {
-    if (selectedValue){
-        return selectedValue
+    if (props.selectedValue){
+        return props.selectedValue
     }
     return props.placeHolder
   }
 
   const onItemClick = (trip: any) => {
-    setSelectedValue(trip)
+    props.setSelectedValue(trip)
   }
 
   const isSelected = (trip: any) => {
-    if(!selectedValue){
-        return false
+    if (!props.selectedValue) {
+      return false
     }
 
-    return selectedValue === trip
+    return props.selectedValue === trip
   }
 
   const tripClickHandler = () => {

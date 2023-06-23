@@ -8,7 +8,9 @@ function Modal(props: Modal) {
   const { user, error, isLoading } = useUser()
   const userId = user?.['https://example.com/id']
 
-  const addTripToDB = async () => {
+
+  //this will need to be made async I think
+  const addTripToDB =  () => {
     //     const params = {
     //         trip_name: tripName,
     //         user_id: userId
@@ -18,11 +20,13 @@ function Modal(props: Modal) {
     //       body: JSON.stringify(params),
     //     }
     //     const data = await fetch('/api/saveAttraction', options)
-    console.log('I was clicked')
+    props.setSelectedValue(tripName)
+    props.setIsOpen(false)
   }
 
   function handleStateChange(e: any) {
     setTripName(e.target.value)
+    
     console.log(tripName)
   }
 

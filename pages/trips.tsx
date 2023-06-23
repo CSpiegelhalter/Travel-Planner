@@ -66,7 +66,7 @@ function trips(props: any) {
               <TripsDefault setModalDisplay={setModalDisplay} />
             )}
           </div>
-          {modalDisplay && <Modal setIsOpen={setModalDisplay} />}
+          {modalDisplay && <Modal setIsOpen={setModalDisplay} setSelectedValue={null} />}
           <div className={styles.bottomContainer}>
             <button onClick={() => setModalDisplay(true)} className={styles.createTripBtn}>
               Create Trip

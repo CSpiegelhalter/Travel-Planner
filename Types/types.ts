@@ -29,6 +29,7 @@ export interface Card extends locationObj {
 
 export interface Modal {
   setIsOpen: Function
+  setSelectedValue: Function | any
 }
 
 export interface Dropdown {
