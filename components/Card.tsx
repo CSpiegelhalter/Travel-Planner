@@ -48,21 +48,21 @@ function Card(props: Card) {
     // setDisabled(true)
   }
 
-  const addToTripHandler = () => {
+  const addToTripHandler = async () => {
     const objToSend = {
       userId: userId,
       locationData: locationData,
       tripName: props.tripName,
     }
     if(!props.tripName){
-      addToBucketListHandler()
+      await addToBucketListHandler()
       return
     }
     console.log("TRIPS")
     console.log(objToSend)
   }
 
-  const addToBucketListHandler = () => {
+  const addToBucketListHandler = async () => {
     const objToSend = {
       userId: userId,
       locationData: locationData,
