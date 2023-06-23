@@ -8,9 +8,15 @@ function Button(props: ButtonProps) {
   const handleClick = (args: any) => {
     if (disabled) return
     setDisabled(true)
-    props.handler(args).then(() => {
-      setDisabled(false)
-    })
+    if (args) {
+      props.handler(args).then(() => {
+        setDisabled(false)
+      })
+    } else {
+      props.handler().then(() => {
+        setDisabled(false)
+      })
+    }
   }
 
   useEffect(() => {}, [disabled])

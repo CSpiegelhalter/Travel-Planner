@@ -139,8 +139,7 @@ html, body {
   margin-right: 1rem;
 }
 
-
-button:focus, button:active{background-color:#ff6396;}
+ button:active{background-color:#ff6396;}
 
 
 .landingPageFindPlaces {

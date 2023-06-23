@@ -2,13 +2,18 @@ import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import styles from '@/styles/componentStyles/Card.module.css'
-import { Card } from '@/Types/types'
+import { Card, locationObj } from '@/Types/types'
 import Image from 'next/image'
-import { ratingsTrimmer } from '@/helperFunctions/helperFunction'
+import { addToBucketList, addToTrip, ratingsTrimmer } from '@/helperFunctions/helperFunction'
 
 function Card(props: Card) {
   const Button = dynamic(() => import('@/components/Button'))
   const MoreInfoModal = dynamic(() => import('@/components/MoreInfoModal'))
+
+  const { user } = useUser()
+  const userId: number | any = process.env.NEXT_PUBLIC_AUTH0_USER_ID
+    ? user?.[process.env.NEXT_PUBLIC_AUTH0_USER_ID]
+    : null
 
   const [disabled, setDisabled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
@@ -21,32 +26,35 @@ function Card(props: Card) {
     props?.lng,
     props?.attractionType,
     props?.reviewCount,
+    props?.descriptionShort,
+    props?.imageUrl
   ]
 
-  const addAttractionToDB = async () => {
-    const params = {
-      userId: locationData?.[8],
-      name: locationData?.[0],
-      rating: locationData?.[1],
-      address: locationData?.[2],
-      lat: locationData?.[3],
-      lng: locationData?.[4],
-      attraction_type: locationData?.[5],
-      rating_count: locationData?.[6],
-      email: locationData?.[7],
-    }
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(params),
-    }
-    const data = await fetch('/api/saveAttraction', options)
-    // setDisabled(true)
+  const params: locationObj = {
+    userId: userId,
+    name: locationData?.[0],
+    rating: locationData?.[1],
+    address: locationData?.[2],
+    lat: locationData?.[3],
+    lng: locationData?.[4],
+    attractionType: locationData?.[5],
+    reviewCount: locationData?.[6],
+    descriptionShort: locationData?.[7],
+    imageUrl: locationData?.[8],
   }
 
-  // const clickHandler = async () => {
-  //   props.setIsOpen(true)
-  //   props.setShowInfo(false)
-  // }
+
+  const addToTripHandler = async () => {
+    if(!props.tripName){
+      await addToBucketListHandler()
+      return
+    }
+    await addToTrip(userId, params, props.tripName)
+  }
+
+  const addToBucketListHandler = async () => {
+    await addToBucketList(userId, params)
+  }
 
   const showMoreInfo = () => {
     setIsOpen(!isOpen)
@@ -92,17 +100,19 @@ function Card(props: Card) {
           </div>
           <p className={styles.descriptionShort}>{props.descriptionShort}</p>
           <p className={styles.showMore}>...show more</p>
+        </div>
+      </div>
           {!props.hideButtons && (
             <div className={styles.cardBtnContainer}>
               <Button
-                handler={addAttractionToDB as any}
+                handler={() => addToBucketListHandler()}
                 name="cardBtn"
                 buttonText="cardBtnText"
                 value="Add to profile!"
                 disabled={disabled}
               ></Button>
               <Button
-                // handler={() => clickHandler()}
+                handler={() => addToTripHandler()}
                 name="cardBtn"
                 buttonText="cardBtnText"
                 value="Add to trip!"
@@ -110,8 +120,6 @@ function Card(props: Card) {
               ></Button>
             </div>
           )}
-        </div>
-      </div>
     </div>
   )
 }
