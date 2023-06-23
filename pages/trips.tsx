@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import styles from '@/styles/pageStyles/trips.module.css'
 import dynamic from 'next/dynamic'
-import { testTrips } from '@/constants/test'
+import { testLocations, testTrips } from '@/constants/test'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import ProfileDefault from '@/components/Profilepage/ProfileDefault'
 import { grabDataToDisplay } from '@/helperFunctions/grabDataToDisplay'
 import LoadingPage from '@/components/LoadingPage'
+import { addToBucketList, addToTrip } from '@/helperFunctions/helperFunction'
 
 function trips(props: any) {
   const TripDisplay = dynamic(() => import('@/components/Tripspage/TripDisplay'))
@@ -14,9 +15,12 @@ function trips(props: any) {
   const TripsDefault = dynamic(() => import('@/components/Tripspage/TripsDefault'))
   const CreateTrip = dynamic(() => import('@/components/Tripspage/CreateTrip'))
   const { user, isLoading } = useUser()
-  const userId: number | any = process.env.NEXT_PUBLIC_AUTH0_USER_ID
-    ? user?.[process.env.NEXT_PUBLIC_AUTH0_USER_ID]
-    : null
+  // const userId: number | any = process.env.NEXT_PUBLIC_AUTH0_USER_ID
+  //   ? user?.[process.env.NEXT_PUBLIC_AUTH0_USER_ID]
+  //   : null
+
+  //TESTING
+  const userId = 3
 
   console.log(userId, typeof userId)
 
@@ -47,6 +51,15 @@ function trips(props: any) {
     return <LoadingPage />
   }
 
+  // ONLY FOR TESTING LOCAL STORAGE
+  function testLocalStorage() {
+    const randomIndex = Math.floor(Math.random() * (testLocations.length - 1))
+
+    // addToBucketList(`${userId}`, testLocations[randomIndex])
+    // addToTrip(`${userId}`, testLocations[randomIndex], 'Pariii2.0')
+
+  }
+
   return (
     <>
       {user ? (
@@ -54,6 +67,8 @@ function trips(props: any) {
           <div className={styles.topContainer}>
             <header className={styles.tripHeader}>
               <p className={styles.header}>My Trips:</p>
+              {/* <button onClick={() => testLocalStorage()}>TEST HERE BOI</button> */}
+
               <CreateTrip setModalDisplay={setModalDisplay} />
             </header>
             {tripDisplay ? (
