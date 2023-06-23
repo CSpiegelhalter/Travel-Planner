@@ -7,7 +7,7 @@
   bottom: 0%;
   overflow: hidden;
   overflow-y: scroll;
-  border-radius: 2rem;
+  /* border-radius: 2rem; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +26,7 @@
   border-radius: 0.5rem;
   border: none;
   font-size: 0.75rem;
-  color: #2c3e50;
+  color: gainsboro;
   background: rgb(195, 9, 9);
   transition: all 0.25s ease;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
@@ -35,6 +35,19 @@
   margin-left: 80%;
   margin-top: 0;
   position: sticky;
+}
+
+.sidebarHeader {
+  /* display: flex; */
+  /* justify-content:space-between; */
+  border: 2px solid black;
+  width: 100%;
+}
+
+.dropdownContainer {
+  /* border: 1px solid black; */
+  width: 40vw;
+
 }
 
 @media (min-width: 70rem) {
