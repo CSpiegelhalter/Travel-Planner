@@ -49,19 +49,19 @@ function NavBar(props: NavBarProps) {
       <Image className={styles.logo} onClick={() =>router.push('/') } src="/Logo.webp" alt="Logo" width={60} height={60} />
       <div className={styles.buttonContainer}>
         {iconItems.map((info, index) => (
-          <div id={index.toString()} className={styles.btnBorder}>
+          <div key={info.name + 'btnBorder'} id={index.toString()} className={styles.btnBorder}>
             <Link
-              key={index}
+              key={info.name}
               className={styles.link}
               href={info.href}
               prefetch={false}
               style={{ textDecoration: 'none' }}
             >
-              <div className={styles.navBtn}>
-                <div className={styles.imageContainer}>
-                  <Image src={info.selected ? info.selectedImage : info.unselectedImage} alt={info.alt} fill />
+              <div key={info.name + 'navBtn'} className={styles.navBtn}>
+                <div key={info.name + 'imageContainer'} className={styles.imageContainer}>
+                  <Image key={info.name + 'image'} src={info.selected ? info.selectedImage : info.unselectedImage} alt={info.alt} fill />
                 </div>
-                <p className={styles.btnLabels} style={info.selected ? { color: '#0000EF' } : { color: 'grey' }}>
+                <p key={info.name + 'buttonLabel'} className={styles.btnLabels} style={info.selected ? { color: '#0000EF' } : { color: 'grey' }}>
                   {info.name}
                 </p>
               </div>
