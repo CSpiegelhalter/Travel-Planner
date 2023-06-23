@@ -39,7 +39,6 @@ const Dropdown = (props: any) => {
   }
 
   const tripClickHandler = () => {
-    console.log('I was clicked')
     props.createNewTrip(true)
   }
 

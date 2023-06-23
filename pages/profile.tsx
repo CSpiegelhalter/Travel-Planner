@@ -1,7 +1,7 @@
 import { useUser } from '@auth0/nextjs-auth0/client'
 import styles from '@/styles/pageStyles/Profile.module.css'
 import dynamic from 'next/dynamic'
-import { use, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { grabDataToDisplay } from '@/helperFunctions/grabDataToDisplay'
 import { testTrips } from '@/constants/test'
 
@@ -13,8 +13,6 @@ function profilePage() {
   const userId: number | any = process.env.NEXT_PUBLIC_AUTH0_USER_ID
     ? user?.[process.env.NEXT_PUBLIC_AUTH0_USER_ID]
     : null
-
-    console.log(user)
 
   const [tripsNumber, setTripsNumber] = useState<number>(0)
 

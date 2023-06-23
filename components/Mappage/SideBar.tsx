@@ -2,12 +2,11 @@ import dynamic from 'next/dynamic'
 import styles from '@/styles/componentStyles/SideBar.module.css'
 import { testTrips } from '@/constants/test'
 import { useState } from 'react'
-import CreateTrip from '@/components/Tripspage/CreateTrip'
-import Modal from '../Modal'
 
 function SideBar(props: any) {
   const Card = dynamic(() => import('@/components/Card'))
   const Dropdown = dynamic(() => import('@/components/Dropdown'))
+  const Modal = dynamic(() => import('@/components/Modal'))
 
   const [createNewTrip, setCreateNewTrip] = useState(false)
   console.log(createNewTrip)
