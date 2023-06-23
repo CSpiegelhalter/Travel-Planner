@@ -44,7 +44,7 @@ function Card(props: Card) {
   }
 
 
-  const addToTripHandler = async () => {\
+  const addToTripHandler = async () => {
     if(!props.tripName){
       await addToBucketListHandler()
       return
