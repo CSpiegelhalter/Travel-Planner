@@ -1,4 +1,5 @@
-import { PointsOfInterestApiParams } from '@/Types/types'
+import { PointsOfInterestApiParams, locationObj } from '@/Types/types'
+import { LocalStorageService } from '@/lib/localStorage'
 
 export function handleStateChange(event: any, param: any) {
   param(event.target.value)
@@ -60,3 +61,28 @@ export const ratingsTrimmer = (reviewCount: string) => {
   }
 }
 
+export const addToBucketList = async (userId: string, locationObject: locationObj) => {
+  try {
+    const localStorageInstance = new LocalStorageService(`${userId}`)
+    const shouldSaveToDatabase = await localStorageInstance.saveToBucketList(locationObject)
+
+    if (shouldSaveToDatabase) {
+      // TODO - Add save to database
+    }
+  } catch (e) {
+    console.log('Failed to save to bucketlist... ', e)
+  }
+}
+
+export const addToTrip = async (userId: string, locationObject: locationObj, tripName: string) => {
+  try {
+    const localStorageInstance = new LocalStorageService(`${userId}`)
+    const shouldSaveToDatabase = await localStorageInstance.saveToTrip(locationObject, tripName)
+
+    if (shouldSaveToDatabase) {
+      // TODO - Add save to database
+    }
+  } catch (e) {
+    console.log('Failed to save to trip... ', e)
+  }
+}
