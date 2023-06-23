@@ -110,7 +110,6 @@ function Card(props: Card) {
                 buttonText="cardBtnText"
                 value="Add to profile!"
                 disabled={disabled}
-                params={null}
               ></Button>
               <Button
                 handler={() => addToTripHandler()}
@@ -118,7 +117,6 @@ function Card(props: Card) {
                 buttonText="cardBtnText"
                 value="Add to trip!"
                 disabled=""
-                params={null}
               ></Button>
             </div>
           )}
