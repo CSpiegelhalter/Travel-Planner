@@ -1,0 +1,37 @@
+
+.dropdownContainer {
+  text-align: left;
+  border: 1px solid #ccc;
+  border-radius:1rem;
+  position: relative;
+  border-radius: 5px;
+}
+
+.dropdownInput {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.dropdownMenu{
+    position: absolute;
+    transform: translateY(4px);
+    width: 100%;
+    border-radius: 0.5rem;
+    overflow: auto;
+    max-height: 10rem;
+    z-index: 10;
+    top: 0;
+}
+
+.dropdownItem {
+    padding: 5px;
+    cursor: pointer;
+    background: white;
+}
+
+.dropdownItem:hover {
+    background: gainsboro;
+}
