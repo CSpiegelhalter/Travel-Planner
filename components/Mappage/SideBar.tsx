@@ -48,6 +48,7 @@ function SideBar(props: any) {
                 setLocationDetails={props.setLocationDetails}
                 setModalDisplay={props.setModalDisplay}
                 className="tripsCardDarkBG"
+                tripName={selectedValue}
               />
             ))
           : null}

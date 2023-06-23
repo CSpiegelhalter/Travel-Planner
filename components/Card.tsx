@@ -10,6 +10,11 @@ function Card(props: Card) {
   const Button = dynamic(() => import('@/components/Button'))
   const MoreInfoModal = dynamic(() => import('@/components/MoreInfoModal'))
 
+  const { user } = useUser()
+  const userId: number | any = process.env.NEXT_PUBLIC_AUTH0_USER_ID
+    ? user?.[process.env.NEXT_PUBLIC_AUTH0_USER_ID]
+    : null
+
   const [disabled, setDisabled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
 
@@ -43,10 +48,28 @@ function Card(props: Card) {
     // setDisabled(true)
   }
 
-  // const clickHandler = async () => {
-  //   props.setIsOpen(true)
-  //   props.setShowInfo(false)
-  // }
+  const addToTripHandler = () => {
+    const objToSend = {
+      userId: userId,
+      locationData: locationData,
+      tripName: props.tripName,
+    }
+    if(!props.tripName){
+      addToBucketListHandler()
+      return
+    }
+    console.log("TRIPS")
+    console.log(objToSend)
+  }
+
+  const addToBucketListHandler = () => {
+    const objToSend = {
+      userId: userId,
+      locationData: locationData,
+    }
+    console.log("BUCKET")
+    console.log(objToSend)
+  }
 
   const showMoreInfo = () => {
     setIsOpen(!isOpen)
@@ -92,26 +115,28 @@ function Card(props: Card) {
           </div>
           <p className={styles.descriptionShort}>{props.descriptionShort}</p>
           <p className={styles.showMore}>...show more</p>
+        </div>
+      </div>
           {!props.hideButtons && (
             <div className={styles.cardBtnContainer}>
               <Button
-                handler={addAttractionToDB as any}
+                handler={() => addToBucketListHandler()}
                 name="cardBtn"
                 buttonText="cardBtnText"
                 value="Add to profile!"
                 disabled={disabled}
+                params={null}
               ></Button>
               <Button
-                // handler={() => clickHandler()}
+                handler={() => addToTripHandler()}
                 name="cardBtn"
                 buttonText="cardBtnText"
                 value="Add to trip!"
                 disabled=""
+                params={null}
               ></Button>
             </div>
           )}
-        </div>
-      </div>
     </div>
   )
 }
