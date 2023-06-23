@@ -14,6 +14,8 @@ function profilePage() {
     ? user?.[process.env.NEXT_PUBLIC_AUTH0_USER_ID]
     : null
 
+    console.log(user)
+
   const [tripsNumber, setTripsNumber] = useState<number>(0)
 
   useEffect(() => {

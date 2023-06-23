@@ -29,6 +29,7 @@ function HomeHeader(props: HomeHeader) {
           <Button
             key={index}
             name="attractionsFilterBtn"
+            //We need to remove this
             handler={callPointsOfInterestsApi}
             value={point.name}
             img={point.img}
