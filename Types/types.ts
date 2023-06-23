@@ -119,7 +119,7 @@ export interface NavBarProps {
 
 export interface locationObj {
   imageUrl: string
-  name: string
+  name: string | any
   rating: number | string
   address: string
   lat: number | string
@@ -128,6 +128,7 @@ export interface locationObj {
   reviewCount: string
   descriptionShort: string
   descriptionLong?: string
+  userId: number
 }
 
 export type LocalStorageKeyType = 'bucketList' | 'trips'

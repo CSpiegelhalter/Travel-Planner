@@ -2,9 +2,9 @@ import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import styles from '@/styles/componentStyles/Card.module.css'
-import { Card } from '@/Types/types'
+import { Card, locationObj } from '@/Types/types'
 import Image from 'next/image'
-import { ratingsTrimmer } from '@/helperFunctions/helperFunction'
+import { addToBucketList, addToTrip, ratingsTrimmer } from '@/helperFunctions/helperFunction'
 
 function Card(props: Card) {
   const Button = dynamic(() => import('@/components/Button'))
@@ -26,49 +26,34 @@ function Card(props: Card) {
     props?.lng,
     props?.attractionType,
     props?.reviewCount,
+    props?.descriptionShort,
+    props?.imageUrl
   ]
 
-  const addAttractionToDB = async () => {
-    const params = {
-      userId: locationData?.[8],
-      name: locationData?.[0],
-      rating: locationData?.[1],
-      address: locationData?.[2],
-      lat: locationData?.[3],
-      lng: locationData?.[4],
-      attraction_type: locationData?.[5],
-      rating_count: locationData?.[6],
-      email: locationData?.[7],
-    }
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(params),
-    }
-    const data = await fetch('/api/saveAttraction', options)
-    // setDisabled(true)
+  const params: locationObj = {
+    userId: userId,
+    name: locationData?.[0],
+    rating: locationData?.[1],
+    address: locationData?.[2],
+    lat: locationData?.[3],
+    lng: locationData?.[4],
+    attractionType: locationData?.[5],
+    reviewCount: locationData?.[6],
+    descriptionShort: locationData?.[7],
+    imageUrl: locationData?.[8],
   }
 
-  const addToTripHandler = async () => {
-    const objToSend = {
-      userId: userId,
-      locationData: locationData,
-      tripName: props.tripName,
-    }
+
+  const addToTripHandler = async () => {\
     if(!props.tripName){
       await addToBucketListHandler()
       return
     }
-    console.log("TRIPS")
-    console.log(objToSend)
+    await addToTrip(userId, params, props.tripName)
   }
 
   const addToBucketListHandler = async () => {
-    const objToSend = {
-      userId: userId,
-      locationData: locationData,
-    }
-    console.log("BUCKET")
-    console.log(objToSend)
+    await addToBucketList(userId, params)
   }
 
   const showMoreInfo = () => {
