@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 20;
+  z-index: 2;
   margin: auto;
   background-color: white;
   border-radius: 50%;
@@ -42,6 +42,15 @@
   right: 4vw;
   width: 10rem;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.burgerBackground {
+  width: 100vw;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  z-index: 30;
 }
 
 .burgerLinkSelected,

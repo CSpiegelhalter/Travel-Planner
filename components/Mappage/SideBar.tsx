@@ -23,6 +23,7 @@ function SideBar(props: any) {
       </header>
       <div className={styles.btnContainer}>
       </div>
+      <div className={styles.cardContainer} >
       {props.placesInfo
         ? props.placesInfo.map((place: any, index: number) => (
             <Card
@@ -45,6 +46,7 @@ function SideBar(props: any) {
             />
           ))
         : null}
+        </div>
     </div>
   )
 }
