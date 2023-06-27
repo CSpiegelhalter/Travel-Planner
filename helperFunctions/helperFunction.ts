@@ -79,10 +79,20 @@ export const addToTrip = async (userId: string, locationObject: locationObj, tri
     const localStorageInstance = new LocalStorageService(`${userId}`)
     const shouldSaveToDatabase = await localStorageInstance.saveToTrip(locationObject, tripName)
 
-    if (shouldSaveToDatabase) {
-      // TODO - Add save to database
+      if (shouldSaveToDatabase) {
+        // TODO - Add save to database
+      }
     }
-  } catch (e) {
+    //TODO - hit the database and update local storage
+   catch (e) {
     console.log('Failed to save to trip... ', e)
   }
+}
+
+const timeStampValidator = (currentTime: number, timeStamp: number) => {
+  const difference = currentTime - timeStamp
+  if (difference < 3600000) {
+    return true
+  }
+  return false
 }

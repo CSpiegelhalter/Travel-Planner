@@ -52,13 +52,22 @@ export class LocalStorageService {
     public async fetchStorageData(callback: () => Promise<Response>, keyType: LocalStorageKeyType) {
         const formattedKey = `${this.key}-${keyType}`
         const data = this.getItem(formattedKey)
+        console.log('DATA HERE FOR FETCH')
+        console.log(data)
+        
         if (!!data) {
             return data
         }
+        //this is the data that we are getting from our DB
         const fetchedData = await callback()
         const dataToStore = await fetchedData.json()
-        this.setItem(this.key, dataToStore)
-        return dataToStore
+        //this is the object with the timeStamp for us to refer to
+        const stampedData = {
+            locationData: dataToStore,
+            timestamp: new Date().getTime()
+        }
+        this.setItem(this.key, stampedData)
+        return stampedData
     }
 
     /**
@@ -68,9 +77,13 @@ export class LocalStorageService {
     public async saveToBucketList(data: locationObj): Promise<boolean> {
         const formattedKey = `${this.key}-bucketList`
         const currentData = this.getItem(formattedKey)
+        const currentTime = new Date().getTime()
         
         if (!currentData) {
-            const newBucketList = [data]
+            const newBucketList = {
+                locationData : [data],
+                timeStamp: new Date().getTime()
+            }
             this.setItem(formattedKey, newBucketList)
             return true
         } else {
@@ -96,10 +109,12 @@ export class LocalStorageService {
      public async saveToTrip(data: locationObj, tripName: string): Promise<boolean> {
         const formattedKey = `${this.key}-trips`
         const currentData = this.getItem(formattedKey)
+        const timeStamp = new Date().getTime()
         
         if (!currentData) {
-            const newTripObject: Record<string, locationObj[]> = {}
+            const newTripObject: Record<string, locationObj[] | number> = {}
             newTripObject[tripName] = [data]
+            newTripObject["timeStamp"] = timeStamp;
             this.setItem(formattedKey, newTripObject)
             return true
         } else if (!currentData[tripName]) {
