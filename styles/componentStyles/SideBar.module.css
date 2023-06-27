@@ -43,7 +43,7 @@
 .closeBtn {
   cursor: pointer;
   font-weight: 500;
-  /* padding: 4px 8px; */
+  padding: 4px 8px;
   border-radius: 0.5rem;
   border: none;
   font-size: 0.75rem;
@@ -68,10 +68,10 @@
 }
 @media (min-width: 700px) {
   .cardContainer {
-    width: 36rem;
+    width: 42rem;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: none;
   }
 }
 
@@ -81,12 +81,12 @@
     bottom: 0;
     right: 0;
     height: 100vh;
-    width: 18rem;
+    width: 23rem;
+    box-shadow: 2px 2px 2px black;
+    margin-right:0;
+
   }
   .cardContainer {
     width: 18rem;
-    /* flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: left; */
   }
 }
