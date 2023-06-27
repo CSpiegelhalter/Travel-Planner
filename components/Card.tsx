@@ -47,7 +47,6 @@ function Card(props: Card) {
     timeStamp: timeStamp
   }
 
-
   const addToTripHandler = async () => {
     if(!props.tripName){
       await addToBucketListHandler()

@@ -6,8 +6,7 @@ export function handleStateChange(event: any, param: any) {
 }
 //WE NEED TO KILL THIS?
 export const callPointsOfInterestsApi = async (args: PointsOfInterestApiParams) => {
-  console.log('HERE ARE THE ARGS')
-  console.log(args)
+
   const { city, typeOfInterest, callback } = args
   const params = {
     city: city,
