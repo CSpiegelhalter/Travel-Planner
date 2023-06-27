@@ -25,12 +25,12 @@ export interface Card extends locationObj {
   setModalDisplay?: Function
   hideButtons?: boolean
   className?: string
-  tripName: string | any
+  tripName?: string | any
 }
 
 export interface Modal {
   setIsOpen: Function
-  setSelectedValue: Function | any
+  setSelectedValue?: Function | any
 }
 
 export interface Dropdown {
@@ -128,7 +128,7 @@ export interface locationObj {
   reviewCount: string
   descriptionShort: string
   descriptionLong?: string
-  userId: number
+  userId?: number
 }
 
 export type LocalStorageKeyType = 'bucketList' | 'trips'
