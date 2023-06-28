@@ -88,7 +88,8 @@ export const addToTrip = async (userId: string, locationObject: locationObj, tri
   }
 }
 
-const timeStampValidator = (currentTime: number, timeStamp: number) => {
+export const timeStampValidator = (currentTime: number, timeStamp: number) => {
+  
   const difference = currentTime - timeStamp
   if (difference < 3600000) {
     return true

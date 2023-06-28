@@ -1,4 +1,5 @@
 import { LocalStorageKeyType, locationObj } from "@/Types/types"
+import { timeStampValidator } from "@/helperFunctions/helperFunction"
 
 // const setLocalStorage = async (userId, data) => {
 //     await grabUserAttractions()
@@ -52,11 +53,10 @@ export class LocalStorageService {
     public async fetchStorageData(callback: () => Promise<Response>, keyType: LocalStorageKeyType) {
         const formattedKey = `${this.key}-${keyType}`
         const data = this.getItem(formattedKey)
-        console.log('DATA HERE FOR FETCH')
-        console.log(data)
-        
-        if (!!data) {
-            return data
+        const currentTime = new Date().getTime()
+
+        if (!!data && !!timeStampValidator(currentTime, data.timeStamp)) {
+            return data.locationData
         }
         //this is the data that we are getting from our DB
         const fetchedData = await callback()
@@ -67,7 +67,7 @@ export class LocalStorageService {
             timestamp: new Date().getTime()
         }
         this.setItem(this.key, stampedData)
-        return stampedData
+        return stampedData.locationData
     }
 
     /**
@@ -77,7 +77,6 @@ export class LocalStorageService {
     public async saveToBucketList(data: locationObj): Promise<boolean> {
         const formattedKey = `${this.key}-bucketList`
         const currentData = this.getItem(formattedKey)
-        const currentTime = new Date().getTime()
         
         if (!currentData) {
             const newBucketList = {
@@ -89,11 +88,11 @@ export class LocalStorageService {
         } else {
             // Find any duplicate locations. We do NOT want to add if we already have it
             let foundDuplicate = false
-            currentData.map((location: locationObj) => {if(location.name === data.name) foundDuplicate = true })
+            currentData.locationData.map((location: locationObj) => {if(location.name === data.name) foundDuplicate = true })
             
             // We only write to local storage if data is not already in it
             if (!foundDuplicate) {
-                currentData.push(data)
+                currentData.locationData.push(data)
                 this.setItem(formattedKey, currentData)
                 return true
             }
