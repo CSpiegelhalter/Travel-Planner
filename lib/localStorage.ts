@@ -36,7 +36,6 @@ export class LocalStorageService {
         if(value){
             this.storage.setItem(key, JSON.stringify(value));
         }
-        console.log('I was falsy')
     }
 
     getItem(key: string): any {
