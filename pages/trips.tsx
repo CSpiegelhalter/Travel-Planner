@@ -55,7 +55,7 @@ function trips(props: any) {
   function testLocalStorage() {
     const randomIndex = Math.floor(Math.random() * (testLocations.length - 1))
 
-    // addToBucketList(`${userId}`, testLocations[randomIndex])
+    addToBucketList(`${userId}`, testLocations[randomIndex])
     // addToTrip(`${userId}`, testLocations[randomIndex], 'Pariii2.0')
 
   }
@@ -67,7 +67,7 @@ function trips(props: any) {
           <div className={styles.topContainer}>
             <header className={styles.tripHeader}>
               <p className={styles.header}>My Trips:</p>
-              {/* <button onClick={() => testLocalStorage()}>TEST HERE BOI</button> */}
+              <button onClick={() => testLocalStorage()}>TEST HERE BOI</button>
 
               <CreateTrip setModalDisplay={setModalDisplay} />
             </header>

@@ -15,6 +15,5 @@ export const grabDataToDisplay = async (userId: number, pageType: LocalStorageKe
     async () => await fetch('/api/grabAttractionsFromDB', options),
     pageType,
   )
-  console.log(" I was called YAY!")
-  return data
+  return data.locationData
 }

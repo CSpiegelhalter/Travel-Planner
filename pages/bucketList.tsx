@@ -22,7 +22,9 @@ function bucketList(props: any) {
   useEffect(() => {
     if (!!user) {
       grabDataToDisplay(userId, 'trips').then((val) => {
-        setLocationData(val)
+        if(val){
+          setLocationData(val)
+        }
       })
       if (locationData.length > 0) {
         setDisplay(true)
@@ -39,6 +41,8 @@ function bucketList(props: any) {
   if(isLoading){
     return  <LoadingPage />
   }
+
+
 
   return (
     <>

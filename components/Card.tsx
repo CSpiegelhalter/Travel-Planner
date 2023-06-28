@@ -18,6 +18,9 @@ function Card(props: Card) {
   const [disabled, setDisabled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
 
+  const timeStamp = new Date().getTime();
+  
+
   const locationData = [
     props?.name,
     props?.rating,
@@ -41,8 +44,8 @@ function Card(props: Card) {
     reviewCount: locationData?.[6],
     descriptionShort: locationData?.[7],
     imageUrl: locationData?.[8],
+    timeStamp: timeStamp
   }
-
 
   const addToTripHandler = async () => {
     if(!props.tripName){

@@ -1,4 +1,5 @@
 import { LocalStorageKeyType, locationObj } from "@/Types/types"
+import { timeStampValidator } from "@/helperFunctions/helperFunction"
 
 // const setLocalStorage = async (userId, data) => {
 //     await grabUserAttractions()
@@ -31,9 +32,10 @@ export class LocalStorageService {
     }
 
     setItem(key: string, value: any) {
-        console.log('I am setting ', value)
-        console.log('With the key of, ', key)
-        this.storage.setItem(key, JSON.stringify(value));
+        
+        if(value){
+            this.storage.setItem(key, JSON.stringify(value));
+        }
     }
 
     getItem(key: string): any {
@@ -52,13 +54,21 @@ export class LocalStorageService {
     public async fetchStorageData(callback: () => Promise<Response>, keyType: LocalStorageKeyType) {
         const formattedKey = `${this.key}-${keyType}`
         const data = this.getItem(formattedKey)
-        if (!!data) {
-            return data
+        const currentTime = new Date().getTime()
+
+        if (!!data && !!timeStampValidator(currentTime, data.timeStamp)) {
+            return data.locationData
         }
+        //this is the data that we are getting from our DB
         const fetchedData = await callback()
         const dataToStore = await fetchedData.json()
-        this.setItem(this.key, dataToStore)
-        return dataToStore
+        //this is the object with the timeStamp for us to refer to
+        const stampedData = {
+            locationData: dataToStore,
+            timestamp: new Date().getTime()
+        }
+        this.setItem(this.key, stampedData)
+        return stampedData.locationData
     }
 
     /**
@@ -70,17 +80,20 @@ export class LocalStorageService {
         const currentData = this.getItem(formattedKey)
         
         if (!currentData) {
-            const newBucketList = [data]
+            const newBucketList = {
+                locationData : [data],
+                timeStamp: new Date().getTime()
+            }
             this.setItem(formattedKey, newBucketList)
             return true
         } else {
             // Find any duplicate locations. We do NOT want to add if we already have it
             let foundDuplicate = false
-            currentData.map((location: locationObj) => {if(location.name === data.name) foundDuplicate = true })
+            currentData.locationData.map((location: locationObj) => {if(location.name === data.name) foundDuplicate = true })
             
             // We only write to local storage if data is not already in it
             if (!foundDuplicate) {
-                currentData.push(data)
+                currentData.locationData.push(data)
                 this.setItem(formattedKey, currentData)
                 return true
             }
@@ -96,10 +109,12 @@ export class LocalStorageService {
      public async saveToTrip(data: locationObj, tripName: string): Promise<boolean> {
         const formattedKey = `${this.key}-trips`
         const currentData = this.getItem(formattedKey)
+        const timeStamp = new Date().getTime()
         
         if (!currentData) {
-            const newTripObject: Record<string, locationObj[]> = {}
+            const newTripObject: Record<string, locationObj[] | number> = {}
             newTripObject[tripName] = [data]
+            newTripObject["timeStamp"] = timeStamp;
             this.setItem(formattedKey, newTripObject)
             return true
         } else if (!currentData[tripName]) {
