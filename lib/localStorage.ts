@@ -32,9 +32,11 @@ export class LocalStorageService {
     }
 
     setItem(key: string, value: any) {
-        console.log('I am setting ', value)
-        console.log('With the key of, ', key)
-        this.storage.setItem(key, JSON.stringify(value));
+        
+        if(value){
+            this.storage.setItem(key, JSON.stringify(value));
+        }
+        console.log('I was falsy')
     }
 
     getItem(key: string): any {

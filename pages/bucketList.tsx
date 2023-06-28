@@ -22,9 +22,9 @@ function bucketList(props: any) {
   useEffect(() => {
     if (!!user) {
       grabDataToDisplay(userId, 'trips').then((val) => {
-        console.log("I AM HERE")
-        console.log(val)
-        setLocationData(val)
+        if(val){
+          setLocationData(val)
+        }
       })
       if (locationData.length > 0) {
         setDisplay(true)
