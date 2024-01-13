@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from '@/styles/pageStyles/Profile.module.css'
+import styles from './Profile.module.css'
 
 
 function ProfileDefault(props: any) {

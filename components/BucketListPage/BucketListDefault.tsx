@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from '@/styles/componentStyles/bucketListDefault.module.css'
+import styles from './BucketListDefault.module.css'
 
 function BucketListDefault(props: any) {
   return (
