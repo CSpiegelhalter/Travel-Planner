@@ -6,13 +6,13 @@ import Head from 'next/head'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <UserProvider>
-      <html lang="en">
-        <Head>
-          <link rel="icon" href="/Logo.svg" />
-        </Head>
+    <html lang="en">
+      <Head>
+        <link rel="icon" href="/Logo.svg" />
+      </Head>
+      <UserProvider>
         <body>{children}</body>
-      </html>
-    </UserProvider>
+      </UserProvider>
+    </html>
   )
 }

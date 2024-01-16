@@ -6,7 +6,7 @@ function ProfileDefault() {
     return (
         <div className={styles.profileContainer}>
             <h2>You don't seem to be logged in!</h2>
-            <h3><Link href='api/auth/login' className={styles.login} prefetch={false} >Login</Link> to get started!</h3>
+            <h3><a href={`api/auth/login?returnTo=${encodeURIComponent('/profile')}`} className={styles.login} >Login</a> to get started!</h3>
         </div>
     );
 }

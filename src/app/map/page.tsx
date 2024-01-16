@@ -28,11 +28,12 @@ export default function Home() {
   const [showInfo, setShowInfo] = useState<boolean>(false)
   // this is to hold onto our data that we get from our api call
   const [placesInfo, setPlacesInfo] = useState()
-  //auth0 user to allow us to know if we are logged in or not
-  const { user, error, isLoading } = useUser()
-  // const userId =process.env.AUTH0_USER_ID ?  user?.[process.env.AUTH0_USER_ID] : null
-  const userId = user?.['https://example.com/id']
-  console.log(userId)
+
+  const { user, isLoading } = useUser()
+  const userId: number | any = process.env.NEXT_PUBLIC_AUTH0_USER_ID
+    ? user?.[process.env.NEXT_PUBLIC_AUTH0_USER_ID]
+    : null
+
   //State for the Modal
   const [isOpen, setIsOpen] = useState(false)
   // this sets our location State using this function
@@ -59,7 +60,9 @@ export default function Home() {
       setUserLocation(null)
       setHasLoaded(true)
     }
-  }, [])
+    console.log(user)
+  }, [isLoading, user])
+
   // this is our key and how we load in our google maps api
   const key: any = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
   const { isLoaded } = useLoadScript({
@@ -97,7 +100,7 @@ export default function Home() {
               <HomeHeader
                 isLoaded={isLoaded}
                 handleSavedTripsDisplay={handleSavedTripsDisplay}
-                user={null}
+                user={user}
                 callback={updatePlaces}
                 city={city}
                 locationHandler={setUserLocation}
@@ -120,7 +123,7 @@ export default function Home() {
               <Image src="/Logo.webp" alt="Logo" width={60} height={60} />
             </Link>
           </div>
-            {/* <NavBar map={true} trips={false} bucketList={false} profile={false} /> */}
+          {/* <NavBar map={true} trips={false} bucketList={false} profile={false} /> */}
         </div>
         {isOpen && <Modal setIsOpen={setIsOpen} />}
       </main>

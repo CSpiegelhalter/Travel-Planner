@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 // import { useRouter } from 'next/router'
 import Image from 'next/image'
-import Link from 'next/link'
 
 function Hamburger(props: any) {
   const HamburgerItem = dynamic(() => import('@/components/Hamburger/HamburgerItem'))
@@ -17,7 +16,7 @@ function Hamburger(props: any) {
     },
     {
       id: 2,
-      href: 'api/auth/login',
+      href: `/api/auth/login?returnTo=${encodeURIComponent('/map')}`,
       name: 'Login',
     },
   ]
@@ -58,7 +57,7 @@ function Hamburger(props: any) {
     },
     {
       id: 3,
-      href: props.user ? 'api/auth/logout' : 'api/auth/login',
+      href: props.user ? 'api/auth/logout' : `/api/auth/login?returnTo=${encodeURIComponent('/map')}`,
       name: props.user ? 'Logout' : 'Login',
     },
   ]

@@ -17,7 +17,7 @@ function ProfileComponent(props: any) {
             <li className={styles.listItem}>{props.user?.email}</li>
           </ul>
         </div>
-        <Link className={styles.logout} href="api/auth/logout" prefetch={false}>Logout</Link>
+        <a className={styles.logout} href="api/auth/logout">Logout</a>
       </div>
     );
 }

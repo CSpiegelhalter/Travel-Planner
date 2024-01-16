@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
 import { grabDataToDisplay } from '@/helperFunctions/grabDataToDisplay'
 import { testTrips } from '@/constants/test'
+import LoadingComponent from '@/components/Loading/LoadingComponent/LoadingComponent'
 
 function profilePage() {
   const NavBar = dynamic(() => import('@/components/Navbar/NavBar'))
@@ -27,6 +28,8 @@ function profilePage() {
       })
     }
   }, [isLoading, user])
+
+  if (isLoading) return <LoadingComponent />
 
   return (
     <div className={styles.mainContainer}>
