@@ -23,3 +23,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 5. Remove all calls that have to do with trips
 6. Make profile and saved pages not look like TRASH
 7. Fix the picture from blowing up on-load on the landing page
+8. GET getSavedPlaces(userId)

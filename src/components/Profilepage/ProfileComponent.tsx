@@ -2,19 +2,19 @@ import styles from './Profile.module.css'
 import Link from 'next/link'
 
 
-function ProfileComponent(props: any) {
+function ProfileComponent({ user, trips }: any) {
     return (
         <div className={styles.profileContainer}>
-        <h1>{`${props.user?.given_name} ${props.user?.family_name}`}</h1>
+        <h1>{`${user?.given_name} ${user?.family_name}`}</h1>
         <Link href='/trips' prefetch={false} className={styles.link}>
-        <p className={styles.savedTrips}>{`${props.trips} Trips`}</p>
+        <p className={styles.savedTrips}>{`${trips} Trips`}</p>
         </Link>
         <div className={styles.profileItemsList}>
           <ul className={styles.profileList}> 
-            <li className={styles.listItem}>{props.user?.given_name as string}</li>
-            <li className={styles.listItem}>{props.user?.family_name as string}</li>
-            <li className={styles.listItem}>{props.user?.nickname}</li>
-            <li className={styles.listItem}>{props.user?.email}</li>
+            <li className={styles.listItem}>{user?.given_name as string}</li>
+            <li className={styles.listItem}>{user?.family_name as string}</li>
+            <li className={styles.listItem}>{user?.nickname}</li>
+            <li className={styles.listItem}>{user?.email}</li>
           </ul>
         </div>
         <a className={styles.logout} href="api/auth/logout">Logout</a>

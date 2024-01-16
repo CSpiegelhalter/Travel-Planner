@@ -8,8 +8,7 @@ import { grabDataToDisplay } from '@/helperFunctions/grabDataToDisplay'
 import { testTrips } from '@/constants/test'
 import LoadingComponent from '@/components/Loading/LoadingComponent/LoadingComponent'
 
-function profilePage() {
-  const NavBar = dynamic(() => import('@/components/Navbar/NavBar'))
+function ProfilePage() {
   const ProfileComponent = dynamic(() => import('@/components/Profilepage/ProfileComponent'))
   const ProfileDefault = dynamic(() => import('@/components/Profilepage/ProfileDefault'))
   const { user, isLoading } = useUser()
@@ -33,10 +32,9 @@ function profilePage() {
 
   return (
     <div className={styles.mainContainer}>
-      <NavBar profile={true} bucketList={false} trips={false} map={false} />
       {user ? <ProfileComponent user={user} trips={tripsNumber} /> : <ProfileDefault />}
     </div>
   )
 }
 
-export default profilePage
+export default ProfilePage

@@ -1,18 +1,16 @@
 'use client'
 
-import styles from './bucketList.module.css'
+import styles from './Saved.module.css'
 import dynamic from 'next/dynamic'
 import { testLocations } from '@/constants/test'
 import { useEffect, useState } from 'react'
 import { locationObj } from '@/Types/types'
 import ProfileDefault from '@/components/Profilepage/ProfileDefault'
 import { useUser } from '@auth0/nextjs-auth0/client'
-import { grabDataToDisplay } from '@/helperFunctions/grabDataToDisplay'
 import LoadingComponent from '@/components/Loading/LoadingComponent/LoadingComponent'
 
-function bucketList() {
-  const NavBar = dynamic(() => import('@/components/Navbar/NavBar'))
-  const BucketListDefault = dynamic(() => import('@/components/BucketListPage/BucketListDefault'))
+function Saved() {
+  const NothingSavedPage = dynamic(() => import('@/components/NothingSavedPage/NothingSavedPage'))
   const Card = dynamic(() => import('@/components/Card/Card'))
 
   const [locationData, setLocationData] = useState<locationObj[]>([])
@@ -23,10 +21,13 @@ function bucketList() {
 
   useEffect(() => {
     if (!!user) {
-      grabDataToDisplay(userId, 'trips').then((val) => {
-        if (val) {
-          setLocationData(val)
-        }
+      fetch(`api/getSavedPlaces/${userId}`).then((res) => {
+        res.json().then((val) => {
+          console.log(val.message)
+          if (val.message) {
+            setLocationData(val)
+          }
+        })
       })
       if (locationData.length > 0) {
         setDisplay(true)
@@ -73,16 +74,15 @@ function bucketList() {
                 ))}
               </div>
             ) : (
-              <BucketListDefault />
+              <NothingSavedPage />
             )}
           </>
         </div>
       ) : (
         <ProfileDefault />
       )}
-      <NavBar bucketList={true} map={false} trips={false} profile={false} />
     </>
   )
 }
 
-export default bucketList
+export default Saved

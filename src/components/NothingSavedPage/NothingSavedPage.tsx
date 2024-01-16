@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import styles from './BucketListDefault.module.css'
+import styles from './NothingSavedPage.module.css'
 
-function BucketListDefault() {
+function NothingSavedPage() {
   return (
     <section className={styles.contentContainer}>
       <div className={styles.imageContainer}>
@@ -14,4 +14,4 @@ function BucketListDefault() {
   )
 }
 
-export default BucketListDefault
+export default NothingSavedPage
