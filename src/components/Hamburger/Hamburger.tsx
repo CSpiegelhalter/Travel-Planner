@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic'
 // import { useRouter } from 'next/router'
 import Image from 'next/image'
 
-function Hamburger(props: any) {
+function Hamburger({ user }: any) {
   const HamburgerItem = dynamic(() => import('@/components/Hamburger/HamburgerItem'))
 
   const itemsNotLoggedIn: Record<string, any>[] = [
@@ -44,23 +44,8 @@ function Hamburger(props: any) {
     },
   ]
   // const router = useRouter()
-  const items: Record<string, any>[] = [
-    {
-      id: 1,
-      href: '/',
-      name: 'Home',
-    },
-    {
-      id: 2,
-      href: '/profile',
-      name: 'Profile',
-    },
-    {
-      id: 3,
-      href: props.user ? 'api/auth/logout' : `/api/auth/login?returnTo=${encodeURIComponent('/map')}`,
-      name: props.user ? 'Logout' : 'Login',
-    },
-  ]
+  const items: Record<string, any>[] = user ? itemsLoggedIn : itemsNotLoggedIn
+
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleOpen = () => {

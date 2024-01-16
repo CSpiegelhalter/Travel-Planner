@@ -82,7 +82,6 @@ export default function Home() {
   const Modal = dynamic(() => import('@/components/Modal/Modal'))
   const SideBar = dynamic(() => import('@/components/Mappage/SideBar/SideBar'))
   const HomeHeader = dynamic(() => import('@/components/Mappage/HomeHeader/HomeHeader'))
-  const NavBar = dynamic(() => import('@/components/Navbar/NavBar'))
 
   return (
     <>
@@ -123,7 +122,6 @@ export default function Home() {
               <Image src="/Logo.webp" alt="Logo" width={60} height={60} />
             </Link>
           </div>
-          {/* <NavBar map={true} trips={false} bucketList={false} profile={false} /> */}
         </div>
         {isOpen && <Modal setIsOpen={setIsOpen} />}
       </main>
