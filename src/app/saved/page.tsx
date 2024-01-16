@@ -20,7 +20,7 @@ function Saved() {
   const userId: number | any = process.env.AUTH0_USER_ID ? user?.[process.env.AUTH0_USER_ID] : null
 
   useEffect(() => {
-    if (!!user) {
+    if (!!userId) {
       fetch(`api/getSavedPlaces/${userId}`).then((res) => {
         res.json().then((val) => {
           const places = val.message
@@ -37,9 +37,11 @@ function Saved() {
 
   //I AM FOR TESTING!
   useEffect(() => {
+    // setLocationData([])
     setLocationData(testData)
+
     setDisplay(true)
-  })
+  }, [])
 
   if (isLoading) {
     return <LoadingComponent />
@@ -49,13 +51,13 @@ function Saved() {
     <>
       {user ? (
         <div className={styles.mainContainer}>
-          <header className={styles.header}>
-            <h1 className={styles.headerCaption}>My Bucketlist:</h1>
+          <header>
+            <h1 className={styles.headerCaption}>Saved Places:</h1>
           </header>
-          <>
-            {locationData.length ? (
-              <div className={styles.scrollableArea}>
-                {locationData.map((location: any, index: number) => (
+          <div className={styles.contentContainer}>
+            {locationData?.length > 0 ? (
+              <>
+                {locationData?.map((location: any, index: number) => (
                   <Card
                     name={location.name}
                     rating={location.rating}
@@ -72,11 +74,11 @@ function Saved() {
                     className="bucketListCardDarkBG"
                   />
                 ))}
-              </div>
+              </>
             ) : (
               <NothingSavedPage />
             )}
-          </>
+          </div>
         </div>
       ) : (
         <ProfileDefault />

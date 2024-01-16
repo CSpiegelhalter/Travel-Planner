@@ -4,12 +4,8 @@ import styles from './NothingSavedPage.module.css'
 function NothingSavedPage() {
   return (
     <section className={styles.contentContainer}>
-      <div className={styles.imageContainer}>
-        <Image src="/paperAirplaneIllustration.webp" alt="walking up stairs" fill />
-      </div>
-      <div className={styles.captionContainer}>
-        <p className={styles.imageCaption}>Save points of interest here to collect them.</p>
-      </div>
+      <Image src="/paperAirplaneIllustration.webp" alt="walking up stairs" width={0} height={300} layout="responsive" />
+      <p className={styles.imageCaption}>Save points of interest here to remember them.</p>
     </section>
   )
 }

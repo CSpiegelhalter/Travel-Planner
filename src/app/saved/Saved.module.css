@@ -1,66 +1,38 @@
 .mainContainer {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 80vh;
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .headerCaption {
-    margin-left: 2rem;
-    height: 4rem;
-    display: flex;
-
+  margin-left: 4rem;
+  margin-top: 3rem;
+  margin-bottom: 0;
+  height: 4rem;
+  color: #03036d;
 }
 
-.header {
-    height: 4rem;
-    display: flex;
+.contentContainer {
+  display: flex;
+  align-items: center;
+  height: 60vh;
+  width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.scrollableArea {
-    margin: auto;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    /* padding-right: 10rem; */
-    /* margin-right: 2rem; */
+.mainContainer::-webkit-scrollbar {
+  width: 5px;
+  color: blue;
 }
 
-.scrollableArea::-webkit-scrollbar {
-    width: 5px;
-    color: blue;
-  }
-  
-  .scrollableArea::-webkit-scrollbar-track {
+.mainContainer::-webkit-scrollbar-track {
+  background-color: darkgrey;
+}
 
-    background-color: darkgrey;
-  }
-  
-  .scrollableArea::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  }
-
-
-@media (min-width: 70rem) {
-    .mainContainer {
-        margin-left: 10vw;
-        width: 90vw;
-        height: 90vh
-
-    }
-  }
-@media (min-width: 800px) {
-    .scrollableArea {
-        display: flex;
-        width: 39rem;
-        flex-wrap: wrap;
-        max-width: 60rem;
-    }
-  }
-
-  @media (min-width: 1250px) {
-    .scrollableArea {
-        width: 54.5em;
-      
-    }
-  }
+.mainContainer::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
