@@ -10,7 +10,7 @@ import { grabDataToDisplay } from '@/helperFunctions/grabDataToDisplay'
 import LoadingComponent from '@/components/Loading/LoadingComponent/LoadingComponent'
 import { addToBucketList, addToTrip } from '@/helperFunctions/helperFunction'
 
-function trips(props: any) {
+function trips() {
   const TripDisplay = dynamic(() => import('@/components/Tripspage/TripDisplay/TripDisplay'))
   const NavBar = dynamic(() => import('@/components/Navbar/NavBar'))
   const Modal = dynamic(() => import('@/components/Modal/Modal'))
@@ -79,7 +79,7 @@ function trips(props: any) {
                 ))}
               </div>
             ) : (
-              <TripsDefault setModalDisplay={setModalDisplay} />
+              <TripsDefault />
             )}
           </div>
           {modalDisplay && <Modal setIsOpen={setModalDisplay} setSelectedValue={null} />}

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styles from './BucketListDefault.module.css'
 
-function BucketListDefault(props: any) {
+function BucketListDefault() {
   return (
     <section className={styles.contentContainer}>
       <div className={styles.imageContainer}>

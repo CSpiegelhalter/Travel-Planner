@@ -85,7 +85,7 @@ function Hamburger(props: any) {
           <>
             <div className={styles.burgerBackground} onClick={() => setIsOpen(false)}></div>
             <div className={styles.burgerDropdownCLOSE}>
-              {items.map((item, i) => (
+              {items.map((item) => (
                 <HamburgerItem
                   // className="burger"
                   key={item.id}

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styles from './TripsDefault.module.css'
 
-function TripsDefault(props: any) {
+function TripsDefault() {
   return (
     <section className={styles.mainContent}>
       <div className={styles.contentContainer}>

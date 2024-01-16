@@ -16,7 +16,7 @@ function TripInfoModal(props: any) {
           </button>
           <div className={styles.cardContainer}>
             {props.locationDetails &&
-              props.locationDetails.map((location: any, index: number) => (
+              props.locationDetails.map((location: any) => (
                 <Card
                   name={location.name}
                   rating={location.rating}

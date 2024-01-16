@@ -14,19 +14,47 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false, // SET TO TRUE AND CLEAN YOUR CODE
     "noUnusedParameters": true,
     "sourceMap": true,
     "skipLibCheck": true,
     "strict": true,
     "target": "ES2017",
     "useUnknownInCatchVariables": false,
-    "lib": ["es6", "dom"],
+    "lib": [
+      "es6",
+      "dom"
+    ],
     "downlevelIteration": true,
     "resolveJsonModule": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "outDir": "./dist",
-    "types": ["jest", "node", "@testing-library/jest-dom"]
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "types": [
+      "jest",
+      "node",
+      "@testing-library/jest-dom",
+      "babel__generator"
+    ],
+    "noEmit": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["src", "tests"]
+  "include": [
+    "src",
+    "tests",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

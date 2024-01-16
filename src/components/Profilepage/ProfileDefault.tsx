@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styles from './Profile.module.css'
 
 
-function ProfileDefault(props: any) {
+function ProfileDefault() {
     return (
         <div className={styles.profileContainer}>
             <h2>You don't seem to be logged in!</h2>

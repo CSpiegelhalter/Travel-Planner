@@ -10,7 +10,7 @@ import { useUser } from '@auth0/nextjs-auth0/client'
 import { grabDataToDisplay } from '@/helperFunctions/grabDataToDisplay'
 import LoadingComponent from '@/components/Loading/LoadingComponent/LoadingComponent'
 
-function bucketList(props: any) {
+function bucketList() {
   const NavBar = dynamic(() => import('@/components/Navbar/NavBar'))
   const BucketListDefault = dynamic(() => import('@/components/BucketListPage/BucketListDefault'))
   const Card = dynamic(() => import('@/components/Card/Card'))
