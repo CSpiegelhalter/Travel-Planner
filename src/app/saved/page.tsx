@@ -23,15 +23,15 @@ function Saved() {
     if (!!user) {
       fetch(`api/getSavedPlaces/${userId}`).then((res) => {
         res.json().then((val) => {
-          console.log(val.message)
-          if (val.message) {
-            setLocationData(val)
+          const places = val.message
+          if (places) {
+            setLocationData(places)
+            if (places.length > 0) {
+              setDisplay(true)
+            }
           }
         })
       })
-      if (locationData.length > 0) {
-        setDisplay(true)
-      }
     }
   }, [isLoading, user])
 
