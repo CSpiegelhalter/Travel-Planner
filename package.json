@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "install:example": "npm i --prefix=travel-planner --no-package-lock",
+    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "build:example": "npm run build --prefix=travel-planner",
+    "build:vercel": "npm run install:example && npm run build && npm run build:example",
     "start": "next start",
     "lint": "next lint"
   },
