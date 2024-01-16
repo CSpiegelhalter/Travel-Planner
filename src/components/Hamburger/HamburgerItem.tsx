@@ -9,9 +9,9 @@ interface HamburgerItemProps {
 function HamburgerItem({ item }: HamburgerItemProps) {
   return (
     <>
-      <Link prefetch={false} className={styles.burgerLinkSelected} href={item.href} >
+      <a className={styles.burgerLinkSelected} href={item.href}>
         {item.name}
-      </Link>
+      </a>
     </>
   )
 }
