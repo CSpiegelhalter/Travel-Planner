@@ -7,22 +7,12 @@ import LoadingComponent from '@/components/Loading/LoadingComponent/LoadingCompo
 import { Suspense } from 'react'
 
 function LandingPage() {
-  const DiscoverAndExplore = dynamic(() => import('@/components/Landingpage/DiscoverAndExplore/DiscoverAndExplore'), {
-    loading: () => <LoadingComponent />,
-    ssr: false,
-  })
-  const MemorableTrips = dynamic(() => import('@/components/Landingpage/MemorableTrips/MemorableTrips'), {
-    loading: () => <LoadingComponent />,
-    ssr: false,
-  })
+  const DiscoverAndExplore = dynamic(() => import('@/components/Landingpage/DiscoverAndExplore/DiscoverAndExplore'))
+  const MemorableTrips = dynamic(() => import('@/components/Landingpage/MemorableTrips/MemorableTrips'))
   const WhatMakesUsDifferent = dynamic(
     () => import('@/components/Landingpage/WhatMakesUsDifferent/WhatMakesUsDifferent'),
-    { loading: () => <LoadingComponent />, ssr: false },
   )
-  const Footer = dynamic(() => import('@/components/Footer/Footer'), {
-    loading: () => <LoadingComponent />,
-    ssr: false,
-  })
+  const Footer = dynamic(() => import('@/components/Footer/Footer'))
 
   return (
     <div style={{ margin: 'auto', width: '100vw', justifySelf: 'center' }}>

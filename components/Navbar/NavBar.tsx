@@ -48,15 +48,6 @@ function NavBar(props: NavBarProps) {
 
   return (
     <header className={styles.mainHeader}>
-      <Link href={'/'}>
-        <Image
-          className={styles.logo}
-          src="/Logo.webp"
-          alt="Logo"
-          width={60}
-          height={60}
-        />
-      </Link>
       <div className={styles.buttonContainer}>
         {iconItems.map((info, index) => (
           <div key={info.name + 'btnBorder'} id={index.toString()} className={styles.btnBorder}>

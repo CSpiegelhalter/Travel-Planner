@@ -3,6 +3,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .pointsOfInterestFilterContainer {
@@ -20,4 +21,19 @@
 
 .mapContents {
   width: 100vw;
+  height: 97vh;
+}
+
+.logo {
+  display: none;
+}
+
+@media (min-width: 70rem) {
+  .logo {
+    display: block;
+    position: absolute;
+    z-index: 100;
+    left: 2vw;
+    top: 1vw;
+  }
 }

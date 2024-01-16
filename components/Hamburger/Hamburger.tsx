@@ -9,6 +9,41 @@ import Link from 'next/link'
 function Hamburger(props: any) {
   const HamburgerItem = dynamic(() => import('@/components/Hamburger/HamburgerItem'))
 
+  const itemsNotLoggedIn: Record<string, any>[] = [
+    {
+      id: 1,
+      href: '/',
+      name: 'Home',
+    },
+    {
+      id: 2,
+      href: 'api/auth/login',
+      name: 'Login',
+    },
+  ]
+
+  const itemsLoggedIn: Record<string, any>[] = [
+    {
+      id: 1,
+      href: '/',
+      name: 'Home',
+    },
+    {
+      id: 2,
+      href: '/saved',
+      name: 'Saved Places',
+    },
+    {
+      id: 3,
+      href: '/profile',
+      name: 'Profile',
+    },
+    {
+      id: 4,
+      href: '/api/auth/logout',
+      name: 'Logout',
+    },
+  ]
   // const router = useRouter()
   const items: Record<string, any>[] = [
     {

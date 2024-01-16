@@ -13,6 +13,8 @@ import LoadingComponent from '@/components/Loading/LoadingComponent/LoadingCompo
 import dynamic from 'next/dynamic'
 //DELETE ME I AM FOR TESTING
 import { testLocations } from '@/constants/test'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Home() {
   const [modalDisplay, setModalDisplay] = useState(false) //CHANGE TO FALSE\
@@ -27,10 +29,10 @@ export default function Home() {
   // this is to hold onto our data that we get from our api call
   const [placesInfo, setPlacesInfo] = useState()
   //auth0 user to allow us to know if we are logged in or not
-  //   const { user, error, isLoading } = useUser()
+  const { user, error, isLoading } = useUser()
   // const userId =process.env.AUTH0_USER_ID ?  user?.[process.env.AUTH0_USER_ID] : null
-  //   const userId = user?.['https://example.com/id']
-  //   console.log(userId)
+  const userId = user?.['https://example.com/id']
+  console.log(userId)
   //State for the Modal
   const [isOpen, setIsOpen] = useState(false)
   // this sets our location State using this function
@@ -113,7 +115,12 @@ export default function Home() {
               )}
             </div>
           </div>
-          <NavBar map={true} trips={false} bucketList={false} profile={false} />
+          <div className={styles.logo}>
+            <Link href={'/'}>
+              <Image src="/Logo.webp" alt="Logo" width={60} height={60} />
+            </Link>
+          </div>
+            {/* <NavBar map={true} trips={false} bucketList={false} profile={false} /> */}
         </div>
         {isOpen && <Modal setIsOpen={setIsOpen} />}
       </main>
