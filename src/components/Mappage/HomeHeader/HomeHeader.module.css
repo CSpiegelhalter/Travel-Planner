@@ -1,3 +1,29 @@
+.attractionsFilterBtn {
+  display: flex;
+  align-items: baseline;
+  background: #fc266b;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  margin: 0.5rem;
+  margin-top: 0.75rem;
+  width: fit-content;
+  height: auto;
+}
+
+.icon {
+  margin-left: 0.5rem;
+}
+
+.buttonText {
+  font-weight: 500;
+  font-size: medium;
+  line-height: 2rem;
+  margin: 0;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
 .mainHeader {
   display: flex;
   flex-direction: column;
@@ -28,7 +54,6 @@
   .btnContainer {
     margin-left: 10vw;
     margin-right: 18rem;
-
   }
   .btnContainer {
     width: fit-content;
@@ -54,4 +79,3 @@
     margin-left: 12vw;
   }
 }
-

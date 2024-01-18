@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import { useLoadScript } from '@react-google-maps/api'
 import FindLocation from '@/hooks/FindLocation'
 import Map from '@/components/Mappage/MapComponent/MapComponent'
-import { libraries } from '@/constants/constants'
+import { libraries, sessionStoragePlacesKey } from '@/constants/constants'
 import { UserProvider, useUser } from '@auth0/nextjs-auth0/client'
 import { Location } from '@/Types/types'
 import LoadingComponent from '@/components/Loading/LoadingComponent/LoadingComponent'
@@ -15,19 +15,21 @@ import dynamic from 'next/dynamic'
 import { testLocations } from '@/constants/test'
 import Link from 'next/link'
 import Image from 'next/image'
+import HomeHeader from '@/components/Mappage/HomeHeader/HomeHeader'
 
 export default function Home() {
   const [modalDisplay, setModalDisplay] = useState(false) //CHANGE TO FALSE\
-  const [locationDetails, setLocationDetails] = useState({})
 
   //These are the two states used to get our location for centering
   const [location, setLocation] = useState({ lat: 51.5072, lng: 0.1276 })
-  const [city, setCity] = useState('london')
+
   const [hasLoaded, setHasLoaded] = useState<boolean>(false)
   //This state is used to show (or not show) the information sidebar
   const [showInfo, setShowInfo] = useState<boolean>(false)
   // this is to hold onto our data that we get from our api call
-  const [placesInfo, setPlacesInfo] = useState()
+  const [places, setPlaces] = useState()
+
+  const [offset, setOffset] = useState(0)
 
   const { user, isLoading } = useUser()
   const userId: number | any = process.env.NEXT_PUBLIC_AUTH0_USER_ID
@@ -36,26 +38,87 @@ export default function Home() {
 
   //State for the Modal
   const [isOpen, setIsOpen] = useState(false)
-  // this sets our location State using this function
+
   async function setUserLocation(location: any) {
-    const defaultLocation: Location | undefined = await FindLocation()
+    // Reset the storage when we lookup a new place
+    sessionStorage.removeItem(sessionStoragePlacesKey)
+
     if (!!location) {
       setLocation({ lat: location.lat, lng: location.lng })
-      setCity(location.city)
-    } else if (!!defaultLocation) {
-      setLocation({ lat: defaultLocation.lat, lng: defaultLocation.lng })
-      setCity(defaultLocation.city)
-    } else {
-      //this is a default location that we chose
-      setLocation({ lat: 51.5072, lng: 0.1276 })
+      return
     }
+    const userLocation = await FindLocation()
+    if (!!userLocation) {
+      setLocation({ lat: userLocation.lat, lng: userLocation.lng })
+      return
+    }
+    //this is a default location that we chose
+    setLocation({ lat: 51.5072, lng: 0.1276 })
   }
-  //used to change the t/f for what the sidebar will show
-  const handleSavedTripsDisplay = async () => {
+
+  const updatePlaces = (data: any) => {
+    setPlaces(data)
     setShowInfo(true)
   }
+
+  useEffect(() => {
+    if (!!places) return
+
+    // Get saved places if we do not already have places (ex. we navigated to another page and back)
+    const storageData = sessionStorage.getItem(sessionStoragePlacesKey)
+    if (!storageData) return
+
+    const savedData = JSON.parse(storageData)
+    const savedPlaces = savedData.places
+    const savedOffset = Number(savedData.offset)
+
+    setPlaces(savedPlaces)
+    setOffset(savedOffset)
+  }, [])
+
+  useEffect(() => {
+    if (!location) return
+
+    // Gets places near the set location
+    const queryParams = new URLSearchParams({
+      lat: location.lat.toString(),
+      lng: location.lng.toString(),
+      offset: offset.toString(),
+    })
+    fetch(`api/getPlaces/${queryParams}`).then((res) => {
+      console.log(res.ok)
+
+      if (!res.ok) return
+
+      res.json().then((data) => {
+        const placesResults = data.places
+        const newOffset = data.offset + data.limit
+
+        setOffset(newOffset)
+        updatePlaces(placesResults)
+
+        const storageObject = {
+          offset: newOffset,
+          places: placesResults,
+        }
+        const currentSessionStorage = sessionStorage.getItem(sessionStoragePlacesKey)
+
+        // Combine what is in there now with what we just retrieved
+        if (!!currentSessionStorage) {
+          const currentStorageData = JSON.parse(currentSessionStorage)
+          storageObject.places = [...currentStorageData.places, ...storageObject.places]
+        }
+
+        sessionStorage.setItem(sessionStoragePlacesKey, JSON.stringify(storageObject))
+      })
+    })
+  }, [location])
+
   //This is a useEffect used to make sure that the users location is grabbed only once when the page is rendered
   useEffect(() => {
+    // TODO: Change how we store in session storage to include lat and long.
+    // Do a check here for session storage, if we have it just call setLocation here
+    // with the lat and lng from session storage
     if (!hasLoaded) {
       setUserLocation(null)
       setHasLoaded(true)
@@ -74,14 +137,8 @@ export default function Home() {
     return <LoadingComponent />
   }
 
-  const updatePlaces = (data: any) => {
-    setPlacesInfo(data)
-    setShowInfo(true)
-  }
-
   const Modal = dynamic(() => import('@/components/Modal/Modal'))
   const SideBar = dynamic(() => import('@/components/Mappage/SideBar/SideBar'))
-  const HomeHeader = dynamic(() => import('@/components/Mappage/HomeHeader/HomeHeader'))
 
   return (
     <>
@@ -96,22 +153,13 @@ export default function Home() {
           <div className={styles.mapContents}>
             <Map location={location} />
             <div className={styles.infoContainer}>
-              <HomeHeader
-                isLoaded={isLoaded}
-                handleSavedTripsDisplay={handleSavedTripsDisplay}
-                user={user}
-                callback={updatePlaces}
-                city={city}
-                locationHandler={setUserLocation}
-                displayHandler={handleSavedTripsDisplay}
-              />
+              <HomeHeader isLoaded={isLoaded} user={user} setUserLocation={setUserLocation} />
               {showInfo && (
                 <SideBar
                   /*we to change this back changed for testing below*/
                   placesInfo={testLocations}
                   setIsOpen={setIsOpen}
                   setShowInfo={setShowInfo}
-                  setLocationDetails={setLocationDetails}
                   setModalDisplay={setModalDisplay}
                 />
               )}

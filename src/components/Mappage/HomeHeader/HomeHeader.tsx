@@ -3,40 +3,28 @@ import { callPointsOfInterestsApi } from '@/helperFunctions/helperFunction'
 import { HomeHeader, PointsOfInterestApiParams } from '@/Types/types'
 import { locationButtons } from '@/constants/constants'
 import dynamic from 'next/dynamic'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function HomeHeader(props: HomeHeader) {
+function HomeHeader({ isLoaded, setUserLocation, user }: HomeHeader) {
   const Hamburger = dynamic(() => import('@/components/Hamburger/Hamburger'))
-  const Button = dynamic(() => import('@/components/Button'))
   const PlaceComponent = dynamic(() => import('@/components/Mappage/PlaceComponent/PlaceComponent'))
 
-  const params: PointsOfInterestApiParams = {
-    callback: props.callback,
-    city: props.city,
-  }
   return (
     <header className={styles.mainHeader}>
       <div className={styles.placeContainer}>
         <PlaceComponent
-          isLoaded={props.isLoaded}
+          isLoaded={isLoaded}
           style={{ paddingRight: '0', marginRight: '0' }}
-          locationHandler={props.locationHandler}
-          displayHandler={props.displayHandler}
+          setUserLocation={setUserLocation}
         />
-        <Hamburger user={props.user} />
+        <Hamburger user={user} />
       </div>
       <div className={styles.btnContainer}>
         {locationButtons.map((point, index) => (
-          <Button
-            key={index}
-            name="attractionsFilterBtn"
-            //We need to remove this
-            handler={callPointsOfInterestsApi}
-            value={point.name}
-            img={point.img}
-            alt={point.alt}
-            params={{ typeOfInterest: point, ...params }}
-            disabled=""
-          />
+          <button className={styles.attractionsFilterBtn} key={index} onClick={() => console.log(point.name)}>
+            <FontAwesomeIcon className={styles.icon}  icon={point.img as any} />
+            <p className={styles.buttonText}>{point.name}</p>
+          </button>
         ))}
       </div>
     </header>

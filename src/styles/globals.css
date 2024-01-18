@@ -111,33 +111,9 @@ html, body {
   position: absolute;
 }
 
-.attractionsFilterBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  background: #FC266B;
-  border-radius: 5px;
-  border: none;
-  color: #FFFFFF;
-}
 
-.attractionsFilterBtn {
-  margin: .5rem;
-  margin-top: .75rem;
-  width: fit-content;
-  height: auto;
-  justify-content: flex-start;
-}
 
-.buttonText {
-  font-weight: 500;
-  font-size: medium;
-  line-height: 3.5vh;
-  margin: 0;
-  margin-left: .75rem;
-  margin-right: 1rem;
-}
+
 
  button:active{background-color:#ff6396;}
 

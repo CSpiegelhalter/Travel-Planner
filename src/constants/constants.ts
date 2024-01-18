@@ -8,6 +8,8 @@ import {
   faShoppingCart,
 } from '@fortawesome/free-solid-svg-icons'
 
+export const sessionStoragePlacesKey = 'Places'
+
 export const locationLabels: LocationLabels = {
   Shopping: ['clothing_store', 'shopping_mall'],
   Restaurants: ['cafe', 'restaurant'],
@@ -24,9 +26,9 @@ export const locationButtons: LocationButtons[] = [
     alt: 'Attractions',
   },
   {
-    name: 'Restaurants',
+    name: 'Food',
     img: faUtensils,
-    alt: 'Restaurants',
+    alt: 'Food',
   },
   {
     name: 'Nature',
@@ -42,11 +44,6 @@ export const locationButtons: LocationButtons[] = [
     name: 'Shops',
     img: faShoppingCart,
     alt: 'Shopping',
-  },
-  {
-    name: 'Cafes',
-    img: faCoffee,
-    alt: 'Cafes',
   },
 ]
 

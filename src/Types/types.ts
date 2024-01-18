@@ -47,13 +47,9 @@ export interface latLng {
   city?: string
 }
 export interface HomeHeader {
-  handleSavedTripsDisplay: Function
   user: any
-  isLoaded: any
-  city: string
-  callback: Function
-  locationHandler: Function
-  displayHandler: Function
+  isLoaded: boolean
+  setUserLocation: Function
 }
 export interface PointsOfInterestApiParams {
   city?: string

@@ -10,8 +10,9 @@ import { useUser } from '@auth0/nextjs-auth0/client'
 import LoadingComponent from '@/components/Loading/LoadingComponent/LoadingComponent'
 
 function Saved() {
-  const NothingSavedPage = dynamic(() => import('@/components/NothingSavedPage/NothingSavedPage'))
   const Card = dynamic(() => import('@/components/Card/Card'))
+  const NothingSavedPage = dynamic(() => import('@/components/NothingSavedPage/NothingSavedPage'))
+
 
   const [locationData, setLocationData] = useState<locationObj[]>([])
   const { user, isLoading } = useUser()
