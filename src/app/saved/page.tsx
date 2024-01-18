@@ -14,8 +14,6 @@ function Saved() {
   const Card = dynamic(() => import('@/components/Card/Card'))
 
   const [locationData, setLocationData] = useState<locationObj[]>([])
-  const [display, setDisplay] = useState(false)
-  const testData = testLocations
   const { user, isLoading } = useUser()
   const userId: number | any = process.env.AUTH0_USER_ID ? user?.[process.env.AUTH0_USER_ID] : null
 
@@ -26,9 +24,6 @@ function Saved() {
           const places = val.message
           if (places) {
             setLocationData(places)
-            if (places.length > 0) {
-              setDisplay(true)
-            }
           }
         })
       })
@@ -37,10 +32,8 @@ function Saved() {
 
   //I AM FOR TESTING!
   useEffect(() => {
-    // setLocationData([])
-    setLocationData(testData)
-
-    setDisplay(true)
+    setLocationData([])
+    // setLocationData(testLocations)
   }, [])
 
   if (isLoading) {
@@ -54,31 +47,35 @@ function Saved() {
           <header>
             <h1 className={styles.headerCaption}>Saved Places:</h1>
           </header>
-          <div className={styles.contentContainer}>
+          <>
             {locationData?.length > 0 ? (
-              <>
-                {locationData?.map((location: any, index: number) => (
-                  <Card
-                    name={location.name}
-                    rating={location.rating}
-                    address={location.address}
-                    lat={location.lat}
-                    lng={location.lng}
-                    attractionType={location.attractionType}
-                    reviewCount={location.reviewCount}
-                    imageUrl={location.imageUrl}
-                    descriptionShort={location.descriptionShort}
-                    descriptionLong={location.descriptionLong}
-                    hideButtons={true}
-                    key={index}
-                    className="bucketListCardDarkBG"
-                  />
-                ))}
-              </>
+              <div className={styles.contentContainer}>
+                <div className={styles.innercontent}>
+                  {locationData?.map((location: any, index: number) => (
+                    <Card
+                      name={location.name}
+                      rating={location.rating}
+                      address={location.address}
+                      lat={location.lat}
+                      lng={location.lng}
+                      attractionType={location.attractionType}
+                      reviewCount={location.reviewCount}
+                      imageUrl={location.imageUrl}
+                      descriptionShort={location.descriptionShort}
+                      descriptionLong={location.descriptionLong}
+                      hideButtons={true}
+                      key={index}
+                      className="bucketListCardDarkBG"
+                    />
+                  ))}
+                </div>
+              </div>
             ) : (
-              <NothingSavedPage />
+              <div className={styles.noSavedContainer}>
+                <NothingSavedPage />
+              </div>
             )}
-          </div>
+          </>
         </div>
       ) : (
         <ProfileDefault />

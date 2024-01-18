@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import styles from './Card.module.css'
@@ -51,12 +51,14 @@ function Card({
     await addToBucketList(userId, params)
   }
 
+  useEffect(() => {}, [isOpen])
+
   const showMoreInfo = () => {
     setIsOpen(!isOpen)
   }
 
   return (
-    <div className={styles.cardContainer}>
+    <>
       {isOpen && (
         <MoreInfoModal
           imageUrl={imageUrl}
@@ -73,42 +75,40 @@ function Card({
           className={className}
         />
       )}
-
-      <div className={styles.imageContainer}>
+      <div className={styles.cardContainer}>
         <div className={styles.fillContainer} onClick={() => showMoreInfo()}>
-          <Image src={imageUrl} alt={name} fill />
+          <Image src={imageUrl} alt={name} fill={true} className={styles.image} />
         </div>
-      </div>
-      <div className={styles.cardContentContainer}>
-        <div className={styles.infoContainer} onClick={() => showMoreInfo()}>
-          <div className={styles.cardContentHeader}>
-            <p className={styles.placeName}>{name}</p>
-            {rating ? (
-              <div className={styles.reviewContainer}>
-                <p className={styles.rating}>{rating}</p>
-                <Image src="/star.svg" alt="a start" height={15} width={15} />
-                <p className={styles.reviewCount}>({ratingsTrimmer(reviewCount)})</p>
-              </div>
-            ) : (
-              <div></div>
-            )}
+        <div className={styles.cardContentContainer}>
+          <div className={styles.infoContainer} onClick={() => showMoreInfo()}>
+            <div className={styles.cardContentHeader}>
+              <p className={styles.placeName}>{name}</p>
+              {rating ? (
+                <div className={styles.reviewContainer}>
+                  <p className={styles.rating}>{rating}</p>
+                  <Image src="/star.svg" alt="a start" height={15} width={15} />
+                  <p className={styles.reviewCount}>({ratingsTrimmer(reviewCount)})</p>
+                </div>
+              ) : (
+                <div></div>
+              )}
+            </div>
+            <p className={styles.descriptionShort}>{descriptionShort}</p>
           </div>
-          <p className={styles.descriptionShort}>{descriptionShort}</p>
-          <p className={styles.showMore}>...show more</p>
         </div>
+        {!hideButtons && (
+          <div className={styles.cardBtnContainer}>
+            <Button
+              handler={addToBucketListHandler}
+              name="cardBtn"
+              buttonText="cardBtnText"
+              value="Save Place"
+              disabled={disabled}
+            ></Button>
+          </div>
+        )}
       </div>
-      {!hideButtons && (
-        <div className={styles.cardBtnContainer}>
-          <Button
-            handler={() => addToBucketListHandler()}
-            name="cardBtn"
-            buttonText="cardBtnText"
-            value="Save Place"
-            disabled={disabled}
-          ></Button>
-        </div>
-      )}
-    </div>
+    </>
   )
 }
 

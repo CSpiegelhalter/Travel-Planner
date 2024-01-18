@@ -1,12 +1,23 @@
 .cardContainer {
-  width: 16rem;
-  height: fit-content;
+  width: 20rem;
+  height: 25rem;
   margin: auto;
   margin: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  border-radius: 8px;
+  z-index: 1;
+  box-shadow: 0px 10px 10px rgb(73, 70, 92);
+  transition: 0.5s;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #03036d;
+}
+
+.cardContainer:hover {
+  transform: translateY(-7px);
+  box-shadow: 0px 10px 10px black;
 }
 
 .cardBtnContainer {
@@ -16,48 +27,44 @@
 }
 
 .fillContainer {
+  width: 100%;
+}
+.image {
   object-fit: contain;
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  border-radius: 5px;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
 }
 
-.imageContainer {
-  display: flex;
-  position: relative;
-  width: 16rem;
-  height: 9rem;
+.fillContainer > div {
+  position: unset !important;
 }
 
 .infoContainer {
-  width: 16rem;
+  width: 18rem;
   margin: auto;
+  margin-top: 0.7rem;
 }
 
 .placeName {
   font-size: 1.2em;
   margin: 0;
+  color: #03036d;
 }
 
 .rating {
   font-size: 1em;
+  color: #03036d;
 }
 
 .descriptionShort {
-  font-size: .6em;
-  line-height: 1.5;
-}
-
-.descriptionShort {
-  height: 5rem;
+  font-size: 0.7em;
+  line-height: 1.7;
 }
 
 .cardContentContainer {
   display: flex;
   flex-direction: column;
-  width: 30rem;
 }
 
 .starContainer {
@@ -79,21 +86,19 @@
   align-items: baseline;
 }
 
-.rating , .reviewCount {
+.rating,
+.reviewCount {
   margin: 0;
 }
 
 .reviewCount {
-  font-size: .8em;
-  color: grey;
+  font-size: 0.8em;
+  color: #525279;
   align-items: center;
 }
 
-.latLngContainer {
-  display: flex;
-}
-
-.showMore {
-  font-size: .9em;
-  color: blue;
+@media (min-width: 1200px) {
+  .cardContainer {
+    margin: 3rem;
+  }
 }

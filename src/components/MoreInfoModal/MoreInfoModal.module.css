@@ -80,11 +80,11 @@
   font-size: 1.5rem;
   font-weight: 500;
   margin: 0;
-
+  color: #03036d;
 }
 
 .reviewCount {
-  font-size: .7rem;
+  font-size: 0.7rem;
   align-items: center;
 }
 
@@ -92,7 +92,10 @@
   font-size: 1rem;
 }
 
-.reviewCount, .rating, .starContainer, .sideInfo {
+.reviewCount,
+.rating,
+.starContainer,
+.sideInfo {
   margin: 0;
   color: #858585;
 }
@@ -109,12 +112,12 @@
 }
 
 .sideInfo {
-  font-size: .7rem;
+  font-size: 0.7rem;
 }
 
 .content {
   margin-top: 2rem;
-  line-height: 1.5;
+  line-height: 1.8rem;
 }
 
 @media (min-width: 1000px) {
@@ -133,17 +136,17 @@
   .reviewCount {
     font-size: 1rem;
   }
-  
+
   .rating {
     font-size: 1.3rem;
   }
 
   .sideInfo {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .content {
     margin-top: 2.2rem;
-    line-height: 1.5;
+    line-height: 2.5;
   }
 }
