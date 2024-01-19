@@ -114,3 +114,15 @@
     width: 12rem;
   }
 }
+
+@media (min-width: 930px) {
+  .contain {
+    width: 23rem;
+  }
+}
+
+@media (min-width: 1300px) {
+  .contain {
+    width: 33rem;
+  }
+}

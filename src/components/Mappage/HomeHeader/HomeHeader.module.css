@@ -27,15 +27,14 @@
 .mainHeader {
   display: flex;
   flex-direction: column;
-  width: fit-content;
-  height: fit-content;
   align-items: center;
-  justify-content: center;
+  width: 100vw;
 }
 
 .placeContainer {
   display: flex;
   width: 100vw;
+  justify-content: center;
 }
 
 .btnContainer::-webkit-scrollbar {
@@ -45,37 +44,34 @@
   display: flex;
   z-index: 1;
   width: 95vw;
+  align-items: flex-start;
   overflow-x: scroll;
-  height: fit-content;
 }
 
-@media (min-width: 70rem) {
-  .placeContainer,
-  .btnContainer {
-    margin-left: 10vw;
-    margin-right: 18rem;
-  }
-  .btnContainer {
-    width: fit-content;
-  }
-}
-
-@media (min-width: 51.25rem) {
-  .mainHeader {
-    width: fit-content;
-  }
-  .placeContainer {
-    width: 58vw;
-  }
-
+@media (min-width: 570px) {
   .btnContainer {
     justify-content: center;
   }
 }
-
-@media (min-width: 1275px) {
-  .placeContainer,
+@media (min-width: 930px) {
+  .mainHeader {
+    width: calc(100vw - 25rem);
+  }
+  .placeContainer {
+    width: auto;
+  }
   .btnContainer {
-    margin-left: 12vw;
+    margin-right: 0.5rem;
+    width: 28rem;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1300px) {
+  .mainHeader {
+    width: calc(100vw - 35rem);
+  }
+  .btnContainer {
+    width: 36rem;
   }
 }
