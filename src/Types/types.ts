@@ -108,7 +108,7 @@ export interface Location {
   id: string
   imageUrl: string
   name: string | any
-  rating: number | string
+  rating?: number | string | null
   address: string
   lat: number | string
   lng: number | string
@@ -117,6 +117,7 @@ export interface Location {
   descriptionShort: string
   descriptionLong?: string
   userId?: number
+  saved: boolean
 }
 
 export type LocalStorageKeyType = 'bucketList' | 'trips'

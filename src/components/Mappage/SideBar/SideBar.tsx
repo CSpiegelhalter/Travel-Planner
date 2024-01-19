@@ -26,6 +26,7 @@ function SideBar(props: any) {
                   lng={place.lng}
                   attractionType={place.types}
                   id={place.id}
+                  saved={place.saved}
                   descriptionShort={place.descriptionShort}
                   descriptionLong={place.descriptionLong}
                 />

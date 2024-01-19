@@ -3,7 +3,7 @@ import { useUser } from '@auth0/nextjs-auth0/client'
 import styles from './AttractionCard.module.css'
 import { Location } from '@/Types/types'
 import Image from 'next/image'
-import { ratingsTrimmer } from '@/helperFunctions/helperFunction'
+import { ratingsTrimmer, truncateString } from '@/helperFunctions/helperFunction'
 import dynamic from 'next/dynamic'
 
 function AttractionCard({
@@ -18,6 +18,7 @@ function AttractionCard({
   descriptionShort,
   imageUrl,
   id,
+  saved,
 }: Location) {
   const MoreInfoModal = dynamic(() => import('@/components/MoreInfoModal/MoreInfoModal'))
 
@@ -44,6 +45,7 @@ function AttractionCard({
     userId: userId,
     name,
     rating,
+    saved,
     address,
     lat,
     lng,
@@ -58,13 +60,22 @@ function AttractionCard({
   return (
     <>
       {selectedLocation && <MoreInfoModal selectedLocation={selectedLocation} populateModal={populateModal} />}
-      <div className={styles.cardContainer} onClick={() => populateModal(params)}>
-        <div className={styles.fillContainer}>
-          <Image src={imageUrl} alt={name} fill={true} className={styles.image} />
+      <div className={styles.contain}>
+        <div className={styles.heart}>
+          <Image
+            className={styles.image}
+            src={saved ? '/heart-filled.svg' : '/heart-outline.svg'}
+            onClick={() => (save ? save(params) : console.log('No save function available'))}
+            fill={true}
+            alt={saved ? 'Unsave' : 'Save'}
+          />
         </div>
-        <div className={styles.cardContentContainer}>
-          <div className={styles.infoContainer}>
-            <div className={styles.cardContentHeader}>
+        <div className={styles.cardContainer} onClick={() => populateModal(params)}>
+          <div className={styles.cardContentHeader}>
+            <div className={styles.fillContainer}>
+              <Image src={imageUrl} alt={name} fill={true} className={styles.image} />
+            </div>
+            <div className={styles.info}>
               <p className={styles.placeName}>{name}</p>
               {rating ? (
                 <div className={styles.reviewContainer}>
@@ -76,17 +87,8 @@ function AttractionCard({
                 <div></div>
               )}
             </div>
-            <p className={styles.descriptionShort}>{descriptionShort}</p>
           </div>
-        </div>
-        <div className={styles.cardBtnContainer}>
-          <button
-            className={styles.heart}
-            onClick={() => (save ? save(params) : console.log('No save function available'))}
-            name="cardBtn"
-            value="Save Place"
-            disabled={disabled}
-          ></button>
+          <p className={styles.descriptionShort}>{truncateString(descriptionShort)}</p>
         </div>
       </div>
     </>

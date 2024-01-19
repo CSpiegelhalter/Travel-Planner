@@ -4,7 +4,7 @@ import { useUser } from '@auth0/nextjs-auth0/client'
 import styles from './Card.module.css'
 import { Location } from '@/Types/types'
 import Image from 'next/image'
-import { addToBucketList, ratingsTrimmer } from '@/helperFunctions/helperFunction'
+import { ratingsTrimmer } from '@/helperFunctions/helperFunction'
 
 function Card({
   name,
@@ -18,6 +18,7 @@ function Card({
   reviewCount,
   descriptionShort,
   imageUrl,
+  saved
 }: Location) {
   const MoreInfoModal = dynamic(() => import('@/components/MoreInfoModal/MoreInfoModal'))
 
@@ -30,6 +31,7 @@ function Card({
 
   const params: Location = {
     userId: userId,
+    saved,
     name,
     rating,
     address,

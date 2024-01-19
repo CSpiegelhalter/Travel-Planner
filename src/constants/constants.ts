@@ -1,6 +1,5 @@
 import { LocationLabels, Attraction, LocationButtons } from '@/Types/types'
 import {
-  faCoffee,
   faBinoculars,
   faUtensils,
   faBeerMugEmpty,

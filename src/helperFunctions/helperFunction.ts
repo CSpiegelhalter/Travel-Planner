@@ -36,6 +36,15 @@ export const callPointsOfInterestsApi = async (args: PointsOfInterestApiParams) 
 //     }
 //   }
 
+export const truncateString = (str: string) => {
+  const maxLength = 300
+  if (str.length > maxLength) {
+    return str.substring(0, maxLength) + '...'
+  } else {
+    return str
+  }
+}
+
 export const ratingsTrimmer = (reviewCount: string) => {
   try {
     if (reviewCount.includes(',')) {

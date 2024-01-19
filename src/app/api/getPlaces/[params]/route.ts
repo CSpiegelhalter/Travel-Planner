@@ -18,5 +18,5 @@ export const GET = async (req: NextRequest, context: { params: any }) => {
   offsetParam ? (offset = Number(offsetParam)) : (offset = 0)
 
   // Hard code for testning
-  return NextResponse.json({ places: testLocations, offset, limit }, { status: 200 })
+  return NextResponse.json({ places: [testLocations[0]], offset, limit }, { status: 200 })
 }

@@ -54,6 +54,7 @@ function Saved() {
                   <div className={styles.innercontent}>
                     {locationData?.map((location: any, index: number) => (
                       <Card
+                      saved={location.saved}
                         name={location.name}
                         rating={location.rating}
                         address={location.address}

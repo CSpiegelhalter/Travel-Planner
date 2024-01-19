@@ -1,0 +1,116 @@
+.cardContainer {
+  width: 100%;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.contain {
+  width: 95vw;
+  max-width: 920px;
+  position: relative;
+  border-radius: 8px;
+  margin: 1rem;
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.fillContainer {
+  width: 10rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.fillContainer > div {
+  position: unset !important;
+}
+
+.heart > div {
+  position: unset !important;
+}
+.heart {
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+}
+
+.placeName {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #03036d;
+}
+
+.descriptionShort {
+  margin: 0.5rem;
+  font-size: 0.7em;
+  line-height: 1.7;
+}
+
+.info {
+  max-height: 20rem;
+  overflow: hidden;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 2rem;
+}
+
+.starContainer {
+  height: 10px;
+  width: 10px;
+}
+
+.cardContentHeader {
+  display: flex;
+  margin-top: 0;
+  width: 100%;
+  height: fit-content;
+}
+
+.reviewContainer {
+  display: flex;
+  align-items: baseline;
+}
+
+.rating,
+.reviewCount {
+  margin: 0;
+}
+
+.rating {
+  font-size: 0.8rem;
+  color: #03036d;
+}
+
+.reviewCount {
+  font-size: 0.5em;
+  color: #525279;
+  align-items: center;
+}
+
+@media (min-width: 660px) {
+  .rating {
+    font-size: 1rem;
+    color: #03036d;
+  }
+
+  .reviewCount {
+    font-size: 0.8em;
+  }
+  .placeName {
+    font-size: 1.2rem;
+  }
+  .fillContainer {
+    width: 12rem;
+  }
+}
