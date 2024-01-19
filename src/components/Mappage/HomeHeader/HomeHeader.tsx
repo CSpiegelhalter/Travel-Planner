@@ -1,6 +1,5 @@
 import styles from './HomeHeader.module.css'
-import { callPointsOfInterestsApi } from '@/helperFunctions/helperFunction'
-import { HomeHeader, PointsOfInterestApiParams } from '@/Types/types'
+import { HomeHeader } from '@/Types/types'
 import { locationButtons } from '@/constants/constants'
 import dynamic from 'next/dynamic'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

@@ -1,4 +1,4 @@
-import { LocalStorageKeyType, locationObj } from "@/Types/types"
+import { LocalStorageKeyType, Location } from "@/Types/types"
 import { timeStampValidator } from "@/helperFunctions/helperFunction"
 
 // const setLocalStorage = async (userId, data) => {
@@ -75,7 +75,7 @@ export class LocalStorageService {
      * @param data Location data we want to save to local storage
      * @returns Boolean to determine to save to database or not
      */ 
-    public async saveToBucketList(data: locationObj): Promise<boolean> {
+    public async saveToBucketList(data: Location): Promise<boolean> {
         const formattedKey = `${this.key}-bucketList`
         const currentData = this.getItem(formattedKey)
         
@@ -89,7 +89,7 @@ export class LocalStorageService {
         } else {
             // Find any duplicate locations. We do NOT want to add if we already have it
             let foundDuplicate = false
-            currentData.locationData.map((location: locationObj) => {if(location.name === data.name) foundDuplicate = true })
+            currentData.locationData.map((location: Location) => {if(location.name === data.name) foundDuplicate = true })
             
             // We only write to local storage if data is not already in it
             if (!foundDuplicate) {
@@ -106,13 +106,13 @@ export class LocalStorageService {
      * @param tripName Name of the trip you want to save the data to
      * @returns Boolean to determine to save to database or not
      */ 
-     public async saveToTrip(data: locationObj, tripName: string): Promise<boolean> {
+     public async saveToTrip(data: Location, tripName: string): Promise<boolean> {
         const formattedKey = `${this.key}-trips`
         const currentData = this.getItem(formattedKey)
         const timeStamp = new Date().getTime()
         
         if (!currentData) {
-            const newTripObject: Record<string, locationObj[] | number> = {}
+            const newTripObject: Record<string, Location[] | number> = {}
             newTripObject[tripName] = [data]
             newTripObject["timeStamp"] = timeStamp;
             this.setItem(formattedKey, newTripObject)
@@ -124,7 +124,7 @@ export class LocalStorageService {
         } else {
             // Find any duplicate locations. We do NOT want to add if we already have it
             let foundDuplicate = false
-            currentData[tripName].map((location: locationObj) => {if(location.name === data.name) foundDuplicate = true })
+            currentData[tripName].map((location: Location) => {if(location.name === data.name) foundDuplicate = true })
             
             // We only write to local storage if data is not already in it
             if (!foundDuplicate) {

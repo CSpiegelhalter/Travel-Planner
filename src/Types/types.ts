@@ -18,14 +18,9 @@ export interface ButtonProps {
   buttonText?: string
 }
 
-export interface Card extends locationObj {
-  setIsOpen?: Function
-  setShowInfo?: Function
-  setLocationDetails?: Function
-  setModalDisplay?: Function
-  hideButtons?: boolean
-  className?: string
-  tripName?: string | any
+export interface MoreInfoModal {
+  selectedLocation: Location
+  populateModal: Function
 }
 
 export interface Modal {
@@ -35,10 +30,6 @@ export interface Modal {
 
 export interface Dropdown {
   tripsList: string[]
-}
-
-export interface Location extends latLng {
-  city: string
 }
 
 export interface latLng {
@@ -113,7 +104,8 @@ export interface NavBarProps {
   profile: boolean
 }
 
-export interface locationObj {
+export interface Location {
+  id: string
   imageUrl: string
   name: string | any
   rating: number | string
@@ -125,7 +117,6 @@ export interface locationObj {
   descriptionShort: string
   descriptionLong?: string
   userId?: number
-  timeStamp?: number
 }
 
 export type LocalStorageKeyType = 'bucketList' | 'trips'

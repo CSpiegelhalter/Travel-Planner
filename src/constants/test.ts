@@ -1,8 +1,8 @@
-
-import { locationObj } from '@/Types/types'
+import { Location } from '@/Types/types'
 
 export const testLocations: any = [
   {
+    id: '12344',
     name: 'Eiffel Tower start',
     address: '123 somewhere in Paris',
     rating: '4',
@@ -16,6 +16,7 @@ export const testLocations: any = [
     imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
   },
   {
+    id: '12344',
     name: 'Eiffel Tower',
     address: '123 somewhere in Paris',
     rating: null,
@@ -29,6 +30,7 @@ export const testLocations: any = [
     imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
   },
   {
+    id: '12344',
     name: 'Eiffel Tower',
     address: '123 somewhere in Paris',
     rating: '6.9',
@@ -42,6 +44,7 @@ export const testLocations: any = [
     imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
   },
   {
+    id: '12344',
     name: 'Eiffel Tower',
     address: '123 somewhere in Paris',
     rating: '4.2',
@@ -55,6 +58,7 @@ export const testLocations: any = [
     imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
   },
   {
+    id: '12344',
     name: 'Eiffel Tower',
     address: '123 somewhere in Paris',
     rating: '4',
@@ -69,6 +73,7 @@ export const testLocations: any = [
   },
 
   {
+    id: '12344',
     name: 'Louve',
     address: '321 somewhere in Paris',
     rating: '4.5',
@@ -80,6 +85,7 @@ export const testLocations: any = [
     imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
   },
   {
+    id: '12344',
     name: 'NotreDam',
     address: '456 Somewhere in paris',
     rating: '2',
@@ -92,9 +98,10 @@ export const testLocations: any = [
   },
 ]
 
-export const testTrips: Record<any, locationObj[]> = {
+export const testTrips: Record<any, Location[]> = {
   Paris: [
     {
+      id: '12344',
       name: 'Eiffel Tower',
       address: '123 somewhere in Paris',
       rating: '4',
@@ -108,6 +115,7 @@ export const testTrips: Record<any, locationObj[]> = {
       imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
     },
     {
+      id: '12344',
       name: 'Eiffel Tower',
       address: '123 somewhere in Paris',
       rating: '4',
@@ -121,6 +129,7 @@ export const testTrips: Record<any, locationObj[]> = {
       imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
     },
     {
+      id: '12344',
       name: 'Eiffel Tower',
       address: '123 somewhere in Paris',
       rating: '4',
@@ -134,6 +143,7 @@ export const testTrips: Record<any, locationObj[]> = {
       imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
     },
     {
+      id: '12344',
       name: 'Eiffel Tower',
       address: '123 somewhere in Paris',
       rating: '4',
@@ -147,6 +157,7 @@ export const testTrips: Record<any, locationObj[]> = {
       imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
     },
     {
+      id: '12344',
       name: 'Eiffel Tower',
       address: '123 somewhere in Paris',
       rating: '4',
@@ -161,6 +172,7 @@ export const testTrips: Record<any, locationObj[]> = {
     },
 
     {
+      id: '12344',
       name: 'Louve',
       address: '321 somewhere in Paris',
       rating: '4.5',
@@ -172,6 +184,7 @@ export const testTrips: Record<any, locationObj[]> = {
       imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
     },
     {
+      id: '12344',
       name: 'NotreDam',
       address: '456 Somewhere in paris',
       rating: '2',
@@ -185,6 +198,7 @@ export const testTrips: Record<any, locationObj[]> = {
   ],
   abcdefghijklmno: [
     {
+      id: '12344',
       name: 'BrandenBurg Gate',
       address: '123 berlin',
       rating: '4',
@@ -196,6 +210,7 @@ export const testTrips: Record<any, locationObj[]> = {
       imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipOnJHzIOu1VUvkTX0GKjmqK-NdgXWJEUa8m2YPd=s549-k-no',
     },
     {
+      id: '12344',
       name: 'Video Game Museum',
       address: '123 pewpew Dr',
       rating: '5',
@@ -236,16 +251,15 @@ const testObj = {
         },
       ],
     },
-      bucketListLocations: [
-        {
-          name: 'curts house',
-          address: 'stinkyville',
-        },
-        {
-          name: 'brandons house',
-          address: '69420 cool lane',
-        },
-      ],
-    },
-  }
-
+    bucketListLocations: [
+      {
+        name: 'curts house',
+        address: 'stinkyville',
+      },
+      {
+        name: 'brandons house',
+        address: '69420 cool lane',
+      },
+    ],
+  },
+}

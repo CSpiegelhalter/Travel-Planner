@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react'
-import dynamic from 'next/dynamic'
 import { useUser } from '@auth0/nextjs-auth0/client'
-import styles from './Card.module.css'
+import styles from './AttractionCard.module.css'
 import { Location } from '@/Types/types'
 import Image from 'next/image'
-import { addToBucketList, ratingsTrimmer } from '@/helperFunctions/helperFunction'
+import { ratingsTrimmer } from '@/helperFunctions/helperFunction'
+import dynamic from 'next/dynamic'
 
-function Card({
+function AttractionCard({
   name,
-  id,
   rating,
   address,
   lat,
@@ -18,15 +17,28 @@ function Card({
   reviewCount,
   descriptionShort,
   imageUrl,
+  id,
 }: Location) {
   const MoreInfoModal = dynamic(() => import('@/components/MoreInfoModal/MoreInfoModal'))
-
-  const [selectedLocation, setSelectedLocation] = useState<Location>()
 
   const { user } = useUser()
   const userId: number | any = process.env.NEXT_PUBLIC_AUTH0_USER_ID
     ? user?.[process.env.NEXT_PUBLIC_AUTH0_USER_ID]
     : null
+
+  const [selectedLocation, setSelectedLocation] = useState<Location>()
+
+  const save = async (params: Location) => {
+    // await saveAttraction(userId, params)
+  }
+
+  const populateModal = (params: Location) => {
+    setSelectedLocation(params)
+    // await saveAttraction(userId, params)
+  }
+
+  useEffect(() => {}, [selectedLocation])
+  const [disabled, setDisabled] = useState(false)
 
   const params: Location = {
     userId: userId,
@@ -43,26 +55,15 @@ function Card({
     id,
   }
 
-  useEffect(() => {}, [selectedLocation])
-
-  const remove = async (params: Location) => {
-    // await saveAttraction(userId, params)
-  }
-
-  const populateModal = (params: Location) => {
-    setSelectedLocation(params)
-  }
-
   return (
     <>
       {selectedLocation && <MoreInfoModal selectedLocation={selectedLocation} populateModal={populateModal} />}
-
-      <div className={styles.cardContainer}>
-        <div className={styles.fillContainer} onClick={() => populateModal(params)}>
+      <div className={styles.cardContainer} onClick={() => populateModal(params)}>
+        <div className={styles.fillContainer}>
           <Image src={imageUrl} alt={name} fill={true} className={styles.image} />
         </div>
         <div className={styles.cardContentContainer}>
-          <div className={styles.infoContainer} onClick={() => populateModal(params)}>
+          <div className={styles.infoContainer}>
             <div className={styles.cardContentHeader}>
               <p className={styles.placeName}>{name}</p>
               {rating ? (
@@ -78,9 +79,18 @@ function Card({
             <p className={styles.descriptionShort}>{descriptionShort}</p>
           </div>
         </div>
+        <div className={styles.cardBtnContainer}>
+          <button
+            className={styles.heart}
+            onClick={() => (save ? save(params) : console.log('No save function available'))}
+            name="cardBtn"
+            value="Save Place"
+            disabled={disabled}
+          ></button>
+        </div>
       </div>
     </>
   )
 }
 
-export default Card
+export default AttractionCard

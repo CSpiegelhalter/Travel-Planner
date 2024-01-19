@@ -11,6 +11,19 @@
   align-items: center;
 }
 
+.bucketListCardDarkBG {
+  background-color: grey;
+  opacity: 0.5;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw !important;
+  height: 100vh;
+  margin: none;
+  background-size: cover;
+  z-index: 100;
+}
+
 .mainContainer {
   display: flex;
   flex-direction: column;

@@ -1,4 +1,4 @@
-import { PointsOfInterestApiParams, locationObj } from '@/Types/types'
+import { PointsOfInterestApiParams, Location } from '@/Types/types'
 import { LocalStorageService } from '@/lib/localStorage'
 
 export function handleStateChange(event: any, param: any) {
@@ -6,7 +6,6 @@ export function handleStateChange(event: any, param: any) {
 }
 //WE NEED TO KILL THIS?
 export const callPointsOfInterestsApi = async (args: PointsOfInterestApiParams) => {
-
   const { city, typeOfInterest, callback } = args
   const params = {
     city: city,
@@ -60,10 +59,10 @@ export const ratingsTrimmer = (reviewCount: string) => {
   }
 }
 
-export const addToBucketList = async (userId: string, locationObject: locationObj) => {
+export const addToBucketList = async (userId: string, Locationect: Location) => {
   try {
     const localStorageInstance = new LocalStorageService(`${userId}`)
-    const shouldSaveToDatabase = await localStorageInstance.saveToBucketList(locationObject)
+    const shouldSaveToDatabase = await localStorageInstance.saveToBucketList(Locationect)
 
     if (shouldSaveToDatabase) {
       // TODO - Add save to database
@@ -73,23 +72,21 @@ export const addToBucketList = async (userId: string, locationObject: locationOb
   }
 }
 
-export const addToTrip = async (userId: string, locationObject: locationObj, tripName: string) => {
+export const addToTrip = async (userId: string, Locationect: Location, tripName: string) => {
   try {
     const localStorageInstance = new LocalStorageService(`${userId}`)
-    const shouldSaveToDatabase = await localStorageInstance.saveToTrip(locationObject, tripName)
+    const shouldSaveToDatabase = await localStorageInstance.saveToTrip(Locationect, tripName)
 
-      if (shouldSaveToDatabase) {
-        // TODO - Add save to database
-      }
+    if (shouldSaveToDatabase) {
+      // TODO - Add save to database
     }
+  } catch (e) {
     //TODO - hit the database and update local storage
-   catch (e) {
     console.log('Failed to save to trip... ', e)
   }
 }
 
 export const timeStampValidator = (currentTime: number, timeStamp: number) => {
-  
   const difference = currentTime - timeStamp
   if (difference < 3600000) {
     return true

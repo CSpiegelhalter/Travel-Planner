@@ -1,24 +1,16 @@
 import styles from './MoreInfoModal.module.css'
 import Image from 'next/image'
 import { ratingsTrimmer } from '@/helperFunctions/helperFunction'
+import { MoreInfoModal } from '@/Types/types'
 
-function MoreInfoModal({
-  setIsOpen,
-  className,
-  imageUrl,
-  name,
-  rating,
-  reviewCount,
-  attractionType,
-  address,
-  descriptionShort,
-  descriptionLong,
-}: any) {
+function MoreInfoModal({ selectedLocation, populateModal }: MoreInfoModal) {
+  const { imageUrl, id, name, rating, address, reviewCount, attractionType, descriptionShort, descriptionLong } =
+    selectedLocation
   return (
     <>
-      <div className={className} onClick={() => setIsOpen(false)}></div>
+      <div className={styles.bucketListCardDarkBG} onClick={() => populateModal(undefined)}></div>
       <div className={styles.absoluteContainer}>
-        <button className={styles.closeBtn} onClick={() => setIsOpen(false)}>
+        <button className={styles.closeBtn} onClick={() => populateModal(undefined)}>
           x
         </button>
         <div className={styles.mainContainer}>
