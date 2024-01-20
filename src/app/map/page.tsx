@@ -167,7 +167,7 @@ export default function Home() {
           </div>
           <div className={styles.logo}>
             <Link href={'/'}>
-              <Image src="/Logo.webp" alt="Logo" width={60} height={60} />
+              <Image src="/static/Logo.webp" alt="Logo" width={60} height={60} />
             </Link>
           </div>
         </div>

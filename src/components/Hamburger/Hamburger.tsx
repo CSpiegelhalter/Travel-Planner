@@ -15,7 +15,7 @@ function Hamburger({ user }: any) {
     },
     {
       id: 2,
-      href: `/api/auth/login?returnTo=${encodeURIComponent('/map')}`,
+      href: `/api/auth/login?returnTo=map`,
       name: 'Login',
     },
   ]
@@ -58,7 +58,7 @@ function Hamburger({ user }: any) {
           <Image
             width={32}
             height={0}
-            src="/hamburger.svg"
+            src="/static/hamburger.svg"
             alt="Hamburger dropdown list"
             loading="lazy"
             style={{ height: '50%', width: '50%' }}
