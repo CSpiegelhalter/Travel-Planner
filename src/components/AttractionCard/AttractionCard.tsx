@@ -29,7 +29,7 @@ function AttractionCard({
 
   const [selectedLocation, setSelectedLocation] = useState<Location>()
 
-  const save = async (params: Location) => {
+  const save = async (_params: Location) => {
     // await saveAttraction(userId, params)
   }
 

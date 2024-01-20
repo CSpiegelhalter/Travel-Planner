@@ -47,7 +47,7 @@ function Card({
 
   useEffect(() => {}, [selectedLocation])
 
-  const remove = async (params: Location) => {
+  const remove = async (_params: Location) => {
     // await saveAttraction(userId, params)
   }
 

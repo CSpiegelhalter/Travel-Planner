@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import styles from './trips.module.css'
 import dynamic from 'next/dynamic'
-import { testLocations, testTrips } from '@/constants/test'
+import { testLocations } from '@/constants/test'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import ProfileDefault from '@/components/Profilepage/ProfileDefault'
 import { grabDataToDisplay } from '@/helperFunctions/grabDataToDisplay'
@@ -35,7 +35,7 @@ function trips() {
     const testingComponent = true
 
     if (testingComponent) {
-      setTripData(testTrips)
+      // setTripData(testTrips)
       setTripDisplay(true)
     } else {
       if (!!user) {

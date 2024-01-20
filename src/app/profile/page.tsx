@@ -5,7 +5,6 @@ import styles from './Profile.module.css'
 import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
 import { grabDataToDisplay } from '@/helperFunctions/grabDataToDisplay'
-import { testTrips } from '@/constants/test'
 import LoadingComponent from '@/components/Loading/LoadingComponent/LoadingComponent'
 
 function ProfilePage() {

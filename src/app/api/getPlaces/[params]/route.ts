@@ -3,7 +3,7 @@ import { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 
 // TODO: Actually hit endpoint that will grab data for this user
-export const GET = async (req: NextRequest, context: { params: any }) => {
+export const GET = async (_req: NextRequest, context: { params: any }) => {
   const limit = 15
   const params = new URLSearchParams(context.params.params)
 

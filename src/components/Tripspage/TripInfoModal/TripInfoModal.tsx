@@ -16,21 +16,21 @@ function TripInfoModal(props: any) {
           </button>
           <div className={styles.cardContainer}>
             {props.locationDetails &&
-              props.locationDetails.map((location: any) => (
-                <Card
-                  name={location.name}
-                  rating={location.rating}
-                  address={location.address}
-                  lat={location.lat}
-                  lng={location.lng}
-                  attractionType={location.attractionType}
-                  reviewCount={location.reviewCount}
-                  imageUrl={location.imageUrl}
-                  descriptionShort={location.descriptionShort}
-                  descriptionLong={location.descriptionLong}
-                  hideButtons={true}
-                  className={'tripsCardDarkBG'}
-                />
+              props.locationDetails.map((_location: any) => (
+                <></>
+                // <Card
+                //   name={location.name}
+                //   rating={location.rating}
+                //   address={location.address}
+                //   lat={location.lat}
+                //   lng={location.lng}
+                //   attractionType={location.attractionType}
+                //   reviewCount={location.reviewCount}
+                //   imageUrl={location.imageUrl}
+                //   descriptionShort={location.descriptionShort}
+                //   descriptionLong={location.descriptionLong}
+                // className={'tripsCardDarkBG'}
+                //   />
               ))}
           </div>
         </div>

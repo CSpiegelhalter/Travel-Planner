@@ -15,8 +15,8 @@ function LandingPage() {
   const Footer = dynamic(() => import('@/components/Footer/Footer'))
 
   return (
-    <div style={{ margin: 'auto', width: '100vw', justifySelf: 'center' }}>
-      <Suspense fallback={<LoadingComponent />}>
+    <Suspense fallback={<LoadingComponent />}>
+      <div style={{ margin: 'auto', width: '100vw', justifySelf: 'center' }}>
         <Head>
           <title>Curious Visits</title>
           <meta name="description" content="Find cool things to do in... " />
@@ -27,8 +27,8 @@ function LandingPage() {
         <WhatMakesUsDifferent />
         <MemorableTrips />
         <Footer />
-      </Suspense>
-    </div>
+      </div>
+    </Suspense>
   )
 }
 
