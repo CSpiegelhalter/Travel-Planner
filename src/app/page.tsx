@@ -5,9 +5,10 @@ import LandingComponent from '@/components/Landingpage/LandingComponent/LandingC
 import Head from 'next/head'
 import LoadingComponent from '@/components/Loading/LoadingComponent/LoadingComponent'
 import { Suspense } from 'react'
+import DiscoverAndExplore from '@/components/Landingpage/DiscoverAndExplore/DiscoverAndExplore'
 
 function LandingPage() {
-  const DiscoverAndExplore = dynamic(() => import('@/components/Landingpage/DiscoverAndExplore/DiscoverAndExplore'))
+  // const DiscoverAndExplore = dynamic(() => import('@/components/Landingpage/DiscoverAndExplore/DiscoverAndExplore'))
   const MemorableTrips = dynamic(() => import('@/components/Landingpage/MemorableTrips/MemorableTrips'))
   const WhatMakesUsDifferent = dynamic(
     () => import('@/components/Landingpage/WhatMakesUsDifferent/WhatMakesUsDifferent'),
