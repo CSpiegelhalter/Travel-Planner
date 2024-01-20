@@ -8,6 +8,8 @@ import { Location } from '@/Types/types'
 import ProfileDefault from '@/components/Profilepage/ProfileDefault'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import LoadingComponent from '@/components/Loading/LoadingComponent/LoadingComponent'
+import Image from 'next/image'
+import Hamburger from '@/components/Hamburger/Hamburger'
 
 function Saved() {
   const Card = dynamic(() => import('@/components/Card/Card'))
@@ -41,7 +43,13 @@ function Saved() {
   }
 
   return (
-    <>
+    <div className={styles.scrollable}>
+      <div className={styles.header}>
+        <a href={'/'} className={styles.logo}>
+          <Image src="/static/Logo.webp" alt="Logo" width={60} height={60} />
+        </a>
+        <Hamburger />
+      </div>
       {user ? (
         <>
           <div className={styles.mainContainer}>
@@ -54,7 +62,7 @@ function Saved() {
                   <div className={styles.innercontent}>
                     {locationData?.map((location: any, index: number) => (
                       <Card
-                      saved={location.saved}
+                        saved={location.saved}
                         name={location.name}
                         rating={location.rating}
                         address={location.address}
@@ -82,7 +90,7 @@ function Saved() {
       ) : (
         <ProfileDefault />
       )}
-    </>
+    </div>
   )
 }
 

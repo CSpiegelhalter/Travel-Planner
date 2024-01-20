@@ -25,7 +25,7 @@
     display: block;
     position: absolute;
     z-index: 80;
-    left: 2vw;
+    left: 4rem;
     top: 1vw;
   }
 }

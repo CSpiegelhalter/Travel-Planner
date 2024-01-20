@@ -165,11 +165,9 @@ export default function Home() {
               )}
             </div>
           </div>
-          <div className={styles.logo}>
-            <Link href={'/'}>
-              <Image src="/static/Logo.webp" alt="Logo" width={60} height={60} />
-            </Link>
-          </div>
+          <a href={'/'} className={styles.logo}>
+            <Image src="/static/Logo.webp" alt="Logo" width={60} height={60} />
+          </a>
         </div>
         {isOpen && <Modal setIsOpen={setIsOpen} />}
       </main>
