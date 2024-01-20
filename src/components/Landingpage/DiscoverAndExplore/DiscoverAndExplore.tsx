@@ -15,7 +15,6 @@ function DiscoverAndExplore() {
             className={styles.twoPhones}
             src="/static/twoPhonesLandingpage.svg"
             alt="Two phones showing off location finder"
-            loading="lazy"
           />
         </div>
         <div className={styles.otherContentContainer}>
@@ -24,7 +23,6 @@ function DiscoverAndExplore() {
               width="0"
               height="0"
               sizes="100vw"
-              loading="lazy"
               className={styles.pinImage}
               src="/static/tiltedPin.webp"
               alt="Map pin"
@@ -41,7 +39,6 @@ function DiscoverAndExplore() {
               width="0"
               height="0"
               sizes="100vw"
-              loading="lazy"
               className={styles.dottedLineImage}
               src="/static/dottedLine.webp"
               alt="Travel route dotted line"
