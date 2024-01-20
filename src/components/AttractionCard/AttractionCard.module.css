@@ -19,19 +19,15 @@
 }
 
 .fillContainer {
-  width: 10rem;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.image {
-  object-fit: contain;
-  width: 100% !important;
-  position: relative !important;
-  height: unset !important;
+  position: relative;
 }
 
-.fillContainer > div {
-  position: unset !important;
+.image,
+.fillContainer {
+  height: 10rem;
+  width: fit-content;
+  max-width: 17rem;
+  overflow: hidden;
 }
 
 .heart > div {

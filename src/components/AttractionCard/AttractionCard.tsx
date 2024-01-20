@@ -39,7 +39,6 @@ function AttractionCard({
   }
 
   useEffect(() => {}, [selectedLocation])
-  const [disabled, setDisabled] = useState(false)
 
   const params: Location = {
     userId: userId,
@@ -64,7 +63,7 @@ function AttractionCard({
         <div className={styles.heart}>
           <Image
             className={styles.image}
-            src={saved ? '/heart-filled.svg' : '/heart-outline.svg'}
+            src={saved ? '/static/heart-filled.svg' : '/static/heart-outline.svg'}
             onClick={() => (save ? save(params) : console.log('No save function available'))}
             fill={true}
             alt={saved ? 'Unsave' : 'Save'}
@@ -73,14 +72,14 @@ function AttractionCard({
         <div className={styles.cardContainer} onClick={() => populateModal(params)}>
           <div className={styles.cardContentHeader}>
             <div className={styles.fillContainer}>
-              <Image src={imageUrl} alt={name} fill={true} className={styles.image} />
+              <Image src={imageUrl} alt={name} width="0" height="0" sizes="100vw" className={styles.image} />
             </div>
             <div className={styles.info}>
               <p className={styles.placeName}>{name}</p>
               {rating ? (
                 <div className={styles.reviewContainer}>
                   <p className={styles.rating}>{rating}</p>
-                  <Image src="/star.svg" alt="a start" height={15} width={15} />
+                  <Image src="/static/star.svg" alt="a start" height={15} width={15} />
                   <p className={styles.reviewCount}>({ratingsTrimmer(reviewCount)})</p>
                 </div>
               ) : (

@@ -8,7 +8,7 @@ function LandingComponent() {
       <section className={styles.landingContainer}>
         <div className={styles.landingContent}>
           <div className={styles.logoContainer}>
-            <Image width={50} layout="responsive" height={50} src="/Logo.webp" alt="Logo" />
+            <Image width={50} layout="responsive" height={50} src="/static/Logo.webp" alt="Logo" />
           </div>
           <div className={styles.imageContainer}>
             <Image
@@ -16,7 +16,7 @@ function LandingComponent() {
               height="0"
               sizes="100vw"
               className={styles.image}
-              src="/landingpageTopIllustration.svg"
+              src="/static/landingpageTopIllustration.svg"
               alt="Illustration of finding things to do on phones"
               priority={true}
               loading="eager"

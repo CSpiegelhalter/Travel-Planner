@@ -13,7 +13,7 @@ function DiscoverAndExplore() {
             height="0"
             sizes="100vw"
             className={styles.twoPhones}
-            src="/twoPhonesLandingpage.svg"
+            src="/static/twoPhonesLandingpage.svg"
             alt="Two phones showing off location finder"
             loading="lazy"
           />
@@ -26,7 +26,7 @@ function DiscoverAndExplore() {
               sizes="100vw"
               loading="lazy"
               className={styles.pinImage}
-              src="/tiltedPin.webp"
+              src="/static/tiltedPin.webp"
               alt="Map pin"
             />
           </div>
@@ -43,7 +43,7 @@ function DiscoverAndExplore() {
               sizes="100vw"
               loading="lazy"
               className={styles.dottedLineImage}
-              src="/dottedLine.webp"
+              src="/static/dottedLine.webp"
               alt="Travel route dotted line"
             />
           </div>

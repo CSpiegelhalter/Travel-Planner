@@ -13,7 +13,7 @@ function WhatMakesUsDifferent() {
             sizes="100vw"
             loading="lazy"
             className={styles.googleSearch}
-            src="/google.webp"
+            src="/static/google.webp"
             alt="Google search"
           />
         </div>

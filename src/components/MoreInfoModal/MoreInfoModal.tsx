@@ -30,7 +30,7 @@ function MoreInfoModal({ selectedLocation, populateModal }: MoreInfoModal) {
               {rating ? (
                 <div className={styles.reviewContainer}>
                   <p className={styles.rating}>{rating}</p>
-                  <Image src="/star.svg" alt="a start" height={15} width={15} />
+                  <Image src="/static/star.svg" alt="a start" height={15} width={15} />
                   <p className={styles.reviewCount}>({ratingsTrimmer(reviewCount)})</p>
                 </div>
               ) : (

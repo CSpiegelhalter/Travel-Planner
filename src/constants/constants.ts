@@ -1,11 +1,5 @@
 import { LocationLabels, Attraction, LocationButtons } from '@/Types/types'
-import {
-  faBinoculars,
-  faUtensils,
-  faBeerMugEmpty,
-  faTree,
-  faShoppingCart,
-} from '@fortawesome/free-solid-svg-icons'
+import { faBinoculars, faUtensils, faBeerMugEmpty, faTree, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 export const sessionStoragePlacesKey = 'Places'
 
@@ -50,31 +44,31 @@ export const libraries: Array<'places'> = ['places']
 
 export const exampleAttractions: Attraction[] = [
   {
-    src: '/cat.webp',
+    src: '/static/cat.webp',
     name: 'KattenKabinet',
     location: 'Amsterdam, Netherlands',
     alt: 'Museum dedicated to cat art',
   },
   {
-    src: '/iceburgBar.webp',
+    src: '/static/iceburgBar.webp',
     name: 'Berlin Icebar',
     location: 'Berlin, Germany',
     alt: 'Bar made out of ice!',
   },
   {
-    src: '/truliHouses.webp',
+    src: '/static/truliHouses.webp',
     name: 'Trulli di Alberobello Puglia',
     location: 'Bari, Italy',
     alt: 'Historic homes with a unique shape',
   },
   {
-    src: '/ufo.webp',
+    src: '/static/ufo.webp',
     name: 'The UFO Hotel',
     location: 'Harads, Sweden',
     alt: 'A UFO hotel',
   },
   {
-    src: '/diving.webp',
+    src: '/static/diving.webp',
     name: 'Landschaftspark Diving',
     location: 'Duisburg, Germany',
     alt: 'Scuba diving',
