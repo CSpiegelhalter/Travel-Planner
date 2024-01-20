@@ -1,8 +1,15 @@
 .smallCardContainer {
   position: relative;
-  height: fit-content;
+  height: 10rem;
+  width: fit-content;
   margin: auto;
   margin-left: 3vw;
+}
+
+.image {
+  height: 10rem;
+  width: auto;
+  border-radius: 20px;
 }
 
 .descriptionContainer {
@@ -31,17 +38,17 @@
 
 .cardImageOverlay {
   background: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
-  position: inherit;
-  width: 15rem;
-  height: 9rem;
-  border-radius: 25px;
+  position: absolute; /* Position over the image */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
 }
 
-
-
-@media (min-width: 56rem) {
-    .cardImageOverlay {
-        width: 19rem;
-        height: 12rem;
-      }
-    }
+@media (min-width: 1300px) {
+  .image,
+  .smallCardContainer {
+    height: 15rem;
+  }
+}

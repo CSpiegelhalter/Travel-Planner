@@ -6,11 +6,25 @@
   margin: auto;
 }
 
+.googleContainer {
+  position: relative;
+  height: 20rem;
+  width: fit-content;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.googleSearch {
+  height: 20rem;
+  width: fit-content;
+}
+
 .contentHeader {
   font-weight: 700;
   font-size: x-large;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 10vh;
+  margin-bottom: 0;
 }
 
 .contentDescription,
@@ -23,27 +37,22 @@
 .emphasisDescription {
   font-weight: 600;
 }
-.googleContainer {
-  margin-top: 15px;
-}
 
 @media (min-width: 56rem) {
-  .imageWithTitle {
-    display: flex;
-    flex-direction: column;
-    width: 40vw;
-  }
-
   .differentContainer {
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    width: 85vw;
+    width: 95vw;
+    max-width: 1250px;
   }
 
+  .contentHeader {
+    margin-top: 0;
+  }
   .description {
     display: flex;
     flex-direction: column;
-    margin-top: auto;
     width: 40vw;
     height: fit-content;
   }
@@ -55,11 +64,18 @@
 }
 
 @media (min-width: 94rem) {
+  .differentContainer {
+    max-width: 90vw;
+  }
   .contentHeader {
     font-size: 3rem;
   }
   .contentDescription,
   .emphasisDescription {
     font-size: 1.5rem;
+  }
+  .googleSearch,
+  .googleContainer {
+    height: 30rem;
   }
 }

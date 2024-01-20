@@ -12,8 +12,8 @@
   height: fit-content;
 }
 
-.imageContainer {
-  width: 75vw;
+.image {
+  width: 65vw;
   height: auto;
   margin-top: 5vh;
 }

@@ -1,11 +1,8 @@
 import styles from './LandingComponent.module.css'
 import Image from 'next/image'
-import dynamic from 'next/dynamic'
 import NavigationButton from '@/components/NavigationButton/NavigationButton'
 
 function LandingComponent() {
-  // const NavigationButton = dynamic(() => import('@/components/NavigationButton'))
-
   return (
     <>
       <section className={styles.landingContainer}>
@@ -15,10 +12,11 @@ function LandingComponent() {
           </div>
           <div className={styles.imageContainer}>
             <Image
-              width={0}
-              height={300}
-              layout="responsive"
-              src="/landingpageTopIllustration.webp"
+              width="0"
+              height="0"
+              sizes="100vw"
+              className={styles.image}
+              src="/landingpageTopIllustration.svg"
               alt="Illustration of finding things to do on phones"
               priority={true}
               loading="eager"

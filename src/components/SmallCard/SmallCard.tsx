@@ -6,12 +6,11 @@ function SmallCard({ attraction }: SmallCardProps) {
   const { src, alt, name, location } = attraction
   return (
     <div className={styles.smallCardContainer}>
-      <div className={styles.cardImageOverlay}>
-        <Image fill src={src} alt={alt} style={{ zIndex: '-1', borderRadius: '25px' }} />
-        <div className={styles.descriptionContainer}>
-          <p className={styles.name}>{name}</p>
-          <p className={styles.location}>{location}</p>
-        </div>
+      <Image src={src} width="0" height="0" sizes="100vw" alt={alt} className={styles.image} />
+      <div className={styles.cardImageOverlay}></div>
+      <div className={styles.descriptionContainer}>
+        <p className={styles.name}>{name}</p>
+        <p className={styles.location}>{location}</p>
       </div>
     </div>
   )

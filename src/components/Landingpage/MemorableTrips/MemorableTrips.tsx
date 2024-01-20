@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import styles from './MemorableTrips.module.css'
 import { exampleAttractions } from '@/constants/constants'
 import dynamic from 'next/dynamic'
@@ -12,15 +11,6 @@ function MemorableTrips() {
   return (
     <div className={styles.memorableContainer}>
       <p className={styles.contentHeader}>Make your trips memorable!</p>
-      <div className={styles.imageContainer}>
-        <Image
-          width={300}
-          height={300}
-          layout="responsive"
-          src="/twoPhonesBlueBackground.webp"
-          alt="Illustration of finding things to do on phones"
-        />
-      </div>
       <div className={styles.scrollableContainer}>
         <ScrollablePicsHorizantal pictureArray={exampleAttractions} />
       </div>

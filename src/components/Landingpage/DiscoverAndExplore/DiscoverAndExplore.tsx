@@ -6,18 +6,26 @@ function DiscoverAndExplore() {
     <div className={styles.discoverContainer}>
       <div className={styles.imageContainer}>
         <Image
-          width={50}
-          height={50}
-          layout="responsive"
-          src="/twoPhonesLandingpage.webp"
+          width="0"
+          height="0"
+          sizes="100vw"
+          className={styles.twoPhones}
+          src="/twoPhonesLandingpage.svg"
           alt="Two phones showing off location finder"
           loading="lazy"
-          // onLoad={() => handler()}
         />
       </div>
       <div className={styles.otherContentContainer}>
         <div className={styles.pin}>
-          <Image layout="responsive" width={0} height={0} loading="lazy" src="/tiltedPin.webp" alt="Map pin" />
+          <Image
+            width="0"
+            height="0"
+            sizes="100vw"
+            loading="lazy"
+            className={styles.pinImage}
+            src="/tiltedPin.webp"
+            alt="Map pin"
+          />
         </div>
         <p className={styles.contentHeader}>Discover and Explore</p>
         <p className={styles.contentDescription}>
@@ -27,10 +35,11 @@ function DiscoverAndExplore() {
         </p>
         <div className={styles.dotContainer}>
           <Image
-            width={50}
-            height={50}
+            width="0"
+            height="0"
+            sizes="100vw"
             loading="lazy"
-            layout="responsive"
+            className={styles.dottedLineImage}
             src="/dottedLine.webp"
             alt="Travel route dotted line"
           />

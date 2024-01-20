@@ -1,9 +1,9 @@
 .scrollableContainer {
   display: flex;
   width: auto;
-  height: 25vh;
+  height: fit-content;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow-x: scroll;
   overflow-y: hidden;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;

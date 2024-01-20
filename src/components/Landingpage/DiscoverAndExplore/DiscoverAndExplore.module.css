@@ -7,13 +7,39 @@
 }
 
 .imageContainer {
-  width: 75vw;
+  position: relative;
+  height: 20rem;
+  width: fit-content;
+  margin: auto;
+  margin-top: 10vh;
+}
+
+.twoPhones {
+  height: 20rem;
+  width: fit-content;
+  margin-top: 10vh;
+}
+
+.dotContainer {
+  position: relative;
+  height: 20rem;
+  width: fit-content;
+  margin: auto;
+  margin-top: 10vh;
+}
+
+.dottedLineImage {
+  margin-top: 10vh;
+  height: 20rem;
+  width: fit-content;
+  margin: auto;
 }
 
 .otherContentContainer {
   width: 75vw;
   display: flex;
   flex-direction: column;
+  margin-top: 10vh;
 }
 
 .pin,
@@ -23,15 +49,20 @@
 }
 
 .pin {
-  margin-top: 120px;
-  width: 7vw;
-  height: auto;
+  position: relative;
+  height: 5rem;
+  width: fit-content;
+  margin: auto;
 }
-
+.pinImage {
+  height: 5rem;
+  width: fit-content;
+  margin-top: 10vh;
+}
 .contentHeader {
   font-weight: 700;
   font-size: x-large;
-  margin-top: 20px;
+  margin-top: 10vh;
 }
 
 .contentDescription {
@@ -40,23 +71,28 @@
   margin-top: 15px;
 }
 
-.dotContainer {
-  width: 50vw;
-  height: auto;
-  display: flex;
-  margin: auto;
-  margin-top: 60px;
-}
-
 @media (min-width: 56rem) {
   .discoverContainer {
     flex-direction: row;
     justify-content: space-between;
     width: 85vw;
   }
-  .pin {
-    width: 4vw;
+  .pin,
+  .pinImage {
+    height: 10rem;
     margin: 0;
+  }
+
+  .dotContainer,
+  .dottedLineImage {
+    height: 30rem;
+    margin-bottom: 5vh;
+  }
+
+  .imageContainer,
+  .twoPhones {
+    height: 30rem;
+    margin-top: 10vh;
   }
   .contentHeader {
     margin: 0;
@@ -66,8 +102,7 @@
     text-align: left;
   }
 
-  .otherContentContainer,
-  .imageContainer {
+  .otherContentContainer {
     width: 40vw;
   }
 
@@ -82,5 +117,16 @@
   }
   .contentDescription {
     font-size: 1.5rem;
+  }
+  .dotContainer,
+  .dottedLineImage {
+    height: 40rem;
+  }
+  .imageContainer,
+  .twoPhones {
+    height: 40rem;
+  }
+  .twoPhones {
+    margin-top: 0;
   }
 }

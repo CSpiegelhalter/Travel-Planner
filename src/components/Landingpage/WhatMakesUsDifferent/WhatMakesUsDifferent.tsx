@@ -8,12 +8,13 @@ function WhatMakesUsDifferent() {
         <p className={styles.contentHeader}>What makes us different?</p>
         <div className={styles.googleContainer}>
           <Image
-            width={0}
-            height={300}
-            layout="responsive"
+            width="0"
+            height="0"
+            sizes="100vw"
+            loading="lazy"
+            className={styles.googleSearch}
             src="/google.webp"
-            alt="Illustration of finding things to do on phones"
-            // onLoad={() => handler()}
+            alt="Google search"
           />
         </div>
       </div>
