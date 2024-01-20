@@ -13,6 +13,8 @@ function DiscoverAndExplore() {
             height="0"
             sizes="100vw"
             className={styles.twoPhones}
+            priority={true}
+            loading="eager"
             src="/static/twoPhonesLandingpage.svg"
             alt="Two phones showing off location finder"
           />
@@ -23,6 +25,8 @@ function DiscoverAndExplore() {
               width="0"
               height="0"
               sizes="100vw"
+              priority={true}
+              loading="eager"
               className={styles.pinImage}
               src="/static/tiltedPin.webp"
               alt="Map pin"
@@ -39,6 +43,8 @@ function DiscoverAndExplore() {
               width="0"
               height="0"
               sizes="100vw"
+              priority={true}
+              loading="eager"
               className={styles.dottedLineImage}
               src="/static/dottedLine.webp"
               alt="Travel route dotted line"
